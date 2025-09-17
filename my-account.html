@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Account - Ventaro</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-gray-50">
+  <header class="bg-white shadow">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-gray-900">Ventaro</h1>
+      <div class="flex items-center space-x-4">
+        <span id="userEmail" class="text-sm text-gray-600"></span>
+        <button onclick="logout()" class="text-sm text-blue-600 hover:text-blue-800">Sign out</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div class="bg-white shadow overflow-hidden sm:rounded-lg">
+      <div class="px-4 py-5 sm:px-6">
+        <h2 class="text-lg leading-6 font-medium text-gray-900">My Account</h2>
+        <p class="mt-1 max-w-2xl text-sm text-gray-500">Personal details and products.</p>
+      </div>
+      <div class="border-t border-gray-200 px-4 py-5 sm:p-6">
+        <h3 class="text-lg font-medium leading-6 text-gray-900 mb-4">Your Products</h3>
+        <div id="productsContainer" class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <!-- Products will be loaded here -->
+          <div class="relative rounded-lg border border-gray-300 bg-white px-6 py-5 shadow-sm flex items-center space-x-3 hover:border-gray-400">
+            <div class="flex-1 min-w-0">
+              <span class="absolute inset-0" aria-hidden="true"></span>
+              <p class="text-sm font-medium text-gray-900">Loading products...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    let userEmail = '';
+    
+    // Check if user is logged in
+    async function checkAuth() {
+      try {
+        const response = await fetch('/api/auth/session');
+        if (response.ok) {
+          const session = await response.json();
+          if (!session || !session.user) {
+            // Not authenticated, redirect to login
+            window.location.href = '/signin';
+            return false;
+          }
+          userEmail = session.user.email;
+          document.getElementById('userEmail').textContent = userEmail;
+          return true;
+        } else {
+          // Error fetching session, redirect to login
+          window.location.href = '/signin';
+          return false;
+        }
+      } catch (error) {
+        console.error('Error checking authentication:', error);
+        window.location.href = '/signin';
+        return false;
+      }
+    }
+    
+    // Logout function
+    async function logout() {
+      try {
+        await fetch('/api/auth/signout', { method: 'POST' });
+        window.location.href = '/signin';
+      } catch (error) {
+        console.error('Error signing out:', error);
+        window.location.href = '/signin';
+      }
+    }
+    
+    // Load user products
+    async function loadProducts() {
+      const productsContainer = document.getElementById('productsContainer');
+      
+      try {
+        // First check if user is authenticated
+        const isAuthenticated = await checkAuth();
+        if (!isAuthenticated) return;
+        
+        // Fetch user's products from API
+        const response = await fetch('/api/user/products');
+        
+        if (response.ok) {
+          const products = await response.json();
+          
+          // Clear loading message
+          productsContainer.innerHTML = '';
+          
+          if (products.length === 0) {
+            productsContainer.innerHTML = `
+              <div class="col-span-full text-center py-8">
+                <p class="text-gray-500">You don't have any products yet.</p>
+              </div>
+            `;
+            return;
+          }
+      
+          // Display products
+          products.forEach(product => {
+            const productElement = document.createElement('div');
+            productElement.className = 'relative rounded-lg border border-gray-300 bg-white px-6 py-5 shadow-sm flex items-center space-x-3 hover:border-gray-400';
+            productElement.innerHTML = `
+              <div class="flex-1 min-w-0">
+                <span class="absolute inset-0" aria-hidden="true"></span>
+                <p class="text-sm font-medium text-gray-900">${product.name}</p>
+                <p class="text-sm text-gray-500 truncate">${product.description}</p>
+              </div>
+            `;
+            productsContainer.appendChild(productElement);
+          });
+        } else {
+          // Handle API error
+          productsContainer.innerHTML = `
+            <div class="col-span-full text-center py-8">
+              <p class="text-gray-500">Error loading products. Please try again later.</p>
+            </div>
+          `;
+        }
+      } catch (error) {
+        console.error('Error loading products:', error);
+        productsContainer.innerHTML = `
+          <div class="col-span-full text-center py-8">
+            <p class="text-gray-500">Error loading products. Please try again later.</p>
+          </div>
+        `;
+      }
+    }
+    
+    // Initialize the page
+    window.onload = loadProducts;
+  </script>
+</body>
+</html>

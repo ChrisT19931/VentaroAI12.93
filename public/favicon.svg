@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+  <rect width="500" height="500" fill="#000000"/>
+  <g transform="translate(50, 120) scale(0.8)">
+    <!-- Horizontal lines -->
+    <line x1="0" y1="0" x2="285" y2="0" stroke="#888888" stroke-width="5"/>
+    <line x1="285" y1="0" x2="500" y2="0" stroke="#888888" stroke-width="5"/>
+    
+    <!-- Crown symbol -->
+    <path d="M 285 -40 L 305 -10 L 325 -40 L 345 -10 L 365 -40 L 345 0 L 305 0 Z" fill="#FFFFFF"/>
+    
+    <!-- VENTARO text -->
+    <path d="M 30 150 L 70 30 L 110 30 L 150 150 L 110 150 L 90 70 L 70 150 Z" fill="#FFFFFF"/>
+    <path d="M 160 30 L 200 30 L 200 150 L 160 150 Z" fill="#FFFFFF"/>
+    <path d="M 210 30 L 250 30 L 290 90 L 290 30 L 330 30 L 330 150 L 290 150 L 250 90 L 250 150 L 210 150 Z" fill="#FFFFFF"/>
+    <path d="M 340 30 L 420 30 L 420 60 L 380 60 L 380 80 L 410 80 L 410 110 L 380 110 L 380 150 L 340 150 Z" fill="#FFFFFF"/>
+    <path d="M 430 30 L 510 30 L 510 60 L 470 60 L 470 80 L 500 80 L 500 110 L 470 110 L 470 120 L 510 120 L 510 150 L 430 150 Z" fill="#FFFFFF"/>
+    <path d="M 520 30 L 560 30 L 600 90 L 600 30 L 640 30 L 640 150 L 600 150 L 560 90 L 560 150 L 520 150 Z" fill="#FFFFFF"/>
+    <path d="M 650 30 L 730 30 L 730 60 L 690 60 L 690 150 L 650 150 Z" fill="#FFFFFF"/>
+    <path d="M 740 30 L 820 30 C 840 30 860 50 860 90 C 860 130 840 150 820 150 L 740 150 Z M 780 60 L 780 120 L 800 120 C 810 120 820 110 820 90 C 820 70 810 60 800 60 Z" fill="#FFFFFF"/>
+  </g>
+</svg>

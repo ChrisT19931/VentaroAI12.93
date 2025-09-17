@@ -1,0 +1,211 @@
+/* Premium Heading Animations */
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideInLeft {
+  from { transform: translateX(-30px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideInRight {
+  from { transform: translateX(30px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes glow {
+  0% { filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.7)); }
+  50% { filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.9)); }
+  100% { filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.7)); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes rotateY {
+  0% { transform: rotateY(0deg); }
+  100% { transform: rotateY(360deg); }
+}
+
+/* Premium Heading Classes */
+
+.premium-heading {
+  position: relative;
+  font-weight: 900;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.premium-heading-animation {
+  animation: slideUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.premium-heading-delayed {
+  opacity: 0;
+  animation: slideUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: 0.3s;
+}
+
+.premium-text-gradient {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-size: 200% auto;
+  background-position: 0% center;
+}
+
+.premium-text-shimmer {
+  background-image: linear-gradient(
+    to right,
+    #ffffff 0%,
+    #e0e0e0 20%,
+    #ffffff 40%,
+    #d0d0d0 60%,
+    #ffffff 80%,
+    #e0e0e0 100%
+  );
+  background-size: 200% auto;
+  animation: shimmer 3s linear infinite;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.premium-text-gold {
+  background-image: linear-gradient(
+    to right,
+    #ffd700 0%,
+    #f0c030 20%,
+    #ffec80 40%,
+    #ffd700 60%,
+    #f0c030 80%,
+    #ffec80 100%
+  );
+}
+
+.premium-text-silver {
+  background-image: linear-gradient(
+    to right,
+    #cccccc 0%,
+    #f5f5f5 20%,
+    #e0e0e0 40%,
+    #cccccc 60%,
+    #f5f5f5 80%,
+    #e0e0e0 100%
+  );
+}
+
+.premium-text-blue {
+  background-image: linear-gradient(
+    to right,
+    #3b82f6 0%,
+    #60a5fa 20%,
+    #93c5fd 40%,
+    #3b82f6 60%,
+    #60a5fa 80%,
+    #93c5fd 100%
+  );
+}
+
+.premium-text-purple {
+  background-image: linear-gradient(
+    to right,
+    #8b5cf6 0%,
+    #a78bfa 20%,
+    #c4b5fd 40%,
+    #8b5cf6 60%,
+    #a78bfa 80%,
+    #c4b5fd 100%
+  );
+}
+
+.premium-text-emerald {
+  background-image: linear-gradient(
+    to right,
+    #10b981 0%,
+    #34d399 20%,
+    #6ee7b7 40%,
+    #10b981 60%,
+    #34d399 80%,
+    #6ee7b7 100%
+  );
+}
+
+.premium-text-glow {
+  animation: glow 3s ease-in-out infinite;
+}
+
+.premium-text-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.premium-3d-text {
+  text-shadow: 
+    0px 1px 0px rgba(255, 255, 255, 0.3),
+    0px 2px 0px rgba(0, 0, 0, 0.1),
+    0px 3px 2px rgba(0, 0, 0, 0.2),
+    0px 5px 5px rgba(0, 0, 0, 0.25);
+}
+
+.premium-3d-text-deep {
+  text-shadow: 
+    0px 1px 0px rgba(255, 255, 255, 0.3),
+    0px 2px 0px rgba(0, 0, 0, 0.1),
+    0px 3px 2px rgba(0, 0, 0, 0.2),
+    0px 5px 5px rgba(0, 0, 0, 0.25),
+    0px 10px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Scroll Reveal Animations */
+.reveal-on-scroll {
+  opacity: 0;
+  transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-up {
+  transform: translateY(50px);
+}
+
+.reveal-down {
+  transform: translateY(-50px);
+}
+
+.reveal-left {
+  transform: translateX(-50px);
+}
+
+.reveal-right {
+  transform: translateX(50px);
+}
+
+/* Staggered Animation Delays */
+.stagger-1 { animation-delay: 0.1s; }
+.stagger-2 { animation-delay: 0.2s; }
+.stagger-3 { animation-delay: 0.3s; }
+.stagger-4 { animation-delay: 0.4s; }
+.stagger-5 { animation-delay: 0.5s; }
