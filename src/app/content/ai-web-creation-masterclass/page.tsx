@@ -114,51 +114,25 @@ export default function AIWebCreationMasterclassContent() {
                 <Play className="w-20 h-20 text-blue-400 mx-auto mb-4" />
                 <h3 className="text-2xl font-semibold text-white mb-2">Masterclass Video</h3>
                 <p className="text-gray-400 mb-4">
-                  2+ hours of comprehensive AI web development training
+                  Video content to be added
                 </p>
-                <button className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg transition-colors">
-                  ▶️ Start Watching
-                </button>
               </div>
-            </div>
-            
-            <div className="text-center">
-              <p className="text-gray-300 text-lg mb-4">
-                Learn how to build AI-powered websites step by step with our comprehensive video masterclass.
-              </p>
-              <p className="text-gray-400">
-                Video content will be uploaded soon. You'll receive an email notification when it's available.
-              </p>
             </div>
           </div>
 
-          {/* Resources Section */}
-          <div className="grid md:grid-cols-1 gap-6 mb-8">
-            <div className="bg-white/10 backdrop-blur-lg rounded-xl p-6 text-center">
-              <Download className="w-12 h-12 text-green-400 mx-auto mb-4" />
-              <h3 className="text-lg font-bold text-white mb-2">Course Resources</h3>
-              <p className="text-gray-300 mb-4">Downloadable resources and materials will be available once the video content is uploaded</p>
-              <button className="bg-gray-600 text-white font-semibold py-2 px-4 rounded-lg cursor-not-allowed" disabled>
-                Coming Soon
-              </button>
-            </div>
-          </div>
-
-          {/* Progress Tracking */}
-          <div className="bg-white/10 backdrop-blur-lg rounded-xl p-6 mb-8">
-            <h3 className="text-xl font-bold text-white mb-4">📊 Your Progress</h3>
-            <div className="space-y-3">
-              <div className="flex items-center justify-between">
-                <span className="text-gray-300">Course Completion</span>
-                <span className="text-green-400 font-semibold">0% Complete</span>
-              </div>
-              <div className="w-full bg-gray-700 rounded-full h-2">
-                <div className="bg-green-500 h-2 rounded-full" style={{ width: '0%' }}></div>
-              </div>
-              <p className="text-sm text-gray-400">
-                Start watching to track your progress automatically
-              </p>
-            </div>
+          {/* Cheat Sheet Link */}
+          <div className="bg-white/10 backdrop-blur-lg rounded-xl p-6 text-center mb-8">
+            <BookOpen className="w-12 h-12 text-blue-400 mx-auto mb-4" />
+            <h3 className="text-lg font-bold text-white mb-2">AI Web Creation Cheat Sheet</h3>
+            <p className="text-gray-300 mb-4">Access the comprehensive cheat sheet for this masterclass</p>
+            <Link
+              href="https://ventaroai.com/products/ai-web-creation-masterclass"
+              className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors inline-block"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View Cheat Sheet
+            </Link>
           </div>
 
           {/* Navigation */}

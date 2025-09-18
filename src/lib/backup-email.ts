@@ -17,7 +17,7 @@ interface BackupEmailResult {
   success: boolean;
   id?: string;
   error?: string;
-  method: 'sendgrid' | 'backup' | 'failed';
+  method: 'sendgrid' | 'resend' | 'backup' | 'failed';
 }
 
 // Store email in Supabase as backup
@@ -56,7 +56,7 @@ export async function storeBackupEmail(emailData: EmailData): Promise<{ success:
   }
 }
 
-// Send email with SendGrid fallback to backup system
+// Send email with SendGrid -> Resend -> Backup system fallback
 export async function sendEmailWithBackup(emailData: EmailData): Promise<BackupEmailResult> {
   // First try SendGrid
   if (process.env.SENDGRID_API_KEY && process.env.SENDGRID_API_KEY !== 'your_sendgrid_api_key') {
@@ -81,11 +81,43 @@ export async function sendEmailWithBackup(emailData: EmailData): Promise<BackupE
       return { success: true, method: 'sendgrid' };
     } catch (error: any) {
       console.error('❌ SENDGRID: Failed to send email:', error);
+      // Fall back to Resend
+    }
+  }
+
+  // Second try Resend
+  if (process.env.RESEND_API_KEY && process.env.RESEND_API_KEY !== 'your_resend_api_key') {
+    try {
+      const { Resend } = await import('resend');
+      const resend = new Resend(process.env.RESEND_API_KEY);
+
+      const emailPayload: any = {
+        from: emailData.from || process.env.SENDGRID_FROM_EMAIL || 'noreply@ventaroai.com',
+        to: [emailData.to],
+        subject: emailData.subject,
+      };
+
+      if (emailData.html) {
+        emailPayload.html = emailData.html;
+      }
+      if (emailData.text) {
+        emailPayload.text = emailData.text;
+      }
+
+      const result = await resend.emails.send(emailPayload);
+      console.log('✅ RESEND: Email sent successfully to', emailData.to, 'ID:', result.data?.id);
+      
+      // Also store in backup for record keeping
+      await storeBackupEmail({ ...emailData, type: emailData.type });
+      
+      return { success: true, method: 'resend' };
+    } catch (error: any) {
+      console.error('❌ RESEND: Failed to send email:', error);
       // Fall back to backup system
     }
   }
 
-  // Fallback to backup system
+  // Final fallback to backup system (store only)
   console.log('📧 BACKUP EMAIL: Using backup email system for', emailData.to);
   const backupResult = await storeBackupEmail(emailData);
   
@@ -189,7 +221,7 @@ export async function processBackupEmails() {
   
   for (const email of pendingEmails) {
     try {
-      // Try to send via SendGrid again
+      // Try to send via SendGrid or Resend again
       const result = await sendEmailWithBackup({
         to: email.to_email,
         from: email.from_email,
@@ -200,9 +232,9 @@ export async function processBackupEmails() {
         formData: email.form_data
       });
       
-      if (result.success && result.method === 'sendgrid') {
+      if (result.success && (result.method === 'sendgrid' || result.method === 'resend')) {
         await markBackupEmailProcessed(email.id, 'sent');
-        console.log('✅ BACKUP EMAIL PROCESSOR: Successfully sent email', email.id);
+        console.log('✅ BACKUP EMAIL PROCESSOR: Successfully sent email via', result.method.toUpperCase(), 'ID:', email.id);
       } else {
         console.log('⏳ BACKUP EMAIL PROCESSOR: Email still in backup queue', email.id);
       }
@@ -237,7 +269,7 @@ export async function getBackupEmailStats() {
     };
 
     // Count by type
-    data.forEach(email => {
+    data.forEach((email: any) => {
       stats.byType[email.email_type] = (stats.byType[email.email_type] || 0) + 1;
     });
 

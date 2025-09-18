@@ -62,49 +62,6 @@ export default function AboutPage() {
               </Link>
             </div>
           </div>
-          
-          {/* Cheat Sheets Section */}
-          <div className="mt-16">
-            <h3 className="text-3xl font-bold text-white text-center mb-8">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-500">
-                Premium Cheat Sheets - $50 Each
-              </span>
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-              <div className="glass-panel text-center p-6 border border-amber-500/20 hover:border-amber-400/30 transition-all duration-300">
-                <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center mb-4 mx-auto">
-                  <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
-                  </svg>
-                </div>
-                <h4 className="text-lg font-bold text-white mb-3">Business AI Implementation</h4>
-                <p className="text-gray-300 text-sm mb-4">Complete step-by-step guide for implementing AI in your business operations and workflows.</p>
-                <div className="text-amber-400 font-bold text-xl">$50</div>
-              </div>
-              
-              <div className="glass-panel text-center p-6 border border-purple-500/20 hover:border-purple-400/30 transition-all duration-300">
-                <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-pink-600 rounded-lg flex items-center justify-center mb-4 mx-auto">
-                  <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                  </svg>
-                </div>
-                <h4 className="text-lg font-bold text-white mb-3">Beginners AI Systems Guide</h4>
-                <p className="text-gray-300 text-sm mb-4">Essential cheat sheet for understanding and using all AI systems from beginner to advanced level.</p>
-                <div className="text-amber-400 font-bold text-xl">$50</div>
-              </div>
-              
-              <div className="glass-panel text-center p-6 border border-emerald-500/20 hover:border-emerald-400/30 transition-all duration-300">
-                <div className="w-10 h-10 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-lg flex items-center justify-center mb-4 mx-auto">
-                  <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9v-9m0-9v9m0 9c-5 0-9-4-9-9s4-9 9-9" />
-                  </svg>
-                </div>
-                <h4 className="text-lg font-bold text-white mb-3">AI Business Build Guide</h4>
-                <p className="text-gray-300 text-sm mb-4">Step-by-step layman's guide to building a complete online business with AI agents from start to finish.</p>
-                <div className="text-amber-400 font-bold text-xl">$50</div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
 
