@@ -168,12 +168,6 @@ const ProductsPage = React.memo(function ProductsPage() {
   const handleContactSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Validate that at least one service is selected
-    if (contactForm.services.length === 0) {
-      toast.error('Please select at least one service for your quote.');
-      return;
-    }
-    
     setIsSubmitting(true);
 
     try {
@@ -519,7 +513,7 @@ const ProductsPage = React.memo(function ProductsPage() {
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-gray-200 font-medium mb-2 text-sm tracking-wide">
-                    Full Name <span className="text-gray-400">*</span>
+                    Full Name
                   </label>
                   <input 
                     type="text" 
@@ -527,14 +521,13 @@ const ProductsPage = React.memo(function ProductsPage() {
                     value={contactForm.name}
                     onChange={handleContactChange}
                     placeholder="John Smith"
-                    required
                     className="w-full p-3.5 bg-slate-800/80 border border-slate-600 rounded-lg text-white focus:border-gray-500 focus:ring-1 focus:ring-gray-500/30 focus:outline-none transition-all duration-200 text-base"
                   />
                 </div>
                 
                 <div>
                   <label className="block text-gray-200 font-medium mb-2 text-sm tracking-wide">
-                    Email Address <span className="text-gray-400">*</span>
+                    Email Address
                   </label>
                   <input 
                     type="email" 
@@ -542,7 +535,6 @@ const ProductsPage = React.memo(function ProductsPage() {
                     value={contactForm.email}
                     onChange={handleContactChange}
                     placeholder="your.email@example.com"
-                    required
                     className="w-full p-3.5 bg-slate-800/80 border border-slate-600 rounded-lg text-white focus:border-gray-500 focus:ring-1 focus:ring-gray-500/30 focus:outline-none transition-all duration-200 text-base"
                   />
                 </div>
@@ -583,13 +575,12 @@ const ProductsPage = React.memo(function ProductsPage() {
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-gray-200 font-medium mb-2 text-sm tracking-wide">
-                    Project Type <span className="text-gray-400">*</span>
+                    Project Type
                   </label>
                   <select 
                     name="projectType"
                     value={contactForm.projectType}
                     onChange={handleContactChange}
-                    required
                     className="w-full p-3.5 bg-slate-800/80 border border-slate-600 rounded-lg text-white focus:border-gray-500 focus:ring-1 focus:ring-gray-500/30 focus:outline-none transition-all duration-200 text-base appearance-none">
                     <option value="">Select project type</option>
                     <option value="business-website">Professional Business Website</option>
@@ -604,13 +595,12 @@ const ProductsPage = React.memo(function ProductsPage() {
                 
                 <div>
                   <label className="block text-gray-200 font-medium mb-2 text-sm tracking-wide">
-                    Project Timeline <span className="text-gray-400">*</span>
+                    Project Timeline
                   </label>
                   <select 
                     name="timeline"
                     value={contactForm.timeline}
                     onChange={handleContactChange}
-                    required
                     className="w-full p-3.5 bg-slate-800/80 border border-slate-600 rounded-lg text-white focus:border-gray-500 focus:ring-1 focus:ring-gray-500/30 focus:outline-none transition-all duration-200 text-base appearance-none">
                     <option value="">Select timeline</option>
                     <option value="asap">ASAP (Rush)</option>
@@ -626,7 +616,7 @@ const ProductsPage = React.memo(function ProductsPage() {
               {/* Services Needed */}
               <div>
                 <label className="block text-gray-200 font-medium mb-3 text-sm tracking-wide">
-                  Services Required <span className="text-gray-400">*</span>
+                  Services Needed <span className="text-gray-400">(Optional)</span>
                 </label>
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
                   {services.map((service) => (
@@ -641,9 +631,7 @@ const ProductsPage = React.memo(function ProductsPage() {
                     </label>
                   ))}
                 </div>
-                {contactForm.services.length === 0 && (
-                  <p className="text-red-400 text-sm mt-2">Please select at least one service</p>
-                )}
+                <p className="text-gray-400 text-sm mt-2">Select any services you're interested in, or leave blank for a general quote</p>
               </div>
               
               {/* Project Description */}
