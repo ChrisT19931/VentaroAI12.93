@@ -261,7 +261,7 @@ export default function BulletproofSignInPage() {
 
           <div className="mt-4 text-center">
             <Link 
-              href="/forgot-password" 
+              href="/auth/forgot-password" 
               className="text-sm text-gray-400 hover:text-gray-300 transition-colors duration-200"
             >
               Forgot your password?

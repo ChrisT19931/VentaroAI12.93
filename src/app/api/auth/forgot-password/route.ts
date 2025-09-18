@@ -1,7 +1,7 @@
-import { NextResponse } from 'next/server';
-import { supabase } from '@/lib/supabase';
+import { NextRequest, NextResponse } from 'next/server';
+import { supabaseAuth } from '@/lib/supabase-auth';
 
-export async function POST(request: Request) {
+export async function POST(request: NextRequest) {
   try {
     const { email } = await request.json();
 
@@ -12,24 +12,31 @@ export async function POST(request: Request) {
       );
     }
 
-    // Use Supabase to send a password reset email
-    const { error } = await supabase.auth.resetPasswordForEmail(email, {
-      redirectTo: `${process.env.NEXTAUTH_URL || process.env.VERCEL_URL || 'http://localhost:3000'}/reset-password`,
-    });
-
-    if (error) {
-      console.error('Password reset email error:', error);
+    // Validate email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
       return NextResponse.json(
-        { error: error.message || 'Failed to send password reset email' },
+        { error: 'Please enter a valid email address' },
         { status: 400 }
       );
     }
 
-    return NextResponse.json({ success: true });
-  } catch (error: any) {
-    console.error('Password reset email exception:', error);
+    // Send password reset email using Supabase Auth service
+    const result = await supabaseAuth.sendPasswordReset(email);
+
+    // Always return success message for security (don't reveal if email exists)
     return NextResponse.json(
-      { error: error.message || 'An unexpected error occurred' },
+      { 
+        message: 'If an account with that email exists, we have sent a password reset link.',
+        success: true 
+      },
+      { status: 200 }
+    );
+
+  } catch (error) {
+    console.error('Forgot password error:', error);
+    return NextResponse.json(
+      { error: 'An error occurred while processing your request' },
       { status: 500 }
     );
   }

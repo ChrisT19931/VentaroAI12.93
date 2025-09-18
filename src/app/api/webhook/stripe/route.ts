@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { headers } from 'next/headers';
 import { getStripeInstance } from '@/lib/stripe';
 import { supabase } from '@/lib/supabase';
-import { bulletproofAuth } from '@/lib/auth-bulletproof';
+import { supabaseAuth } from '@/lib/supabase-auth';
 import { sendOrderConfirmationEmail, sendAccessGrantedEmail } from '@/lib/sendgrid';
 
 // COMPREHENSIVE LOGGING SYSTEM
@@ -95,7 +95,7 @@ async function createPurchaseRecord(purchaseData: any): Promise<boolean> {
   logPurchaseEvent('INFO', 'Attempting to create purchase record', purchaseData);
 
   const strategies = [
-    'bulletproof_auth',
+    'supabase_auth',
     'direct_supabase',
     'fallback_storage'
   ];
@@ -108,9 +108,13 @@ async function createPurchaseRecord(purchaseData: any): Promise<boolean> {
       let purchase = null;
 
       switch (strategy) {
-        case 'bulletproof_auth':
-          purchase = await bulletproofAuth.createPurchase(purchaseData);
-          success = !!purchase;
+        case 'supabase_auth':
+          const result = await supabaseAuth.createPurchase(purchaseData);
+          success = result.success && !!result.purchase;
+          purchase = result.purchase;
+          if (!success && result.error) {
+            logPurchaseEvent('ERROR', `Supabase auth creation failed: ${result.error}`, result.error);
+          }
           break;
 
         case 'direct_supabase':

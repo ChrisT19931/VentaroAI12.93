@@ -2,7 +2,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { useState, useEffect } from 'react'
-import { toast, Toaster } from 'react-hot-toast'
+import { toast } from 'react-hot-toast'
 // import CinematicHero from '../components/3d/CinematicHero' // Temporarily disabled due to webpack module resolution error
 import TypewriterText from '../components/TypewriterText'
 import UnifiedCheckoutButton from '../components/UnifiedCheckoutButton'
@@ -838,7 +838,7 @@ export default function Home() {
             </div>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto justify-items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto justify-items-center">
             <style jsx>{`
               .glass-panel {
                 background: rgba(15, 23, 42, 0.6);
@@ -970,55 +970,7 @@ export default function Home() {
               </div>
             </div>
 
-            {/* AI Business Launch Blueprint - Moved from Elite Custom Website Creation section */}
-            <div className="group relative bg-gradient-to-br from-slate-900/95 via-purple-900/30 to-gray-900/95 backdrop-blur-xl rounded-3xl shadow-lg hover:shadow-purple-500/20 transition-all duration-300 transform hover:-translate-y-2 overflow-hidden border-2 border-purple-500/40 hover:border-purple-500/60">
-              {/* Enhanced glow effects */}
-              <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-purple-500/20 via-transparent to-blue-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              
-              <div className="absolute top-4 left-4 z-20">
-                <div className="bg-gray-800/90 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg transition-all duration-300 border border-purple-500/40">
-                  PREMIUM
-                </div>
-              </div>
-              
-              <div className="h-32 bg-gradient-to-br from-slate-900 to-gray-900 relative overflow-hidden flex items-center justify-center group-hover:bg-gradient-to-br group-hover:from-slate-800 group-hover:to-gray-800 transition-all duration-500">
-                <div className="relative transform group-hover:scale-110 transition-all duration-500">
-                  <svg className="w-16 h-16 text-purple-400 opacity-60 group-hover:opacity-100 group-hover:text-purple-300 transition-all duration-500 group-hover:drop-shadow-lg" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-                  </svg>
-                  <div className="absolute inset-0 bg-purple-400/20 rounded-full blur-xl group-hover:bg-purple-400/40 transition-all duration-300"></div>
-                </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent group-hover:from-black/50 transition-all duration-500"></div>
-              </div>
-              
-              <div className="p-6">
-                <h3 className="text-xl font-black mb-3 text-white drop-shadow-lg border-l-2 border-purple-500/40 pl-3">AI Business Launch Blueprint</h3>
-                <p className="text-gray-200 mb-4 text-sm leading-relaxed group-hover:text-white transition-colors duration-500">Complete step-by-step guidance to create your own AI-powered online platform.</p>
-                
-                <div className="space-y-3 mb-4">
-                  <div className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-purple-400 rounded-full"></div>
-                    <span className="text-xs text-gray-300">60-Minute Video Tutorial</span>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-purple-400 rounded-full"></div>
-                    <span className="text-xs text-gray-300">Detailed Step-by-Step Report</span>
-                  </div>
-                </div>
-                
-                <div className="text-center mb-4">
-                  <div className="text-3xl font-black text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-blue-400 transition-all duration-500">A$50</div>
-                  <div className="text-xs text-gray-300">one-time</div>
-                </div>
-                <SubscriptionForm
-                  source="homepage-preorder"
-                  title="Join Forward-Thinking Professionals"
-                  description="Reserve your access to the AI Business Launch Blueprint. Receive priority notification and exclusive early access benefits."
-                  buttonText="SECURE YOUR SPOT"
-                  className="w-full block text-center py-3 rounded-xl font-bold transition-all duration-500 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-500 hover:to-blue-500 text-white text-sm transform group-hover:scale-105 group-hover:shadow-lg group-hover:shadow-purple-500/30"
-                />
-              </div>
-            </div>
+
           </div>
           
           <div className="text-center mt-16">
@@ -1273,7 +1225,7 @@ export default function Home() {
 
       </main>
       
-      <Toaster position="bottom-center" toastOptions={{ duration: 3000 }} />
+
       
       {/* Floating Quote Button */}
       {/* <FloatingQuoteButton onClick={scrollToContactForm} /> */}

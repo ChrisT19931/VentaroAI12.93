@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { getServerSession } from 'next-auth/next';
 import { authOptions } from '@/app/api/auth/[...nextauth]/auth';
 import { supabase, getSupabaseAdmin } from '@/lib/supabase';
-import { bulletproofAuth } from '@/lib/auth-bulletproof';
+import { supabaseAuth } from '@/lib/supabase-auth';
 
 export async function GET(request: NextRequest) {
   try {
@@ -209,7 +209,8 @@ async function handleAutoUnlockFromSuccess(body: any) {
         // Try to create purchase record
         let purchase = null;
         try {
-          purchase = await bulletproofAuth.createPurchase(purchaseData);
+          const result = await supabaseAuth.createPurchase(purchaseData);
+        purchase = result.success ? result.purchase : null;
         } catch (error: any) {
           console.log('Bulletproof auth failed, trying direct Supabase:', error.message);
         }
@@ -302,7 +303,8 @@ async function handleManualUnlock(body: any) {
     // Try bulletproof auth first
     let purchase = null;
     try {
-      purchase = await bulletproofAuth.createPurchase(purchaseData);
+      const result = await supabaseAuth.createPurchase(purchaseData);
+      purchase = result.success ? result.purchase : null;
     } catch (error: any) {
       console.log('Bulletproof auth failed, trying direct Supabase:', error.message);
     }
@@ -508,7 +510,8 @@ async function handleSimulatePurchase(body: any) {
     };
 
     // Create purchase
-    const purchase = await bulletproofAuth.createPurchase(purchaseData);
+    const result = await supabaseAuth.createPurchase(purchaseData);
+    const purchase = result.success ? result.purchase : null;
 
     if (!purchase) {
       throw new Error('Purchase creation failed');
@@ -550,7 +553,8 @@ async function handleVerifyAccess(body: any) {
 
   try {
     // Get user purchases
-    const purchases = await bulletproofAuth.getUserPurchases(userId || email);
+    const purchasesResult = await supabaseAuth.getUserPurchases(userId || email);
+    const purchases = purchasesResult.success ? purchasesResult.purchases || [] : [];
     
     // Check access
     const hasAccess = purchases.some((p: any) => p.product_id === productId);
@@ -593,4 +597,4 @@ async function handleVerifyAccess(body: any) {
       message: error.message
     }, { status: 500 });
   }
-} 
+}

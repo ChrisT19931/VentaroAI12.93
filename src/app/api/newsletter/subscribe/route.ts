@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { sendEmail } from '@/lib/sendgrid';
-import { bulletproofAuth } from '@/lib/auth-bulletproof';
 import { supabase } from '@/lib/supabase';
+import { sendEmailWithBackup } from '@/lib/backup-email';
 
 export async function POST(request: NextRequest) {
   console.log('📰 NEWSLETTER: Processing subscription...');
@@ -84,10 +84,16 @@ export async function POST(request: NextRequest) {
       console.log(`✅ NEWSLETTER: Subscription processed for ${email} (database storage skipped)`);
     }
 
-    // Send welcome email to subscriber
-    const welcomeEmailResult = await sendEmail({
+    // Send welcome email to subscriber using backup system
+    const welcomeEmailResult = await sendEmailWithBackup({
       to: email,
       subject: '🎉 Welcome to Ventaro AI Updates!',
+      type: 'newsletter',
+      formData: {
+        name,
+        email,
+        source: 'newsletter_subscribe'
+      },
       html: `
         <!DOCTYPE html>
         <html>
@@ -184,10 +190,16 @@ The Ventaro AI Team
 Unsubscribe: chris.t@ventarosales.com`
     });
 
-    // Send notification to admin
-    const adminEmailResult = await sendEmail({
+    // Send notification to admin using backup system
+    const adminEmailResult = await sendEmailWithBackup({
       to: 'chris.t@ventarosales.com',
       subject: `📰 New Updates Subscription: ${email}`,
+      type: 'newsletter',
+      formData: {
+        name,
+        email,
+        source: 'newsletter_subscribe'
+      },
       html: `
         <!DOCTYPE html>
         <html>

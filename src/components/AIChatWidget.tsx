@@ -17,7 +17,7 @@ export default function AIChatWidget({ isOpen, onToggle }: AIChatWidgetProps) {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: '1',
-      text: "Hi! I'm VentaroAI's assistant. I can help you with questions about our services, pricing, delivery times, and more. What would you like to know?",
+      text: "Hi! I'm VentaroAI's assistant. I can help you with questions about our AI coaching services, digital products, pricing plans, and how AI can transform your business. Whether you're a complete beginner or looking for advanced AI implementation, I'm here to guide you. What would you like to know?",
       isUser: false,
       timestamp: new Date()
     }
@@ -59,7 +59,7 @@ export default function AIChatWidget({ isOpen, onToggle }: AIChatWidgetProps) {
       return data.response + "\n\nIf you have any specific questions or need further assistance, feel free to contact Chris at chris.t@ventarosales.com"
     } catch (error) {
       console.error('Error getting AI response:', error)
-      return "I'm having trouble connecting right now. For immediate assistance, please contact Chris at chris.t@ventarosales.com or use our quote form below. I can help with questions about our $500-$3,000+ custom websites, 21-day delivery guarantee, and complete source code ownership!"
+      return "I'm having trouble connecting right now. For immediate assistance, please contact Chris at chris.t@ventarosales.com. I can help with questions about our AI coaching services ($250-$500+), digital products, and how AI can transform your business!"
     }
   }
 
@@ -91,7 +91,7 @@ export default function AIChatWidget({ isOpen, onToggle }: AIChatWidgetProps) {
       console.error('Error in handleSendMessage:', error)
       const errorResponse: Message = {
         id: (Date.now() + 1).toString(),
-        text: "I'm having trouble connecting right now. For immediate assistance, please contact Chris at chris.t@ventarosales.com or use our quote form below.",
+        text: "I'm having trouble connecting right now. For immediate assistance, please contact Chris at chris.t@ventarosales.com. I can help with AI coaching, digital products, and business transformation strategies.",
         isUser: false,
         timestamp: new Date()
       }

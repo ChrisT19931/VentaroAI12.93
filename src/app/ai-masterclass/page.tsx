@@ -1,6 +1,6 @@
 'use client'
 import Link from 'next/link'
-import { Toaster } from 'react-hot-toast'
+
 import SubscriptionForm from '@/components/SubscriptionForm'
 import AnimatedHeading from '@/components/AnimatedHeading'
 
@@ -132,7 +132,7 @@ export default function AIMasterclass() {
         </div>
       </section>
 
-      <Toaster position="top-right" />
+
     </main>
   )
 }

@@ -39,11 +39,12 @@ export default function Navbar() {
               <Link href="/vai-coaching" className="px-5 py-3 rounded-lg text-sm font-semibold text-gray-300 hover:text-white bg-gray-900 hover:bg-gray-800 transition-all duration-300 border border-gray-700/50 hover:border-gray-600/60 border-l-2 border-l-blue-500/30 hover:border-l-blue-500/60">
                 <span className="tracking-wide">VAI COACHING</span>
               </Link>
-              <Link href="/ai-masterclass" className="px-5 py-3 rounded-lg text-sm font-medium text-gray-300 hover:text-white bg-gray-900/80 hover:bg-gray-800 transition-all duration-300 border border-gray-700/50 hover:border-gray-600/60 border-l-2 border-l-purple-500/30 hover:border-l-purple-500/60">
-                <span>VAI Masterclass</span>
-              </Link>
               <Link href="/products" className="px-5 py-3 rounded-lg text-sm font-medium text-gray-300 hover:text-white bg-gray-900/80 hover:bg-gray-800 transition-all duration-300 border border-gray-700/50 hover:border-gray-600/60 border-l-2 border-l-emerald-500/30 hover:border-l-emerald-500/60">
                 <span>VAI Toolkit</span>
+              </Link>
+              <Link href="/ai-masterclass" className="px-5 py-3 rounded-lg text-sm font-medium text-gray-300 hover:text-white bg-gray-900/80 hover:bg-gray-800 transition-all duration-300 border border-gray-700/50 hover:border-gray-600/60 border-l-2 border-l-purple-500/30 hover:border-l-purple-500/60 relative">
+                <span>VAI Masterclass</span>
+                <span className="absolute -top-2 -right-2 bg-gray-800 text-gray-300 text-xs px-2 py-1 rounded-full text-[10px] font-medium border border-gray-600/30">SOON</span>
               </Link>
               <Link href="/toolbox" className="px-5 py-3 rounded-lg text-sm font-medium text-gray-300 hover:text-white bg-gray-900/80 hover:bg-gray-800 transition-all duration-300 border border-gray-700/50 hover:border-gray-600/60 border-l-2 border-l-amber-500/30 hover:border-l-amber-500/60 relative">
                 <span>VAI Web Gen</span>
@@ -141,15 +142,16 @@ export default function Navbar() {
           <Link href="/vai-coaching" className="block px-4 py-3 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-gray-900 transition-all duration-300 border border-transparent hover:border-gray-800 border-l-2 border-l-blue-500/30 hover:border-l-blue-500/60">
             VAI Coaching
           </Link>
-          <Link href="/ai-masterclass" className="block px-4 py-3 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-gray-900 transition-all duration-300 border border-transparent hover:border-gray-800 border-l-2 border-l-purple-500/30 hover:border-l-purple-500/60">
+          <Link href="/products" className="block px-4 py-3 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-gray-900 transition-all duration-300 border border-transparent hover:border-gray-800 border-l-2 border-l-emerald-500/30 hover:border-l-emerald-500/60">
+            VAI Toolkit
+          </Link>
+          <Link href="/ai-masterclass" className="block px-4 py-3 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-gray-900 transition-all duration-300 border border-transparent hover:border-gray-800 border-l-2 border-l-purple-500/30 hover:border-l-purple-500/60 relative">
             VAI Masterclass
+            <span className="absolute -top-1 -right-1 bg-gray-800 text-gray-300 text-xs px-1 py-0.5 rounded text-[10px] font-medium border border-gray-600/30">SOON</span>
           </Link>
           <Link href="/toolbox" className="block px-4 py-3 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-gray-900 transition-all duration-300 border border-transparent hover:border-gray-800 border-l-2 border-l-amber-500/30 hover:border-l-amber-500/60 relative">
             VAI Web Gen
             <span className="absolute -top-1 -right-1 bg-gray-800 text-gray-300 text-xs px-1 py-0.5 rounded text-[10px] font-medium border border-gray-600/30">SOON</span>
-          </Link>
-          <Link href="/products" className="block px-4 py-3 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-gray-900 transition-all duration-300 border border-transparent hover:border-gray-800 border-l-2 border-l-emerald-500/30 hover:border-l-emerald-500/60">
-            VAI Toolkit
           </Link>
           <Link href="/affiliate" className="block px-4 py-3 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-gray-900 transition-all duration-300 border border-transparent hover:border-gray-800 border-l-2 border-l-cyan-500/30 hover:border-l-cyan-500/60 relative">
             Ventaro AI Affiliate

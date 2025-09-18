@@ -51,12 +51,14 @@ function validateSupabaseConfig() {
     throw new Error('Missing environment variable: NEXT_PUBLIC_SUPABASE_ANON_KEY. Please configure this in your Vercel environment variables.');
   }
   
-  // Check for placeholder values and throw error to prevent invalid URL construction
+  // Check for placeholder values and warn in development
   if (supabaseUrl === 'https://placeholder.supabase.co' || supabaseUrl === 'https://supabase.co' || supabaseUrl.includes('placeholder')) {
-    throw new Error('NEXT_PUBLIC_SUPABASE_URL contains placeholder value. Please set your actual Supabase project URL in .env.local');
+    console.warn('⚠️ SUPABASE: Using placeholder URL. Set NEXT_PUBLIC_SUPABASE_URL in .env.local for full functionality.');
+    return createMockSupabaseClient();
   }
   if (supabaseAnonKey.includes('EXAMPLE') || supabaseAnonKey.includes('placeholder')) {
-    throw new Error('NEXT_PUBLIC_SUPABASE_ANON_KEY contains placeholder value. Please set your actual Supabase anonymous key in .env.local');
+    console.warn('⚠️ SUPABASE: Using placeholder key. Set NEXT_PUBLIC_SUPABASE_ANON_KEY in .env.local for full functionality.');
+    return createMockSupabaseClient();
   }
   
   // Validate URL format
@@ -274,5 +276,47 @@ export const getSupabaseAdmin = () => {
   return _supabaseAdmin;
 };
 
-// For backward compatibility, export the getter function as supabaseAdmin
-export { getSupabaseAdmin as supabaseAdmin };
+// Create mock client for development when credentials are not available
+function createMockSupabaseClient() {
+  return {
+    from: () => ({
+      select: () => ({ data: [], error: null }),
+      insert: () => ({ data: null, error: { message: 'Mock client - no real database connection' } }),
+      update: () => ({ data: null, error: { message: 'Mock client - no real database connection' } }),
+      delete: () => ({ data: null, error: { message: 'Mock client - no real database connection' } }),
+      eq: () => ({ data: [], error: null }),
+      single: () => ({ data: null, error: { message: 'Mock client - no real database connection' } }),
+      limit: () => ({ data: [], error: null })
+    }),
+    auth: {
+      getUser: () => Promise.resolve({ data: { user: null }, error: { message: 'Mock client - no auth' } }),
+      signInWithPassword: () => Promise.resolve({ data: { user: null }, error: { message: 'Mock client - no auth' } }),
+      signUp: () => Promise.resolve({ data: { user: null }, error: { message: 'Mock client - no auth' } }),
+      signOut: () => Promise.resolve({ error: null })
+    }
+  } as any;
+}
+
+// Admin client with fallback to mock
+let supabaseAdmin: any;
+try {
+  const adminUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const adminKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+  
+  if (!adminUrl || !adminKey || adminUrl.includes('placeholder') || adminKey.includes('placeholder')) {
+    console.warn('⚠️ SUPABASE ADMIN: Using mock client due to missing/placeholder credentials');
+    supabaseAdmin = createMockSupabaseClient();
+  } else {
+    supabaseAdmin = createClient(adminUrl, adminKey, {
+      auth: {
+        autoRefreshToken: false,
+        persistSession: false
+      }
+    });
+  }
+} catch (error) {
+  console.warn('⚠️ SUPABASE ADMIN: Failed to create client, using mock:', error);
+  supabaseAdmin = createMockSupabaseClient();
+}
+
+export { supabaseAdmin };

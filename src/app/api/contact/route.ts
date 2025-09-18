@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { sendEmail } from '@/lib/sendgrid';
-import { bulletproofAuth } from '@/lib/auth-bulletproof';
+import { sendEmailWithBackup } from '@/lib/backup-email';
+
 import { supabase } from '@/lib/supabase';
 
 // Rate limiting storage (in production, use Redis or database)
@@ -115,10 +116,23 @@ export async function POST(request: NextRequest) {
       servicesFormatted = services.split(',').map(service => `• ${service.trim()}`).join('\n');
     }
 
-    // Send email to admin
-    const adminEmailResult = await sendEmail({
+    // Send email to admin using backup system
+    const adminEmailResult = await sendEmailWithBackup({
       to: 'chris.t@ventarosales.com',
       subject: `🔔 New ${projectType ? 'Project Quote Request' : 'Contact Form Submission'}: ${subject}`,
+      type: 'contact',
+      formData: {
+        name,
+        email,
+        subject,
+        message,
+        services,
+        projectType,
+        timeline,
+        phone,
+        company,
+        product
+      },
       html: `
         <!DOCTYPE html>
         <html>
@@ -231,10 +245,23 @@ ${message}
 📧 Reply to: ${email}`
     });
 
-    // Send auto-reply to customer
-    const customerEmailResult = await sendEmail({
+    // Send auto-reply to customer using backup system
+    const customerEmailResult = await sendEmailWithBackup({
       to: email,
       subject: `✅ ${projectType ? 'Your Project Quote Request' : 'Thank you for contacting'} - Ventaro AI`,
+      type: 'contact',
+      formData: {
+        name,
+        email,
+        subject,
+        message,
+        services,
+        projectType,
+        timeline,
+        phone,
+        company,
+        product
+      },
       html: `
         <!DOCTYPE html>
         <html>

@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import sgMail from '@sendgrid/mail';
+import { sendEmailWithBackup } from '@/lib/backup-email';
 
 // Set SendGrid API key
 if (process.env.SENDGRID_API_KEY) {
@@ -101,17 +102,35 @@ export async function POST(request: NextRequest) {
       `
     };
 
-    // Send emails
-    if (process.env.SENDGRID_API_KEY) {
-      await Promise.all([
-        sgMail.send(adminEmailContent),
-        sgMail.send(userEmailContent)
-      ]);
-    } else {
-      console.log('SendGrid not configured, emails would be sent to:');
-      console.log('Admin:', adminEmail);
-      console.log('User:', email);
-    }
+    // Send emails using backup system
+    const adminEmailResult = await sendEmailWithBackup({
+      to: adminEmail,
+      subject: adminEmailContent.subject,
+      html: adminEmailContent.html,
+      type: 'subscription',
+      formData: {
+        name,
+        email,
+        source,
+        timestamp
+      }
+    });
+
+    const userEmailResult = await sendEmailWithBackup({
+      to: email,
+      subject: userEmailContent.subject,
+      html: userEmailContent.html,
+      type: 'subscription',
+      formData: {
+        name,
+        email,
+        source,
+        timestamp
+      }
+    });
+
+    console.log('📧 SUBSCRIPTION INTEREST: Admin email', adminEmailResult.success ? 'sent' : 'failed');
+    console.log('📧 SUBSCRIPTION INTEREST: User email', userEmailResult.success ? 'sent' : 'failed');
 
     return NextResponse.json({ 
       success: true, 

@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import sgMail from '@sendgrid/mail';
+import { sendEmailWithBackup } from '@/lib/backup-email';
 
 // Initialize SendGrid
 if (process.env.SENDGRID_API_KEY) {
@@ -185,41 +186,27 @@ export async function POST(request: NextRequest) {
       </html>
     `;
 
-    // Send emails
-    const emailPromises = [];
+    // Send emails using backup system
+    const adminEmailResult = await sendEmailWithBackup({
+      to: 'chris.t@ventarosales.com',
+      from: 'noreply@ventaroai.com',
+      subject: `🎯 New Web Design Inquiry - ${inquiryData.projectType} ${inquiryData.timeline === 'ASAP (Rush job)' ? '(URGENT)' : ''}`,
+      html: adminEmailHtml,
+      type: 'web-design',
+      formData: inquiryData
+    });
 
-    // Admin notification email
-    if (process.env.SENDGRID_API_KEY) {
-      emailPromises.push(
-        sgMail.send({
-          to: 'chris.t@ventarosales.com',
-          from: {
-            email: 'noreply@ventaroai.com',
-            name: 'Ventaro AI'
-          },
-          subject: `🎯 New Web Design Inquiry - ${inquiryData.projectType} ${inquiryData.timeline === 'ASAP (Rush job)' ? '(URGENT)' : ''}`,
-          html: adminEmailHtml
-        })
-      );
+    const clientEmailResult = await sendEmailWithBackup({
+      to: inquiryData.email,
+      from: 'noreply@ventaroai.com',
+      subject: '🎯 Your Web Design Inquiry - We\'ll Be In Touch Soon!',
+      html: clientEmailHtml,
+      type: 'web-design',
+      formData: inquiryData
+    });
 
-      // Client confirmation email
-      emailPromises.push(
-        sgMail.send({
-          to: inquiryData.email,
-          from: {
-            email: 'noreply@ventaroai.com',
-            name: 'Ventaro AI'
-          },
-          subject: '🎯 Your Web Design Inquiry - We\'ll Be In Touch Soon!',
-          html: clientEmailHtml
-        })
-      );
-    }
-
-    // Wait for all emails to send
-    if (emailPromises.length > 0) {
-      await Promise.all(emailPromises);
-    }
+    console.log('📧 WEB DESIGN INQUIRY: Admin email', adminEmailResult.success ? 'sent' : 'failed');
+    console.log('📧 WEB DESIGN INQUIRY: Client email', clientEmailResult.success ? 'sent' : 'failed');
 
     // Log the inquiry for analytics
     console.log('📧 Web Design Inquiry Received:', {

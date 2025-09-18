@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import getStripeInstance from '@/lib/stripe';
 import sgMail from '@sendgrid/mail';
 import { createClientWithRetry } from '@/lib/supabase';
+import { sendEmailWithBackup } from '@/lib/backup-email';
 
 // Initialize SendGrid
 if (process.env.SENDGRID_API_KEY) {
@@ -139,21 +140,6 @@ async function sendSubscriptionEmails({
   price: number;
   sessionId: string;
 }) {
-  if (!process.env.SENDGRID_API_KEY || process.env.SENDGRID_API_KEY === 'SG.placeholder_api_key_replace_with_real_key') {
-    console.log('📧 SendGrid not configured - Subscription emails would be sent');
-    console.log('📧 Admin notification:', {
-      to: 'chris.t@ventarosales.com',
-      subject: `🎯 New Subscription: ${tierName} (${billingCycle})`,
-      user: userName,
-      email: userEmail
-    });
-    console.log('📧 User confirmation:', {
-      to: userEmail,
-      subject: `Welcome to ${tierName} - First Access to AI Toolbox!`
-    });
-    return;
-  }
-
   try {
     // Admin notification email
     const adminEmailHtml = `
@@ -219,29 +205,42 @@ async function sendSubscriptionEmails({
       </div>
     `;
 
-    // Send admin notification
-    await sgMail.send({
+    // Send admin notification using backup system
+    const adminEmailResult = await sendEmailWithBackup({
       to: 'chris.t@ventarosales.com',
-      from: {
-        email: 'noreply@ventaroai.com',
-        name: 'VentaroAI Subscriptions'
-      },
+      from: 'noreply@ventaroai.com',
       subject: `🎯 New Subscription: ${tierName} (${billingCycle}) - ${userName}`,
-      html: adminEmailHtml
+      html: adminEmailHtml,
+      type: 'membership',
+      formData: {
+        userEmail,
+        userName,
+        tierName,
+        billingCycle,
+        price,
+        sessionId
+      }
     });
 
-    // Send user confirmation
-    await sgMail.send({
+    // Send user confirmation using backup system
+    const userEmailResult = await sendEmailWithBackup({
       to: userEmail,
-      from: {
-        email: 'noreply@ventaroai.com',
-        name: 'VentaroAI'
-      },
+      from: 'noreply@ventaroai.com',
       subject: `🎉 Welcome to ${tierName} - First Access to AI Toolbox!`,
-      html: userEmailHtml
+      html: userEmailHtml,
+      type: 'membership',
+      formData: {
+        userEmail,
+        userName,
+        tierName,
+        billingCycle,
+        price,
+        sessionId
+      }
     });
 
-    console.log('✅ Subscription notification emails sent successfully');
+    console.log('✅ MEMBERSHIP: Admin email', adminEmailResult.success ? 'sent' : 'failed');
+    console.log('✅ MEMBERSHIP: User email', userEmailResult.success ? 'sent' : 'failed');
 
   } catch (error) {
     console.error('❌ Failed to send subscription emails:', error);

@@ -77,7 +77,7 @@ function ProductCard({
   }, []);
 
   return (
-    <div className={`glass-panel rounded-lg overflow-hidden transition-all duration-200 hover:shadow-xl ${className}`}>
+    <div className={`glass-panel rounded-lg overflow-hidden transition-all duration-500 ease-out hover:shadow-2xl hover:shadow-emerald-500/20 hover:-translate-y-2 hover:scale-[1.02] ${className}`}>
       <Link href={productUrl} className="block relative">
         <div className="relative h-48 w-full overflow-hidden bg-gradient-to-br from-gray-900 to-black">
           {image_url ? (
@@ -86,7 +86,7 @@ function ProductCard({
               alt={name}
               fill
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              className="object-contain transition-transform duration-200 hover:scale-105"
+              className="object-contain transition-transform duration-700 ease-out hover:scale-110"
             />
           ) : (
             <div className="flex items-center justify-center h-full bg-gradient-to-br from-gray-900 to-black">
@@ -119,7 +119,7 @@ function ProductCard({
           <button
             onClick={handleAddToCart}
             disabled={alreadyInCart || isAdding}
-            className={`w-full py-2 px-4 rounded-md transition-all duration-200 ${alreadyInCart
+            className={`w-full py-2 px-4 rounded-md transition-all duration-300 ease-out transform hover:shadow-lg ${alreadyInCart
               ? 'bg-emerald-500 text-white cursor-default shadow-lg shadow-emerald-500/20'
               : isAdding
                 ? 'bg-blue-400 text-white cursor-wait shadow-lg shadow-blue-400/20'

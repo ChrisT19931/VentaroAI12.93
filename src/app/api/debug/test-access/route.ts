@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getServerSession } from 'next-auth/next';
 import { authOptions } from '@/app/api/auth/[...nextauth]/auth';
-import { bulletproofAuth } from '@/lib/auth-bulletproof';
+import { supabaseAuth } from '@/lib/supabase-auth';
 
 export async function GET(request: NextRequest) {
   try {
@@ -25,8 +25,11 @@ export async function GET(request: NextRequest) {
     console.log(`🧪 TEST ACCESS: Testing access for user ${userId} (${userEmail})`);
 
     // Get fresh purchases from database
-    const purchases = await bulletproofAuth.getUserPurchases(userId);
-    const purchasesByEmail = await bulletproofAuth.getUserPurchasesByEmail(userEmail);
+    const purchasesResult = await supabaseAuth.getUserPurchases(userId);
+      const purchases = purchasesResult.success ? purchasesResult.purchases || [] : [];
+      
+      const purchasesByEmailResult = await supabaseAuth.getUserPurchasesByEmail(userEmail);
+      const purchasesByEmail = purchasesByEmailResult.success ? purchasesByEmailResult.purchases || [] : [];
 
     // Test product access
     const productTests = [
@@ -105,4 +108,4 @@ export async function GET(request: NextRequest) {
 export async function POST(request: NextRequest) {
   // Same as GET for convenience
   return GET(request);
-} 
+}

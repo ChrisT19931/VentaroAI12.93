@@ -436,15 +436,15 @@
 
   /* Enhanced Input Fields */
   input, textarea, select {
-    @apply bg-gray-900/50 border border-gray-600/50 text-white px-4 py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-white/20 focus:border-white/30 transition-all duration-300;
+    @apply bg-gray-900/50 border border-gray-600/50 text-white px-4 py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-white/20 focus:border-white/30 transition-all duration-500 ease-out;
     backdrop-filter: blur(10px);
     letter-spacing: -0.01em;
     font-weight: 400;
   }
 
   input:focus, textarea:focus, select:focus {
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px) scale(1.01);
+    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.15);
   }
 
   input::placeholder, textarea::placeholder {
@@ -481,9 +481,9 @@
   }
 
   .card-elegant:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-    border-color: rgba(255, 255, 255, 0.15);
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+    border-color: rgba(255, 255, 255, 0.2);
   }
 
   .card-hover {

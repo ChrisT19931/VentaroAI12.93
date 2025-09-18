@@ -1,8 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getServerSession } from 'next-auth/next';
 import { authOptions } from '@/app/api/auth/[...nextauth]/auth';
-import { bulletproofAuth } from '@/lib/auth-bulletproof';
-import { Purchase } from '@/lib/auth-bulletproof';
+import { supabaseAuth } from '@/lib/supabase-auth';
 
 // Product ID mapping for entitlements (same as in auth.ts)
 const PRODUCT_ENTITLEMENT_MAP: Record<string, string[]> = {
@@ -17,7 +16,7 @@ const PRODUCT_ENTITLEMENT_MAP: Record<string, string[]> = {
   'coaching': ['coaching', 'session']
 };
 
-function mapPurchasesToEntitlements(purchases: Purchase[]): string[] {
+function mapPurchasesToEntitlements(purchases: any[]): string[] {
   const entitlements = new Set<string>();
   
   for (const purchase of purchases) {
@@ -55,17 +54,25 @@ export async function POST(request: NextRequest) {
     console.log(`🔄 REFRESH SESSION: Refreshing for user ${userId} (${userEmail})`);
 
     // Get fresh purchases from database
-    let purchases: Purchase[] = [];
+    let purchases: any[] = [];
     try {
-      purchases = await bulletproofAuth.getUserPurchases(userId);
-      console.log(`✅ REFRESH SESSION: Found ${purchases.length} purchases for user`);
+      const result = await supabaseAuth.getUserPurchases(userId);
+      if (result.success && result.purchases) {
+        purchases = result.purchases;
+        console.log(`✅ REFRESH SESSION: Found ${purchases.length} purchases for user`);
+      } else {
+        console.error('❌ REFRESH SESSION: Error fetching purchases:', result.error);
+      }
     } catch (error) {
       console.error('❌ REFRESH SESSION: Error fetching purchases:', error);
-      // Try to get purchases by email as fallback
+    }
+    
+    // Try to get purchases by email as fallback if no purchases found
+    if (purchases.length === 0) {
       try {
-        const purchasesByEmail = await bulletproofAuth.getUserPurchasesByEmail(userEmail);
-        if (purchasesByEmail.length > 0) {
-          purchases = purchasesByEmail;
+        const emailResult = await supabaseAuth.getUserPurchasesByEmail(userEmail);
+        if (emailResult.success && emailResult.purchases && emailResult.purchases.length > 0) {
+          purchases = emailResult.purchases;
           console.log(`✅ REFRESH SESSION: Found ${purchases.length} purchases by email fallback`);
         }
       } catch (emailError) {
@@ -98,4 +105,4 @@ export async function POST(request: NextRequest) {
 export async function GET(request: NextRequest) {
   // Allow GET requests for debugging
   return POST(request);
-} 
+}

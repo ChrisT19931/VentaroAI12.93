@@ -1,6 +1,6 @@
 import NextAuth, { NextAuthOptions, User, Session } from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
-import { bulletproofAuth } from '@/lib/auth-bulletproof';
+import { supabaseAuth } from '@/lib/supabase-auth';
 
 // Extend NextAuth types
 declare module 'next-auth' {
@@ -81,45 +81,55 @@ export const authOptions: NextAuthOptions = {
         }
 
         try {
-          // Use bulletproof authentication
-          const user = await bulletproofAuth.authenticateUser(
+          // Use Supabase authentication
+          const result = await supabaseAuth.signIn(
             credentials.email,
             credentials.password
           );
 
-          if (!user) {
-            console.error('❌ BULLETPROOF AUTH: User authentication failed');
-            throw new Error('Invalid email or password');
+          if (!result.success || !result.user) {
+            console.error('❌ SUPABASE AUTH: User authentication failed:', result.error);
+            throw new Error(result.error || 'Invalid email or password');
           }
 
-          console.log('✅ BULLETPROOF AUTH: User authenticated:', user.email);
+          console.log('✅ SUPABASE AUTH: User authenticated:', result.user.email);
 
-          // Get user purchases for entitlements
+          // Get user profile and purchases for entitlements
           let entitlements: string[] = [];
-          let roles: string[] = [user.user_role];
+          let roles: string[] = ['user'];
+          let userName = result.user.email?.split('@')[0]; // Default name from email
           
           try {
-            const purchases = await bulletproofAuth.getUserPurchases(user.id);
-            entitlements = mapPurchasesToEntitlements(purchases);
-            console.log('✅ BULLETPROOF AUTH: User entitlements loaded:', entitlements);
+            const profileResult = await supabaseAuth.getUserProfile(result.user.id);
+            if (profileResult.success && profileResult.profile) {
+              userName = profileResult.profile.name || userName;
+              roles = profileResult.profile.user_role ? [profileResult.profile.user_role] : ['user'];
+              
+              // Get purchases for entitlements
+              const purchases = await supabaseAuth.getUserPurchases(result.user.id);
+              if (purchases.success && purchases.purchases) {
+                entitlements = mapPurchasesToEntitlements(purchases.purchases);
+                console.log('✅ SUPABASE AUTH: User entitlements loaded:', entitlements);
+              }
+            }
           } catch (error) {
-            console.warn('⚠️ BULLETPROOF AUTH: Error loading purchases (non-blocking):', error);
+            console.warn('⚠️ SUPABASE AUTH: Error loading profile/purchases (non-blocking):', error);
           }
 
           const authUser: User = {
-            id: user.id,
-            email: user.email,
-            name: user.name,
+            id: result.user.id,
+            email: result.user.email!,
+            name: userName,
             entitlements,
             roles,
-            created_at: user.created_at,
+            created_at: result.user.created_at,
           };
 
-          console.log('🎉 BULLETPROOF AUTH: Authentication complete for:', user.email);
+          console.log('🎉 SUPABASE AUTH: Authentication complete for:', result.user.email);
           return authUser;
 
         } catch (error) {
-          console.error('❌ BULLETPROOF AUTH: Authentication error:', error);
+          console.error('❌ SUPABASE AUTH: Authentication error:', error);
           throw new Error(error instanceof Error ? error.message : 'Authentication failed');
         }
       }
@@ -137,13 +147,13 @@ export const authOptions: NextAuthOptions = {
         token.entitlements = user.entitlements || [];
         token.roles = user.roles || ['user'];
         token.created_at = user.created_at;
-        console.log('✅ BULLETPROOF AUTH: JWT token populated for:', user.email);
+        console.log('✅ SUPABASE AUTH: JWT token populated for:', user.email);
       }
       return token;
     },
     
     async session({ session, token }) {
-      console.log('🔐 BULLETPROOF AUTH: Session callback - token present:', !!token);
+      console.log('🔐 SUPABASE AUTH: Session callback - token present:', !!token);
       
       if (token && session.user) {
         session.user.id = token.id;
@@ -154,28 +164,33 @@ export const authOptions: NextAuthOptions = {
         
         // CRITICAL: Always refresh entitlements from database to ensure immediate access after purchase
         try {
-          const purchases = await bulletproofAuth.getUserPurchases(token.id);
-          const freshEntitlements = mapPurchasesToEntitlements(purchases);
-          session.user.entitlements = freshEntitlements;
-          console.log('✅ BULLETPROOF AUTH: Fresh entitlements loaded for:', token.email, freshEntitlements);
+          const purchasesResult = await supabaseAuth.getUserPurchases(token.id);
+          if (purchasesResult.success && purchasesResult.purchases) {
+            const freshEntitlements = mapPurchasesToEntitlements(purchasesResult.purchases);
+            session.user.entitlements = freshEntitlements;
+            console.log('✅ SUPABASE AUTH: Fresh entitlements loaded for:', token.email, freshEntitlements);
+          } else {
+            console.warn('⚠️ SUPABASE AUTH: Failed to refresh entitlements, using cached:', purchasesResult.error);
+            session.user.entitlements = token.entitlements || [];
+          }
         } catch (error) {
-          console.warn('⚠️ BULLETPROOF AUTH: Failed to refresh entitlements, using cached:', error);
+          console.warn('⚠️ SUPABASE AUTH: Failed to refresh entitlements, using cached:', error);
           session.user.entitlements = token.entitlements || [];
         }
         
-        console.log('✅ BULLETPROOF AUTH: Session populated for:', token.email);
+        console.log('✅ SUPABASE AUTH: Session populated for:', token.email);
       }
       return session;
     },
     
     async redirect({ url, baseUrl }) {
-      console.log('🔄 BULLETPROOF AUTH: Redirect callback - url:', url, 'baseUrl:', baseUrl);
+      console.log('🔄 SUPABASE AUTH: Redirect callback - url:', url, 'baseUrl:', baseUrl);
       
       // If user is signing in, redirect to my-account page
       if (url.startsWith(baseUrl)) {
         // If it's a callback URL, check if it's a sign-in
         if (url.includes('/api/auth/callback') || url.includes('/signin') || url.includes('/signup')) {
-          console.log('✅ BULLETPROOF AUTH: Redirecting to /my-account after login');
+          console.log('✅ SUPABASE AUTH: Redirecting to /my-account after login');
           return `${baseUrl}/my-account`;
         }
         return url;

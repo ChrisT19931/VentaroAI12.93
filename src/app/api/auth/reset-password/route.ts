@@ -1,35 +1,81 @@
-import { NextResponse } from 'next/server';
-import { supabase } from '@/lib/supabase';
+import { NextRequest, NextResponse } from 'next/server';
+import { supabaseAuth } from '@/lib/supabase-auth';
 
-export async function POST(request: Request) {
+// Password validation function
+function validatePassword(password: string): { valid: boolean; message?: string } {
+  if (password.length < 8) {
+    return { valid: false, message: 'Password must be at least 8 characters long' };
+  }
+  
+  if (!/[A-Z]/.test(password)) {
+    return { valid: false, message: 'Password must contain at least one uppercase letter' };
+  }
+  
+  if (!/[a-z]/.test(password)) {
+    return { valid: false, message: 'Password must contain at least one lowercase letter' };
+  }
+  
+  if (!/\d/.test(password)) {
+    return { valid: false, message: 'Password must contain at least one number' };
+  }
+  
+  if (!/[!@#$%^&*(),.?":{}|<>]/.test(password)) {
+    return { valid: false, message: 'Password must contain at least one special character' };
+  }
+  
+  return { valid: true };
+}
+
+export async function POST(request: NextRequest) {
   try {
-    const { token, password } = await request.json();
+    const body = await request.json();
+    const { password, access_token, refresh_token } = body;
 
-    if (!token || !password) {
+    if (!password) {
       return NextResponse.json(
-        { error: 'Token and password are required' },
+        { error: 'Password is required' },
         { status: 400 }
       );
     }
 
-    // Use Supabase to update the user's password with the token
-    const { error } = await supabase.auth.resetPasswordForEmail(password, {
-      token,
-    });
-
-    if (error) {
-      console.error('Password reset error:', error);
+    if (!access_token || !refresh_token) {
       return NextResponse.json(
-        { error: error.message || 'Failed to reset password' },
+        { error: 'Invalid reset link. Please request a new password reset.' },
         { status: 400 }
       );
     }
 
-    return NextResponse.json({ success: true });
-  } catch (error: any) {
-    console.error('Password reset exception:', error);
+    // Validate password strength
+    const passwordValidation = validatePassword(password);
+    if (!passwordValidation.valid) {
+      return NextResponse.json(
+        { error: passwordValidation.message },
+        { status: 400 }
+      );
+    }
+
+    // Reset password using Supabase Auth service
+    const result = await supabaseAuth.resetPassword(access_token, refresh_token, password);
+
+    if (!result.success) {
+      return NextResponse.json(
+        { error: result.error },
+        { status: 400 }
+      );
+    }
+
     return NextResponse.json(
-      { error: error.message || 'An unexpected error occurred' },
+      { 
+        message: 'Password updated successfully',
+        success: true 
+      },
+      { status: 200 }
+    );
+
+  } catch (error) {
+    console.error('Reset password error:', error);
+    return NextResponse.json(
+      { error: 'An error occurred while resetting your password' },
       { status: 500 }
     );
   }

@@ -36,15 +36,15 @@ export default function Button({
   icon,
   iconPosition = 'left',
 }: ButtonProps) {
-  const baseClasses = 'inline-flex items-center justify-center font-medium rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2';
+  const baseClasses = 'inline-flex items-center justify-center font-medium rounded-md transition-all duration-300 ease-out transform hover:-translate-y-1 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 active:scale-95';
   
   const variantClasses = {
-    primary: 'bg-primary-600 hover:bg-primary-700 text-white focus:ring-primary-500',
-    secondary: 'bg-gray-200 hover:bg-gray-300 text-gray-800 focus:ring-gray-500',
-    outline: 'bg-transparent border border-gray-300 text-gray-700 hover:bg-gray-50 focus:ring-gray-500',
-    ghost: 'bg-transparent hover:bg-gray-100 text-gray-700 focus:ring-gray-500',
-    danger: 'bg-red-600 hover:bg-red-700 text-white focus:ring-red-500',
-    success: 'bg-green-600 hover:bg-green-700 text-white focus:ring-green-500',
+    primary: 'bg-primary-600 hover:bg-primary-700 hover:shadow-primary-500/25 text-white focus:ring-primary-500',
+    secondary: 'bg-gray-200 hover:bg-gray-300 hover:shadow-gray-400/25 text-gray-800 focus:ring-gray-500',
+    outline: 'bg-transparent border border-gray-300 text-gray-700 hover:bg-gray-50 hover:border-gray-400 hover:shadow-md focus:ring-gray-500',
+    ghost: 'bg-transparent hover:bg-gray-100 hover:shadow-md text-gray-700 focus:ring-gray-500',
+    danger: 'bg-red-600 hover:bg-red-700 hover:shadow-red-500/25 text-white focus:ring-red-500',
+    success: 'bg-green-600 hover:bg-green-700 hover:shadow-green-500/25 text-white focus:ring-green-500',
   };
   
   const sizeClasses = {

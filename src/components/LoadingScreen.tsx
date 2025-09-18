@@ -38,7 +38,7 @@ export default function LoadingScreen({ isLoading, type = 'full', onComplete }: 
           // Keep the full text visible for a moment before completing
           setTimeout(() => {
             onComplete?.();
-          }, 800);
+          }, 1800);
         }
       }, 150); // Faster typing
 

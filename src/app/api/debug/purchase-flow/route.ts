@@ -3,7 +3,7 @@ import { getServerSession } from 'next-auth/next';
 import { authOptions } from '@/app/api/auth/[...nextauth]/auth';
 import { supabase, getSupabaseAdmin } from '@/lib/supabase';
 import { getStripeInstance } from '@/lib/stripe';
-import { bulletproofAuth } from '@/lib/auth-bulletproof';
+import { supabaseAuth } from '@/lib/supabase-auth';
 
 interface DebugTest {
   name: string;
@@ -141,10 +141,10 @@ export async function GET(request: NextRequest) {
 
     // Test 5: Bulletproof Auth System
     try {
-      const healthCheck = await bulletproofAuth.healthCheck();
+      const healthCheck = await supabaseAuth.healthCheck();
       results.push({
         name: 'Bulletproof Auth System',
-        status: healthCheck.status === 'healthy' ? 'success' : 'warning',
+        status: healthCheck.success ? 'success' : 'warning',
         message: `Status: ${healthCheck.status}, Database: ${healthCheck.database}, Users: ${healthCheck.users}, Purchases: ${healthCheck.purchases}`,
         data: healthCheck
       });
@@ -285,7 +285,8 @@ async function createTestPurchase(data: any) {
       created_at: new Date().toISOString()
     };
 
-    const purchase = await bulletproofAuth.createPurchase(testPurchase);
+    const result = await supabaseAuth.createPurchase(testPurchase);
+    const purchase = result.success ? result.purchase : null;
     
     if (purchase) {
       return NextResponse.json({
@@ -339,7 +340,7 @@ async function simulateStripeWebhook(data: any) {
     const mappedProductId = mapProduct(mockProduct.name);
 
     // Create purchase record
-    const purchase = await bulletproofAuth.createPurchase({
+    const result = await supabaseAuth.createPurchase({
       user_id: mockSession.client_reference_id,
       customer_email: mockSession.customer_details.email,
       product_id: mappedProductId,
@@ -349,6 +350,7 @@ async function simulateStripeWebhook(data: any) {
       stripe_session_id: mockSession.id,
       stripe_customer_id: mockSession.customer
     });
+    const purchase = result.success ? result.purchase : null;
 
     return NextResponse.json({
       success: true,
@@ -376,7 +378,8 @@ async function testUserAccess(data: any) {
     const productId = data.productId || 'prompts';
 
     // Get user purchases
-    const purchases = await bulletproofAuth.getUserPurchases(userId);
+    const purchasesResult = await supabaseAuth.getUserPurchases(userId);
+    const purchases = purchasesResult.success ? purchasesResult.purchases || [] : [];
     
     // Check access
     const hasAccess = purchases.some((purchase: any) => purchase.product_id === productId);
@@ -519,4 +522,4 @@ function generateRecommendations(results: DebugTest[]): string[] {
   }
 
   return recommendations;
-} 
+}

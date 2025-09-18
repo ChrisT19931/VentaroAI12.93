@@ -69,10 +69,10 @@ export default function AIWebCreationMasterclassPage() {
 
   if (loading || status === 'loading') {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-blue-900 via-purple-900 to-indigo-900 flex items-center justify-center">
+      <div className="min-h-screen bg-gray-950 flex items-center justify-center">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-white mx-auto mb-4"></div>
-          <p className="text-white text-lg">Checking access...</p>
+          <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-gray-400 mx-auto mb-4"></div>
+          <p className="text-gray-300 text-lg">Checking access...</p>
         </div>
       </div>
     );
@@ -80,15 +80,18 @@ export default function AIWebCreationMasterclassPage() {
 
   if (!session?.user) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-blue-900 via-purple-900 to-indigo-900 flex items-center justify-center">
-        <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-8 max-w-md mx-auto text-center">
+      <div className="min-h-screen bg-gray-950 flex items-center justify-center">
+        <div className="bg-gray-900 rounded-lg p-8 max-w-md mx-auto text-center border border-gray-800">
+          <div className="w-16 h-16 bg-gray-800 rounded-lg flex items-center justify-center mx-auto mb-6 border border-gray-700">
+            <div className="w-8 h-8 bg-gray-600 rounded"></div>
+          </div>
           <h1 className="text-2xl font-bold text-white mb-4">Sign In Required</h1>
           <p className="text-gray-300 mb-6">
             Please sign in to access the AI Web Creation Masterclass.
           </p>
           <button
             onClick={() => router.push('/signin?callbackUrl=/products/ai-web-creation-masterclass')}
-            className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors"
+            className="w-full bg-gray-800 hover:bg-gray-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors border border-gray-700"
           >
             Sign In
           </button>
@@ -99,15 +102,18 @@ export default function AIWebCreationMasterclassPage() {
 
   if (!hasAccess) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-blue-900 via-purple-900 to-indigo-900 flex items-center justify-center">
-        <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-8 max-w-md mx-auto text-center">
-          <h1 className="text-2xl font-bold text-white mb-4">📅 Coming Soon - Pre-Order Now!</h1>
+      <div className="min-h-screen bg-gray-950 flex items-center justify-center">
+        <div className="bg-gray-900 rounded-lg p-8 max-w-md mx-auto text-center border border-gray-800">
+          <div className="w-16 h-16 bg-gray-800 rounded-lg flex items-center justify-center mx-auto mb-6 border border-gray-700">
+            <div className="w-8 h-8 bg-gray-600 rounded"></div>
+          </div>
+          <h1 className="text-2xl font-bold text-white mb-4">Coming Soon - Pre-Order Now!</h1>
           <p className="text-gray-300 mb-6">
             The AI Web Creation Masterclass is coming soon! Pre-order now to secure your spot and get instant access when it's released.
           </p>
-          <div className="bg-orange-500/20 border border-orange-500/50 rounded-lg p-4 mb-6">
-            <p className="text-orange-200 text-sm">
-              🎯 Pre-order benefits: Early access, bonus materials, and priority support!
+          <div className="bg-gray-800 border border-gray-700 rounded-lg p-4 mb-6">
+            <p className="text-gray-300 text-sm">
+              Pre-order benefits: Early access, bonus materials, and priority support!
             </p>
           </div>
           <div className="space-y-4">
@@ -119,14 +125,14 @@ export default function AIWebCreationMasterclassPage() {
                 productType: 'digital',
                 isPreOrder: true
               }}
-              className="w-full block text-center py-3 rounded-xl font-bold transition-all duration-300 bg-gradient-to-r from-orange-600 to-yellow-600 hover:from-orange-500 hover:to-yellow-500 text-white text-base"
+              className="w-full block text-center py-3 rounded-lg font-bold transition-all duration-300 bg-gray-800 hover:bg-gray-700 text-white text-base border border-gray-700"
               variant="direct"
             >
-              📅 Pre-Order Now – A$50
+              Pre-Order Now – A$50
             </UnifiedCheckoutButton>
             <button
               onClick={() => router.push('/products')}
-              className="bg-gray-700 hover:bg-gray-800 text-white font-semibold py-3 px-6 rounded-lg transition-colors w-full"
+              className="bg-gray-700 hover:bg-gray-600 text-white font-semibold py-3 px-6 rounded-lg transition-colors w-full border border-gray-600"
             >
               View All Products
             </button>
@@ -137,11 +143,14 @@ export default function AIWebCreationMasterclassPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-900 via-purple-900 to-indigo-900">
+    <div className="min-h-screen bg-gray-950">
       <div className="container mx-auto px-4 py-12">
         <div className="max-w-4xl mx-auto">
           {/* Header */}
           <div className="text-center mb-12">
+            <div className="w-20 h-20 bg-gray-800 rounded-lg flex items-center justify-center mx-auto mb-6 border border-gray-700">
+              <div className="w-10 h-10 bg-gray-600 rounded"></div>
+            </div>
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
               AI Web Creation Masterclass
             </h1>
@@ -152,45 +161,45 @@ export default function AIWebCreationMasterclassPage() {
           </div>
 
           {/* Main Content */}
-          <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-8 mb-8">
+          <div className="bg-gray-900 rounded-lg p-8 mb-8 border border-gray-800">
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
                 <h2 className="text-2xl font-bold text-white mb-4">What You'll Learn:</h2>
                 <ul className="space-y-3 text-gray-300">
                   <li className="flex items-start">
-                    <span className="text-green-400 mr-3">✓</span>
+                    <span className="text-gray-400 mr-3">•</span>
                     Complete website creation process from start to finish
                   </li>
                   <li className="flex items-start">
-                    <span className="text-green-400 mr-3">✓</span>
+                    <span className="text-gray-400 mr-3">•</span>
                     AI tools and prompts for unlimited customization
                   </li>
                   <li className="flex items-start">
-                    <span className="text-green-400 mr-3">✓</span>
+                    <span className="text-gray-400 mr-3">•</span>
                     Full control of backend and frontend code
                   </li>
                   <li className="flex items-start">
-                    <span className="text-green-400 mr-3">✓</span>
+                    <span className="text-gray-400 mr-3">•</span>
                     Deploy your website and start making money
                   </li>
                   <li className="flex items-start">
-                    <span className="text-green-400 mr-3">✓</span>
+                    <span className="text-gray-400 mr-3">•</span>
                     No experience required - complete beginner friendly
                   </li>
                 </ul>
               </div>
               
               <div className="text-center">
-                <div className="bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl p-6">
+                <div className="bg-gray-800 rounded-lg p-6 border border-gray-700">
                   <h3 className="text-2xl font-bold text-white mb-4">Ready to Watch?</h3>
-                  <p className="text-white/90 mb-6">
+                  <p className="text-gray-300 mb-6">
                     Access your exclusive masterclass content now!
                   </p>
                   <button
                     onClick={() => router.push('/products/ai-web-creation-masterclass/video')}
-                    className="bg-white text-purple-600 font-bold py-3 px-8 rounded-lg hover:bg-gray-100 transition-colors"
+                    className="bg-gray-700 text-white font-bold py-3 px-8 rounded-lg hover:bg-gray-600 transition-colors border border-gray-600"
                   >
-                    🎥 Watch Masterclass
+                    Watch Masterclass
                   </button>
                 </div>
               </div>
@@ -198,28 +207,28 @@ export default function AIWebCreationMasterclassPage() {
           </div>
 
           {/* Additional Resources */}
-          <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-8">
-            <h2 className="text-2xl font-bold text-white mb-6 text-center">📚 Your Resources</h2>
+          <div className="bg-gray-900 rounded-lg p-8 border border-gray-800">
+            <h2 className="text-2xl font-bold text-white mb-6 text-center">Your Resources</h2>
             <div className="grid md:grid-cols-3 gap-6">
               <div className="text-center">
-                <div className="bg-blue-600 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl">🎥</span>
+                <div className="bg-gray-800 rounded-lg w-16 h-16 flex items-center justify-center mx-auto mb-4 border border-gray-700">
+                  <div className="w-8 h-8 bg-gray-600 rounded"></div>
                 </div>
                 <h3 className="text-lg font-semibold text-white mb-2">Video Masterclass</h3>
                 <p className="text-gray-300 text-sm">Complete 2-hour step-by-step guide</p>
               </div>
               
               <div className="text-center">
-                <div className="bg-green-600 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl">📁</span>
+                <div className="bg-gray-800 rounded-lg w-16 h-16 flex items-center justify-center mx-auto mb-4 border border-gray-700">
+                  <div className="w-8 h-8 bg-gray-600 rounded"></div>
                 </div>
                 <h3 className="text-lg font-semibold text-white mb-2">Source Files</h3>
                 <p className="text-gray-300 text-sm">All templates and code examples</p>
               </div>
               
               <div className="text-center">
-                <div className="bg-purple-600 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl">🤖</span>
+                <div className="bg-gray-800 rounded-lg w-16 h-16 flex items-center justify-center mx-auto mb-4 border border-gray-700">
+                  <div className="w-8 h-8 bg-gray-600 rounded"></div>
                 </div>
                 <h3 className="text-lg font-semibold text-white mb-2">AI Prompts</h3>
                 <p className="text-gray-300 text-sm">Ready-to-use prompts for customization</p>
@@ -231,13 +240,13 @@ export default function AIWebCreationMasterclassPage() {
           <div className="text-center mt-8">
             <button
               onClick={() => router.push('/my-account')}
-              className="bg-gray-700 hover:bg-gray-800 text-white font-semibold py-3 px-8 rounded-lg transition-colors mr-4"
+              className="bg-gray-800 hover:bg-gray-700 text-white font-semibold py-3 px-8 rounded-lg transition-colors mr-4 border border-gray-700"
             >
-              ← Back to My Account
+              Back to My Account
             </button>
             <button
               onClick={() => router.push('/products')}
-              className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg transition-colors"
+              className="bg-gray-700 hover:bg-gray-600 text-white font-semibold py-3 px-8 rounded-lg transition-colors border border-gray-600"
             >
               View More Products
             </button>

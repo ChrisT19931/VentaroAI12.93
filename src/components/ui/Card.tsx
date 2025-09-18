@@ -37,7 +37,7 @@ export default function Card({
   };
 
   const borderClass = bordered ? 'border border-gray-200' : '';
-  const hoverableClass = hoverable ? 'transition-transform duration-300 hover:-translate-y-1 hover:shadow-md' : '';
+  const hoverableClass = hoverable ? 'transition-all duration-500 ease-out hover:-translate-y-2 hover:shadow-2xl hover:shadow-gray-500/20 hover:border-gray-300 hover:scale-[1.02]' : '';
   const cursorClass = onClick ? 'cursor-pointer' : '';
 
   const cardClasses = `
