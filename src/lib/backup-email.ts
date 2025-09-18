@@ -17,7 +17,7 @@ interface BackupEmailResult {
   success: boolean;
   id?: string;
   error?: string;
-  method: 'sendgrid' | 'resend' | 'backup' | 'failed';
+  method: 'sendgrid' | 'resend' | 'mailgun' | 'backup' | 'failed';
 }
 
 // Store email in Supabase as backup
@@ -113,6 +113,51 @@ export async function sendEmailWithBackup(emailData: EmailData): Promise<BackupE
       return { success: true, method: 'resend' };
     } catch (error: any) {
       console.error('❌ RESEND: Failed to send email:', error);
+      // Fall back to Mailgun
+    }
+  }
+
+  // Third try Mailgun
+  if (process.env.MAILGUN_API_KEY && process.env.MAILGUN_DOMAIN && 
+      process.env.MAILGUN_API_KEY !== 'your_mailgun_api_key') {
+    try {
+      const formData = new FormData();
+      formData.append('from', emailData.from || process.env.SENDGRID_FROM_EMAIL || 'noreply@ventaroai.com');
+      formData.append('to', emailData.to);
+      formData.append('subject', emailData.subject);
+      
+      if (emailData.html) {
+        formData.append('html', emailData.html);
+      }
+      if (emailData.text) {
+        formData.append('text', emailData.text);
+      }
+
+      const response = await fetch(
+        `https://api.mailgun.net/v3/${process.env.MAILGUN_DOMAIN}/messages`,
+        {
+          method: 'POST',
+          headers: {
+            'Authorization': `Basic ${Buffer.from(`api:${process.env.MAILGUN_API_KEY}`).toString('base64')}`
+          },
+          body: formData
+        }
+      );
+
+      if (response.ok) {
+        const result = await response.json();
+        console.log('✅ MAILGUN: Email sent successfully to', emailData.to, 'ID:', result.id);
+        
+        // Also store in backup for record keeping
+        await storeBackupEmail({ ...emailData, type: emailData.type });
+        
+        return { success: true, method: 'mailgun' };
+      } else {
+        const errorText = await response.text();
+        throw new Error(`Mailgun API error: ${response.status} - ${errorText}`);
+      }
+    } catch (error: any) {
+      console.error('❌ MAILGUN: Failed to send email:', error);
       // Fall back to backup system
     }
   }

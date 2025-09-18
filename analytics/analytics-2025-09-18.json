@@ -6208,5 +6208,50 @@
     "sessionId": "session_1758192456514_5ktfrt4i6",
     "page": "/",
     "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "scroll_depth",
+    "properties": {
+      "percentage": 50,
+      "page": "/",
+      "url": "http://localhost:3003/?ide_webview_request_time=1758192311874",
+      "referrer": "http://localhost:3003/?ide_webview_request_time=1758192311874",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-18T11:52:45.631Z"
+    },
+    "timestamp": "2025-09-18T11:52:45.631Z",
+    "sessionId": "session_1758192456514_5ktfrt4i6",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "scroll_depth",
+    "properties": {
+      "percentage": 75,
+      "page": "/",
+      "url": "http://localhost:3003/?ide_webview_request_time=1758192311874",
+      "referrer": "http://localhost:3003/?ide_webview_request_time=1758192311874",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-18T11:52:46.897Z"
+    },
+    "timestamp": "2025-09-18T11:52:46.897Z",
+    "sessionId": "session_1758192456514_5ktfrt4i6",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "scroll_depth",
+    "properties": {
+      "percentage": 90,
+      "page": "/",
+      "url": "http://localhost:3003/?ide_webview_request_time=1758192311874",
+      "referrer": "http://localhost:3003/?ide_webview_request_time=1758192311874",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-18T11:52:47.523Z"
+    },
+    "timestamp": "2025-09-18T11:52:47.523Z",
+    "sessionId": "session_1758192456514_5ktfrt4i6",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
   }
 ]

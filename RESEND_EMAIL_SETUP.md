@@ -1,8 +1,27 @@
-# 🚀 Resend Email Service Setup Guide
+# Resend Email Setup Guide (Part of Three-Tier System)
+
+## Overview
+
+This guide helps you set up **Resend** as part of our **three-tier email backup system**. Resend serves as the secondary fallback when SendGrid (primary) is unavailable.
+
+## 🛡️ Three-Tier Email System
+
+```
+SendGrid (Primary) → Resend (Secondary) → Mailgun (Tertiary) → Supabase (Backup)
+```
+
+> **📋 For complete setup**: See [THREE_TIER_EMAIL_BACKUP_SETUP.md](./THREE_TIER_EMAIL_BACKUP_SETUP.md)
+
+## Why Resend?
+
+- ✅ **Reliable**: 99.9% uptime SLA
+- ✅ **Developer-friendly**: Simple, modern API
+- ✅ **Free tier**: 100 emails/day, 3,000/month
+- ✅ **Fast setup**: Get running in minutes
+- ✅ **Great deliverability**: Built by email experts
+- ✅ **Perfect backup**: Excellent secondary service
 
 ## Quick Setup (5 minutes)
-
-Since SendGrid is offline, we're switching to **Resend** - a modern, reliable email service that's perfect for developers.
 
 ### Step 1: Create Resend Account
 1. Go to [resend.com](https://resend.com)
