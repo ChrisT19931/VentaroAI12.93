@@ -4,24 +4,16 @@ import { createClient as createSupabaseClient } from '@supabase/supabase-js';
 import { Database } from '@/types/supabase';
 
 // Validate environment variables
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-
-if (!supabaseUrl) {
-  throw new Error('Missing environment variable: NEXT_PUBLIC_SUPABASE_URL. Please configure this in your Vercel environment variables.');
-}
-
-if (!supabaseAnonKey) {
-  throw new Error('Missing environment variable: NEXT_PUBLIC_SUPABASE_ANON_KEY. Please configure this in your Vercel environment variables.');
-}
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://placeholder.supabase.co';
+const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBsYWNlaG9sZGVyIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NDUxOTI3MjYsImV4cCI6MTk2MDc2ODcyNn0.placeholder';
 
 // Check for placeholder values (only warn, don't throw errors)
-if (supabaseUrl === 'https://supabase.co' || supabaseUrl.includes('placeholder')) {
-  console.warn('NEXT_PUBLIC_SUPABASE_URL contains placeholder value. Please set your actual Supabase project URL in Vercel environment variables.');
+if (supabaseUrl.includes('placeholder') || supabaseUrl === 'https://supabase.co') {
+  console.warn('⚠️  NEXT_PUBLIC_SUPABASE_URL contains placeholder value. Database features will be disabled until you configure actual Supabase credentials.');
 }
 
-if (supabaseAnonKey.includes('EXAMPLE') || supabaseAnonKey.includes('placeholder')) {
-  console.warn('NEXT_PUBLIC_SUPABASE_ANON_KEY contains placeholder value. Please set your actual Supabase anonymous key in Vercel environment variables.');
+if (supabaseAnonKey.includes('placeholder') || supabaseAnonKey.includes('EXAMPLE')) {
+  console.warn('⚠️  NEXT_PUBLIC_SUPABASE_ANON_KEY contains placeholder value. Database features will be disabled until you configure actual Supabase credentials.');
 }
 
 export const createClient = () => {

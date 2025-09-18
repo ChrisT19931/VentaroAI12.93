@@ -1186,27 +1186,82 @@ export default function Home() {
                 Transform your business with AI. Get strategic insights, practical tools, and expert guidance to implement AI solutions that drive measurable results.
               </p>
               
-              {/* Special Offer Box */}
-              <div className="relative mb-12">
-                <div className="bg-gradient-to-r from-gray-700/20 via-gray-600/20 to-gray-500/20 backdrop-blur-xl rounded-2xl border border-gray-400/30 border-b-emerald-400/20 p-8 shadow-2xl">
-                  <div className="absolute inset-0 bg-gradient-to-r from-gray-500/10 to-gray-400/10 rounded-2xl blur-lg"></div>
-                  <div className="relative">
-                    <div className="text-gray-300 text-lg font-semibold mb-2 uppercase tracking-wider">Limited Time Offer - September 2025</div>
-                    <div className="text-4xl md:text-5xl font-black text-white mb-4">
-                      Only <span className="text-gray-300">$250</span>
+              {/* Elite Special Offer Section */}
+              <div className="relative mb-12 perspective-1000">
+                {/* Enhanced 3D Background Elements */}
+                <div className="absolute -top-20 -left-20 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
+                <div className="absolute -bottom-20 -right-20 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
+                
+                <div className="group relative bg-gradient-to-br from-black/90 via-gray-900/80 to-black/95 backdrop-blur-2xl rounded-3xl shadow-[0_35px_70px_-12px_rgba(0,0,0,0.9)] hover:shadow-[0_45px_80px_-12px_rgba(59,130,246,0.4)] transition-all duration-700 transform hover:-translate-y-4 hover:scale-105 overflow-hidden border-2 border-blue-500/40 hover:border-blue-400/80">
+                  <div className="absolute inset-0 rounded-3xl bg-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                  <div className="absolute -inset-1 bg-blue-500/20 rounded-3xl blur opacity-0 group-hover:opacity-30 transition-opacity duration-700"></div>
+                  
+                  {/* Premium Badge */}
+                  <div className="absolute top-6 left-6 z-20">
+                    <div className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-xs font-bold px-4 py-2 rounded-full shadow-[0_8px_25px_-8px_rgba(59,130,246,0.6)] hover:shadow-[0_12px_35px_-8px_rgba(59,130,246,0.8)] transform hover:scale-110 transition-all duration-500 border border-blue-400/30">
+                      LIMITED TIME OFFER
                     </div>
-                    <div className="text-slate-300 text-lg mb-6">Premium AI Business Coaching Calls</div>
+                  </div>
+                  
+                  <div className="relative p-12 text-center">
+                    <div className="inline-flex items-center gap-2 bg-gradient-to-r from-gray-900/80 to-black/80 backdrop-blur-xl border border-gray-700/30 rounded-full px-6 py-3 mb-8 shadow-2xl shadow-black/40 transform group-hover:scale-105 transition-all duration-500">
+                      <div className="w-3 h-3 bg-blue-400 rounded-full animate-pulse shadow-lg shadow-blue-400/50"></div>
+                      <span className="text-gray-300 font-bold text-sm uppercase tracking-wider drop-shadow-lg">September 2025 Special</span>
+                      <div className="w-3 h-3 bg-blue-500 rounded-full animate-pulse shadow-lg shadow-blue-500/50"></div>
+                    </div>
+                    
+                    <div className="relative mb-8">
+                      <MetallicText 
+                        text="Only $250" 
+                        className="text-5xl md:text-7xl mb-4 font-black" 
+                        theme="blue" 
+                        size="xl" 
+                        withGlow={true} 
+                      />
+                      <div className="text-slate-300 text-xl md:text-2xl font-light mb-2 group-hover:text-white transition-colors duration-500">Premium AI Business Coaching Calls</div>
+                      <div className="text-gray-400 text-lg line-through opacity-75">Regular Price: $300</div>
+                    </div>
+                    
+                    {/* Enhanced Features List */}
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10 max-w-4xl mx-auto">
+                      <div className="flex items-center space-x-3 transform group-hover:translate-x-2 transition-all duration-300">
+                        <div className="w-3 h-3 bg-blue-400 rounded-full shadow-lg group-hover:shadow-blue-400/50 transition-all duration-300"></div>
+                        <span className="text-gray-300 group-hover:text-blue-200 transition-colors duration-300 font-medium">60-min Google Meet call</span>
+                      </div>
+                      
+                      <div className="flex items-center space-x-3 transform group-hover:translate-x-2 transition-all duration-300" style={{transitionDelay: '0.1s'}}>
+                        <div className="w-3 h-3 bg-blue-400 rounded-full shadow-lg group-hover:shadow-blue-400/50 transition-all duration-300"></div>
+                        <span className="text-gray-300 group-hover:text-blue-200 transition-colors duration-300 font-medium">Unlimited email support</span>
+                      </div>
+                      
+                      <div className="flex items-center space-x-3 transform group-hover:translate-x-2 transition-all duration-300" style={{transitionDelay: '0.2s'}}>
+                        <div className="w-3 h-3 bg-blue-400 rounded-full shadow-lg group-hover:shadow-blue-400/50 transition-all duration-300"></div>
+                        <span className="text-gray-300 group-hover:text-blue-200 transition-colors duration-300 font-medium">AI strategy cheat sheet</span>
+                      </div>
+                    </div>
                     
                     <Link 
                       href="/vai-coaching" 
-                      className="group relative inline-flex items-center px-12 py-5 bg-gradient-to-r from-gray-700 via-gray-600 to-gray-500 hover:from-gray-600 hover:via-gray-500 hover:to-gray-400 text-white font-bold text-xl rounded-2xl transition-all duration-500 transform hover:scale-105 hover:shadow-[0_25px_50px_-12px_rgba(209,213,219,0.5)] border border-gray-400/50 border-b-emerald-400/30 hover:border-gray-300 hover:border-b-emerald-300/40">
-                      <span className="relative z-10 tracking-wide">Book Your Coaching Call Now</span>
-                      <div className="absolute inset-0 bg-white/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                      <div className="ml-3 text-2xl group-hover:translate-x-1 transition-transform duration-300">→</div>
+                      className="group/btn relative inline-flex items-center px-16 py-6 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-bold text-xl rounded-2xl transition-all duration-700 transform hover:scale-110 hover:shadow-[0_25px_50px_-12px_rgba(59,130,246,0.6)] border border-blue-500/30 hover:border-blue-400/60 shadow-[0_15px_35px_-5px_rgba(59,130,246,0.3)]">
+                      <span className="relative z-10 tracking-wide drop-shadow-lg">Book Your Coaching Call Now</span>
+                      <div className="absolute inset-0 bg-white/10 rounded-2xl opacity-0 group-hover/btn:opacity-100 transition-opacity duration-500"></div>
+                      <div className="ml-4 text-2xl group-hover/btn:translate-x-2 transition-transform duration-300 drop-shadow-lg">→</div>
+                      <div className="absolute -inset-1 bg-blue-500/30 rounded-2xl blur opacity-0 group-hover/btn:opacity-50 transition-opacity duration-700"></div>
                     </Link>
                     
-                    <div className="text-slate-400 text-sm mt-4 font-medium">
-                      ✓ Immediate booking available • ✓ 100% satisfaction guarantee
+                    <div className="flex items-center justify-center space-x-8 text-gray-400 text-sm mt-8 group-hover:text-gray-300 transition-colors duration-500">
+                      <div className="flex items-center transform group-hover:scale-105 transition-transform duration-300">
+                        <svg className="w-4 h-4 mr-2 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span className="font-medium">Immediate booking available</span>
+                      </div>
+                      <div className="flex items-center transform group-hover:scale-105 transition-transform duration-300" style={{transitionDelay: '0.1s'}}>
+                        <svg className="w-4 h-4 mr-2 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4" />
+                        </svg>
+                        <span className="font-medium">100% satisfaction guarantee</span>
+                      </div>
                     </div>
                   </div>
                 </div>

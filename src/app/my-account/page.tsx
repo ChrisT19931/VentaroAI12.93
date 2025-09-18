@@ -29,9 +29,42 @@ interface Product {
 
 const AVAILABLE_PRODUCTS: Product[] = [
   {
+    id: '1',
+    name: 'AI Tools Mastery Guide 2025',
+    description: 'Complete 30-page guide to building profitable online businesses with AI. Master ChatGPT, Claude, Grok, and Gemini for content creation, marketing automation, customer service, and revenue generation. Includes proven strategies, real-world case studies, and step-by-step implementation guides for launching your AI-powered business in 2025.',
+    image_url: '/images/products/ai-tools-mastery-guide.svg',
+    view_url: '/products/ai-tools-mastery-guide',
+    price: 25.00,
+    productType: 'digital',
+    featured: true,
+    category: 'E-book'
+  },
+  {
+    id: '2',
+    name: 'AI Prompts Arsenal 2025',
+    description: '30 professional AI prompts specifically designed for online business success. Ready-to-use ChatGPT and Claude prompts for content marketing, sales copy, social media automation, customer engagement, and business strategy. Each prompt includes detailed instructions and real examples to maximize your AI business results.',
+    image_url: '/images/products/ai-prompts-arsenal.svg',
+    view_url: '/products/ai-prompts-arsenal',
+    price: 10.00,
+    productType: 'digital',
+    featured: true,
+    category: 'AI Prompts'
+  },
+  {
+    id: '4',
+    name: 'AI Web Creation Masterclass',
+    description: 'Complete step-by-step video masterclass showing how to build a fully operational online business from scratch in just 2 hours using AI. Learn our proven process for creating websites, automating workflows, and scaling revenue with AI tools. Includes all templates, tools, and resources needed.',
+    image_url: '/images/products/ai-business-video-guide.svg',
+    view_url: '/products/ai-web-creation-masterclass',
+    price: 50.00,
+    productType: 'digital',
+    featured: true,
+    category: 'Video Course'
+  },
+  {
     id: 'vai-beginners-mastery',
-    name: 'AI for Beginners',
-    description: 'Comprehensive AI guidance for sales professionals and entrepreneurs. Get up to date with the full range of AI tools, learn how to use them effectively for your goals, and master practical applications for business growth. Includes: • 60-minute consultation call • Unlimited email support (1 month) • Complete AI beginner cheat sheet. September 2025 special: $250 (was $300).',
+    name: 'AI for Beginners Coaching',
+    description: 'Personalized 1-on-1 coaching to master AI fundamentals and build your first profitable AI project. Get up-to-date with the full range of AI tools and learn practical applications for business growth. Includes 60-minute consultation, unlimited email support (1 month), and complete AI beginner cheat sheet.',
     image_url: '/images/products/vai-beginners-coaching.svg',
     view_url: '/coaching/vai-beginners-mastery',
     price: 250.00,
@@ -41,8 +74,8 @@ const AVAILABLE_PRODUCTS: Product[] = [
   },
   {
     id: 'vai-web-development-elite',
-    name: 'AI for Web Developers',
-    description: 'Learn how to leverage AI tools to create online platforms, tools, and SaaS applications. Master AI-powered development workflows, automation strategies, and cutting-edge implementation techniques for modern web development. Includes: • 60-minute consultation call • Unlimited email support (1 month) • Technical implementation guide. September 2025 special: $250 (was $300).',
+    name: 'AI Web Development Elite',
+    description: 'Advanced 1-on-1 coaching for building sophisticated AI-powered web applications and scaling your development skills. Master AI-powered development workflows, automation strategies, and cutting-edge implementation techniques. Includes 60-minute consultation, unlimited email support (1 month), and technical implementation guide.',
     image_url: '/images/products/vai-web-dev-coaching.svg',
     view_url: '/coaching/vai-web-development-elite',
     price: 250.00,
@@ -52,8 +85,8 @@ const AVAILABLE_PRODUCTS: Product[] = [
   },
   {
     id: 'ai-business-strategy-session',
-    name: 'AI for Business',
-    description: 'Strategic AI guidance for employers and business leaders. Understand AI capabilities, implementation strategies, and how to effectively integrate AI solutions into your organization for competitive advantage and operational efficiency. Includes: • 90-minute strategy session • Unlimited email support (1 month) • Custom AI strategy roadmap. September 2025 special: $250 (was $300).',
+    name: 'AI Business Strategy Session',
+    description: 'Strategic 1-on-1 coaching for business leaders to develop AI implementation roadmaps for competitive advantage and operational efficiency. Understand AI capabilities, implementation strategies, and integration solutions. Includes 90-minute strategy session, unlimited email support (1 month), and custom AI strategy roadmap.',
     image_url: '/images/products/ai-business-coaching.svg',
     view_url: '/coaching/ai-business-strategy-session',
     price: 250.00,
@@ -336,7 +369,7 @@ export default function MyAccountPage() {
                     <div className="relative transform group-hover:scale-150 group-hover:rotate-12 transition-all duration-700">
                       {product.category === 'Coaching Session' ? (
                         <svg className="w-20 h-20 text-purple-400 opacity-80 group-hover:opacity-100 group-hover:text-purple-300 transition-all duration-700 drop-shadow-[0_10px_20px_rgba(147,51,234,0.5)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                         </svg>
                       ) : product.category === 'Video Course' ? (
                         <svg className="w-20 h-20 text-blue-400 opacity-80 group-hover:opacity-100 group-hover:text-blue-300 transition-all duration-700 drop-shadow-[0_10px_20px_rgba(59,130,246,0.5)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -345,6 +378,10 @@ export default function MyAccountPage() {
                       ) : product.category === 'E-book' ? (
                         <svg className="w-20 h-20 text-emerald-400 opacity-80 group-hover:opacity-100 group-hover:text-emerald-300 transition-all duration-700 drop-shadow-[0_10px_20px_rgba(16,185,129,0.5)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                        </svg>
+                      ) : product.category === 'AI Prompts' ? (
+                        <svg className="w-20 h-20 text-cyan-400 opacity-80 group-hover:opacity-100 group-hover:text-cyan-300 transition-all duration-700 drop-shadow-[0_10px_20px_rgba(34,211,238,0.5)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                         </svg>
                       ) : (
                         <svg className="w-20 h-20 text-yellow-400 opacity-80 group-hover:opacity-100 group-hover:text-yellow-300 transition-all duration-700 drop-shadow-[0_10px_20px_rgba(251,191,36,0.5)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">

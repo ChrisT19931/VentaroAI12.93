@@ -1,0 +1,532 @@
+{
+  "timestamp": "2025-09-18T06:46:34.930Z",
+  "summary": {
+    "totalPages": 34,
+    "passedPages": 34,
+    "totalButtons": 7,
+    "workingButtons": 7,
+    "totalApis": 10,
+    "workingApis": 9,
+    "criticalIssues": 1
+  },
+  "results": {
+    "pages": [
+      {
+        "page": "Home Page",
+        "path": "/",
+        "accessible": true,
+        "loadTime": 974.5820348396578,
+        "errors": [],
+        "warnings": [],
+        "critical": true
+      },
+      {
+        "page": "Products Page",
+        "path": "/products",
+        "accessible": true,
+        "loadTime": 501.80615573406516,
+        "errors": [],
+        "warnings": [],
+        "critical": true
+      },
+      {
+        "page": "About Page",
+        "path": "/about",
+        "accessible": true,
+        "loadTime": 578.0114433452563,
+        "errors": [],
+        "warnings": [],
+        "critical": false
+      },
+      {
+        "page": "Contact Page",
+        "path": "/contact",
+        "accessible": true,
+        "loadTime": 728.7913752312179,
+        "errors": [],
+        "warnings": [],
+        "critical": true
+      },
+      {
+        "page": "FAQ Page",
+        "path": "/faq",
+        "accessible": true,
+        "loadTime": 1222.6538143975113,
+        "errors": [],
+        "warnings": [],
+        "critical": false
+      },
+      {
+        "page": "Privacy Policy",
+        "path": "/privacy",
+        "accessible": true,
+        "loadTime": 1457.9878409043977,
+        "errors": [],
+        "warnings": [],
+        "critical": false
+      },
+      {
+        "page": "Terms of Service",
+        "path": "/terms",
+        "accessible": true,
+        "loadTime": 544.0974563984582,
+        "errors": [],
+        "warnings": [],
+        "critical": false
+      },
+      {
+        "page": "Login Page",
+        "path": "/login",
+        "accessible": true,
+        "loadTime": 535.6037576755504,
+        "errors": [],
+        "warnings": [],
+        "critical": true
+      },
+      {
+        "page": "Sign In Page",
+        "path": "/signin",
+        "accessible": true,
+        "loadTime": 1464.9515102276328,
+        "errors": [],
+        "warnings": [],
+        "critical": true
+      },
+      {
+        "page": "Sign Up Page",
+        "path": "/signup",
+        "accessible": true,
+        "loadTime": 1016.4727541517617,
+        "errors": [],
+        "warnings": [],
+        "critical": true
+      },
+      {
+        "page": "Forgot Password",
+        "path": "/forgot-password",
+        "accessible": true,
+        "loadTime": 542.2959895282725,
+        "errors": [],
+        "warnings": [],
+        "critical": true
+      },
+      {
+        "page": "Reset Password",
+        "path": "/reset-password",
+        "accessible": true,
+        "loadTime": 1090.7323480898672,
+        "errors": [],
+        "warnings": [],
+        "critical": true
+      },
+      {
+        "page": "My Account",
+        "path": "/my-account",
+        "accessible": true,
+        "loadTime": 1442.2925025347608,
+        "errors": [],
+        "warnings": [],
+        "critical": true
+      },
+      {
+        "page": "Downloads Hub",
+        "path": "/downloads",
+        "accessible": true,
+        "loadTime": 680.9798567483638,
+        "errors": [],
+        "warnings": [],
+        "critical": true
+      },
+      {
+        "page": "VIP Portal",
+        "path": "/vip-portal",
+        "accessible": true,
+        "loadTime": 565.8550683689954,
+        "errors": [],
+        "warnings": [],
+        "critical": true
+      },
+      {
+        "page": "Masterclass Product",
+        "path": "/products/ai-web-creation-masterclass",
+        "accessible": true,
+        "loadTime": 1153.3113116757781,
+        "errors": [],
+        "warnings": [],
+        "critical": true
+      },
+      {
+        "page": "Support Package",
+        "path": "/products/support-package",
+        "accessible": true,
+        "loadTime": 870.1080309771272,
+        "errors": [],
+        "warnings": [],
+        "critical": true
+      },
+      {
+        "page": "Weekly Support",
+        "path": "/products/weekly-support-contract",
+        "accessible": true,
+        "loadTime": 811.8525400457424,
+        "errors": [],
+        "warnings": [],
+        "critical": true
+      },
+      {
+        "page": "Ebook Downloads",
+        "path": "/downloads/ebook",
+        "accessible": true,
+        "loadTime": 803.2162622356159,
+        "errors": [],
+        "warnings": [],
+        "critical": true
+      },
+      {
+        "page": "Prompts Downloads",
+        "path": "/downloads/prompts",
+        "accessible": true,
+        "loadTime": 774.6204454588394,
+        "errors": [],
+        "warnings": [],
+        "critical": true
+      },
+      {
+        "page": "Coaching Downloads",
+        "path": "/downloads/coaching",
+        "accessible": true,
+        "loadTime": 580.8560994354077,
+        "errors": [],
+        "warnings": [],
+        "critical": true
+      },
+      {
+        "page": "AI Prompts Arsenal Content",
+        "path": "/content/ai-prompts-arsenal",
+        "accessible": true,
+        "loadTime": 687.688277545057,
+        "errors": [],
+        "warnings": [],
+        "critical": true
+      },
+      {
+        "page": "AI Tools Guide Content",
+        "path": "/content/ai-tools-mastery-guide",
+        "accessible": true,
+        "loadTime": 924.922380816598,
+        "errors": [],
+        "warnings": [],
+        "critical": true
+      },
+      {
+        "page": "Support Package Content",
+        "path": "/content/support-package",
+        "accessible": true,
+        "loadTime": 1253.6006700833514,
+        "errors": [],
+        "warnings": [],
+        "critical": true
+      },
+      {
+        "page": "Admin Dashboard",
+        "path": "/admin",
+        "accessible": true,
+        "loadTime": 1241.8134295356087,
+        "errors": [],
+        "warnings": [],
+        "critical": true
+      },
+      {
+        "page": "Admin Users",
+        "path": "/admin/users",
+        "accessible": true,
+        "loadTime": 899.1207762651084,
+        "errors": [],
+        "warnings": [],
+        "critical": true
+      },
+      {
+        "page": "Admin Orders",
+        "path": "/admin/orders",
+        "accessible": true,
+        "loadTime": 608.5961355582355,
+        "errors": [],
+        "warnings": [
+          "Admin page may need additional security headers"
+        ],
+        "critical": true
+      },
+      {
+        "page": "Admin Products",
+        "path": "/admin/products",
+        "accessible": true,
+        "loadTime": 810.7053692661771,
+        "errors": [],
+        "warnings": [],
+        "critical": true
+      },
+      {
+        "page": "Admin System",
+        "path": "/admin/system",
+        "accessible": true,
+        "loadTime": 845.7953144634293,
+        "errors": [],
+        "warnings": [],
+        "critical": true
+      },
+      {
+        "page": "Checkout Page",
+        "path": "/checkout",
+        "accessible": true,
+        "loadTime": 647.2750231796931,
+        "errors": [],
+        "warnings": [],
+        "critical": true
+      },
+      {
+        "page": "Checkout Success",
+        "path": "/checkout/success",
+        "accessible": true,
+        "loadTime": 732.705005963429,
+        "errors": [],
+        "warnings": [],
+        "critical": true
+      },
+      {
+        "page": "Shopping Cart",
+        "path": "/cart",
+        "accessible": true,
+        "loadTime": 566.3993427858553,
+        "errors": [],
+        "warnings": [],
+        "critical": true
+      },
+      {
+        "page": "Email Manager",
+        "path": "/email-manager",
+        "accessible": true,
+        "loadTime": 1230.879135648043,
+        "errors": [],
+        "warnings": [],
+        "critical": false
+      },
+      {
+        "page": "Storage Manager",
+        "path": "/storage-manager",
+        "accessible": true,
+        "loadTime": 618.1368482558265,
+        "errors": [],
+        "warnings": [],
+        "critical": false
+      }
+    ],
+    "buttons": [
+      {
+        "button": "Buy Now Button",
+        "working": true,
+        "responseTime": 191.94528725060934
+      },
+      {
+        "button": "Purchase Button",
+        "working": true,
+        "responseTime": 459.96149497907317
+      },
+      {
+        "button": "Checkout Button",
+        "working": true,
+        "responseTime": 274.08239007557233
+      },
+      {
+        "button": "Login Submit",
+        "working": true,
+        "responseTime": 576.9962482603039
+      },
+      {
+        "button": "Signup Submit",
+        "working": true,
+        "responseTime": 113.2935554912137
+      },
+      {
+        "button": "Download Button",
+        "working": true,
+        "responseTime": 154.13203840397597
+      },
+      {
+        "button": "Contact Form Submit",
+        "working": true,
+        "responseTime": 364.85276327601525
+      }
+    ],
+    "forms": [
+      {
+        "form": "Login Form",
+        "field": "password",
+        "hasValidation": false,
+        "error": "Missing required field validation"
+      }
+    ],
+    "apis": [
+      {
+        "endpoint": "/api/health",
+        "name": "Health Check",
+        "working": true,
+        "statusCode": 200,
+        "responseTime": 624.2719240770311
+      },
+      {
+        "endpoint": "/api/products",
+        "name": "Products API",
+        "working": false,
+        "statusCode": 500,
+        "error": "HTTP 500 error"
+      },
+      {
+        "endpoint": "/api/auth/register",
+        "name": "Registration API",
+        "working": true,
+        "statusCode": 200,
+        "responseTime": 381.6732193908816
+      },
+      {
+        "endpoint": "/api/checkout",
+        "name": "Checkout API",
+        "working": true,
+        "statusCode": 200,
+        "responseTime": 633.6565902373152
+      },
+      {
+        "endpoint": "/api/purchases/confirm",
+        "name": "Purchase Confirmation",
+        "working": true,
+        "statusCode": 200,
+        "responseTime": 396.2366401510602
+      },
+      {
+        "endpoint": "/api/contact",
+        "name": "Contact Form API",
+        "working": true,
+        "statusCode": 200,
+        "responseTime": 504.59713665002965
+      },
+      {
+        "endpoint": "/api/newsletter/subscribe",
+        "name": "Newsletter API",
+        "working": true,
+        "statusCode": 200,
+        "responseTime": 238.47031460817743
+      },
+      {
+        "endpoint": "/api/webhook/stripe",
+        "name": "Stripe Webhook",
+        "working": true,
+        "statusCode": 200,
+        "responseTime": 904.1879159569486
+      },
+      {
+        "endpoint": "/api/debug/purchase-flow",
+        "name": "Purchase Debug API",
+        "working": true,
+        "statusCode": 200,
+        "responseTime": 576.1375741344357
+      },
+      {
+        "endpoint": "/api/verify-payment",
+        "name": "Payment Verification",
+        "working": true,
+        "statusCode": 200,
+        "responseTime": 279.19047796590314
+      }
+    ],
+    "performance": [
+      {
+        "metric": "Page Load Time",
+        "target": "<2s",
+        "actual": "1.2s",
+        "pass": true
+      },
+      {
+        "metric": "Time to Interactive",
+        "target": "<3s",
+        "actual": "2.1s",
+        "pass": true
+      },
+      {
+        "metric": "First Contentful Paint",
+        "target": "<1.5s",
+        "actual": "0.8s",
+        "pass": true
+      },
+      {
+        "metric": "Largest Contentful Paint",
+        "target": "<2.5s",
+        "actual": "1.9s",
+        "pass": true
+      },
+      {
+        "metric": "Cumulative Layout Shift",
+        "target": "<0.1",
+        "actual": "0.05",
+        "pass": true
+      },
+      {
+        "metric": "API Response Time",
+        "target": "<500ms",
+        "actual": "320ms",
+        "pass": true
+      }
+    ],
+    "accessibility": [],
+    "security": [
+      {
+        "component": "Download Access",
+        "product": "AI Tools Mastery Guide",
+        "secure": false,
+        "critical": true
+      },
+      {
+        "check": "HTTPS Enforcement",
+        "secure": true,
+        "critical": true
+      },
+      {
+        "check": "XSS Protection",
+        "secure": true,
+        "critical": true
+      },
+      {
+        "check": "CSRF Protection",
+        "secure": true,
+        "critical": true
+      },
+      {
+        "check": "SQL Injection Prevention",
+        "secure": true,
+        "critical": true
+      },
+      {
+        "check": "Authentication Security",
+        "secure": true,
+        "critical": true
+      },
+      {
+        "check": "API Rate Limiting",
+        "secure": true,
+        "critical": true
+      },
+      {
+        "check": "Input Validation",
+        "secure": true,
+        "critical": true
+      },
+      {
+        "check": "Secure Headers",
+        "secure": true,
+        "critical": true
+      }
+    ]
+  },
+  "criticalIssues": [
+    "API: Products API - HTTP 500 error"
+  ],
+  "deploymentReady": false
+}
