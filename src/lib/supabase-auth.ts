@@ -140,13 +140,13 @@ export class SupabaseAuthService {
       }
 
       // Get user profile
-      const profile = await this.getUserProfile(authData.user.id);
+      const profileResult = await this.getUserProfile(authData.user.id);
       
       const user: AuthUser = {
         id: authData.user.id,
         email: authData.user.email!,
-        name: profile?.name || authData.user.user_metadata?.name || '',
-        user_role: profile?.user_role || 'user',
+        name: profileResult?.profile?.name || authData.user.user_metadata?.name || '',
+        user_role: profileResult?.profile?.user_role || 'user',
         email_confirmed: authData.user.email_confirmed_at ? true : false,
         created_at: authData.user.created_at!,
         updated_at: authData.user.updated_at!

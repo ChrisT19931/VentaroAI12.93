@@ -64,7 +64,7 @@ export async function sendEmailWithBackup(emailData: EmailData): Promise<BackupE
       const sgMail = (await import('@sendgrid/mail')).default;
       sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
-      const msg = {
+      const msg: any = {
         to: emailData.to,
         from: emailData.from || process.env.SENDGRID_FROM_EMAIL || 'noreply@ventaroai.com',
         subject: emailData.subject,

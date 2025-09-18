@@ -307,7 +307,7 @@ try {
     console.warn('⚠️ SUPABASE ADMIN: Using mock client due to missing/placeholder credentials');
     supabaseAdmin = createMockSupabaseClient();
   } else {
-    supabaseAdmin = createClient(adminUrl, adminKey, {
+    supabaseAdmin = createSupabaseClient(adminUrl, adminKey, {
       auth: {
         autoRefreshToken: false,
         persistSession: false

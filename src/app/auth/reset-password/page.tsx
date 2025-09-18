@@ -17,6 +17,12 @@ export default function ResetPasswordPage() {
 
   useEffect(() => {
     // Extract tokens from URL parameters
+    if (!searchParams) {
+      setIsValidLink(false);
+      toast.error('Invalid or expired reset link');
+      return;
+    }
+
     const accessToken = searchParams.get('access_token');
     const refreshToken = searchParams.get('refresh_token');
     const type = searchParams.get('type');
