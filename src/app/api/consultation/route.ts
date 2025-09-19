@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { sendEmail } from '@/lib/sendgrid';
+import { sendEmailWithBackup } from '@/lib/backup-email';
 
 // Rate limiting storage (in production, use Redis or database)
 const rateLimitStore = new Map<string, { count: number; resetTime: number }>();
@@ -79,7 +79,18 @@ export async function POST(request: NextRequest) {
     console.log(`✅ CONSULTATION FORM: Rate limit check passed. Remaining: ${remaining}`);
 
     // Send email to admin
-    const adminEmailResult = await sendEmail({
+    const adminEmailResult = await sendEmailWithBackup({
+      type: 'web-design',
+      formData: {
+        name,
+        email,
+        company,
+        website,
+        budget,
+        timeline,
+        description,
+        features
+      },
       to: 'chris.t@ventarosales.com',
       subject: `🚀 New Custom Website Consultation Request from ${name}`,
       html: `
@@ -203,7 +214,18 @@ Reply to: ${email}`
     });
 
     // Send auto-reply to customer
-    const customerEmailResult = await sendEmail({
+    const customerEmailResult = await sendEmailWithBackup({
+      type: 'web-design',
+      formData: {
+        name,
+        email,
+        company,
+        website,
+        budget,
+        timeline,
+        description,
+        features
+      },
       to: email,
       subject: '🚀 Your Custom Website Consultation Request Received!',
       html: `

@@ -34,7 +34,7 @@ const SYSTEM_PROMPT = `You are VentaroAI's helpful AI assistant. You are an expe
 - AI Tools Mastery Guide 2025: $25 (30-page comprehensive guide)
 - AI Prompts Arsenal 2025: $10 (30 professional AI prompts)
 - AI Web Creation Masterclass: $50 (2-hour video training)
-- Premium Cheat Sheets: $50 each (Business AI, Beginners Systems, AI Business Build)
+- AI Resources & Guides: $50 each (Business AI, Beginners Systems, AI Business Build)
 
 **3. PRICING PLANS:**
 - VAI Toolkit All-in-One: $197 (was $497) - Most Popular

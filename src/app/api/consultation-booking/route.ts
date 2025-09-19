@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { sendEmail } from '@/lib/sendgrid';
+import { sendEmailWithBackup } from '@/lib/backup-email';
 
 // Rate limiting storage (in production, use Redis or database)
 const rateLimitStore = new Map<string, { count: number; resetTime: number }>();
@@ -100,7 +100,22 @@ export async function POST(request: NextRequest) {
     const formattedTime = `${hour12}:${minutes} ${ampm}`;
 
     // Send admin notification email
-    const adminEmailResult = await sendEmail({
+    const adminEmailResult = await sendEmailWithBackup({
+      type: 'support',
+      formData: {
+        userId,
+        userEmail,
+        userName,
+        selectedDate,
+        selectedTime,
+        timezone,
+        businessType,
+        currentChallenges,
+        goals,
+        notes,
+        sessionType,
+        bookingId
+      },
       to: process.env.ADMIN_EMAIL || 'chris.t@ventarosales.com',
       subject: `🚀 New AI Business Consultation Booking - ${userName}`,
       html: `
@@ -190,7 +205,22 @@ export async function POST(request: NextRequest) {
     });
 
     // Send customer confirmation email
-    const customerEmailResult = await sendEmail({
+    const customerEmailResult = await sendEmailWithBackup({
+      type: 'support',
+      formData: {
+        userId,
+        userEmail,
+        userName,
+        selectedDate,
+        selectedTime,
+        timezone,
+        businessType,
+        currentChallenges,
+        goals,
+        notes,
+        sessionType,
+        bookingId
+      },
       to: userEmail,
       subject: `✅ Your AI Business Consultation is Confirmed - ${formattedDate}`,
       html: `
@@ -309,4 +339,4 @@ export async function POST(request: NextRequest) {
       { status: 500 }
     );
   }
-} 
+}

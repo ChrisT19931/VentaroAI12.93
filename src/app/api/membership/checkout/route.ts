@@ -186,7 +186,7 @@ async function sendSubscriptionEmails({
             <ul style="color: #374151; line-height: 1.8;">
               <li><strong>AI Toolbox:</strong> 30+ curated AI tools for business automation</li>
               <li><strong>VAI Masterclass:</strong> Complete video training series</li>
-              <li><strong>Premium Prompts:</strong> Expert-crafted AI prompts</li>
+              <li><strong>Professional Prompts:</strong> Expert-crafted AI prompts</li>
               <li><strong>Priority Support:</strong> Direct access to our team</li>
               <li><strong>Early Access:</strong> Be first to try new tools and features</li>
             </ul>

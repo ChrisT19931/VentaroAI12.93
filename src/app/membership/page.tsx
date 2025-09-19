@@ -31,7 +31,7 @@ export default async function MembershipPage() {
               Get First Access to Our AI Toolbox
             </h1>
             <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-8">
-              Subscribe for exclusive first access to 30+ curated AI tools, premium prompts, and expert guidance.
+              Subscribe for exclusive first access to 30+ curated AI tools, professional prompts, and expert guidance.
               Be among the first to unlock the full potential of AI for your business.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">

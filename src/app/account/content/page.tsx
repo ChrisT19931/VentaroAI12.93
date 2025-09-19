@@ -79,7 +79,7 @@ const products: Product[] = [
   {
     id: 'weekly-support-contract-2025',
     title: 'Support Package',
-    description: 'Premium support and resources for your AI journey.',
+    description: 'Professional support and resources for your AI journey.',
     bullets: [
       'Weekly support sessions',
       'Priority email support',
@@ -349,7 +349,7 @@ export default function ContentAccessPage() {
             Content Access Portal
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Access your purchased content and explore premium AI resources
+            Access your purchased content and explore professional AI resources
           </p>
           
           {isAdmin && (
@@ -374,4 +374,4 @@ export default function ContentAccessPage() {
       </div>
     </div>
   );
-} 
+}

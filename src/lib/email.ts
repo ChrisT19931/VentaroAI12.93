@@ -1,4 +1,5 @@
 import { env } from './env';
+import { sendEmailWithBackup } from './backup-email';
 
 // Email templates
 const EMAIL_TEMPLATES = {
@@ -108,15 +109,23 @@ async function sendEmailInternal(options: EmailOptions) {
   await sgMail.send(msg as any);
 }
 
-// Main function to send email with retry logic
+// Main function to send email with backup system
 export async function sendEmail(options: EmailOptions): Promise<boolean> {
   try {
-    await sendEmailInternal(options);
-    return true;
+    const result = await sendEmailWithBackup({
+      to: options.to,
+      subject: options.subject,
+      html: options.html,
+      text: options.text,
+      type: 'newsletter', // Default type for general emails
+      formData: {
+        templateId: options.templateId,
+        dynamicTemplateData: options.dynamicTemplateData
+      }
+    });
+    return result.success;
   } catch (error) {
     console.error(`Error sending email to ${options.to}:`, error);
-    emailQueue.push({ options, retries: 0 });
-    setTimeout(processEmailQueue, RETRY_DELAY);
     return false;
   }
 }

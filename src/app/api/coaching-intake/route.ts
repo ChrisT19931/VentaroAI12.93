@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { supabase } from '@/lib/supabase';
-import { sendEmail } from '@/lib/sendgrid';
+import { sendEmailWithBackup } from '@/lib/backup-email';
 
 export async function POST(request: NextRequest) {
   try {
@@ -58,7 +58,20 @@ export async function POST(request: NextRequest) {
 
     // Send confirmation email to customer
     try {
-      await sendEmail({
+      await sendEmailWithBackup({
+        type: 'support',
+        formData: {
+          userId,
+          userEmail,
+          projectType,
+          currentHosting,
+          techStack,
+          timeline,
+          specificChallenges,
+          preferredTimes,
+          timezone,
+          additionalInfo
+        },
         to: userEmail,
         subject: 'Coaching Session Intake Form Received - Next Steps',
         html: `
@@ -124,7 +137,20 @@ export async function POST(request: NextRequest) {
 
     // Send notification email to admin
     try {
-      await sendEmail({
+      await sendEmailWithBackup({
+        type: 'support',
+        formData: {
+          userId,
+          userEmail,
+          projectType,
+          currentHosting,
+          techStack,
+          timeline,
+          specificChallenges,
+          preferredTimes,
+          timezone,
+          additionalInfo
+        },
         to: 'chris.t@ventarosales.com',
         subject: `New Coaching Intake Form - ${projectType} (${timeline})`,
         html: `

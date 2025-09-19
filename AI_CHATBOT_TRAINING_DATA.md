@@ -68,7 +68,7 @@
 - All templates and tools included
 - Resource library access
 
-#### Premium Cheat Sheets - $50 Each:
+#### AI Resources & Guides - $50 Each:
 1. **Business AI Implementation Guide**
    - Complete step-by-step business AI integration
    - Workflow optimization

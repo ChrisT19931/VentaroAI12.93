@@ -1,13 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import sgMail from '@sendgrid/mail';
-
-// Initialize SendGrid
-if (process.env.SENDGRID_API_KEY) {
-  sgMail.setApiKey(process.env.SENDGRID_API_KEY);
-  console.log('✅ SendGrid configured for support request emails');
-} else {
-  console.warn('⚠️ SendGrid API key not configured - support request emails will be logged only');
-}
+import { sendEmailWithBackup } from '@/lib/backup-email';
 
 function getPriorityColor(priority: string): string {
   switch (priority) {
@@ -163,30 +155,24 @@ export async function POST(request: NextRequest) {
       </div>
     `;
 
-    // Send admin notification email
-    const adminMsg = {
+    // Send admin notification email using backup system
+    const adminEmailResult = await sendEmailWithBackup({
       to: 'chris.t@ventarosales.com',
-      from: process.env.SENDGRID_FROM_EMAIL || process.env.EMAIL_FROM || 'noreply@ventarosales.com',
       subject: `🛠️ New Support Booking: ${subject} - ${priority.toUpperCase()} Priority`,
-      html: adminEmailContent
-    };
-
-    let adminEmailSent = false;
-    if (process.env.SENDGRID_API_KEY && process.env.SENDGRID_API_KEY !== 'SG.placeholder_api_key_replace_with_real_key') {
-      try {
-        await sgMail.send(adminMsg);
-        console.log('✅ Admin notification email sent successfully');
-        adminEmailSent = true;
-      } catch (error) {
-        console.error('❌ Failed to send admin notification email:', error);
-        console.error('Error details:', error);
+      html: adminEmailContent,
+      type: 'support-request',
+      formData: {
+        userName,
+        userEmail,
+        phoneNumber,
+        subject,
+        description,
+        priority,
+        preferredDate,
+        preferredTime,
+        submissionTime
       }
-    } else {
-      console.log('📧 SendGrid not configured - Admin email would be sent:', adminMsg.subject);
-      console.log('📧 Admin email content saved to console for debugging');
-      console.log('📧 To:', adminMsg.to);
-      console.log('📧 Subject:', adminMsg.subject);
-    }
+    });
 
     // Enhanced client confirmation email
     const clientConfirmationContent = `
@@ -266,45 +252,36 @@ export async function POST(request: NextRequest) {
       </div>
     `;
 
-    // Send client confirmation email
-    const clientMsg = {
+    // Send client confirmation email using backup system
+    const clientEmailResult = await sendEmailWithBackup({
       to: userEmail,
-      from: process.env.SENDGRID_FROM_EMAIL || process.env.EMAIL_FROM || 'noreply@ventarosales.com',
       subject: '✅ Support Request Confirmed - We\'ll Be In Touch Soon!',
-      html: clientConfirmationContent
-    };
-
-    let clientEmailSent = false;
-    if (process.env.SENDGRID_API_KEY && process.env.SENDGRID_API_KEY !== 'SG.placeholder_api_key_replace_with_real_key') {
-      try {
-        await sgMail.send(clientMsg);
-        console.log('✅ Client confirmation email sent successfully');
-        clientEmailSent = true;
-      } catch (error) {
-        console.error('❌ Failed to send client confirmation email:', error);
-        console.error('Error details:', error);
+      html: clientConfirmationContent,
+      type: 'support-request',
+      formData: {
+        userName,
+        userEmail,
+        phoneNumber,
+        subject,
+        description,
+        priority,
+        preferredDate,
+        preferredTime,
+        submissionTime
       }
-    } else {
-      console.log('📧 SendGrid not configured - Client email would be sent:', clientMsg.subject);
-      console.log('📧 Client email content saved to console for debugging');
-      console.log('📧 To:', clientMsg.to);
-      console.log('📧 Subject:', clientMsg.subject);
-    }
+    });
+
+    console.log('📧 SUPPORT REQUEST: Admin email', adminEmailResult.success ? 'sent' : 'failed');
+    console.log('📧 SUPPORT REQUEST: Client email', clientEmailResult.success ? 'sent' : 'failed');
 
     return NextResponse.json(
       {
         success: true,
-        message: adminEmailSent && clientEmailSent 
-          ? 'Support request submitted successfully. You will receive a confirmation email shortly.'
-          : adminEmailSent 
-          ? 'Support request submitted successfully. Admin has been notified, but confirmation email could not be sent.'
-          : clientEmailSent
-          ? 'Support request submitted successfully. You will receive a confirmation email shortly.'
-          : 'Support request submitted successfully. Email notifications are currently unavailable, but your request has been logged.',
+        message: 'Support request submitted successfully. You will receive a confirmation email shortly.',
         emailStatus: {
-          adminEmailSent,
-          clientEmailSent,
-          emailConfigured: !!(process.env.SENDGRID_API_KEY && process.env.SENDGRID_API_KEY !== 'SG.placeholder_api_key_replace_with_real_key')
+          adminEmailSent: adminEmailResult.success,
+          clientEmailSent: clientEmailResult.success,
+          backupSystemActive: true
         }
       },
       { status: 200 }

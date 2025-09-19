@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { sendEmail } from '@/lib/sendgrid';
+import { sendEmailWithBackup } from '@/lib/backup-email';
 
 export async function POST(request: NextRequest) {
   try {
@@ -25,7 +25,18 @@ export async function POST(request: NextRequest) {
 
     // Send confirmation email to customer
     try {
-      await sendEmail({
+      await sendEmailWithBackup({
+        type: 'support',
+        formData: {
+          userId,
+          userEmail,
+          userName,
+          selectedDate,
+          selectedTime,
+          timezone,
+          sessionType,
+          notes
+        },
         to: userEmail,
         from: 'noreply@ventarosales.com',
         subject: 'Coaching Session Booking Confirmation - Test',
@@ -72,7 +83,18 @@ export async function POST(request: NextRequest) {
 
     // Send notification email to admin
     try {
-      await sendEmail({
+      await sendEmailWithBackup({
+        type: 'support',
+        formData: {
+          userId,
+          userEmail,
+          userName,
+          selectedDate,
+          selectedTime,
+          timezone,
+          sessionType,
+          notes
+        },
         to: 'chris.t@ventarosales.com',
         from: 'noreply@ventarosales.com',
         subject: 'New Coaching Session Booking Request - Test',

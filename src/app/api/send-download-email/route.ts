@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { sendEmail } from '@/lib/sendgrid';
+import { sendEmailWithBackup } from '@/lib/backup-email';
 
 export async function POST(request: NextRequest) {
   try {
@@ -164,14 +164,22 @@ export async function POST(request: NextRequest) {
       © ${new Date().getFullYear()} Ventaro Digital Store. All rights reserved.
     `;
 
-    // Send the email
-    const result = await sendEmail({
+    // Send the email using backup system
+    const result = await sendEmailWithBackup({
       to: email,
       subject: '🔥 Your AI Tools Mastery Guide 2025 is Ready for Download!',
       text,
       html,
+      type: 'download-email',
+      formData: {
+        email,
+        productName,
+        downloadUrl
+      }
     });
 
+    console.log('📧 DOWNLOAD EMAIL:', result.success ? 'sent' : 'failed');
+    
     if (result.success) {
       return NextResponse.json({ success: true, message: 'Email sent successfully' });
     } else {

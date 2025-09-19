@@ -1,15 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getToken } from 'next-auth/jwt';
 import { db } from '@/lib/database';
-import { sendEmail } from '@/lib/sendgrid';
-
-// Check if email is configured
-const isEmailConfigured = !!process.env.SENDGRID_API_KEY && !!process.env.EMAIL_FROM;
-console.log('📧 COACHING BOOKING: Email configuration check:', { 
-  hasApiKey: !!process.env.SENDGRID_API_KEY,
-  hasEmailFrom: !!process.env.EMAIL_FROM,
-  isConfigured: isEmailConfigured
-});
+import { sendEmailWithBackup } from '@/lib/backup-email';
 
 interface BookingData {
   name: string;
@@ -92,8 +84,8 @@ const sendBookingConfirmationEmail = async (bookingData: BookingData & { id: str
     'scaling-business': 'Scaling Business'
   };
 
-  // Send email to admin (SAME AS CONTACT FORM)
-  const adminEmailResult = await sendEmail({
+  // Send email to admin using backup system
+  const adminEmailResult = await sendEmailWithBackup({
     to: 'chris.t@ventarosales.com',
     subject: `🔔 New Coaching Booking: ${bookingData.name}`,
     html: `
@@ -154,11 +146,13 @@ ${bookingData.goals}
 
 ${bookingData.additional_notes ? `Additional Notes:\n${bookingData.additional_notes}` : ''}
 
-Reply to: ${bookingData.email}`
+Reply to: ${bookingData.email}`,
+    type: 'coaching-booking',
+    formData: bookingData
   });
 
-  // Send auto-reply to customer (SAME AS CONTACT FORM)
-  const customerEmailResult = await sendEmail({
+  // Send auto-reply to customer using backup system
+  const customerEmailResult = await sendEmailWithBackup({
     to: bookingData.email,
     subject: '🎯 Your AI Business Coaching Session Request Received!',
     html: `
@@ -243,7 +237,9 @@ ${bookingData.additional_notes ? `Additional Notes: ${bookingData.additional_not
 Questions? Contact: chris.t@ventarosales.com
 
 Best regards,
-The Ventaro AI Team`
+The Ventaro AI Team`,
+    type: 'coaching-booking',
+    formData: bookingData
   });
 
   console.log(`📧 COACHING BOOKING: Admin email ${adminEmailResult.success ? 'sent' : 'failed'}`);

@@ -8,6 +8,7 @@ import { useSession, signOut } from 'next-auth/react';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isComingSoonOpen, setIsComingSoonOpen] = useState(false);
   const { items } = useCart();
   const { data: session, status } = useSession();
   const user = session?.user || null;
@@ -36,24 +37,54 @@ export default function Navbar() {
               <Link href="/" className="px-5 py-3 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-900/80 transition-all duration-300 border border-transparent hover:border-gray-700">
                 Home
               </Link>
+              <Link href="/vai-agents" className="px-5 py-3 rounded-lg text-sm font-semibold text-gray-300 hover:text-white bg-gradient-to-r from-purple-900/50 to-blue-900/50 hover:from-purple-800/60 hover:to-blue-800/60 transition-all duration-300 border border-purple-700/50 hover:border-purple-600/60 border-l-2 border-l-purple-500/50 hover:border-l-purple-400/70">
+                <span className="tracking-wide">VAI AGENTS</span>
+              </Link>
               <Link href="/vai-coaching" className="px-5 py-3 rounded-lg text-sm font-semibold text-gray-300 hover:text-white bg-gray-900 hover:bg-gray-800 transition-all duration-300 border border-gray-700/50 hover:border-gray-600/60 border-l-2 border-l-blue-500/30 hover:border-l-blue-500/60">
                 <span className="tracking-wide">VAI COACHING</span>
               </Link>
               <Link href="/products" className="px-5 py-3 rounded-lg text-sm font-medium text-gray-300 hover:text-white bg-gray-900/80 hover:bg-gray-800 transition-all duration-300 border border-gray-700/50 hover:border-gray-600/60 border-l-2 border-l-emerald-500/30 hover:border-l-emerald-500/60">
                 <span>VAI Toolkit</span>
               </Link>
-              <Link href="/ai-masterclass" className="px-5 py-3 rounded-lg text-sm font-medium text-gray-300 hover:text-white bg-gray-900/80 hover:bg-gray-800 transition-all duration-300 border border-gray-700/50 hover:border-gray-600/60 border-l-2 border-l-purple-500/30 hover:border-l-purple-500/60 relative">
-                <span>VAI Masterclass</span>
-                <span className="absolute -top-2 -right-2 bg-gray-800 text-gray-300 text-xs px-2 py-1 rounded-full text-[10px] font-medium border border-gray-600/30">SOON</span>
-              </Link>
-              <Link href="/toolbox" className="px-5 py-3 rounded-lg text-sm font-medium text-gray-300 hover:text-white bg-gray-900/80 hover:bg-gray-800 transition-all duration-300 border border-gray-700/50 hover:border-gray-600/60 border-l-2 border-l-amber-500/30 hover:border-l-amber-500/60 relative">
-                <span>VAI Web Gen</span>
-                <span className="absolute -top-2 -right-2 bg-gray-800 text-gray-300 text-xs px-2 py-1 rounded-full text-[10px] font-medium border border-gray-600/30">SOON</span>
-              </Link>
-              <Link href="/affiliate" className="px-5 py-3 rounded-lg text-sm font-medium text-gray-300 hover:text-white bg-gray-900/80 hover:bg-gray-800 transition-all duration-300 border border-gray-700/50 hover:border-gray-600/60 border-l-2 border-l-cyan-500/30 hover:border-l-cyan-500/60 relative">
-                <span>Ventaro AI Affiliate</span>
-                <span className="absolute -top-2 -right-2 bg-gray-800 text-gray-300 text-xs px-2 py-1 rounded-full text-[10px] font-medium border border-gray-600/30">SOON</span>
-              </Link>
+              
+              {/* Coming Soon Dropdown */}
+              <div className="relative">
+                <button
+                  onClick={() => setIsComingSoonOpen(!isComingSoonOpen)}
+                  className="px-5 py-3 rounded-lg text-sm font-medium text-gray-300 hover:text-white bg-gray-900/80 hover:bg-gray-800 transition-all duration-300 border border-gray-700/50 hover:border-gray-600/60 border-l-2 border-l-amber-500/30 hover:border-l-amber-500/60 flex items-center space-x-2"
+                >
+                  <span>Coming Soon</span>
+                  <svg className={`w-4 h-4 transition-transform duration-200 ${isComingSoonOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                
+                {isComingSoonOpen && (
+                  <div className="absolute top-full left-0 mt-2 w-56 bg-black/95 border border-gray-700 rounded-lg shadow-2xl z-50">
+                    <div className="py-2">
+                      <Link href="/ai-masterclass" className="block px-4 py-3 text-sm text-gray-300 hover:text-white hover:bg-gray-800 transition-colors border-l-2 border-l-purple-500/30 hover:border-l-purple-500/60">
+                        <div className="flex items-center justify-between">
+                          <span>VAI Masterclass</span>
+                          <span className="bg-gray-800 text-gray-300 text-xs px-2 py-1 rounded-full font-medium border border-gray-600/30">SOON</span>
+                        </div>
+                      </Link>
+                      <Link href="/toolbox" className="block px-4 py-3 text-sm text-gray-300 hover:text-white hover:bg-gray-800 transition-colors border-l-2 border-l-amber-500/30 hover:border-l-amber-500/60">
+                        <div className="flex items-center justify-between">
+                          <span>VAI Web Gen</span>
+                          <span className="bg-gray-800 text-gray-300 text-xs px-2 py-1 rounded-full font-medium border border-gray-600/30">SOON</span>
+                        </div>
+                      </Link>
+                      <Link href="/affiliate" className="block px-4 py-3 text-sm text-gray-300 hover:text-white hover:bg-gray-800 transition-colors border-l-2 border-l-cyan-500/30 hover:border-l-cyan-500/60">
+                        <div className="flex items-center justify-between">
+                          <span>Ventaro AI Affiliate</span>
+                          <span className="bg-gray-800 text-gray-300 text-xs px-2 py-1 rounded-full font-medium border border-gray-600/30">SOON</span>
+                        </div>
+                      </Link>
+                    </div>
+                  </div>
+                )}
+              </div>
+              
               <Link href="/about" className="px-5 py-3 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-900/80 transition-all duration-300 border border-transparent hover:border-gray-700">
                 About Us
               </Link>
@@ -139,30 +170,43 @@ export default function Navbar() {
           <Link href="/" className="block px-4 py-3 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-gray-900 transition-all duration-300 border border-transparent hover:border-gray-800">
             Home
           </Link>
+          <Link href="/vai-agents" className="block px-4 py-3 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-gray-900 transition-all duration-300 border border-transparent hover:border-gray-800 border-l-2 border-l-purple-500/30 hover:border-l-purple-500/60">
+            VAI Agents
+          </Link>
           <Link href="/vai-coaching" className="block px-4 py-3 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-gray-900 transition-all duration-300 border border-transparent hover:border-gray-800 border-l-2 border-l-blue-500/30 hover:border-l-blue-500/60">
             VAI Coaching
           </Link>
           <Link href="/products" className="block px-4 py-3 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-gray-900 transition-all duration-300 border border-transparent hover:border-gray-800 border-l-2 border-l-emerald-500/30 hover:border-l-emerald-500/60">
             VAI Toolkit
           </Link>
-          <Link href="/ai-masterclass" className="block px-4 py-3 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-gray-900 transition-all duration-300 border border-transparent hover:border-gray-800 border-l-2 border-l-purple-500/30 hover:border-l-purple-500/60 relative">
-            VAI Masterclass
-            <span className="absolute -top-1 -right-1 bg-gray-800 text-gray-300 text-xs px-1 py-0.5 rounded text-[10px] font-medium border border-gray-600/30">SOON</span>
-          </Link>
-          <Link href="/toolbox" className="block px-4 py-3 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-gray-900 transition-all duration-300 border border-transparent hover:border-gray-800 border-l-2 border-l-amber-500/30 hover:border-l-amber-500/60 relative">
-            VAI Web Gen
-            <span className="absolute -top-1 -right-1 bg-gray-800 text-gray-300 text-xs px-1 py-0.5 rounded text-[10px] font-medium border border-gray-600/30">SOON</span>
-          </Link>
-          <Link href="/affiliate" className="block px-4 py-3 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-gray-900 transition-all duration-300 border border-transparent hover:border-gray-800 border-l-2 border-l-cyan-500/30 hover:border-l-cyan-500/60 relative">
-            Ventaro AI Affiliate
-            <span className="absolute -top-1 -right-1 bg-gray-800 text-gray-300 text-xs px-1 py-0.5 rounded text-[10px] font-medium border border-gray-600/30">SOON</span>
-          </Link>
-          <Link href="/about" className="block px-4 py-3 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-gray-900 transition-all duration-300 border border-transparent hover:border-gray-800">
-            About Us
-          </Link>
-          <Link href="/contact" className="block px-4 py-3 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-gray-900 transition-all duration-300 border border-transparent hover:border-gray-800">
-            Contact
-          </Link>
+          
+          {/* Coming Soon Section */}
+          <div className="border-t border-gray-700 pt-2 mt-2">
+            <div className="px-4 py-2 text-xs font-semibold text-gray-400 uppercase tracking-wider">
+              Coming Soon
+            </div>
+            <Link href="/ai-masterclass" className="block px-4 py-3 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-gray-900 transition-all duration-300 border border-transparent hover:border-gray-800 border-l-2 border-l-purple-500/30 hover:border-l-purple-500/60 relative">
+              VAI Masterclass
+              <span className="absolute -top-1 -right-1 bg-gray-800 text-gray-300 text-xs px-1 py-0.5 rounded text-[10px] font-medium border border-gray-600/30">SOON</span>
+            </Link>
+            <Link href="/toolbox" className="block px-4 py-3 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-gray-900 transition-all duration-300 border border-transparent hover:border-gray-800 border-l-2 border-l-amber-500/30 hover:border-l-amber-500/60 relative">
+              VAI Web Gen
+              <span className="absolute -top-1 -right-1 bg-gray-800 text-gray-300 text-xs px-1 py-0.5 rounded text-[10px] font-medium border border-gray-600/30">SOON</span>
+            </Link>
+            <Link href="/affiliate" className="block px-4 py-3 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-gray-900 transition-all duration-300 border border-transparent hover:border-gray-800 border-l-2 border-l-cyan-500/30 hover:border-l-cyan-500/60 relative">
+              Ventaro AI Affiliate
+              <span className="absolute -top-1 -right-1 bg-gray-800 text-gray-300 text-xs px-1 py-0.5 rounded text-[10px] font-medium border border-gray-600/30">SOON</span>
+            </Link>
+          </div>
+          
+          <div className="border-t border-gray-700 pt-2 mt-2">
+            <Link href="/about" className="block px-4 py-3 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-gray-900 transition-all duration-300 border border-transparent hover:border-gray-800">
+              About Us
+            </Link>
+            <Link href="/contact" className="block px-4 py-3 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-gray-900 transition-all duration-300 border border-transparent hover:border-gray-800">
+              Contact
+            </Link>
+          </div>
 
           {user && (
             <Link href="/my-account" className="flex items-center px-4 py-3 rounded-lg text-base font-medium bg-gray-900 text-amber-300 hover:bg-black transition-all duration-300 border border-amber-900/50 hover:border-amber-700">

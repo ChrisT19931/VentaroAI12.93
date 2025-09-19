@@ -257,7 +257,7 @@ export default function AIPromptsArsenalPage() {
               <div className="flex items-start">
                 <div className="w-5 h-5 bg-gray-500 rounded-full mr-3 mt-1 flex-shrink-0"></div>
                 <div>
-                  <h4 className="text-white font-semibold">500+ Premium Prompts</h4>
+                  <h4 className="text-white font-semibold">500+ Professional Prompts</h4>
                   <p className="text-gray-300 text-sm">Carefully crafted and tested for maximum results</p>
                 </div>
               </div>

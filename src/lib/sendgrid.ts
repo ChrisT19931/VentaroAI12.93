@@ -193,6 +193,8 @@ export const sendOrderConfirmationEmail = async ({
   downloadLinks: { productName: string; url: string }[];
   isGuest?: boolean;
 }) => {
+  const { sendEmailWithBackup } = await import('./backup-email');
+  
   const itemsList = orderItems
     .map(
       (item) =>
@@ -282,11 +284,19 @@ export const sendOrderConfirmationEmail = async ({
     If you have any questions about your order, please contact us at chris.t@ventarosales.com.
   `;
 
-  return sendEmail({
+  return sendEmailWithBackup({
     to: email,
     subject: `Order Confirmation #${orderNumber}`,
     text,
     html,
+    type: 'membership',
+    formData: {
+      orderNumber,
+      orderItems,
+      total,
+      downloadLinks,
+      isGuest
+    }
   });
 };
 
@@ -391,6 +401,7 @@ export const sendAccessGrantedEmail = async ({
   accessUrl: string;
   firstName?: string;
 }) => {
+  const { sendEmailWithBackup } = await import('./backup-email');
   const greeting = firstName ? `Hi ${firstName},` : 'Hi there,';
   
   const html = `
@@ -443,10 +454,16 @@ export const sendAccessGrantedEmail = async ({
     The Ventaro Team
   `;
 
-  return sendEmail({
+  return sendEmailWithBackup({
     to: email,
     subject: `Access Granted: ${productName}`,
     text,
     html,
+    type: 'membership',
+    formData: {
+      productName,
+      accessUrl,
+      firstName
+    }
   });
 };

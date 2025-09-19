@@ -1,5 +1,4 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { sendEmail } from '@/lib/sendgrid';
 import { supabase } from '@/lib/supabase';
 import { sendEmailWithBackup } from '@/lib/backup-email';
 
@@ -177,7 +176,7 @@ What to Expect:
 - Product Updates: First to know about new releases and offers
 
 Get Started:
-Ready to transform your business with AI? Explore our premium products: ${process.env.NEXT_PUBLIC_SITE_URL || 'https://ventaroai.com'}/products
+Ready to transform your business with AI? Explore our AI resources and services: ${process.env.NEXT_PUBLIC_SITE_URL || 'https://ventaroai.com'}/products
 
 Pro Tip: Add chris.t@ventarosales.com to your contacts to ensure our emails reach your inbox!
 

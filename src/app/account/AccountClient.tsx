@@ -55,28 +55,34 @@ export default function AccountClient({ initialOrders, initialIsAdmin, user }: A
         </div>
 
         {/* Tabs Navigation */}
-        <div className="flex border-b border-gray-700 mb-6">
+        <div className="flex border-b border-gray-700 mb-6 overflow-x-auto">
           <button
-            className={`px-6 py-3 font-medium text-sm focus:outline-none ${activeTab === 'purchases' ? 'text-blue-400 border-b-2 border-blue-400' : 'text-gray-400 hover:text-gray-300'}`}
+            className={`px-6 py-3 font-medium text-sm focus:outline-none whitespace-nowrap ${activeTab === 'purchases' ? 'text-blue-400 border-b-2 border-blue-400' : 'text-gray-400 hover:text-gray-300'}`}
             onClick={() => setActiveTab('purchases')}
           >
             My Purchases
           </button>
           <button
-            className={`px-6 py-3 font-medium text-sm focus:outline-none ${activeTab === 'downloads' ? 'text-blue-400 border-b-2 border-blue-400' : 'text-gray-400 hover:text-gray-300'}`}
+            className={`px-6 py-3 font-medium text-sm focus:outline-none whitespace-nowrap ${activeTab === 'agents' ? 'text-purple-400 border-b-2 border-purple-400' : 'text-gray-400 hover:text-gray-300'}`}
+            onClick={() => setActiveTab('agents')}
+          >
+            VAI Agents
+          </button>
+          <button
+            className={`px-6 py-3 font-medium text-sm focus:outline-none whitespace-nowrap ${activeTab === 'downloads' ? 'text-blue-400 border-b-2 border-blue-400' : 'text-gray-400 hover:text-gray-300'}`}
             onClick={() => setActiveTab('downloads')}
           >
             Downloads
           </button>
           <button
-            className={`px-6 py-3 font-medium text-sm focus:outline-none ${activeTab === 'settings' ? 'text-blue-400 border-b-2 border-blue-400' : 'text-gray-400 hover:text-gray-300'}`}
+            className={`px-6 py-3 font-medium text-sm focus:outline-none whitespace-nowrap ${activeTab === 'settings' ? 'text-blue-400 border-b-2 border-blue-400' : 'text-gray-400 hover:text-gray-300'}`}
             onClick={() => setActiveTab('settings')}
           >
             Settings
           </button>
           {isAdmin && (
             <button
-              className={`px-6 py-3 font-medium text-sm focus:outline-none ${activeTab === 'admin' ? 'text-green-400 border-b-2 border-green-400' : 'text-gray-400 hover:text-gray-300'}`}
+              className={`px-6 py-3 font-medium text-sm focus:outline-none whitespace-nowrap ${activeTab === 'admin' ? 'text-green-400 border-b-2 border-green-400' : 'text-gray-400 hover:text-gray-300'}`}
               onClick={() => setActiveTab('admin')}
             >
               Admin Tools
@@ -193,6 +199,182 @@ export default function AccountClient({ initialOrders, initialIsAdmin, user }: A
                       </div>
                     </div>
                   ))}
+                </div>
+              </div>
+            )}
+          </div>
+        )}
+
+        {/* VAI Agents Tab */}
+        {activeTab === 'agents' && (
+          <div className="glass-panel rounded-lg p-8 mb-8">
+            <div className="text-center mb-8">
+              <h2 className="text-3xl font-bold bg-gradient-to-r from-purple-400 via-blue-400 to-cyan-400 bg-clip-text text-transparent mb-4">VAI Agents Dashboard</h2>
+              <p className="text-gray-400 text-lg">Access your AI-powered business assistants</p>
+            </div>
+            
+            {/* Check if user has agent access */}
+            {orders.some(order => order.order_items.some((item: any) => item.product?.name?.toLowerCase().includes('agent'))) ? (
+              <div>
+                <div className="bg-gradient-to-r from-purple-900/30 to-blue-900/30 rounded-lg p-6 mb-8 border border-purple-500/30">
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full flex items-center justify-center">
+                      <span className="text-2xl">🤖</span>
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold text-white">Welcome to VAI Agents</h3>
+                      <p className="text-purple-300">Your AI assistants are ready to help transform your business</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="grid md:grid-cols-3 gap-6 mb-8">
+                  {/* Strategy Agent */}
+                  <div className="bg-gradient-to-br from-purple-900/40 to-purple-800/20 rounded-xl p-6 border border-purple-500/30 hover:border-purple-400/50 transition-all duration-300">
+                    <div className="text-center mb-6">
+                      <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span className="text-2xl">🧠</span>
+                      </div>
+                      <h3 className="text-xl font-bold text-white mb-2">Strategy Agent</h3>
+                      <p className="text-gray-300 text-sm mb-4">Advanced business strategy and market analysis</p>
+                    </div>
+                    
+                    <div className="space-y-3 mb-6">
+                      <div className="flex items-center text-sm text-gray-300">
+                        <div className="w-2 h-2 bg-purple-400 rounded-full mr-3"></div>
+                        Market Analysis
+                      </div>
+                      <div className="flex items-center text-sm text-gray-300">
+                        <div className="w-2 h-2 bg-purple-400 rounded-full mr-3"></div>
+                        Strategic Planning
+                      </div>
+                      <div className="flex items-center text-sm text-gray-300">
+                        <div className="w-2 h-2 bg-purple-400 rounded-full mr-3"></div>
+                        Competitive Intelligence
+                      </div>
+                    </div>
+                    
+                    <Button
+                      variant="primary"
+                      size="md"
+                      className="w-full bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800"
+                    >
+                      Launch Agent
+                    </Button>
+                  </div>
+
+                  {/* Growth Agent */}
+                  <div className="bg-gradient-to-br from-blue-900/40 to-blue-800/20 rounded-xl p-6 border border-blue-500/30 hover:border-blue-400/50 transition-all duration-300">
+                    <div className="text-center mb-6">
+                      <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span className="text-2xl">📈</span>
+                      </div>
+                      <h3 className="text-xl font-bold text-white mb-2">Growth Agent</h3>
+                      <p className="text-gray-300 text-sm mb-4">Scaling operations and revenue optimization</p>
+                    </div>
+                    
+                    <div className="space-y-3 mb-6">
+                      <div className="flex items-center text-sm text-gray-300">
+                        <div className="w-2 h-2 bg-blue-400 rounded-full mr-3"></div>
+                        Revenue Optimization
+                      </div>
+                      <div className="flex items-center text-sm text-gray-300">
+                        <div className="w-2 h-2 bg-blue-400 rounded-full mr-3"></div>
+                        Process Automation
+                      </div>
+                      <div className="flex items-center text-sm text-gray-300">
+                        <div className="w-2 h-2 bg-blue-400 rounded-full mr-3"></div>
+                        Scaling Strategies
+                      </div>
+                    </div>
+                    
+                    <Button
+                      variant="primary"
+                      size="md"
+                      className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800"
+                    >
+                      Launch Agent
+                    </Button>
+                  </div>
+
+                  {/* Marketing Agent */}
+                  <div className="bg-gradient-to-br from-cyan-900/40 to-cyan-800/20 rounded-xl p-6 border border-cyan-500/30 hover:border-cyan-400/50 transition-all duration-300">
+                    <div className="text-center mb-6">
+                      <div className="w-16 h-16 bg-gradient-to-r from-cyan-500 to-cyan-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span className="text-2xl">🎯</span>
+                      </div>
+                      <h3 className="text-xl font-bold text-white mb-2">Marketing Agent</h3>
+                      <p className="text-gray-300 text-sm mb-4">Campaign creation and ROI optimization</p>
+                    </div>
+                    
+                    <div className="space-y-3 mb-6">
+                      <div className="flex items-center text-sm text-gray-300">
+                        <div className="w-2 h-2 bg-cyan-400 rounded-full mr-3"></div>
+                        Campaign Creation
+                      </div>
+                      <div className="flex items-center text-sm text-gray-300">
+                        <div className="w-2 h-2 bg-cyan-400 rounded-full mr-3"></div>
+                        Customer Analytics
+                      </div>
+                      <div className="flex items-center text-sm text-gray-300">
+                        <div className="w-2 h-2 bg-cyan-400 rounded-full mr-3"></div>
+                        ROI Optimization
+                      </div>
+                    </div>
+                    
+                    <Button
+                      variant="primary"
+                      size="md"
+                      className="w-full bg-gradient-to-r from-cyan-600 to-cyan-700 hover:from-cyan-700 hover:to-cyan-800"
+                    >
+                      Launch Agent
+                    </Button>
+                  </div>
+                </div>
+
+                {/* Usage Statistics */}
+                <div className="bg-gray-800/50 rounded-lg p-6 border border-gray-700">
+                  <h3 className="text-lg font-semibold text-white mb-4">Usage Statistics</h3>
+                  <div className="grid md:grid-cols-3 gap-4">
+                    <div className="text-center">
+                      <div className="text-2xl font-bold text-purple-400 mb-1">127</div>
+                      <div className="text-sm text-gray-400">Total Queries</div>
+                    </div>
+                    <div className="text-center">
+                      <div className="text-2xl font-bold text-blue-400 mb-1">23h</div>
+                      <div className="text-sm text-gray-400">Time Saved</div>
+                    </div>
+                    <div className="text-center">
+                      <div className="text-2xl font-bold text-cyan-400 mb-1">94%</div>
+                      <div className="text-sm text-gray-400">Success Rate</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ) : (
+              <div className="text-center py-12">
+                <div className="text-6xl mb-6">🤖</div>
+                <h3 className="text-2xl font-bold text-white mb-4">No VAI Agents Access</h3>
+                <p className="text-gray-400 mb-8 max-w-2xl mx-auto">
+                  Unlock the power of AI-driven business automation with our specialized agents. 
+                  Choose from our Strategy, Growth, and Marketing agents to transform your business operations.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <Button
+                    href="/vai-agents"
+                    variant="primary"
+                    size="lg"
+                    className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700"
+                  >
+                    View VAI Agents Plans
+                  </Button>
+                  <Button
+                    href="/contact"
+                    variant="secondary"
+                    size="lg"
+                  >
+                    Contact Sales
+                  </Button>
                 </div>
               </div>
             )}

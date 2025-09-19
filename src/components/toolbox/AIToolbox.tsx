@@ -364,7 +364,7 @@ const AIToolbox: React.FC<AIToolboxProps> = ({ className = '' }) => {
               Unlock More AI Tools
             </h3>
             <p className="text-gray-600 mb-4">
-              Upgrade your membership to access premium AI tools and exclusive affiliate partnerships.
+              Upgrade your membership to access professional AI tools and exclusive affiliate partnerships.
             </p>
             <button
               onClick={() => window.location.href = '/membership'}

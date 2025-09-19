@@ -1,9 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
-import sgMail from '@sendgrid/mail'
+import { sendEmailWithBackup } from '@/lib/backup-email'
 import { createClientWithRetry } from '@/lib/supabase'
-
-// Initialize SendGrid
-sgMail.setApiKey(process.env.SENDGRID_API_KEY!)
 
 export async function POST(request: NextRequest) {
   try {
@@ -31,10 +28,9 @@ export async function POST(request: NextRequest) {
       // Continue even if database fails
     }
 
-    // Send email notification to admin
-    const emailData = {
+    // Send email notification to admin using backup system
+    const emailResult = await sendEmailWithBackup({
       to: process.env.ADMIN_EMAIL || 'ventaro@ventaro.ai',
-      from: process.env.FROM_EMAIL || 'noreply@ventaro.ai',
       subject: `🎯 New Interest: ${product}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; background-color: #f8f9fa;">
@@ -62,10 +58,17 @@ export async function POST(request: NextRequest) {
             <p>This notification was sent automatically from your Ventaro AI system.</p>
           </div>
         </div>
-      `
-    }
+      `,
+      type: 'product-interest',
+      formData: {
+        product,
+        source,
+        timestamp,
+        userIP
+      }
+    });
 
-    await sgMail.send(emailData)
+    console.log('📧 SUBSCRIBE INTEREST: Admin email', emailResult.success ? 'sent' : 'failed');
 
     return NextResponse.json({ 
       success: true, 

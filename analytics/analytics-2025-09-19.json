@@ -1,0 +1,2140 @@
+[
+  {
+    "event": "click_heatmap",
+    "properties": {
+      "x": 491,
+      "y": 450,
+      "element": "div.absolute.-inset-1.bg-gradient-to-r.from-blue-600/50.via-indigo-600/50.to-blue-600/50.rounded-3xl.blur.opacity-0.group-hover:opacity-20.transition-opacity.duration-700",
+      "page": "/",
+      "viewport": "1206x696",
+      "url": "http://localhost:3003/?ide_webview_request_time=1758192311874",
+      "referrer": "http://localhost:3003/?ide_webview_request_time=1758192311874",
+      "timestamp": "2025-09-19T02:34:28.502Z"
+    },
+    "timestamp": "2025-09-19T02:34:28.502Z",
+    "sessionId": "session_1758192456514_5ktfrt4i6",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "purchase_intent",
+    "properties": {
+      "product_id": "ai-web-development-support",
+      "product_name": "VAI Web Development Elite",
+      "price": 250,
+      "currency": "AUD",
+      "url": "http://localhost:3003/?ide_webview_request_time=1758192311874",
+      "referrer": "http://localhost:3003/?ide_webview_request_time=1758192311874",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T02:34:28.843Z"
+    },
+    "timestamp": "2025-09-19T02:34:28.843Z",
+    "sessionId": "session_1758192456514_5ktfrt4i6",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "funnel_purchase_intent",
+    "properties": {
+      "value": 250,
+      "productId": "ai-web-development-support",
+      "url": "http://localhost:3003/?ide_webview_request_time=1758192311874",
+      "referrer": "http://localhost:3003/?ide_webview_request_time=1758192311874",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T02:34:28.849Z"
+    },
+    "timestamp": "2025-09-19T02:34:28.849Z",
+    "sessionId": "session_1758192456514_5ktfrt4i6",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "click_heatmap",
+    "properties": {
+      "x": 496,
+      "y": 420,
+      "element": "button.w-full.block.text-center.py-4.rounded-xl.font-bold.transition-all.duration-500.bg-gradient-to-r.from-blue-600.to-indigo-600.hover:from-blue-500.hover:to-indigo-500.text-white.text-sm.transform.group-hover:scale-105.group-hover:shadow-lg.group-hover:shadow-blue-500/40.tap-target",
+      "page": "/",
+      "viewport": "1206x696",
+      "url": "http://localhost:3003/?ide_webview_request_time=1758192311874",
+      "referrer": "http://localhost:3003/?ide_webview_request_time=1758192311874",
+      "timestamp": "2025-09-19T02:34:28.874Z"
+    },
+    "timestamp": "2025-09-19T02:34:28.874Z",
+    "sessionId": "session_1758192456514_5ktfrt4i6",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "time_on_page",
+    "properties": {
+      "duration": 56812,
+      "page": "/",
+      "url": "http://localhost:3003/?ide_webview_request_time=1758192311874",
+      "referrer": "http://localhost:3003/?ide_webview_request_time=1758192311874",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T02:34:28.883Z"
+    },
+    "timestamp": "2025-09-19T02:34:28.883Z",
+    "sessionId": "session_1758192456514_5ktfrt4i6",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "page_view",
+    "properties": {
+      "page": "/",
+      "title": "Get Free Custom Website Quote | Professional Web Development | Ventaro AI",
+      "url": "http://localhost:3003/",
+      "referrer": "http://localhost:3003/signup",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T02:42:08.034Z"
+    },
+    "timestamp": "2025-09-19T02:42:08.034Z",
+    "sessionId": "session_1758249728034_sydnyfor8",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "homepage_loaded",
+    "properties": {
+      "url": "http://localhost:3003/",
+      "referrer": "http://localhost:3003/signup",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T02:42:08.105Z"
+    },
+    "timestamp": "2025-09-19T02:42:08.105Z",
+    "sessionId": "session_1758249728034_sydnyfor8",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "homepage_loaded",
+    "properties": {
+      "url": "http://localhost:3003/",
+      "referrer": "http://localhost:3003/signup",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T02:42:08.113Z"
+    },
+    "timestamp": "2025-09-19T02:42:08.113Z",
+    "sessionId": "session_1758249728034_sydnyfor8",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "click_heatmap",
+    "properties": {
+      "x": 392,
+      "y": 49,
+      "element": "span.tracking-wide",
+      "page": "/",
+      "viewport": "1206x696",
+      "url": "http://localhost:3003/",
+      "referrer": "http://localhost:3003/signup",
+      "timestamp": "2025-09-19T02:42:09.239Z"
+    },
+    "timestamp": "2025-09-19T02:42:09.239Z",
+    "sessionId": "session_1758249728034_sydnyfor8",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "time_on_page",
+    "properties": {
+      "duration": 1,
+      "page": "/",
+      "url": "http://localhost:3003/",
+      "referrer": "http://localhost:3003/signup",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T02:42:09.248Z"
+    },
+    "timestamp": "2025-09-19T02:42:09.248Z",
+    "sessionId": "session_1758249728034_sydnyfor8",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "performance",
+    "properties": {
+      "page_load_time": 681.9000000357628,
+      "dom_content_loaded": 119.60000002384186,
+      "first_paint": 299.10000002384186,
+      "largest_contentful_paint": 0,
+      "url": "http://localhost:3003/",
+      "referrer": "http://localhost:3003/signup",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T02:42:09.497Z"
+    },
+    "timestamp": "2025-09-19T02:42:09.497Z",
+    "sessionId": "session_1758249728034_sydnyfor8",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "time_on_page",
+    "properties": {
+      "duration": 2,
+      "page": "/",
+      "url": "http://localhost:3003/",
+      "referrer": "http://localhost:3003/signup",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T02:42:09.903Z"
+    },
+    "timestamp": "2025-09-19T02:42:09.903Z",
+    "sessionId": "session_1758249728034_sydnyfor8",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "page_view",
+    "properties": {
+      "page": "/",
+      "title": "Get Free Custom Website Quote | Professional Web Development | Ventaro AI",
+      "url": "http://localhost:3003/",
+      "referrer": "http://localhost:3003/",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T02:42:10.322Z"
+    },
+    "timestamp": "2025-09-19T02:42:10.322Z",
+    "sessionId": "session_1758249730322_8i95f6jjl",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "homepage_loaded",
+    "properties": {
+      "url": "http://localhost:3003/",
+      "referrer": "http://localhost:3003/",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T02:42:10.381Z"
+    },
+    "timestamp": "2025-09-19T02:42:10.381Z",
+    "sessionId": "session_1758249730322_8i95f6jjl",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "homepage_loaded",
+    "properties": {
+      "url": "http://localhost:3003/",
+      "referrer": "http://localhost:3003/",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T02:42:10.387Z"
+    },
+    "timestamp": "2025-09-19T02:42:10.387Z",
+    "sessionId": "session_1758249730322_8i95f6jjl",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "performance",
+    "properties": {
+      "page_load_time": 1506.199999988079,
+      "dom_content_loaded": 283.4000000357628,
+      "first_paint": 512.8000000119209,
+      "largest_contentful_paint": 0,
+      "url": "http://localhost:3003/",
+      "referrer": "http://localhost:3003/",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T02:42:12.431Z"
+    },
+    "timestamp": "2025-09-19T02:42:12.431Z",
+    "sessionId": "session_1758249730322_8i95f6jjl",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "time_on_page",
+    "properties": {
+      "duration": 10,
+      "page": "/",
+      "url": "http://localhost:3003/",
+      "referrer": "http://localhost:3003/",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T02:42:20.735Z"
+    },
+    "timestamp": "2025-09-19T02:42:20.735Z",
+    "sessionId": "session_1758249730322_8i95f6jjl",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "time_on_page",
+    "properties": {
+      "duration": 10,
+      "page": "/",
+      "url": "http://localhost:3003/",
+      "referrer": "http://localhost:3003/",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T02:42:20.726Z"
+    },
+    "timestamp": "2025-09-19T02:42:20.726Z",
+    "sessionId": "session_1758249730322_8i95f6jjl",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "page_view",
+    "properties": {
+      "page": "/",
+      "title": "Get Free Custom Website Quote | Professional Web Development | Ventaro AI",
+      "url": "http://localhost:3003/",
+      "referrer": "http://localhost:3003/",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T02:42:20.961Z"
+    },
+    "timestamp": "2025-09-19T02:42:20.961Z",
+    "sessionId": "session_1758249740961_ey990mmsd",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "homepage_loaded",
+    "properties": {
+      "url": "http://localhost:3003/",
+      "referrer": "http://localhost:3003/",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T02:42:21.021Z"
+    },
+    "timestamp": "2025-09-19T02:42:21.021Z",
+    "sessionId": "session_1758249740961_ey990mmsd",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "homepage_loaded",
+    "properties": {
+      "url": "http://localhost:3003/",
+      "referrer": "http://localhost:3003/",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T02:42:21.030Z"
+    },
+    "timestamp": "2025-09-19T02:42:21.030Z",
+    "sessionId": "session_1758249740961_ey990mmsd",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "performance",
+    "properties": {
+      "page_load_time": 1155.3999999761581,
+      "dom_content_loaded": 106.5,
+      "first_paint": 331.30000001192093,
+      "largest_contentful_paint": 0,
+      "url": "http://localhost:3003/",
+      "referrer": "http://localhost:3003/",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T02:42:22.898Z"
+    },
+    "timestamp": "2025-09-19T02:42:22.898Z",
+    "sessionId": "session_1758249740961_ey990mmsd",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "time_on_page",
+    "properties": {
+      "duration": 30,
+      "page": "/",
+      "url": "http://localhost:3003/",
+      "referrer": "http://localhost:3003/",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T02:42:50.972Z"
+    },
+    "timestamp": "2025-09-19T02:42:50.972Z",
+    "sessionId": "session_1758249740961_ey990mmsd",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "time_on_page",
+    "properties": {
+      "duration": 31,
+      "page": "/",
+      "url": "http://localhost:3003/",
+      "referrer": "http://localhost:3003/",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T02:42:51.871Z"
+    },
+    "timestamp": "2025-09-19T02:42:51.871Z",
+    "sessionId": "session_1758249740961_ey990mmsd",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "time_on_page",
+    "properties": {
+      "duration": 31,
+      "page": "/",
+      "url": "http://localhost:3003/",
+      "referrer": "http://localhost:3003/",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T02:42:51.881Z"
+    },
+    "timestamp": "2025-09-19T02:42:51.881Z",
+    "sessionId": "session_1758249740961_ey990mmsd",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "page_view",
+    "properties": {
+      "page": "/",
+      "title": "Get Free Custom Website Quote | Professional Web Development | Ventaro AI",
+      "url": "http://localhost:3003/",
+      "referrer": "http://localhost:3003/",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T02:42:52.123Z"
+    },
+    "timestamp": "2025-09-19T02:42:52.123Z",
+    "sessionId": "session_1758249772122_x84fm1ebp",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "homepage_loaded",
+    "properties": {
+      "url": "http://localhost:3003/",
+      "referrer": "http://localhost:3003/",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T02:42:52.235Z"
+    },
+    "timestamp": "2025-09-19T02:42:52.235Z",
+    "sessionId": "session_1758249772122_x84fm1ebp",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "homepage_loaded",
+    "properties": {
+      "url": "http://localhost:3003/",
+      "referrer": "http://localhost:3003/",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T02:42:52.244Z"
+    },
+    "timestamp": "2025-09-19T02:42:52.244Z",
+    "sessionId": "session_1758249772122_x84fm1ebp",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "performance",
+    "properties": {
+      "page_load_time": 1694.5999999642372,
+      "dom_content_loaded": 118.5,
+      "first_paint": 351.5999999642372,
+      "largest_contentful_paint": 0,
+      "url": "http://localhost:3003/",
+      "referrer": "http://localhost:3003/",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T02:42:54.584Z"
+    },
+    "timestamp": "2025-09-19T02:42:54.584Z",
+    "sessionId": "session_1758249772122_x84fm1ebp",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "time_on_page",
+    "properties": {
+      "duration": 30,
+      "page": "/",
+      "url": "http://localhost:3003/",
+      "referrer": "http://localhost:3003/",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T02:43:22.133Z"
+    },
+    "timestamp": "2025-09-19T02:43:22.133Z",
+    "sessionId": "session_1758249772122_x84fm1ebp",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "time_on_page",
+    "properties": {
+      "duration": 54,
+      "page": "/",
+      "url": "http://localhost:3003/",
+      "referrer": "http://localhost:3003/",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T02:43:45.959Z"
+    },
+    "timestamp": "2025-09-19T02:43:45.959Z",
+    "sessionId": "session_1758249772122_x84fm1ebp",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "time_on_page",
+    "properties": {
+      "duration": 54,
+      "page": "/",
+      "url": "http://localhost:3003/",
+      "referrer": "http://localhost:3003/",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T02:43:45.970Z"
+    },
+    "timestamp": "2025-09-19T02:43:45.970Z",
+    "sessionId": "session_1758249772122_x84fm1ebp",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "page_view",
+    "properties": {
+      "page": "/",
+      "title": "Get Free Custom Website Quote | Professional Web Development | Ventaro AI",
+      "url": "http://localhost:3003/",
+      "referrer": "http://localhost:3003/",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T02:43:46.215Z"
+    },
+    "timestamp": "2025-09-19T02:43:46.215Z",
+    "sessionId": "session_1758249826215_vzp7y0on7",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "homepage_loaded",
+    "properties": {
+      "url": "http://localhost:3003/",
+      "referrer": "http://localhost:3003/",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T02:43:46.323Z"
+    },
+    "timestamp": "2025-09-19T02:43:46.323Z",
+    "sessionId": "session_1758249826215_vzp7y0on7",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "homepage_loaded",
+    "properties": {
+      "url": "http://localhost:3003/",
+      "referrer": "http://localhost:3003/",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T02:43:46.333Z"
+    },
+    "timestamp": "2025-09-19T02:43:46.333Z",
+    "sessionId": "session_1758249826215_vzp7y0on7",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "performance",
+    "properties": {
+      "page_load_time": 898,
+      "dom_content_loaded": 126.80000001192093,
+      "first_paint": 353.10000002384186,
+      "largest_contentful_paint": 0,
+      "url": "http://localhost:3003/",
+      "referrer": "http://localhost:3003/",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T02:43:47.877Z"
+    },
+    "timestamp": "2025-09-19T02:43:47.877Z",
+    "sessionId": "session_1758249826215_vzp7y0on7",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "time_on_page",
+    "properties": {
+      "duration": 28,
+      "page": "/",
+      "url": "http://localhost:3003/",
+      "referrer": "http://localhost:3003/",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T02:44:14.625Z"
+    },
+    "timestamp": "2025-09-19T02:44:14.625Z",
+    "sessionId": "session_1758249826215_vzp7y0on7",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "time_on_page",
+    "properties": {
+      "duration": 28,
+      "page": "/",
+      "url": "http://localhost:3003/",
+      "referrer": "http://localhost:3003/",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T02:44:14.638Z"
+    },
+    "timestamp": "2025-09-19T02:44:14.638Z",
+    "sessionId": "session_1758249826215_vzp7y0on7",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "page_view",
+    "properties": {
+      "page": "/",
+      "title": "Get Free Custom Website Quote | Professional Web Development | Ventaro AI",
+      "url": "http://localhost:3003/",
+      "referrer": "http://localhost:3003/",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T02:44:14.891Z"
+    },
+    "timestamp": "2025-09-19T02:44:14.891Z",
+    "sessionId": "session_1758249854891_dv3i3bp93",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "homepage_loaded",
+    "properties": {
+      "url": "http://localhost:3003/",
+      "referrer": "http://localhost:3003/",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T02:44:14.995Z"
+    },
+    "timestamp": "2025-09-19T02:44:14.995Z",
+    "sessionId": "session_1758249854891_dv3i3bp93",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "homepage_loaded",
+    "properties": {
+      "url": "http://localhost:3003/",
+      "referrer": "http://localhost:3003/",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T02:44:15.006Z"
+    },
+    "timestamp": "2025-09-19T02:44:15.006Z",
+    "sessionId": "session_1758249854891_dv3i3bp93",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "performance",
+    "properties": {
+      "page_load_time": 1703.699999988079,
+      "dom_content_loaded": 123.39999997615814,
+      "first_paint": 408.2999999523163,
+      "largest_contentful_paint": 0,
+      "url": "http://localhost:3003/",
+      "referrer": "http://localhost:3003/",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T02:44:17.352Z"
+    },
+    "timestamp": "2025-09-19T02:44:17.352Z",
+    "sessionId": "session_1758249854891_dv3i3bp93",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "time_on_page",
+    "properties": {
+      "duration": 30,
+      "page": "/",
+      "url": "http://localhost:3003/",
+      "referrer": "http://localhost:3003/",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T02:44:44.902Z"
+    },
+    "timestamp": "2025-09-19T02:44:44.902Z",
+    "sessionId": "session_1758249854891_dv3i3bp93",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "time_on_page",
+    "properties": {
+      "duration": 60,
+      "page": "/",
+      "url": "http://localhost:3003/",
+      "referrer": "http://localhost:3003/",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T02:45:14.902Z"
+    },
+    "timestamp": "2025-09-19T02:45:14.902Z",
+    "sessionId": "session_1758249854891_dv3i3bp93",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "time_on_page",
+    "properties": {
+      "duration": 146,
+      "page": "/",
+      "url": "http://localhost:3003/",
+      "referrer": "http://localhost:3003/",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T02:46:40.927Z"
+    },
+    "timestamp": "2025-09-19T02:46:40.927Z",
+    "sessionId": "session_1758249854891_dv3i3bp93",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "time_on_page",
+    "properties": {
+      "duration": 147,
+      "page": "/",
+      "url": "http://localhost:3003/",
+      "referrer": "http://localhost:3003/",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T02:46:41.594Z"
+    },
+    "timestamp": "2025-09-19T02:46:41.594Z",
+    "sessionId": "session_1758249854891_dv3i3bp93",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "page_view",
+    "properties": {
+      "page": "/",
+      "title": "Get Free Custom Website Quote | Professional Web Development | Ventaro AI",
+      "url": "http://localhost:3003/",
+      "referrer": "http://localhost:3003/",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T02:46:54.095Z"
+    },
+    "timestamp": "2025-09-19T02:46:54.095Z",
+    "sessionId": "session_1758250014095_tq6w2rd79",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "homepage_loaded",
+    "properties": {
+      "url": "http://localhost:3003/",
+      "referrer": "http://localhost:3003/",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T02:46:54.203Z"
+    },
+    "timestamp": "2025-09-19T02:46:54.203Z",
+    "sessionId": "session_1758250014095_tq6w2rd79",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "homepage_loaded",
+    "properties": {
+      "url": "http://localhost:3003/",
+      "referrer": "http://localhost:3003/",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T02:46:54.209Z"
+    },
+    "timestamp": "2025-09-19T02:46:54.209Z",
+    "sessionId": "session_1758250014095_tq6w2rd79",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "performance",
+    "properties": {
+      "page_load_time": 29479.099999964237,
+      "dom_content_loaded": 250.19999998807907,
+      "first_paint": 759.8000000119209,
+      "largest_contentful_paint": 0,
+      "url": "http://localhost:3003/",
+      "referrer": "http://localhost:3003/",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T02:47:12.084Z"
+    },
+    "timestamp": "2025-09-19T02:47:12.084Z",
+    "sessionId": "session_1758250014095_tq6w2rd79",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "time_on_page",
+    "properties": {
+      "duration": 30,
+      "page": "/",
+      "url": "http://localhost:3003/",
+      "referrer": "http://localhost:3003/",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T02:47:24.105Z"
+    },
+    "timestamp": "2025-09-19T02:47:24.105Z",
+    "sessionId": "session_1758250014095_tq6w2rd79",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "time_on_page",
+    "properties": {
+      "duration": 60,
+      "page": "/",
+      "url": "http://localhost:3003/",
+      "referrer": "http://localhost:3003/",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T02:47:54.105Z"
+    },
+    "timestamp": "2025-09-19T02:47:54.105Z",
+    "sessionId": "session_1758250014095_tq6w2rd79",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "time_on_page",
+    "properties": {
+      "duration": 91,
+      "page": "/",
+      "url": "http://localhost:3003/",
+      "referrer": "http://localhost:3003/",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T02:48:25.095Z"
+    },
+    "timestamp": "2025-09-19T02:48:25.095Z",
+    "sessionId": "session_1758250014095_tq6w2rd79",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "time_on_page",
+    "properties": {
+      "duration": 91,
+      "page": "/",
+      "url": "http://localhost:3003/",
+      "referrer": "http://localhost:3003/",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T02:48:25.008Z"
+    },
+    "timestamp": "2025-09-19T02:48:25.008Z",
+    "sessionId": "session_1758250014095_tq6w2rd79",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "homepage_loaded",
+    "properties": {
+      "url": "http://localhost:3003/",
+      "referrer": "http://localhost:3003/",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T02:48:26.097Z"
+    },
+    "timestamp": "2025-09-19T02:48:26.097Z",
+    "sessionId": "session_1758250105998_pom31nkbm",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "homepage_loaded",
+    "properties": {
+      "url": "http://localhost:3003/",
+      "referrer": "http://localhost:3003/",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T02:48:26.106Z"
+    },
+    "timestamp": "2025-09-19T02:48:26.106Z",
+    "sessionId": "session_1758250105998_pom31nkbm",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "time_on_page",
+    "properties": {
+      "duration": 0,
+      "page": "/",
+      "url": "http://localhost:3003/",
+      "referrer": "http://localhost:3003/",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T02:48:26.282Z"
+    },
+    "timestamp": "2025-09-19T02:48:26.282Z",
+    "sessionId": "session_1758250105998_pom31nkbm",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "page_view",
+    "properties": {
+      "page": "/",
+      "title": "Get Free Custom Website Quote | Professional Web Development | Ventaro AI",
+      "url": "http://localhost:3003/",
+      "referrer": "http://localhost:3003/",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T02:48:26.866Z"
+    },
+    "timestamp": "2025-09-19T02:48:26.866Z",
+    "sessionId": "session_1758250106866_j3ylocwtz",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "homepage_loaded",
+    "properties": {
+      "url": "http://localhost:3003/",
+      "referrer": "http://localhost:3003/",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T02:48:26.953Z"
+    },
+    "timestamp": "2025-09-19T02:48:26.953Z",
+    "sessionId": "session_1758250106866_j3ylocwtz",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "homepage_loaded",
+    "properties": {
+      "url": "http://localhost:3003/",
+      "referrer": "http://localhost:3003/",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T02:48:26.960Z"
+    },
+    "timestamp": "2025-09-19T02:48:26.960Z",
+    "sessionId": "session_1758250106866_j3ylocwtz",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "performance",
+    "properties": {
+      "page_load_time": 1042.800000011921,
+      "dom_content_loaded": 452,
+      "first_paint": 705.3000000119209,
+      "largest_contentful_paint": 0,
+      "url": "http://localhost:3003/",
+      "referrer": "http://localhost:3003/",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T02:48:28.337Z"
+    },
+    "timestamp": "2025-09-19T02:48:28.337Z",
+    "sessionId": "session_1758250106866_j3ylocwtz",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "scroll_depth",
+    "properties": {
+      "percentage": 25,
+      "page": "/",
+      "url": "http://localhost:3003/",
+      "referrer": "http://localhost:3003/",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T02:48:48.588Z"
+    },
+    "timestamp": "2025-09-19T02:48:48.588Z",
+    "sessionId": "session_1758250106866_j3ylocwtz",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "time_on_page",
+    "properties": {
+      "duration": 30,
+      "page": "/",
+      "url": "http://localhost:3003/",
+      "referrer": "http://localhost:3003/",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T02:48:56.872Z"
+    },
+    "timestamp": "2025-09-19T02:48:56.872Z",
+    "sessionId": "session_1758250106866_j3ylocwtz",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "click_heatmap",
+    "properties": {
+      "x": 685,
+      "y": 296,
+      "element": "h3.text-3xl.font-bold.text-white.mb-4.glow-text",
+      "page": "/",
+      "viewport": "1206x696",
+      "url": "http://localhost:3003/",
+      "referrer": "http://localhost:3003/",
+      "timestamp": "2025-09-19T02:48:57.991Z"
+    },
+    "timestamp": "2025-09-19T02:48:57.991Z",
+    "sessionId": "session_1758250106866_j3ylocwtz",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "click_heatmap",
+    "properties": {
+      "x": 685,
+      "y": 296,
+      "element": "h3.text-3xl.font-bold.text-white.mb-4.glow-text",
+      "page": "/",
+      "viewport": "1206x696",
+      "url": "http://localhost:3003/",
+      "referrer": "http://localhost:3003/",
+      "timestamp": "2025-09-19T02:48:58.085Z"
+    },
+    "timestamp": "2025-09-19T02:48:58.085Z",
+    "sessionId": "session_1758250106866_j3ylocwtz",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "click_heatmap",
+    "properties": {
+      "x": 685,
+      "y": 296,
+      "element": "h3.text-3xl.font-bold.text-white.mb-4.glow-text",
+      "page": "/",
+      "viewport": "1206x696",
+      "url": "http://localhost:3003/",
+      "referrer": "http://localhost:3003/",
+      "timestamp": "2025-09-19T02:48:58.199Z"
+    },
+    "timestamp": "2025-09-19T02:48:58.199Z",
+    "sessionId": "session_1758250106866_j3ylocwtz",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "time_on_page",
+    "properties": {
+      "duration": 39,
+      "page": "/",
+      "url": "http://localhost:3003/",
+      "referrer": "http://localhost:3003/",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T02:49:05.593Z"
+    },
+    "timestamp": "2025-09-19T02:49:05.593Z",
+    "sessionId": "session_1758250106866_j3ylocwtz",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "time_on_page",
+    "properties": {
+      "duration": 39,
+      "page": "/",
+      "url": "http://localhost:3003/",
+      "referrer": "http://localhost:3003/",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T02:49:05.604Z"
+    },
+    "timestamp": "2025-09-19T02:49:05.604Z",
+    "sessionId": "session_1758250106866_j3ylocwtz",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "page_view",
+    "properties": {
+      "page": "/",
+      "title": "Get Free Custom Website Quote | Professional Web Development | Ventaro AI",
+      "url": "http://localhost:3003/",
+      "referrer": "http://localhost:3003/",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T02:49:05.914Z"
+    },
+    "timestamp": "2025-09-19T02:49:05.914Z",
+    "sessionId": "session_1758250145914_u4dnigu4f",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "homepage_loaded",
+    "properties": {
+      "url": "http://localhost:3003/",
+      "referrer": "http://localhost:3003/",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T02:49:06.020Z"
+    },
+    "timestamp": "2025-09-19T02:49:06.020Z",
+    "sessionId": "session_1758250145914_u4dnigu4f",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "homepage_loaded",
+    "properties": {
+      "url": "http://localhost:3003/",
+      "referrer": "http://localhost:3003/",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T02:49:06.025Z"
+    },
+    "timestamp": "2025-09-19T02:49:06.025Z",
+    "sessionId": "session_1758250145914_u4dnigu4f",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "performance",
+    "properties": {
+      "page_load_time": 1350.800000011921,
+      "dom_content_loaded": 173.80000001192093,
+      "first_paint": 409.7000000476837,
+      "largest_contentful_paint": 0,
+      "url": "http://localhost:3003/",
+      "referrer": "http://localhost:3003/",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T02:49:07.962Z"
+    },
+    "timestamp": "2025-09-19T02:49:07.962Z",
+    "sessionId": "session_1758250145914_u4dnigu4f",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "click_heatmap",
+    "properties": {
+      "x": 655,
+      "y": 426,
+      "element": "h3.text-2xl.font-bold.text-white.mb-2",
+      "page": "/",
+      "viewport": "1206x696",
+      "url": "http://localhost:3003/",
+      "referrer": "http://localhost:3003/",
+      "timestamp": "2025-09-19T02:49:10.717Z"
+    },
+    "timestamp": "2025-09-19T02:49:10.717Z",
+    "sessionId": "session_1758250145914_u4dnigu4f",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "click_heatmap",
+    "properties": {
+      "x": 655,
+      "y": 426,
+      "element": "h3.text-2xl.font-bold.text-white.mb-2",
+      "page": "/",
+      "viewport": "1206x696",
+      "url": "http://localhost:3003/",
+      "referrer": "http://localhost:3003/",
+      "timestamp": "2025-09-19T02:49:10.875Z"
+    },
+    "timestamp": "2025-09-19T02:49:10.875Z",
+    "sessionId": "session_1758250145914_u4dnigu4f",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "click_heatmap",
+    "properties": {
+      "x": 655,
+      "y": 426,
+      "element": "h3.text-2xl.font-bold.text-white.mb-2",
+      "page": "/",
+      "viewport": "1206x696",
+      "url": "http://localhost:3003/",
+      "referrer": "http://localhost:3003/",
+      "timestamp": "2025-09-19T02:49:10.993Z"
+    },
+    "timestamp": "2025-09-19T02:49:10.993Z",
+    "sessionId": "session_1758250145914_u4dnigu4f",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "time_on_page",
+    "properties": {
+      "duration": 30,
+      "page": "/",
+      "url": "http://localhost:3003/",
+      "referrer": "http://localhost:3003/",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T02:49:35.920Z"
+    },
+    "timestamp": "2025-09-19T02:49:35.920Z",
+    "sessionId": "session_1758250145914_u4dnigu4f",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "time_on_page",
+    "properties": {
+      "duration": 41,
+      "page": "/",
+      "url": "http://localhost:3003/",
+      "referrer": "http://localhost:3003/",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T02:49:47.364Z"
+    },
+    "timestamp": "2025-09-19T02:49:47.364Z",
+    "sessionId": "session_1758250145914_u4dnigu4f",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "time_on_page",
+    "properties": {
+      "duration": 41,
+      "page": "/",
+      "url": "http://localhost:3003/",
+      "referrer": "http://localhost:3003/",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T02:49:47.372Z"
+    },
+    "timestamp": "2025-09-19T02:49:47.372Z",
+    "sessionId": "session_1758250145914_u4dnigu4f",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "page_view",
+    "properties": {
+      "page": "/",
+      "title": "Get Free Custom Website Quote | Professional Web Development | Ventaro AI",
+      "url": "http://localhost:3003/",
+      "referrer": "http://localhost:3003/",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T02:49:47.625Z"
+    },
+    "timestamp": "2025-09-19T02:49:47.625Z",
+    "sessionId": "session_1758250187625_22jap0vyi",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "homepage_loaded",
+    "properties": {
+      "url": "http://localhost:3003/",
+      "referrer": "http://localhost:3003/",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T02:49:47.714Z"
+    },
+    "timestamp": "2025-09-19T02:49:47.714Z",
+    "sessionId": "session_1758250187625_22jap0vyi",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "homepage_loaded",
+    "properties": {
+      "url": "http://localhost:3003/",
+      "referrer": "http://localhost:3003/",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T02:49:47.715Z"
+    },
+    "timestamp": "2025-09-19T02:49:47.715Z",
+    "sessionId": "session_1758250187625_22jap0vyi",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "performance",
+    "properties": {
+      "page_load_time": 1538.5,
+      "dom_content_loaded": 67.40000003576279,
+      "first_paint": 377,
+      "largest_contentful_paint": 0,
+      "url": "http://localhost:3003/",
+      "referrer": "http://localhost:3003/",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T02:49:49.918Z"
+    },
+    "timestamp": "2025-09-19T02:49:49.918Z",
+    "sessionId": "session_1758250187625_22jap0vyi",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "time_on_page",
+    "properties": {
+      "duration": 30,
+      "page": "/",
+      "url": "http://localhost:3003/",
+      "referrer": "http://localhost:3003/",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T02:50:17.627Z"
+    },
+    "timestamp": "2025-09-19T02:50:17.627Z",
+    "sessionId": "session_1758250187625_22jap0vyi",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "scroll_depth",
+    "properties": {
+      "percentage": 25,
+      "page": "/",
+      "url": "http://localhost:3003/",
+      "referrer": "http://localhost:3003/",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T02:50:21.534Z"
+    },
+    "timestamp": "2025-09-19T02:50:21.534Z",
+    "sessionId": "session_1758250187625_22jap0vyi",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "scroll_depth",
+    "properties": {
+      "percentage": 50,
+      "page": "/",
+      "url": "http://localhost:3003/",
+      "referrer": "http://localhost:3003/",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T02:50:22.675Z"
+    },
+    "timestamp": "2025-09-19T02:50:22.675Z",
+    "sessionId": "session_1758250187625_22jap0vyi",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "scroll_depth",
+    "properties": {
+      "percentage": 75,
+      "page": "/",
+      "url": "http://localhost:3003/",
+      "referrer": "http://localhost:3003/",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T02:50:29.167Z"
+    },
+    "timestamp": "2025-09-19T02:50:29.167Z",
+    "sessionId": "session_1758250187625_22jap0vyi",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "scroll_depth",
+    "properties": {
+      "percentage": 90,
+      "page": "/",
+      "url": "http://localhost:3003/",
+      "referrer": "http://localhost:3003/",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T02:50:30.125Z"
+    },
+    "timestamp": "2025-09-19T02:50:30.125Z",
+    "sessionId": "session_1758250187625_22jap0vyi",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "exit_intent",
+    "properties": {
+      "page": "/",
+      "time_on_page": 1758250187375.1,
+      "url": "http://localhost:3003/",
+      "referrer": "http://localhost:3003/",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T02:50:37.032Z"
+    },
+    "timestamp": "2025-09-19T02:50:37.032Z",
+    "sessionId": "session_1758250187625_22jap0vyi",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "time_on_page",
+    "properties": {
+      "duration": 60,
+      "page": "/",
+      "url": "http://localhost:3003/",
+      "referrer": "http://localhost:3003/",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T02:50:47.626Z"
+    },
+    "timestamp": "2025-09-19T02:50:47.626Z",
+    "sessionId": "session_1758250187625_22jap0vyi",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "time_on_page",
+    "properties": {
+      "duration": 181,
+      "page": "/",
+      "url": "http://localhost:3003/",
+      "referrer": "http://localhost:3003/",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T02:52:48.596Z"
+    },
+    "timestamp": "2025-09-19T02:52:48.596Z",
+    "sessionId": "session_1758250187625_22jap0vyi",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "time_on_page",
+    "properties": {
+      "duration": 181,
+      "page": "/",
+      "url": "http://localhost:3003/",
+      "referrer": "http://localhost:3003/",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T02:52:48.602Z"
+    },
+    "timestamp": "2025-09-19T02:52:48.602Z",
+    "sessionId": "session_1758250187625_22jap0vyi",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "homepage_loaded",
+    "properties": {
+      "url": "http://localhost:3006/?ide_webview_request_time=1758251777337",
+      "referrer": "",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T03:16:21.042Z"
+    },
+    "timestamp": "2025-09-19T03:16:21.042Z",
+    "sessionId": "session_1758251780948_2r4k3snbh",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "homepage_loaded",
+    "properties": {
+      "url": "http://localhost:3006/?ide_webview_request_time=1758251777337",
+      "referrer": "",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T03:16:21.043Z"
+    },
+    "timestamp": "2025-09-19T03:16:21.043Z",
+    "sessionId": "session_1758251780948_2r4k3snbh",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "page_view",
+    "properties": {
+      "page": "/",
+      "title": "Get Free Custom Website Quote | Professional Web Development | Ventaro AI",
+      "url": "http://localhost:3006/?ide_webview_request_time=1758251777337",
+      "referrer": "",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T03:16:20.948Z"
+    },
+    "timestamp": "2025-09-19T03:16:20.948Z",
+    "sessionId": "session_1758251780948_2r4k3snbh",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "performance",
+    "properties": {
+      "page_load_time": 4606.5,
+      "dom_content_loaded": 3377.600000023842,
+      "first_paint": 3708,
+      "largest_contentful_paint": 0,
+      "url": "http://localhost:3006/?ide_webview_request_time=1758251777337",
+      "referrer": "",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T03:16:22.944Z"
+    },
+    "timestamp": "2025-09-19T03:16:22.944Z",
+    "sessionId": "session_1758251780948_2r4k3snbh",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "click_heatmap",
+    "properties": {
+      "x": 768,
+      "y": 49,
+      "element": "span",
+      "page": "/",
+      "viewport": "1206x696",
+      "url": "http://localhost:3006/?ide_webview_request_time=1758251777337",
+      "referrer": "",
+      "timestamp": "2025-09-19T03:16:25.839Z"
+    },
+    "timestamp": "2025-09-19T03:16:25.839Z",
+    "sessionId": "session_1758251780948_2r4k3snbh",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "exit_intent",
+    "properties": {
+      "page": "/",
+      "time_on_page": 1758251777337.5,
+      "url": "http://localhost:3006/?ide_webview_request_time=1758251777337",
+      "referrer": "",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T03:16:27.311Z"
+    },
+    "timestamp": "2025-09-19T03:16:27.311Z",
+    "sessionId": "session_1758251780948_2r4k3snbh",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "click_heatmap",
+    "properties": {
+      "x": 310,
+      "y": 48,
+      "element": "a.px-5.py-3.rounded-lg.text-sm.font-medium.text-gray-300.hover:text-white.hover:bg-gray-900/80.transition-all.duration-300.border.border-transparent.hover:border-gray-700",
+      "page": "/",
+      "viewport": "1206x696",
+      "url": "http://localhost:3006/?ide_webview_request_time=1758251777337",
+      "referrer": "",
+      "timestamp": "2025-09-19T03:16:27.808Z"
+    },
+    "timestamp": "2025-09-19T03:16:27.808Z",
+    "sessionId": "session_1758251780948_2r4k3snbh",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "time_on_page",
+    "properties": {
+      "duration": 7,
+      "page": "/",
+      "url": "http://localhost:3006/?ide_webview_request_time=1758251777337",
+      "referrer": "",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T03:16:27.822Z"
+    },
+    "timestamp": "2025-09-19T03:16:27.822Z",
+    "sessionId": "session_1758251780948_2r4k3snbh",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "page_view",
+    "properties": {
+      "page": "/",
+      "title": "Get Free Custom Website Quote | Professional Web Development | Ventaro AI",
+      "url": "http://localhost:3006/",
+      "referrer": "http://localhost:3006/?ide_webview_request_time=1758251777337",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T03:16:28.076Z"
+    },
+    "timestamp": "2025-09-19T03:16:28.076Z",
+    "sessionId": "session_1758251788076_se2t40s85",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "homepage_loaded",
+    "properties": {
+      "url": "http://localhost:3006/",
+      "referrer": "http://localhost:3006/?ide_webview_request_time=1758251777337",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T03:16:28.176Z"
+    },
+    "timestamp": "2025-09-19T03:16:28.176Z",
+    "sessionId": "session_1758251788076_se2t40s85",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "homepage_loaded",
+    "properties": {
+      "url": "http://localhost:3006/",
+      "referrer": "http://localhost:3006/?ide_webview_request_time=1758251777337",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T03:16:28.184Z"
+    },
+    "timestamp": "2025-09-19T03:16:28.184Z",
+    "sessionId": "session_1758251788076_se2t40s85",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "performance",
+    "properties": {
+      "page_load_time": 713.9000000357628,
+      "dom_content_loaded": 142.69999998807907,
+      "first_paint": 343.5,
+      "largest_contentful_paint": 0,
+      "url": "http://localhost:3006/",
+      "referrer": "http://localhost:3006/?ide_webview_request_time=1758251777337",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T03:16:29.542Z"
+    },
+    "timestamp": "2025-09-19T03:16:29.542Z",
+    "sessionId": "session_1758251788076_se2t40s85",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "scroll_depth",
+    "properties": {
+      "percentage": 25,
+      "page": "/",
+      "url": "http://localhost:3006/",
+      "referrer": "http://localhost:3006/?ide_webview_request_time=1758251777337",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T03:16:30.485Z"
+    },
+    "timestamp": "2025-09-19T03:16:30.485Z",
+    "sessionId": "session_1758251788076_se2t40s85",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "click_heatmap",
+    "properties": {
+      "x": 339,
+      "y": 301,
+      "element": "select.w-full.p-4.bg-white/5.border.border-slate-600/50.rounded-xl.text-white.focus:border-blue-400.focus:ring-2.focus:ring-blue-400/20.focus:outline-none.transition-all.duration-300.hover:border-slate-500.backdrop-blur-sm",
+      "page": "/",
+      "viewport": "1206x696",
+      "url": "http://localhost:3006/",
+      "referrer": "http://localhost:3006/?ide_webview_request_time=1758251777337",
+      "timestamp": "2025-09-19T03:16:36.773Z"
+    },
+    "timestamp": "2025-09-19T03:16:36.773Z",
+    "sessionId": "session_1758251788076_se2t40s85",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "click_heatmap",
+    "properties": {
+      "x": 672,
+      "y": 338,
+      "element": "select.w-full.p-4.bg-white/5.border.border-slate-600/50.rounded-xl.text-white.focus:border-blue-400.focus:ring-2.focus:ring-blue-400/20.focus:outline-none.transition-all.duration-300.hover:border-slate-500.backdrop-blur-sm",
+      "page": "/",
+      "viewport": "1206x696",
+      "url": "http://localhost:3006/",
+      "referrer": "http://localhost:3006/?ide_webview_request_time=1758251777337",
+      "timestamp": "2025-09-19T03:16:39.470Z"
+    },
+    "timestamp": "2025-09-19T03:16:39.470Z",
+    "sessionId": "session_1758251788076_se2t40s85",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "time_on_page",
+    "properties": {
+      "duration": 30,
+      "page": "/",
+      "url": "http://localhost:3006/",
+      "referrer": "http://localhost:3006/?ide_webview_request_time=1758251777337",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T03:16:58.083Z"
+    },
+    "timestamp": "2025-09-19T03:16:58.084Z",
+    "sessionId": "session_1758251788076_se2t40s85",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "scroll_depth",
+    "properties": {
+      "percentage": 50,
+      "page": "/",
+      "url": "http://localhost:3006/",
+      "referrer": "http://localhost:3006/?ide_webview_request_time=1758251777337",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T03:17:04.292Z"
+    },
+    "timestamp": "2025-09-19T03:17:04.292Z",
+    "sessionId": "session_1758251788076_se2t40s85",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "scroll_depth",
+    "properties": {
+      "percentage": 75,
+      "page": "/",
+      "url": "http://localhost:3006/",
+      "referrer": "http://localhost:3006/?ide_webview_request_time=1758251777337",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T03:17:06.660Z"
+    },
+    "timestamp": "2025-09-19T03:17:06.660Z",
+    "sessionId": "session_1758251788076_se2t40s85",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "scroll_depth",
+    "properties": {
+      "percentage": 90,
+      "page": "/",
+      "url": "http://localhost:3006/",
+      "referrer": "http://localhost:3006/?ide_webview_request_time=1758251777337",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T03:17:07.743Z"
+    },
+    "timestamp": "2025-09-19T03:17:07.743Z",
+    "sessionId": "session_1758251788076_se2t40s85",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "scroll_depth",
+    "properties": {
+      "percentage": 100,
+      "page": "/",
+      "url": "http://localhost:3006/",
+      "referrer": "http://localhost:3006/?ide_webview_request_time=1758251777337",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T03:17:08.193Z"
+    },
+    "timestamp": "2025-09-19T03:17:08.193Z",
+    "sessionId": "session_1758251788076_se2t40s85",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "time_on_page",
+    "properties": {
+      "duration": 50,
+      "page": "/",
+      "url": "http://localhost:3006/",
+      "referrer": "http://localhost:3006/?ide_webview_request_time=1758251777337",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T03:17:17.959Z"
+    },
+    "timestamp": "2025-09-19T03:17:17.959Z",
+    "sessionId": "session_1758251788076_se2t40s85",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "time_on_page",
+    "properties": {
+      "duration": 50,
+      "page": "/",
+      "url": "http://localhost:3006/",
+      "referrer": "http://localhost:3006/?ide_webview_request_time=1758251777337",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T03:17:18.523Z"
+    },
+    "timestamp": "2025-09-19T03:17:18.523Z",
+    "sessionId": "session_1758251788076_se2t40s85",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "page_view",
+    "properties": {
+      "page": "/",
+      "title": "Get Free Custom Website Quote | Professional Web Development | Ventaro AI",
+      "url": "http://localhost:3006/",
+      "referrer": "http://localhost:3006/",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T03:17:18.823Z"
+    },
+    "timestamp": "2025-09-19T03:17:18.823Z",
+    "sessionId": "session_1758251838823_6sgqo7s7s",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "error",
+    "properties": {
+      "message": "Uncaught TypeError: Cannot read properties of undefined (reading 'call')",
+      "stack": "Error: Uncaught TypeError: Cannot read properties of undefined (reading 'call')\n    at eval (webpack-internal:///(app-pages-browser)/./src/lib/analytics.ts:317:30)\n    at Object.invokeGuardedCallbackImpl (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom.development.js:20614:16)\n    at invokeGuardedCallback (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom.development.js:20689:29)\n    at beginWork (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom.development.js:26949:7)\n    at performUnitOfWork (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom.development.js:25748:12)\n    at workLoopConcurrent (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom.development.js:25734:5)\n    at renderRootConcurrent (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom.development.js:25690:9)\n    at performConcurrentWorkOnRoot (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom.development.js:24504:38)\n    at workLoop (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/scheduler/cjs/scheduler.development.js:256:34)\n    at flushWork (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/scheduler/cjs/scheduler.development.js:225:14)",
+      "context": "webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom.development.js:9126",
+      "page": "/",
+      "url": "http://localhost:3006/",
+      "referrer": "http://localhost:3006/",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T03:17:18.854Z"
+    },
+    "timestamp": "2025-09-19T03:17:18.854Z",
+    "sessionId": "session_1758251838823_6sgqo7s7s",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "error",
+    "properties": {
+      "message": "Uncaught TypeError: Cannot read properties of undefined (reading 'call')",
+      "stack": "Error: Uncaught TypeError: Cannot read properties of undefined (reading 'call')\n    at eval (webpack-internal:///(app-pages-browser)/./src/lib/analytics.ts:317:30)\n    at Object.invokeGuardedCallbackImpl (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom.development.js:20614:16)\n    at invokeGuardedCallback (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom.development.js:20689:29)\n    at beginWork (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom.development.js:26949:7)\n    at performUnitOfWork (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom.development.js:25748:12)\n    at workLoopSync (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom.development.js:25464:5)\n    at renderRootSync (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom.development.js:25419:7)\n    at recoverFromConcurrentError (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom.development.js:24597:20)\n    at performConcurrentWorkOnRoot (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom.development.js:24542:26)\n    at workLoop (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/scheduler/cjs/scheduler.development.js:256:34)",
+      "context": "webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom.development.js:9126",
+      "page": "/",
+      "url": "http://localhost:3006/",
+      "referrer": "http://localhost:3006/",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T03:17:18.870Z"
+    },
+    "timestamp": "2025-09-19T03:17:18.870Z",
+    "sessionId": "session_1758251838823_6sgqo7s7s",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "error",
+    "properties": {
+      "message": "Uncaught Error: There was an error while hydrating. Because the error happened outside of a Suspense boundary, the entire root will switch to client rendering.",
+      "stack": "Error: Uncaught Error: There was an error while hydrating. Because the error happened outside of a Suspense boundary, the entire root will switch to client rendering.\n    at eval (webpack-internal:///(app-pages-browser)/./src/lib/analytics.ts:317:30)\n    at onRecoverableError (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/on-recoverable-error.js:20:5)\n    at commitRootImpl (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom.development.js:26317:7)\n    at commitRoot (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom.development.js:26077:5)\n    at commitRootWhenReady (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom.development.js:24749:3)\n    at finishConcurrentRender (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom.development.js:24714:5)\n    at performConcurrentWorkOnRoot (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom.development.js:24559:9)\n    at workLoop (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/scheduler/cjs/scheduler.development.js:256:34)\n    at flushWork (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/scheduler/cjs/scheduler.development.js:225:14)\n    at MessagePort.performWorkUntilDeadline (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/scheduler/cjs/scheduler.development.js:534:21)",
+      "context": "webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom.development.js:16571",
+      "page": "/",
+      "url": "http://localhost:3006/",
+      "referrer": "http://localhost:3006/",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T03:17:18.879Z"
+    },
+    "timestamp": "2025-09-19T03:17:18.879Z",
+    "sessionId": "session_1758251838823_6sgqo7s7s",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "error",
+    "properties": {
+      "message": "Uncaught TypeError: Cannot read properties of undefined (reading 'call')",
+      "stack": "Error: Uncaught TypeError: Cannot read properties of undefined (reading 'call')\n    at eval (webpack-internal:///(app-pages-browser)/./src/lib/analytics.ts:317:30)",
+      "context": "webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom.development.js:26325",
+      "page": "/",
+      "url": "http://localhost:3006/",
+      "referrer": "http://localhost:3006/",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T03:17:18.886Z"
+    },
+    "timestamp": "2025-09-19T03:17:18.886Z",
+    "sessionId": "session_1758251838823_6sgqo7s7s",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "performance",
+    "properties": {
+      "page_load_time": 716.3000000119209,
+      "dom_content_loaded": 177.69999998807907,
+      "first_paint": 689.6999999880791,
+      "largest_contentful_paint": 0,
+      "url": "http://localhost:3006/",
+      "referrer": "http://localhost:3006/",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T03:17:20.249Z"
+    },
+    "timestamp": "2025-09-19T03:17:20.249Z",
+    "sessionId": "session_1758251838823_6sgqo7s7s",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "time_on_page",
+    "properties": {
+      "duration": 30,
+      "page": "/",
+      "url": "http://localhost:3006/",
+      "referrer": "http://localhost:3006/",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T03:17:48.834Z"
+    },
+    "timestamp": "2025-09-19T03:17:48.834Z",
+    "sessionId": "session_1758251838823_6sgqo7s7s",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "time_on_page",
+    "properties": {
+      "duration": 60,
+      "page": "/",
+      "url": "http://localhost:3006/",
+      "referrer": "http://localhost:3006/",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T03:18:18.833Z"
+    },
+    "timestamp": "2025-09-19T03:18:18.833Z",
+    "sessionId": "session_1758251838823_6sgqo7s7s",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "time_on_page",
+    "properties": {
+      "duration": 180,
+      "page": "/",
+      "url": "http://localhost:3006/",
+      "referrer": "http://localhost:3006/",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T03:20:18.833Z"
+    },
+    "timestamp": "2025-09-19T03:20:18.833Z",
+    "sessionId": "session_1758251838823_6sgqo7s7s",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "exit_intent",
+    "properties": {
+      "page": "/",
+      "time_on_page": 1758251838527.7,
+      "url": "http://localhost:3006/",
+      "referrer": "http://localhost:3006/",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T03:22:38.642Z"
+    },
+    "timestamp": "2025-09-19T03:22:38.642Z",
+    "sessionId": "session_1758251838823_6sgqo7s7s",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "time_on_page",
+    "properties": {
+      "duration": 843,
+      "page": "/",
+      "url": "http://localhost:3006/",
+      "referrer": "http://localhost:3006/",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T03:31:21.621Z"
+    },
+    "timestamp": "2025-09-19T03:31:21.621Z",
+    "sessionId": "session_1758251838823_6sgqo7s7s",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "page_view",
+    "properties": {
+      "page": "/",
+      "title": "Get Free Custom Website Quote | Professional Web Development | Ventaro AI",
+      "url": "http://localhost:3006/?ide_webview_request_time=1758252681620",
+      "referrer": "",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T03:31:25.493Z"
+    },
+    "timestamp": "2025-09-19T03:31:25.493Z",
+    "sessionId": "session_1758252685493_brg50jbhz",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "homepage_loaded",
+    "properties": {
+      "url": "http://localhost:3006/?ide_webview_request_time=1758252681620",
+      "referrer": "",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T03:31:25.577Z"
+    },
+    "timestamp": "2025-09-19T03:31:25.577Z",
+    "sessionId": "session_1758252685493_brg50jbhz",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "homepage_loaded",
+    "properties": {
+      "url": "http://localhost:3006/?ide_webview_request_time=1758252681620",
+      "referrer": "",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T03:31:25.578Z"
+    },
+    "timestamp": "2025-09-19T03:31:25.578Z",
+    "sessionId": "session_1758252685493_brg50jbhz",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "performance",
+    "properties": {
+      "page_load_time": 4785.800000011921,
+      "dom_content_loaded": 3694.599999964237,
+      "first_paint": 3980.699999988079,
+      "largest_contentful_paint": 0,
+      "url": "http://localhost:3006/?ide_webview_request_time=1758252681620",
+      "referrer": "",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T03:31:27.418Z"
+    },
+    "timestamp": "2025-09-19T03:31:27.418Z",
+    "sessionId": "session_1758252685493_brg50jbhz",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "scroll_depth",
+    "properties": {
+      "percentage": 25,
+      "page": "/",
+      "url": "http://localhost:3006/?ide_webview_request_time=1758252681620",
+      "referrer": "",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T03:31:28.301Z"
+    },
+    "timestamp": "2025-09-19T03:31:28.301Z",
+    "sessionId": "session_1758252685493_brg50jbhz",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "time_on_page",
+    "properties": {
+      "duration": 30,
+      "page": "/",
+      "url": "http://localhost:3006/?ide_webview_request_time=1758252681620",
+      "referrer": "",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T03:31:55.495Z"
+    },
+    "timestamp": "2025-09-19T03:31:55.495Z",
+    "sessionId": "session_1758252685493_brg50jbhz",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "time_on_page",
+    "properties": {
+      "duration": 60,
+      "page": "/",
+      "url": "http://localhost:3006/?ide_webview_request_time=1758252681620",
+      "referrer": "",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T03:32:25.494Z"
+    },
+    "timestamp": "2025-09-19T03:32:25.494Z",
+    "sessionId": "session_1758252685493_brg50jbhz",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "scroll_depth",
+    "properties": {
+      "percentage": 75,
+      "page": "/",
+      "url": "http://localhost:3006/?ide_webview_request_time=1758252681620",
+      "referrer": "",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T03:32:28.009Z"
+    },
+    "timestamp": "2025-09-19T03:32:28.009Z",
+    "sessionId": "session_1758252685493_brg50jbhz",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "scroll_depth",
+    "properties": {
+      "percentage": 90,
+      "page": "/",
+      "url": "http://localhost:3006/?ide_webview_request_time=1758252681620",
+      "referrer": "",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T03:32:29.369Z"
+    },
+    "timestamp": "2025-09-19T03:32:29.369Z",
+    "sessionId": "session_1758252685493_brg50jbhz",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "exit_intent",
+    "properties": {
+      "page": "/",
+      "time_on_page": 1758252681631.2,
+      "url": "http://localhost:3006/?ide_webview_request_time=1758252681620",
+      "referrer": "",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T03:33:00.218Z"
+    },
+    "timestamp": "2025-09-19T03:33:00.218Z",
+    "sessionId": "session_1758252685493_brg50jbhz",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "click_heatmap",
+    "properties": {
+      "x": 397,
+      "y": 56,
+      "element": "span.tracking-wide",
+      "page": "/",
+      "viewport": "1206x696",
+      "url": "http://localhost:3006/?ide_webview_request_time=1758252681620",
+      "referrer": "",
+      "timestamp": "2025-09-19T03:33:05.787Z"
+    },
+    "timestamp": "2025-09-19T03:33:05.787Z",
+    "sessionId": "session_1758252685493_brg50jbhz",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "time_on_page",
+    "properties": {
+      "duration": 100,
+      "page": "/",
+      "url": "http://localhost:3006/?ide_webview_request_time=1758252681620",
+      "referrer": "",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T03:33:05.799Z"
+    },
+    "timestamp": "2025-09-19T03:33:05.799Z",
+    "sessionId": "session_1758252685493_brg50jbhz",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "time_on_page",
+    "properties": {
+      "duration": 101,
+      "page": "/",
+      "url": "http://localhost:3006/?ide_webview_request_time=1758252681620",
+      "referrer": "",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T03:33:06.314Z"
+    },
+    "timestamp": "2025-09-19T03:33:06.314Z",
+    "sessionId": "session_1758252685493_brg50jbhz",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "page_view",
+    "properties": {
+      "page": "/",
+      "title": "Get Free Custom Website Quote | Professional Web Development | Ventaro AI",
+      "url": "http://localhost:3006/?ide_webview_request_time=1758252681620",
+      "referrer": "http://localhost:3006/?ide_webview_request_time=1758252681620",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T03:33:06.612Z"
+    },
+    "timestamp": "2025-09-19T03:33:06.612Z",
+    "sessionId": "session_1758252786612_m3px4donh",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "homepage_loaded",
+    "properties": {
+      "url": "http://localhost:3006/?ide_webview_request_time=1758252681620",
+      "referrer": "http://localhost:3006/?ide_webview_request_time=1758252681620",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T03:33:06.719Z"
+    },
+    "timestamp": "2025-09-19T03:33:06.719Z",
+    "sessionId": "session_1758252786612_m3px4donh",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "homepage_loaded",
+    "properties": {
+      "url": "http://localhost:3006/?ide_webview_request_time=1758252681620",
+      "referrer": "http://localhost:3006/?ide_webview_request_time=1758252681620",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T03:33:06.729Z"
+    },
+    "timestamp": "2025-09-19T03:33:06.729Z",
+    "sessionId": "session_1758252786612_m3px4donh",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "click_heatmap",
+    "properties": {
+      "x": 395,
+      "y": 41,
+      "element": "a.px-5.py-3.rounded-lg.text-sm.font-semibold.text-gray-300.hover:text-white.bg-gradient-to-r.from-purple-900/50.to-blue-900/50.hover:from-purple-800/60.hover:to-blue-800/60.transition-all.duration-300.border.border-purple-700/50.hover:border-purple-600/60.border-l-2.border-l-purple-500/50.hover:border-l-purple-400/70",
+      "page": "/",
+      "viewport": "1206x696",
+      "url": "http://localhost:3006/?ide_webview_request_time=1758252681620",
+      "referrer": "http://localhost:3006/?ide_webview_request_time=1758252681620",
+      "timestamp": "2025-09-19T03:33:07.625Z"
+    },
+    "timestamp": "2025-09-19T03:33:07.625Z",
+    "sessionId": "session_1758252786612_m3px4donh",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "time_on_page",
+    "properties": {
+      "duration": 1,
+      "page": "/",
+      "url": "http://localhost:3006/?ide_webview_request_time=1758252681620",
+      "referrer": "http://localhost:3006/?ide_webview_request_time=1758252681620",
+      "viewport": "1206x696",
+      "timestamp": "2025-09-19T03:33:07.636Z"
+    },
+    "timestamp": "2025-09-19T03:33:07.636Z",
+    "sessionId": "session_1758252786612_m3px4donh",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  }
+]

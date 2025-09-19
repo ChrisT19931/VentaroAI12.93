@@ -1,5 +1,4 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { sendEmail } from '@/lib/sendgrid';
 import { sendEmailWithBackup } from '@/lib/backup-email';
 
 import { supabase } from '@/lib/supabase';
@@ -48,7 +47,7 @@ export async function POST(request: NextRequest) {
   console.log('📧 CONTACT FORM: Processing submission...');
   
   try {
-    const { name, email, subject, message, product, phone, company, projectType, services, timeline } = await request.json();
+    const { name, email, subject, message, product, phone, company, projectType, services, timeline, budget, businessStage } = await request.json();
 
     // Validate input
     if (!name || !email || !subject || !message) {
@@ -81,30 +80,38 @@ export async function POST(request: NextRequest) {
 
     console.log(`✅ CONTACT FORM: Rate limit check passed. Remaining: ${remaining}`);
 
-    // Store contact submission in Supabase
-    const { data: contactSubmission, error: dbError } = await supabase
-      .from('contact_submissions')
-      .insert({
-        name,
-        email,
-        subject,
-        message,
-        product: product || null,
-        phone: phone || null,
-        company: company || null,
-        project_type: projectType || null,
-        services: services ? (Array.isArray(services) ? services.join(', ') : services) : null,
-        timeline: timeline || null,
-        created_at: new Date().toISOString()
-      })
-      .select()
-      .single();
+    // Store contact submission in Supabase (non-blocking)
+    console.log('💾 CONTACT FORM: Storing submission in database...');
+    let submissionId = null;
+    try {
+      const { data: contactSubmission, error: dbError } = await supabase
+        .from('contact_submissions')
+        .insert({
+          name,
+          email,
+          subject,
+          message,
+          product: product || null,
+          phone: phone || null,
+          company: company || null,
+          project_type: projectType || null,
+          services: services ? (Array.isArray(services) ? services.join(', ') : services) : null,
+          timeline: timeline || null,
+          budget: budget || null,
+          business_stage: businessStage || null,
+          created_at: new Date().toISOString()
+        })
+        .select()
+        .single();
 
-    if (dbError) {
-      console.error('❌ CONTACT FORM: Error storing submission:', dbError);
-      // Continue with email sending even if database storage fails
-    } else {
-      console.log(`✅ CONTACT FORM: Submission stored in database with ID: ${contactSubmission.id}`);
+      if (dbError) {
+        console.warn('⚠️ CONTACT FORM: Database storage failed, but continuing:', dbError);
+      } else {
+        console.log(`✅ CONTACT FORM: Submission stored in database with ID: ${contactSubmission.id}`);
+        submissionId = contactSubmission.id;
+      }
+    } catch (dbConnectionError) {
+      console.warn('⚠️ CONTACT FORM: Database connection failed, but continuing:', dbConnectionError);
     }
 
     // Parse and format services for display
@@ -116,23 +123,27 @@ export async function POST(request: NextRequest) {
       servicesFormatted = services.split(',').map(service => `• ${service.trim()}`).join('\n');
     }
 
-    // Send email to admin using backup system
-    const adminEmailResult = await sendEmailWithBackup({
-      to: 'chris.t@ventarosales.com',
-      subject: `🔔 New ${projectType ? 'Project Quote Request' : 'Contact Form Submission'}: ${subject}`,
-      type: 'contact',
-      formData: {
-        name,
-        email,
-        subject,
-        message,
-        services,
-        projectType,
-        timeline,
-        phone,
-        company,
-        product
-      },
+    // Send email to admin using backup system (non-blocking)
+    let adminEmailResult;
+    try {
+      adminEmailResult = await sendEmailWithBackup({
+        to: 'chris.t@ventarosales.com',
+        subject: `🔔 New ${projectType ? 'Project Quote Request' : 'Contact Form Submission'}: ${subject}`,
+        type: 'contact',
+        formData: {
+          name,
+          email,
+          subject,
+          message,
+          services,
+          projectType,
+          timeline,
+          budget,
+          businessStage,
+          phone,
+          company,
+          product
+        },
       html: `
         <!DOCTYPE html>
         <html>
@@ -183,6 +194,18 @@ export async function POST(request: NextRequest) {
               <tr>
                 <td style="padding: 10px; border-bottom: 1px solid #eee; font-weight: bold;">Timeline:</td>
                 <td style="padding: 10px; border-bottom: 1px solid #eee;"><span style="background: #fff3e0; padding: 4px 8px; border-radius: 4px; font-weight: bold; color: #f57c00;">${timeline}</span></td>
+              </tr>
+              ` : ''}
+              ${budget ? `
+              <tr>
+                <td style="padding: 10px; border-bottom: 1px solid #eee; font-weight: bold;">Budget:</td>
+                <td style="padding: 10px; border-bottom: 1px solid #eee;"><span style="background: #e8f5e8; padding: 4px 8px; border-radius: 4px; font-weight: bold; color: #2e7d32;">${budget}</span></td>
+              </tr>
+              ` : ''}
+              ${businessStage ? `
+              <tr>
+                <td style="padding: 10px; border-bottom: 1px solid #eee; font-weight: bold;">Business Stage:</td>
+                <td style="padding: 10px; border-bottom: 1px solid #eee;"><span style="background: #f3e5f5; padding: 4px 8px; border-radius: 4px; font-weight: bold; color: #7b1fa2;">${businessStage}</span></td>
               </tr>
               ` : ''}
               ${product ? `
@@ -243,10 +266,16 @@ ${servicesFormatted}
 ${message}
 
 📧 Reply to: ${email}`
-    });
+      });
+    } catch (emailError) {
+       console.warn('⚠️ CONTACT FORM: Admin email sending error:', emailError);
+       adminEmailResult = { success: false, error: emailError instanceof Error ? emailError.message : String(emailError) };
+    }
 
-    // Send auto-reply to customer using backup system
-    const customerEmailResult = await sendEmailWithBackup({
+    // Send auto-reply to customer using backup system (non-blocking)
+    let customerEmailResult;
+    try {
+      customerEmailResult = await sendEmailWithBackup({
       to: email,
       subject: `✅ ${projectType ? 'Your Project Quote Request' : 'Thank you for contacting'} - Ventaro AI`,
       type: 'contact',
@@ -325,7 +354,7 @@ ${message}
                 </tr>
                 <tr>
                   <td style="padding: 8px 0; font-weight: bold; color: #0c4a6e;">Reference ID:</td>
-                  <td style="padding: 8px 0; color: #374151; font-family: monospace;">#${Date.now()}</td>
+                  <td style="padding: 8px 0; color: #374151; font-family: monospace;">#${submissionId || Date.now()}</td>
                 </tr>
               </table>
             </div>
@@ -381,7 +410,7 @@ Project Type: ${projectType}` : ''}${timeline ? `
 Timeline: ${timeline}` : ''}
 Subject: ${subject}
 Submitted: ${new Date().toLocaleString()}
-Reference ID: #${Date.now()}
+Reference ID: #${submissionId || Date.now()}
 
 ${servicesFormatted ? `🛠️ SERVICES YOU'VE REQUESTED:
 ${servicesFormatted}
@@ -400,13 +429,17 @@ Best regards,
 The Ventaro AI Team
 
 Need immediate assistance? Contact: chris.t@ventarosales.com`
-    });
+      });
+    } catch (emailError) {
+       console.warn('⚠️ CONTACT FORM: Customer email sending error:', emailError);
+       customerEmailResult = { success: false, error: emailError instanceof Error ? emailError.message : String(emailError) };
+    }
 
     console.log('Admin email result:', adminEmailResult);
-    const adminEmailSent = adminEmailResult.success;
+    const adminEmailSent = adminEmailResult?.success || false;
 
     console.log('Customer email result:', customerEmailResult);
-    const customerEmailSent = customerEmailResult.success;
+    const customerEmailSent = customerEmailResult?.success || false;
 
     console.log(`📧 CONTACT FORM: Admin email ${adminEmailSent ? 'sent' : 'failed'}`);
     console.log(`📧 CONTACT FORM: Customer email ${customerEmailSent ? 'sent' : 'failed'}`);

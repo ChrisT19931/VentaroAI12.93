@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { supabase } from '@/lib/supabase';
-import { sendEmail } from '@/lib/sendgrid';
+import { sendEmailWithBackup } from '@/lib/backup-email';
 
 // GET - Fetch all coaching bookings (admin only)
 export async function GET(request: NextRequest) {
@@ -236,10 +236,16 @@ export async function PATCH(request: NextRequest) {
         }
 
         if (emailSubject && emailContent) {
-          await sendEmail({
+          await sendEmailWithBackup({
             to: booking.user_email,
             subject: emailSubject,
-            html: emailContent
+            html: emailContent,
+            type: 'support',
+            formData: {
+              bookingId: booking.id,
+              status,
+              userEmail: booking.user_email
+            }
           });
         }
     } catch (emailError) {
