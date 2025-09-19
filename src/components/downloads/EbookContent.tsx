@@ -18,7 +18,7 @@ const AI_LESSONS = [
     id: 1,
     title: "ChatGPT Business Foundations: Your First $1K Month",
     category: "ChatGPT/Gemini/Grok",
-    icon: "💰",
+    icon: "",
     estimatedRevenue: "$500-2000/month",
     difficulty: "Beginner",
     timeToImplement: "1-2 weeks",

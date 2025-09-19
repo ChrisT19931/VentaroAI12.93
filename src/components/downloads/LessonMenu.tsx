@@ -42,7 +42,7 @@ export default function LessonMenu() {
         onClick={() => setIsOpen(!isOpen)}
         className="btn btn-primary w-full flex items-center justify-between"
       >
-        <span>📚 Jump to Any Lesson</span>
+        <span>Jump to Any Lesson</span>
         <span className={`transform transition-transform ${isOpen ? 'rotate-180' : ''}`}>▼</span>
       </button>
       

@@ -109,13 +109,13 @@ export function ExitIntentPopup({ product, onClose }: ExitIntentPopupProps) {
 
           <UnifiedCheckoutButton
             product={product}
-            buttonText={`💰 Get Started Now - A$${product.price}`}
+            buttonText={`Get Started Now - A$${product.price}`}
             className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white font-bold py-4 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-2xl mb-4"
             variant="direct"
           />
 
           <p className="text-xs text-gray-400">
-            ⚡ Instant access • 30-day money-back guarantee
+            Instant access • 30-day money-back guarantee
           </p>
         </div>
       </div>

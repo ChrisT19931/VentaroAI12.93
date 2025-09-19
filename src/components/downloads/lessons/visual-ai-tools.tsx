@@ -9,7 +9,7 @@ export default function VisualAITools() {
       
       {/* Learning Objectives */}
       <div className="bg-green-900/30 border border-green-500/30 rounded-lg p-6 mb-8">
-        <h3 className="text-lg font-semibold text-green-300 mb-3">🎯 Learning Objectives</h3>
+        <h3 className="text-lg font-semibold text-green-300 mb-3">Learning Objectives</h3>
         <p className="text-green-100 mb-3">By the end of this lesson, you will:</p>
         <ul className="list-disc ml-6 text-green-200 space-y-1">
           <li>Build a profitable visual AI business generating $5K-$50K monthly</li>
@@ -22,18 +22,18 @@ export default function VisualAITools() {
 
       {/* Pro Tip */}
       <div className="bg-blue-900/30 border border-blue-500/30 rounded-lg p-4 mb-6">
-        <h3 className="text-lg font-semibold text-blue-300 mb-2">💡 Visual AI Business Secret</h3>
+        <h3 className="text-lg font-semibold text-blue-300 mb-2">Visual AI Business Secret</h3>
         <p className="text-blue-100">The biggest money is in solving specific business problems, not just creating pretty pictures. Focus on visual AI that drives sales, saves time, or reduces costs. A $500 logo that increases conversions by 20% is worth $50,000 to the right client.</p>
       </div>
 
       {/* Building Your Visual AI Business */}
       <div className="mb-8">
-        <h2 className="text-2xl font-semibold text-white mb-4">🏗️ Building Your Visual AI Business</h2>
+        <h2 className="text-2xl font-semibold text-white mb-4">Building Your Visual AI Business</h2>
         <div className="bg-gray-800/50 rounded-lg p-6">
           <div className="grid md:grid-cols-2 gap-6">
             <div className="space-y-4">
               <div className="bg-blue-900/20 border border-blue-500/30 rounded p-4">
-                <h3 className="text-blue-300 font-semibold mb-2">🎨 Service Categories</h3>
+                <h3 className="text-blue-300 font-semibold mb-2">Service Categories</h3>
                 <ul className="text-blue-200 text-sm space-y-1">
                   <li>• Brand Identity & Logo Design ($500-$5K)</li>
                   <li>• Marketing Visual Packages ($1K-$10K)</li>
@@ -45,7 +45,7 @@ export default function VisualAITools() {
               </div>
               
               <div className="bg-green-900/20 border border-green-500/30 rounded p-4">
-                <h3 className="text-green-300 font-semibold mb-2">⚡ Competitive Advantages</h3>
+                <h3 className="text-green-300 font-semibold mb-2">Competitive Advantages</h3>
                 <ul className="text-green-200 text-sm space-y-1">
                   <li>• 10x faster delivery than traditional designers</li>
                   <li>• 50-80% lower costs with higher margins</li>
@@ -58,7 +58,7 @@ export default function VisualAITools() {
             
             <div className="space-y-4">
               <div className="bg-purple-900/20 border border-purple-500/30 rounded p-4">
-                <h3 className="text-purple-300 font-semibold mb-2">💰 Revenue Models</h3>
+                <h3 className="text-purple-300 font-semibold mb-2">Revenue Models</h3>
                 <ul className="text-purple-200 text-sm space-y-1">
                   <li>• Project-based: $500-$50K per project</li>
                   <li>• Monthly retainers: $1K-$10K/month</li>
@@ -70,7 +70,7 @@ export default function VisualAITools() {
               </div>
               
               <div className="bg-orange-900/20 border border-orange-500/30 rounded p-4">
-                <h3 className="text-orange-300 font-semibold mb-2">🎯 Target Markets</h3>
+                <h3 className="text-orange-300 font-semibold mb-2">Target Markets</h3>
                 <ul className="text-orange-200 text-sm space-y-1">
                   <li>• E-commerce brands (product visuals)</li>
                   <li>• Real estate agencies (property marketing)</li>
@@ -87,7 +87,7 @@ export default function VisualAITools() {
 
       {/* Step-by-Step Implementation */}
       <div className="mb-8">
-        <h2 className="text-2xl font-semibold text-white mb-4">💰 Step-by-Step Implementation</h2>
+        <h2 className="text-2xl font-semibold text-white mb-4">Step-by-Step Implementation</h2>
         
         {/* Phase 1: Tool Mastery */}
         <div className="bg-gray-800/50 rounded-lg p-6 mb-6">
@@ -495,11 +495,11 @@ export default function VisualAITools() {
               
       {/* Advanced Techniques & Automation */}
       <div className="mb-8">
-        <h2 className="text-2xl font-semibold text-white mb-4">⚡ Advanced Techniques & Automation</h2>
+        <h2 className="text-2xl font-semibold text-white mb-4">Advanced Techniques & Automation</h2>
         
         {/* Prompt Engineering Mastery */}
         <div className="bg-gray-800/50 rounded-lg p-6 mb-6">
-          <h3 className="text-xl font-semibold text-white mb-4">🎯 Prompt Engineering Mastery</h3>
+          <h3 className="text-xl font-semibold text-white mb-4">Prompt Engineering Mastery</h3>
           <div className="grid md:grid-cols-2 gap-6">
             <div className="space-y-4">
               <div className="bg-blue-900/20 border border-blue-500/30 rounded p-4">
@@ -573,7 +573,7 @@ export default function VisualAITools() {
 
         {/* Workflow Automation */}
         <div className="bg-gray-800/50 rounded-lg p-6 mb-6">
-          <h3 className="text-xl font-semibold text-white mb-4">🔄 Workflow Automation Systems</h3>
+          <h3 className="text-xl font-semibold text-white mb-4">Workflow Automation Systems</h3>
           <div className="grid md:grid-cols-3 gap-4">
             <div className="bg-blue-900/20 border border-blue-500/30 rounded p-4">
               <h4 className="text-blue-300 font-semibold mb-2">Content Factory Setup</h4>
@@ -630,7 +630,7 @@ export default function VisualAITools() {
 
         {/* Advanced Techniques */}
         <div className="bg-gray-800/50 rounded-lg p-6 mb-6">
-          <h3 className="text-xl font-semibold text-white mb-4">💰 Advanced Scaling Techniques</h3>
+          <h3 className="text-xl font-semibold text-white mb-4">Advanced Scaling Techniques</h3>
           <div className="grid md:grid-cols-2 gap-6">
             <div className="space-y-4">
               <div className="bg-orange-900/20 border border-orange-500/30 rounded p-4">
@@ -700,7 +700,7 @@ export default function VisualAITools() {
 
         {/* Scaling Strategies */}
         <div className="bg-gray-800/50 rounded-lg p-6">
-          <h3 className="text-xl font-semibold text-white mb-4">📈 Business Scaling Strategies</h3>
+          <h3 className="text-xl font-semibold text-white mb-4">Business Scaling Strategies</h3>
           <div className="grid md:grid-cols-3 gap-4">
             <div className="bg-green-900/20 border border-green-500/30 rounded p-4">
               <h4 className="text-green-300 font-semibold mb-2">Team Building</h4>
@@ -752,11 +752,11 @@ export default function VisualAITools() {
 
       {/* Success Metrics & Scaling */}
       <div className="mb-8">
-        <h2 className="text-2xl font-semibold text-white mb-4">📊 Success Metrics & Scaling</h2>
+        <h2 className="text-2xl font-semibold text-white mb-4">Success Metrics & Scaling</h2>
         
         {/* 30-Day Launch Plan */}
         <div className="bg-gray-800/50 rounded-lg p-6 mb-6">
-          <h3 className="text-xl font-semibold text-white mb-4">💰 30-Day Visual AI Business Launch Plan</h3>
+          <h3 className="text-xl font-semibold text-white mb-4">30-Day Visual AI Business Launch Plan</h3>
           <div className="grid md:grid-cols-3 gap-6">
             <div className="bg-blue-900/20 border border-blue-500/30 rounded p-4">
               <h4 className="text-blue-300 font-semibold mb-2">Week 1: Foundation</h4>
@@ -834,7 +834,7 @@ export default function VisualAITools() {
 
         {/* Key Performance Indicators */}
         <div className="bg-gray-800/50 rounded-lg p-6 mb-6">
-          <h3 className="text-xl font-semibold text-white mb-4">📈 Key Performance Indicators (KPIs)</h3>
+          <h3 className="text-xl font-semibold text-white mb-4">Key Performance Indicators (KPIs)</h3>
           <div className="grid md:grid-cols-2 gap-6">
             <div className="space-y-4">
               <div className="bg-green-900/20 border border-green-500/30 rounded p-4">
@@ -940,7 +940,7 @@ export default function VisualAITools() {
 
         {/* Scaling Milestones */}
         <div className="bg-gray-800/50 rounded-lg p-6 mb-6">
-          <h3 className="text-xl font-semibold text-white mb-4">🎯 Scaling Milestones & Growth Opportunities</h3>
+          <h3 className="text-xl font-semibold text-white mb-4">Scaling Milestones & Growth Opportunities</h3>
           <div className="grid md:grid-cols-4 gap-4">
             <div className="bg-green-900/20 border border-green-500/30 rounded p-4">
               <h4 className="text-green-300 font-semibold mb-2">Starter ($5K/month)</h4>
@@ -1006,7 +1006,7 @@ export default function VisualAITools() {
 
         {/* Growth Acceleration Strategies */}
         <div className="bg-gray-800/50 rounded-lg p-6">
-          <h3 className="text-xl font-semibold text-white mb-4">💰 Growth Acceleration Strategies</h3>
+          <h3 className="text-xl font-semibold text-white mb-4">Growth Acceleration Strategies</h3>
           <div className="grid md:grid-cols-3 gap-6">
             <div className="bg-red-900/20 border border-red-500/30 rounded p-4">
               <h4 className="text-red-300 font-semibold mb-2">Market Domination</h4>
@@ -1059,10 +1059,10 @@ export default function VisualAITools() {
         </div>
         {/* Action Items & Homework */}
         <div className="bg-gray-800/50 rounded-lg p-6 mb-6">
-          <h3 className="text-xl font-semibold text-white mb-4">📋 Action Items & Homework</h3>
+          <h3 className="text-xl font-semibold text-white mb-4">Action Items & Homework</h3>
           <div className="grid md:grid-cols-2 gap-6">
             <div className="bg-blue-900/20 border border-blue-500/30 rounded p-4">
-              <h4 className="text-blue-300 font-semibold mb-3">📅 This Week's Tasks</h4>
+              <h4 className="text-blue-300 font-semibold mb-3">This Week's Tasks</h4>
               <div className="space-y-3">
                 <div className="bg-black/30 rounded p-3">
                   <p className="text-blue-200 text-sm font-medium mb-1">Day 1-2: Tool Setup & Mastery</p>
@@ -1100,7 +1100,7 @@ export default function VisualAITools() {
             </div>
             
             <div className="bg-purple-900/20 border border-purple-500/30 rounded p-4">
-              <h4 className="text-purple-300 font-semibold mb-3">🎯 30-Day Challenge</h4>
+              <h4 className="text-purple-300 font-semibold mb-3">30-Day Challenge</h4>
               <div className="space-y-3">
                 <div className="bg-black/30 rounded p-3">
                   <p className="text-purple-200 text-sm font-medium mb-1">Week 1: Foundation Building</p>
@@ -1141,7 +1141,7 @@ export default function VisualAITools() {
 
         {/* Key Takeaways */}
         <div className="bg-gray-800/50 rounded-lg p-6 mb-6">
-          <h3 className="text-xl font-semibold text-white mb-4">🎓 Key Takeaways</h3>
+          <h3 className="text-xl font-semibold text-white mb-4">Key Takeaways</h3>
           <div className="grid md:grid-cols-2 gap-6">
             <div className="bg-green-900/20 border border-green-500/30 rounded p-4">
               <h4 className="text-green-300 font-semibold mb-3">Mastery Principles</h4>
@@ -1158,7 +1158,7 @@ export default function VisualAITools() {
             </div>
             
             <div className="bg-orange-900/20 border border-orange-500/30 rounded p-4">
-              <h4 className="text-orange-300 font-semibold mb-3">📊 Success Metrics</h4>
+              <h4 className="text-orange-300 font-semibold mb-3">Success Metrics</h4>
               <div className="bg-black/30 rounded p-3">
                 <div className="space-y-3">
                   <div>
@@ -1198,10 +1198,10 @@ export default function VisualAITools() {
 
         {/* Next Steps */}
         <div className="bg-gray-800/50 rounded-lg p-6">
-          <h3 className="text-xl font-semibold text-white mb-4">💰 Next Steps</h3>
+          <h3 className="text-xl font-semibold text-white mb-4">Next Steps</h3>
           <div className="grid md:grid-cols-3 gap-4">
             <div className="bg-blue-900/20 border border-blue-500/30 rounded p-4">
-              <h4 className="text-blue-300 font-semibold mb-2">📚 Continue Learning</h4>
+              <h4 className="text-blue-300 font-semibold mb-2">Continue Learning</h4>
               <div className="bg-black/30 rounded p-3">
                 <p className="text-blue-200 text-sm mb-2">Next Lesson:</p>
                 <p className="text-blue-100 text-lg font-semibold">Lesson 8: AI for E-commerce</p>
@@ -1219,7 +1219,7 @@ export default function VisualAITools() {
             </div>
             
             <div className="bg-purple-900/20 border border-purple-500/30 rounded p-4">
-              <h4 className="text-purple-300 font-semibold mb-2">🎯 Take Action</h4>
+              <h4 className="text-purple-300 font-semibold mb-2">Take Action</h4>
               <div className="bg-black/30 rounded p-3">
                 <p className="text-purple-200 text-sm mb-2">Immediate Steps:</p>
                 <ul className="text-purple-100 text-xs space-y-1">
@@ -1230,14 +1230,14 @@ export default function VisualAITools() {
                   <li>• Book a strategy call (optional)</li>
                 </ul>
                 <div className="mt-3 p-2 bg-purple-800/30 rounded">
-                  <p className="text-purple-200 text-xs font-medium">💡 Pro Tip:</p>
+                  <p className="text-purple-200 text-xs font-medium">Pro Tip:</p>
                   <p className="text-purple-100 text-xs">The best time to start was yesterday. The second best time is right now. Take action today!</p>
                 </div>
               </div>
             </div>
             
             <div className="bg-green-900/20 border border-green-500/30 rounded p-4">
-              <h4 className="text-green-300 font-semibold mb-2">💰 Start Earning</h4>
+              <h4 className="text-green-300 font-semibold mb-2">Start Earning</h4>
               <div className="bg-black/30 rounded p-3">
                 <p className="text-green-200 text-sm mb-2">Quick Wins:</p>
                 <ul className="text-green-100 text-xs space-y-1">
@@ -1248,7 +1248,7 @@ export default function VisualAITools() {
                   <li>• Document your journey</li>
                 </ul>
                 <div className="mt-3 p-2 bg-green-800/30 rounded">
-                  <p className="text-green-200 text-xs font-medium">🎯 Goal:</p>
+                  <p className="text-green-200 text-xs font-medium">Goal:</p>
                   <p className="text-green-100 text-xs">Land your first $500 project within 7 days of completing this lesson.</p>
                 </div>
               </div>

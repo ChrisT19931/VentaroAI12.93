@@ -9,7 +9,7 @@ export default function AIAsYourMoneyMakingTool() {
       
       {/* Learning Objectives */}
       <div className="bg-green-900/30 border border-green-500/30 rounded-lg p-6 mb-8">
-        <h3 className="text-lg font-semibold text-green-300 mb-3">🎯 Learning Objectives</h3>
+        <h3 className="text-lg font-semibold text-green-300 mb-3">Learning Objectives</h3>
         <p className="text-green-100 mb-3">By the end of this comprehensive lesson, you will:</p>
         <ul className="list-disc ml-6 text-green-200 space-y-1">
           <li>Understand the fundamental principles of AI monetization</li>
@@ -22,13 +22,13 @@ export default function AIAsYourMoneyMakingTool() {
 
       {/* Pro Tip */}
       <div className="bg-blue-900/30 border border-blue-500/30 rounded-lg p-4 mb-6">
-        <h3 className="text-lg font-semibold text-blue-300 mb-2">💡 Pro Tip</h3>
+        <h3 className="text-lg font-semibold text-blue-300 mb-2">Pro Tip</h3>
         <p className="text-blue-100">Focus on solving real problems with AI, not just using AI for the sake of it. The money follows value creation. The most successful AI entrepreneurs identify pain points first, then apply AI as the solution.</p>
       </div>
 
       {/* Executive Summary */}
       <div className="mb-8">
-        <h2 className="text-2xl font-semibold text-white mb-4">📋 Executive Summary</h2>
+        <h2 className="text-2xl font-semibold text-white mb-4">Executive Summary</h2>
         <div className="bg-gray-800/50 rounded-lg p-6">
           <p className="text-gray-300 mb-4">AI isn't just a productivity tool. It's a revenue multiplier that's creating millionaires in 2025. This lesson reveals the complete blueprint for transforming AI capabilities into consistent, scalable income streams.</p>
           
@@ -49,12 +49,12 @@ export default function AIAsYourMoneyMakingTool() {
                          <p className="text-gray-300 mb-3">The biggest mistake beginners make is focusing on the AI tools instead of the value they create. Your clients don't care if you use ChatGPT, Claude, or carrier pigeons. They care about results.</p>
             
             <div className="bg-red-900/20 border border-red-500/30 rounded p-4 mb-3">
-              <h4 className="text-red-300 font-semibold mb-2">❌ Wrong Approach:</h4>
+              <h4 className="text-red-300 font-semibold mb-2">Wrong Approach:</h4>
               <p className="text-red-200">"I can write content with ChatGPT"</p>
             </div>
             
             <div className="bg-green-900/20 border border-green-500/30 rounded p-4">
-              <h4 className="text-green-300 font-semibold mb-2">✅ Right Approach:</h4>
+              <h4 className="text-green-300 font-semibold mb-2">Right Approach:</h4>
               <p className="text-green-200">"I can increase your website traffic by 300% with AI-optimized content that converts visitors into customers"</p>
             </div>
           </div>
@@ -75,7 +75,7 @@ export default function AIAsYourMoneyMakingTool() {
             <p className="text-gray-300 mb-3">Traditional businesses scale by hiring more people. AI businesses scale by creating better systems. Every task you do manually is a future automation opportunity.</p>
             
             <div className="bg-purple-900/20 border border-purple-500/30 rounded p-4 mt-4">
-              <h4 className="text-purple-300 font-semibold mb-2">💼 Scaling Framework:</h4>
+              <h4 className="text-purple-300 font-semibold mb-2">Scaling Framework:</h4>
               <ol className="list-decimal ml-6 text-purple-200 space-y-1">
                 <li>Document your process</li>
                 <li>Identify repetitive elements</li>
@@ -90,12 +90,12 @@ export default function AIAsYourMoneyMakingTool() {
 
       {/* Revenue Stream Categories */}
       <div className="mb-8">
-        <h2 className="text-2xl font-semibold text-white mb-4">💰 15 Proven AI Revenue Streams</h2>
+        <h2 className="text-2xl font-semibold text-white mb-4">15 Proven AI Revenue Streams</h2>
         
         <div className="space-y-6">
           {/* Service-Based Revenue */}
           <div className="bg-blue-900/20 border border-blue-500/30 rounded-lg p-6">
-            <h3 className="text-xl font-semibold text-blue-300 mb-4">🔧 Service-Based Revenue ($2K-$50K/month)</h3>
+            <h3 className="text-xl font-semibold text-blue-300 mb-4">Service-Based Revenue ($2K-$50K/month)</h3>
             
             <div className="grid md:grid-cols-2 gap-4 mb-4">
               <div className="bg-gray-800/50 rounded p-4">
@@ -137,7 +137,7 @@ export default function AIAsYourMoneyMakingTool() {
 
           {/* Product-Based Revenue */}
           <div className="bg-green-900/20 border border-green-500/30 rounded-lg p-6">
-            <h3 className="text-xl font-semibold text-green-300 mb-4">📦 Product-Based Revenue ($1K-$100K/month)</h3>
+            <h3 className="text-xl font-semibold text-green-300 mb-4">Product-Based Revenue ($1K-$100K/month)</h3>
             
             <div className="grid md:grid-cols-2 gap-4 mb-4">
               <div className="bg-gray-800/50 rounded p-4">
@@ -179,7 +179,7 @@ export default function AIAsYourMoneyMakingTool() {
 
           {/* Investment & Trading */}
           <div className="bg-purple-900/20 border border-purple-500/30 rounded-lg p-6">
-            <h3 className="text-xl font-semibold text-purple-300 mb-4">📈 AI-Powered Investment & Trading</h3>
+            <h3 className="text-xl font-semibold text-purple-300 mb-4">AI-Powered Investment & Trading</h3>
             
             <div className="grid md:grid-cols-2 gap-4 mb-4">
               <div className="bg-gray-800/50 rounded p-4">
@@ -200,7 +200,7 @@ export default function AIAsYourMoneyMakingTool() {
 
           {/* Hybrid Models */}
           <div className="bg-orange-900/20 border border-orange-500/30 rounded-lg p-6">
-            <h3 className="text-xl font-semibold text-orange-300 mb-4">🔄 Hybrid Revenue Models</h3>
+            <h3 className="text-xl font-semibold text-orange-300 mb-4">Hybrid Revenue Models</h3>
             
             <div className="grid md:grid-cols-2 gap-4 mb-4">
               <div className="bg-gray-800/50 rounded p-4">
@@ -230,7 +230,7 @@ export default function AIAsYourMoneyMakingTool() {
 
       {/* Pricing Strategies */}
       <div className="mb-8">
-        <h2 className="text-2xl font-semibold text-white mb-4">💵 Advanced Pricing Strategies</h2>
+        <h2 className="text-2xl font-semibold text-white mb-4">Advanced Pricing Strategies</h2>
         
         <div className="space-y-6">
           <div className="bg-gray-800/50 rounded-lg p-6">
@@ -336,7 +336,7 @@ export default function AIAsYourMoneyMakingTool() {
 
       {/* Implementation Framework */}
       <div className="mb-8">
-        <h2 className="text-2xl font-semibold text-white mb-4">💰 90-Day Implementation Framework</h2>
+        <h2 className="text-2xl font-semibold text-white mb-4">90-Day Implementation Framework</h2>
         
         <div className="space-y-6">
           <div className="bg-blue-900/20 border border-blue-500/30 rounded-lg p-6">
@@ -421,7 +421,7 @@ export default function AIAsYourMoneyMakingTool() {
 
       {/* AI Expansion Prompts */}
       <div className="bg-purple-900/30 border border-purple-500/30 rounded-lg p-6 mb-8">
-        <h3 className="text-lg font-semibold text-purple-300 mb-4">🤖 Advanced AI Expansion Prompts</h3>
+        <h3 className="text-lg font-semibold text-purple-300 mb-4">Advanced AI Expansion Prompts</h3>
         
         <div className="space-y-4">
           <div className="bg-gray-900/50 rounded p-4">
@@ -451,7 +451,7 @@ export default function AIAsYourMoneyMakingTool() {
 
       {/* Real Case Studies */}
       <div className="mb-8">
-        <h2 className="text-2xl font-semibold text-white mb-4">📊 Detailed Case Studies</h2>
+        <h2 className="text-2xl font-semibold text-white mb-4">Detailed Case Studies</h2>
         
         <div className="space-y-6">
           <div className="bg-green-900/20 border border-green-500/30 rounded-lg p-6">
@@ -575,7 +575,7 @@ export default function AIAsYourMoneyMakingTool() {
 
       {/* Action Items & Homework */}
       <div className="mb-8">
-        <h2 className="text-2xl font-semibold text-white mb-4">📝 Action Items & Homework</h2>
+        <h2 className="text-2xl font-semibold text-white mb-4">Action Items & Homework</h2>
         
         <div className="bg-yellow-900/20 border border-yellow-500/30 rounded-lg p-6">
           <h3 className="text-xl font-semibold text-yellow-300 mb-4">This Week's Assignments</h3>
@@ -613,7 +613,7 @@ export default function AIAsYourMoneyMakingTool() {
           </div>
           
           <div className="bg-green-900/20 border border-green-500/30 rounded p-4 mt-6">
-            <h4 className="text-green-300 font-semibold mb-2">📈 Success Metrics</h4>
+            <h4 className="text-green-300 font-semibold mb-2">Success Metrics</h4>
             <p className="text-green-200 text-sm">By the end of this lesson's implementation, you should have:</p>
             <ul className="list-disc ml-6 text-green-200 space-y-1 text-sm mt-2">
               <li>A clear niche and target market identified</li>
@@ -628,7 +628,7 @@ export default function AIAsYourMoneyMakingTool() {
 
       {/* Tools & Resources */}
       <div className="mb-8">
-        <h2 className="text-2xl font-semibold text-white mb-4">🛠️ Essential Tools & Resources</h2>
+        <h2 className="text-2xl font-semibold text-white mb-4">Essential Tools & Resources</h2>
         
         <div className="grid md:grid-cols-2 gap-6">
           <div className="bg-blue-900/20 border border-blue-500/30 rounded-lg p-6">
@@ -677,12 +677,12 @@ export default function AIAsYourMoneyMakingTool() {
 
       {/* Key Takeaways */}
       <div className="mb-8">
-        <h2 className="text-2xl font-semibold text-white mb-4">🎯 Key Takeaways</h2>
+        <h2 className="text-2xl font-semibold text-white mb-4">Key Takeaways</h2>
         
         <div className="bg-gradient-to-r from-blue-900/30 to-purple-900/30 border border-blue-500/30 rounded-lg p-6">
           <div className="grid md:grid-cols-2 gap-6">
             <div>
-              <h3 className="text-lg font-semibold text-blue-300 mb-3">💡 Core Principles</h3>
+              <h3 className="text-lg font-semibold text-blue-300 mb-3">Core Principles</h3>
               <ul className="text-gray-200 space-y-2 text-sm">
                 <li>• <strong>Value over tools:</strong> Clients pay for outcomes, not technology</li>
                 <li>• <strong>Speed advantage:</strong> AI's biggest benefit is velocity</li>
@@ -693,7 +693,7 @@ export default function AIAsYourMoneyMakingTool() {
             </div>
             
             <div>
-              <h3 className="text-lg font-semibold text-purple-300 mb-3">💰 Action Steps</h3>
+              <h3 className="text-lg font-semibold text-purple-300 mb-3">Action Steps</h3>
               <ol className="text-gray-200 space-y-2 text-sm list-decimal ml-6">
                 <li>Choose your niche and validate demand</li>
                 <li>Design your core service offering</li>
@@ -707,7 +707,7 @@ export default function AIAsYourMoneyMakingTool() {
           
           <div className="mt-6 p-4 bg-yellow-900/20 border border-yellow-500/30 rounded">
             <p className="text-yellow-200 text-center font-semibold">
-              🎯 Goal: By implementing this lesson, you should be able to generate your first $1,000 in AI revenue within 30 days.
+              Goal: By implementing this lesson, you should be able to generate your first $1,000 in AI revenue within 30 days.
             </p>
           </div>
         </div>

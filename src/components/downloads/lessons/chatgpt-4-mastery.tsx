@@ -9,7 +9,7 @@ export default function Chatgpt4Mastery() {
       
       {/* Learning Objectives */}
       <div className="bg-green-900/30 border border-green-500/30 rounded-lg p-6 mb-8">
-        <h3 className="text-lg font-semibold text-green-300 mb-3">🎯 What You'll Build</h3>
+        <h3 className="text-lg font-semibold text-green-300 mb-3">What You'll Build</h3>
         <p className="text-green-100 mb-3">In this lesson, you'll create:</p>
         <ul className="list-disc ml-6 text-green-200 space-y-1">
           <li>A content creation system that generates $500-2000/month</li>
@@ -22,19 +22,19 @@ export default function Chatgpt4Mastery() {
 
       {/* Pro Tip */}
       <div className="bg-blue-900/30 border border-blue-500/30 rounded-lg p-4 mb-6">
-        <h3 className="text-lg font-semibold text-blue-300 mb-2">💡 Success Secret</h3>
+        <h3 className="text-lg font-semibold text-blue-300 mb-2">Success Secret</h3>
         <p className="text-blue-100">The entrepreneurs making $10K+ monthly with ChatGPT aren't using complex prompts - they're solving real business problems with simple, repeatable systems. Focus on value creation, not prompt complexity.</p>
       </div>
 
       {/* Business Foundation */}
       <div className="mb-8">
-        <h2 className="text-2xl font-semibold text-white mb-4">🏗️ Building Your ChatGPT Business Foundation</h2>
+        <h2 className="text-2xl font-semibold text-white mb-4">Building Your ChatGPT Business Foundation</h2>
         <div className="bg-gray-800/50 rounded-lg p-6">
           <p className="text-gray-300 mb-4">ChatGPT is the fastest way to start generating income with AI. In the next 30 minutes, you'll build a complete business system that can generate your first $1,000 this month.</p>
           
           <div className="grid md:grid-cols-3 gap-4 mt-6">
             <div className="bg-green-900/20 border border-green-500/30 rounded p-4">
-              <h3 className="text-green-300 font-semibold mb-2">💰 Revenue Streams</h3>
+              <h3 className="text-green-300 font-semibold mb-2">Revenue Streams</h3>
               <ul className="text-green-200 space-y-1 text-sm">
                 <li>• Content writing services</li>
                 <li>• Email marketing automation</li>
@@ -45,7 +45,7 @@ export default function Chatgpt4Mastery() {
             </div>
             
             <div className="bg-blue-900/20 border border-blue-500/30 rounded p-4">
-              <h3 className="text-blue-300 font-semibold mb-2">⚡ Quick Wins</h3>
+              <h3 className="text-blue-300 font-semibold mb-2">Quick Wins</h3>
               <ul className="text-blue-200 space-y-1 text-sm">
                 <li>• Set up in under 1 hour</li>
                 <li>• First client within 7 days</li>
@@ -56,7 +56,7 @@ export default function Chatgpt4Mastery() {
             </div>
             
             <div className="bg-purple-900/20 border border-purple-500/30 rounded p-4">
-              <h3 className="text-purple-300 font-semibold mb-2">🎯 Target Market</h3>
+              <h3 className="text-purple-300 font-semibold mb-2">Target Market</h3>
               <ul className="text-purple-200 space-y-1 text-sm">
                 <li>• Small business owners</li>
                 <li>• E-commerce stores</li>
@@ -71,7 +71,7 @@ export default function Chatgpt4Mastery() {
 
       {/* Step-by-Step Implementation */}
       <div className="mb-8">
-        <h2 className="text-2xl font-semibold text-white mb-4">💰 Step-by-Step Implementation</h2>
+        <h2 className="text-2xl font-semibold text-white mb-4">Step-by-Step Implementation</h2>
         <div className="bg-gray-800/50 rounded-lg p-6">
           <p className="text-gray-300 mb-6">Follow these exact steps to build your ChatGPT business foundation:</p>
           
@@ -83,7 +83,7 @@ export default function Chatgpt4Mastery() {
                 <p>• Create a dedicated business email for client communications</p>
                 <p>• Set up a simple tracking spreadsheet for clients and revenue</p>
                 <div className="bg-black/30 rounded p-3 mt-3">
-                  <p className="text-green-100 font-mono text-sm">💡 Copy this prompt to get started:</p>
+                  <p className="text-green-100 font-mono text-sm">Copy this prompt to get started:</p>
                   <p className="text-green-100 font-mono text-sm mt-2">"You are my business assistant. Help me create a content writing service for small businesses. I want to charge $500/month for 4 blog posts. Create a service description, pricing structure, and client onboarding process."</p>
                 </div>
               </div>
@@ -96,7 +96,7 @@ export default function Chatgpt4Mastery() {
                 <p>• Create 3 service packages: Basic ($300), Standard ($500), Premium ($800)</p>
                 <p>• Write compelling service descriptions using ChatGPT</p>
                 <div className="bg-black/30 rounded p-3 mt-3">
-                  <p className="text-blue-100 font-mono text-sm">💡 Service Package Template:</p>
+                  <p className="text-blue-100 font-mono text-sm">Service Package Template:</p>
                   <p className="text-blue-100 font-mono text-sm mt-2">"Create a professional service package for [YOUR SERVICE]. Include: package name, price, what's included, delivery timeline, and value proposition. Make it sound premium but affordable for small businesses."</p>
                 </div>
               </div>
@@ -109,7 +109,7 @@ export default function Chatgpt4Mastery() {
                 <p>• Set up a simple landing page (use Carrd.co or similar)</p>
                 <p>• Prepare case studies and testimonials (even if hypothetical initially)</p>
                 <div className="bg-black/30 rounded p-3 mt-3">
-                  <p className="text-purple-100 font-mono text-sm">💡 Outreach Template Prompt:</p>
+                  <p className="text-purple-100 font-mono text-sm">Outreach Template Prompt:</p>
                   <p className="text-purple-100 font-mono text-sm mt-2">"Write a friendly cold email to a local restaurant owner offering content writing services. Keep it under 100 words, focus on benefits, and include a clear call-to-action. Make it personal and non-salesy."</p>
                 </div>
               </div>
@@ -120,12 +120,12 @@ export default function Chatgpt4Mastery() {
 
       {/* Revenue Generation Strategies */}
       <div className="mb-8">
-        <h2 className="text-2xl font-semibold text-white mb-4">💰 Revenue Generation Strategies</h2>
+        <h2 className="text-2xl font-semibold text-white mb-4">Revenue Generation Strategies</h2>
         <div className="bg-gray-800/50 rounded-lg p-6">
           <div className="grid md:grid-cols-2 gap-6">
             <div className="space-y-4">
               <div className="bg-green-900/20 border border-green-500/30 rounded p-4">
-                <h3 className="text-green-300 font-semibold mb-2">🎯 High-Demand Services</h3>
+                <h3 className="text-green-300 font-semibold mb-2">High-Demand Services</h3>
                 <ul className="text-green-200 space-y-2 text-sm">
                   <li><strong>Blog Content:</strong> $100-300 per post</li>
                   <li><strong>Email Sequences:</strong> $500-1500 per sequence</li>
@@ -136,7 +136,7 @@ export default function Chatgpt4Mastery() {
               </div>
               
               <div className="bg-blue-900/20 border border-blue-500/30 rounded p-4">
-                <h3 className="text-blue-300 font-semibold mb-2">⚡ Quick Start Actions</h3>
+                <h3 className="text-blue-300 font-semibold mb-2">Quick Start Actions</h3>
                 <ul className="text-blue-200 space-y-1 text-sm">
                   <li>• Post in local business Facebook groups</li>
                   <li>• Reach out to 10 businesses today</li>
@@ -148,7 +148,7 @@ export default function Chatgpt4Mastery() {
             </div>
             
             <div className="bg-yellow-900/20 border border-yellow-500/30 rounded p-4">
-              <h3 className="text-yellow-300 font-semibold mb-3">🔥 30-Day Action Plan</h3>
+              <h3 className="text-yellow-300 font-semibold mb-3">30-Day Action Plan</h3>
               <div className="space-y-3">
                 <div className="bg-black/30 rounded p-2">
                   <p className="text-yellow-200 text-sm"><strong>Week 1:</strong> Set up systems, create samples, reach out to 20 prospects</p>
@@ -170,7 +170,7 @@ export default function Chatgpt4Mastery() {
       
       {/* Success Metrics */}
       <div className="mb-8">
-        <h2 className="text-2xl font-semibold text-white mb-4">📊 Success Metrics & Next Steps</h2>
+        <h2 className="text-2xl font-semibold text-white mb-4">Success Metrics & Next Steps</h2>
         <div className="bg-gray-800/50 rounded-lg p-6">
           <div className="grid md:grid-cols-3 gap-4">
             <div className="bg-green-900/20 border border-green-500/30 rounded p-4 text-center">
@@ -191,7 +191,7 @@ export default function Chatgpt4Mastery() {
           </div>
           
           <div className="mt-6 bg-yellow-900/20 border border-yellow-500/30 rounded p-4">
-            <h3 className="text-yellow-300 font-semibold mb-2">🎯 Your Next Action</h3>
+            <h3 className="text-yellow-300 font-semibold mb-2">Your Next Action</h3>
             <p className="text-yellow-200">Right now, open ChatGPT and create your first service package. Then reach out to 5 local businesses today. The fastest way to succeed is to start immediately.</p>
           </div>
         </div>

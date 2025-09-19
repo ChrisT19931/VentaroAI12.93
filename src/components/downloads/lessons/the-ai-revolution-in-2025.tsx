@@ -9,7 +9,7 @@ export default function TheAIRevolutionIn2025() {
       
       {/* Learning Objectives */}
       <div className="bg-green-900/30 border border-green-500/30 rounded-lg p-6 mb-8">
-        <h3 className="text-lg font-semibold text-green-300 mb-3">🎯 Learning Objectives</h3>
+        <h3 className="text-lg font-semibold text-green-300 mb-3">Learning Objectives</h3>
         <p className="text-green-100 mb-3">By the end of this comprehensive lesson, you will:</p>
         <ul className="list-disc ml-6 text-green-200 space-y-1">
           <li>Understand the magnitude and timing of the 2025 AI transformation</li>
@@ -22,13 +22,13 @@ export default function TheAIRevolutionIn2025() {
 
       {/* Pro Tip */}
       <div className="bg-blue-900/30 border border-blue-500/30 rounded-lg p-4 mb-6">
-        <h3 className="text-lg font-semibold text-blue-300 mb-2">💡 Pro Tip</h3>
+        <h3 className="text-lg font-semibold text-blue-300 mb-2">Pro Tip</h3>
         <p className="text-blue-100">Start learning AI tools now. The early adopters are capturing 80% of the market opportunities. Don't wait for the "perfect" moment. The AI revolution rewards action-takers, not perfectionists.</p>
       </div>
 
       {/* Executive Summary */}
       <div className="mb-8">
-        <h2 className="text-2xl font-semibold text-white mb-4">📋 Executive Summary</h2>
+        <h2 className="text-2xl font-semibold text-white mb-4">Executive Summary</h2>
         <div className="bg-gray-800/50 rounded-lg p-6">
           <p className="text-gray-300 mb-4">The AI revolution isn't coming. It's here. 2025 represents the tipping point where AI literacy becomes as essential as computer literacy was in the 1990s. This lesson explores the massive economic shift and how to position yourself at the forefront.</p>
           
@@ -40,13 +40,13 @@ export default function TheAIRevolutionIn2025() {
 
       {/* The Scale of the AI Revolution */}
       <div className="mb-8">
-        <h2 className="text-2xl font-semibold text-white mb-4">🌍 The Scale of the AI Revolution</h2>
+        <h2 className="text-2xl font-semibold text-white mb-4">The Scale of the AI Revolution</h2>
         <div className="space-y-6">
           <div className="bg-gray-800/50 rounded-lg p-6">
             <h3 className="text-xl font-semibold text-white mb-3">Market Size & Growth</h3>
             <div className="grid md:grid-cols-2 gap-6">
               <div className="bg-blue-900/20 border border-blue-500/30 rounded p-4">
-                <h4 className="text-blue-300 font-semibold mb-2">📊 Market Value</h4>
+                <h4 className="text-blue-300 font-semibold mb-2">Market Value</h4>
                 <ul className="text-blue-200 space-y-1 text-sm">
                   <li>• 2024: $184 billion global AI market</li>
                   <li>• 2025: $390 billion (112% growth)</li>
@@ -55,7 +55,7 @@ export default function TheAIRevolutionIn2025() {
                 </ul>
               </div>
               <div className="bg-green-900/20 border border-green-500/30 rounded p-4">
-                <h4 className="text-green-300 font-semibold mb-2">💼 Job Impact</h4>
+                <h4 className="text-green-300 font-semibold mb-2">Job Impact</h4>
                 <ul className="text-green-200 space-y-1 text-sm">
                   <li>• 12 million new AI-related jobs by 2025</li>
                   <li>• 97 million jobs requiring AI skills</li>
@@ -72,7 +72,7 @@ export default function TheAIRevolutionIn2025() {
             
             <div className="grid md:grid-cols-3 gap-4">
               <div className="bg-red-900/20 border border-red-500/30 rounded p-4">
-                <h4 className="text-red-300 font-semibold mb-2">⚡ Immediate (0-6 months)</h4>
+                <h4 className="text-red-300 font-semibold mb-2">Immediate (0-6 months)</h4>
                 <ul className="text-red-200 space-y-1 text-sm">
                   <li>• Content creation</li>
                   <li>• Customer service</li>
@@ -82,7 +82,7 @@ export default function TheAIRevolutionIn2025() {
                 </ul>
               </div>
               <div className="bg-yellow-900/20 border border-yellow-500/30 rounded p-4">
-                <h4 className="text-yellow-300 font-semibold mb-2">🔄 Near-term (6-18 months)</h4>
+                <h4 className="text-yellow-300 font-semibold mb-2">Near-term (6-18 months)</h4>
                 <ul className="text-yellow-200 space-y-1 text-sm">
                   <li>• Sales automation</li>
                   <li>• Legal research</li>
@@ -92,7 +92,7 @@ export default function TheAIRevolutionIn2025() {
                 </ul>
               </div>
               <div className="bg-purple-900/20 border border-purple-500/30 rounded p-4">
-                <h4 className="text-purple-300 font-semibold mb-2">💰 Long-term (2-5 years)</h4>
+                <h4 className="text-purple-300 font-semibold mb-2">Long-term (2-5 years)</h4>
                 <ul className="text-purple-200 space-y-1 text-sm">
                   <li>• Autonomous vehicles</li>
                   <li>• Drug discovery</li>
@@ -108,13 +108,13 @@ export default function TheAIRevolutionIn2025() {
 
       {/* Strategic Positioning for 2025 */}
       <div className="mb-8">
-        <h2 className="text-2xl font-semibold text-white mb-4">🎯 Strategic Positioning for 2025</h2>
+        <h2 className="text-2xl font-semibold text-white mb-4">Strategic Positioning for 2025</h2>
         <div className="space-y-6">
           <div className="bg-gray-800/50 rounded-lg p-6">
             <h3 className="text-xl font-semibold text-white mb-3">1. Market Timing Advantage</h3>
             <p className="text-gray-300 mb-3">The AI market is reaching $1.8 trillion, but we're still in the early adoption phase. This creates unprecedented opportunities:</p>
             <div className="bg-green-900/20 border border-green-500/30 rounded p-4">
-              <h4 className="text-green-300 font-semibold mb-2">✅ Action Steps:</h4>
+              <h4 className="text-green-300 font-semibold mb-2">Action Steps:</h4>
               <ul className="text-green-200 space-y-1">
                 <li>• Identify high-growth AI sectors in your industry</li>
                 <li>• Position yourself as an early expert before the market saturates</li>
@@ -130,7 +130,7 @@ export default function TheAIRevolutionIn2025() {
             <p className="text-gray-300 mb-3">AI-skilled professionals are seeing 40-60% income increases within 12 months. Here's how to join them:</p>
             <div className="grid md:grid-cols-2 gap-4">
               <div className="bg-blue-900/20 border border-blue-500/30 rounded p-4">
-                <h4 className="text-blue-300 font-semibold mb-2">📈 Skill Stacking</h4>
+                <h4 className="text-blue-300 font-semibold mb-2">Skill Stacking</h4>
                 <ul className="text-blue-200 space-y-1 text-sm">
                   <li>• Combine existing expertise + AI tools</li>
                   <li>• Focus on high-value AI applications</li>
@@ -139,7 +139,7 @@ export default function TheAIRevolutionIn2025() {
                 </ul>
               </div>
               <div className="bg-purple-900/20 border border-purple-500/30 rounded p-4">
-                <h4 className="text-purple-300 font-semibold mb-2">💰 Monetization Paths</h4>
+                <h4 className="text-purple-300 font-semibold mb-2">Monetization Paths</h4>
                 <ul className="text-purple-200 space-y-1 text-sm">
                   <li>• Offer AI-enhanced services</li>
                   <li>• Create AI-powered products</li>
@@ -155,7 +155,7 @@ export default function TheAIRevolutionIn2025() {
             <p className="text-gray-300 mb-3">12 million new AI-related jobs are being created globally. Position yourself for the best opportunities:</p>
             
             <div className="bg-yellow-900/20 border border-yellow-500/30 rounded p-4 mb-4">
-              <h4 className="text-yellow-300 font-semibold mb-2">🔥 Hottest AI Job Categories:</h4>
+              <h4 className="text-yellow-300 font-semibold mb-2">Hottest AI Job Categories:</h4>
               <div className="grid md:grid-cols-2 gap-4">
                 <ul className="text-yellow-200 space-y-1 text-sm">
                   <li>• AI Prompt Engineers ($80K-150K)</li>
@@ -181,7 +181,7 @@ export default function TheAIRevolutionIn2025() {
             
             <div className="space-y-4">
               <div className="bg-red-900/20 border border-red-500/30 rounded p-4">
-                <h4 className="text-red-300 font-semibold mb-2">⚡ Speed Advantage</h4>
+                <h4 className="text-red-300 font-semibold mb-2">Speed Advantage</h4>
                 <p className="text-red-200 text-sm mb-2">AI allows you to work 10x faster than competitors:</p>
                 <ul className="text-red-200 space-y-1 text-sm">
                   <li>• Content creation in minutes vs hours</li>
@@ -193,7 +193,7 @@ export default function TheAIRevolutionIn2025() {
               </div>
               
               <div className="bg-green-900/20 border border-green-500/30 rounded p-4">
-                <h4 className="text-green-300 font-semibold mb-2">🎯 Quality Advantage</h4>
+                <h4 className="text-green-300 font-semibold mb-2">Quality Advantage</h4>
                 <p className="text-green-200 text-sm mb-2">AI helps you deliver consistently higher quality:</p>
                 <ul className="text-green-200 space-y-1 text-sm">
                   <li>• Error-free calculations and analysis</li>
@@ -205,7 +205,7 @@ export default function TheAIRevolutionIn2025() {
               </div>
               
               <div className="bg-blue-900/20 border border-blue-500/30 rounded p-4">
-                <h4 className="text-blue-300 font-semibold mb-2">💡 Innovation Advantage</h4>
+                <h4 className="text-blue-300 font-semibold mb-2">Innovation Advantage</h4>
                 <p className="text-blue-200 text-sm mb-2">AI enables capabilities that were impossible before:</p>
                 <ul className="text-blue-200 space-y-1 text-sm">
                   <li>• Hyper-personalization at scale</li>
@@ -258,14 +258,14 @@ export default function TheAIRevolutionIn2025() {
 
       {/* The AI Literacy Framework */}
       <div className="mb-8">
-        <h2 className="text-2xl font-semibold text-white mb-4">🧠 The AI Literacy Framework</h2>
+        <h2 className="text-2xl font-semibold text-white mb-4">The AI Literacy Framework</h2>
         <div className="bg-gray-800/50 rounded-lg p-6">
           <p className="text-gray-300 mb-4">AI literacy isn't just about knowing tools. It's about understanding how to think with AI, work with AI, and create value with AI. Here's the complete framework:</p>
           
           <div className="grid md:grid-cols-2 gap-6">
             <div className="space-y-4">
               <div className="bg-blue-900/20 border border-blue-500/30 rounded p-4">
-                <h3 className="text-blue-300 font-semibold mb-2">🎯 Level 1: AI Awareness</h3>
+                <h3 className="text-blue-300 font-semibold mb-2">Level 1: AI Awareness</h3>
                 <ul className="text-blue-200 space-y-1 text-sm">
                   <li>• Understand what AI can and cannot do</li>
                   <li>• Know the major AI tools and platforms</li>
@@ -275,7 +275,7 @@ export default function TheAIRevolutionIn2025() {
               </div>
               
               <div className="bg-green-900/20 border border-green-500/30 rounded p-4">
-                <h3 className="text-green-300 font-semibold mb-2">🛠️ Level 2: AI Application</h3>
+                <h3 className="text-green-300 font-semibold mb-2">Level 2: AI Application</h3>
                 <ul className="text-green-200 space-y-1 text-sm">
                   <li>• Use AI tools effectively for daily tasks</li>
                   <li>• Write effective prompts and queries</li>
@@ -285,7 +285,7 @@ export default function TheAIRevolutionIn2025() {
               </div>
               
               <div className="bg-purple-900/20 border border-purple-500/30 rounded p-4">
-                <h3 className="text-purple-300 font-semibold mb-2">💰 Level 3: AI Innovation</h3>
+                <h3 className="text-purple-300 font-semibold mb-2">Level 3: AI Innovation</h3>
                 <ul className="text-purple-200 space-y-1 text-sm">
                   <li>• Create novel AI-powered solutions</li>
                   <li>• Combine multiple AI tools creatively</li>
@@ -297,7 +297,7 @@ export default function TheAIRevolutionIn2025() {
             
             <div className="space-y-4">
               <div className="bg-orange-900/20 border border-orange-500/30 rounded p-4">
-                <h3 className="text-orange-300 font-semibold mb-2">💼 Level 4: AI Strategy</h3>
+                <h3 className="text-orange-300 font-semibold mb-2">Level 4: AI Strategy</h3>
                 <ul className="text-orange-200 space-y-1 text-sm">
                   <li>• Develop organization-wide AI strategies</li>
                   <li>• Make strategic AI investment decisions</li>
@@ -307,7 +307,7 @@ export default function TheAIRevolutionIn2025() {
               </div>
               
               <div className="bg-red-900/20 border border-red-500/30 rounded p-4">
-                <h3 className="text-red-300 font-semibold mb-2">🎓 Level 5: AI Leadership</h3>
+                <h3 className="text-red-300 font-semibold mb-2">Level 5: AI Leadership</h3>
                 <ul className="text-red-200 space-y-1 text-sm">
                   <li>• Shape industry AI standards</li>
                   <li>• Mentor others in AI adoption</li>
@@ -334,7 +334,7 @@ export default function TheAIRevolutionIn2025() {
 
       {/* Your Personal AI Revolution Roadmap */}
       <div className="mb-8">
-        <h2 className="text-2xl font-semibold text-white mb-4">🗺️ Your Personal AI Revolution Roadmap</h2>
+        <h2 className="text-2xl font-semibold text-white mb-4">Your Personal AI Revolution Roadmap</h2>
         <div className="space-y-6">
           <div className="bg-gray-800/50 rounded-lg p-6">
             <h3 className="text-xl font-semibold text-white mb-3">30-Day Quick Start Plan</h3>
@@ -435,7 +435,7 @@ export default function TheAIRevolutionIn2025() {
 
       {/* AI Expansion Prompts */}
       <div className="bg-purple-900/30 border border-purple-500/30 rounded-lg p-6 mb-8">
-        <h3 className="text-lg font-semibold text-purple-300 mb-3">💰 AI Expansion Prompts</h3>
+        <h3 className="text-lg font-semibold text-purple-300 mb-3">AI Expansion Prompts</h3>
         <p className="text-purple-100 text-sm mb-4">Use these prompts to dive deeper into AI opportunities in your specific situation:</p>
         
         <div className="space-y-4">
@@ -464,7 +464,7 @@ export default function TheAIRevolutionIn2025() {
 
       {/* Action Items & Homework */}
       <div className="bg-yellow-900/20 border border-yellow-500/30 rounded-lg p-6 mb-8">
-        <h3 className="text-lg font-semibold text-yellow-300 mb-3">📝 Action Items & Homework</h3>
+        <h3 className="text-lg font-semibold text-yellow-300 mb-3">Action Items & Homework</h3>
         <p className="text-yellow-100 mb-4">Complete these assignments before moving to the next lesson:</p>
         
         <div className="grid md:grid-cols-2 gap-6">
@@ -493,7 +493,7 @@ export default function TheAIRevolutionIn2025() {
 
       {/* Key Takeaways */}
       <div className="bg-gray-800/50 rounded-lg p-6 mb-8">
-        <h3 className="text-lg font-semibold text-white mb-3">🎯 Key Takeaways</h3>
+        <h3 className="text-lg font-semibold text-white mb-3">Key Takeaways</h3>
         <div className="grid md:grid-cols-2 gap-6">
           <div>
             <h4 className="text-green-300 font-semibold mb-2">Core Principles:</h4>
@@ -520,7 +520,7 @@ export default function TheAIRevolutionIn2025() {
 
       {/* Next Steps */}
       <div className="bg-gradient-to-r from-green-900/30 to-blue-900/30 border border-green-500/30 rounded-lg p-6">
-        <h3 className="text-lg font-semibold text-white mb-3">📚 Next Steps</h3>
+        <h3 className="text-lg font-semibold text-white mb-3">Next Steps</h3>
         <p className="text-gray-300 mb-4">You now understand the magnitude and opportunity of the AI revolution. Ready to turn that knowledge into income?</p>
         <p className="text-gray-300">Continue to <strong>Lesson 2: "AI as Your Money-Making Tool"</strong> to learn specific monetization strategies, proven revenue models, and step-by-step implementation guides for building profitable AI-powered businesses.</p>
         

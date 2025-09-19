@@ -8,7 +8,7 @@ import { useSession, signOut } from 'next-auth/react';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isComingSoonOpen, setIsComingSoonOpen] = useState(false);
+  const [isMoreOpen, setIsMoreOpen] = useState(false);
   const { items } = useCart();
   const { data: session, status } = useSession();
   const user = session?.user || null;
@@ -37,8 +37,8 @@ export default function Navbar() {
               <Link href="/" className="px-5 py-3 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-900/80 transition-all duration-300 border border-transparent hover:border-gray-700">
                 Home
               </Link>
-              <Link href="/vai-agents" className="px-5 py-3 rounded-lg text-sm font-semibold text-gray-300 hover:text-white bg-gradient-to-r from-purple-900/50 to-blue-900/50 hover:from-purple-800/60 hover:to-blue-800/60 transition-all duration-300 border border-purple-700/50 hover:border-purple-600/60 border-l-2 border-l-purple-500/50 hover:border-l-purple-400/70">
-                <span className="tracking-wide">VAI AGENTS</span>
+              <Link href="/custom-solutions" className="px-5 py-3 rounded-lg text-sm font-semibold text-gray-300 hover:text-white bg-gradient-to-r from-slate-900/50 to-blue-900/50 hover:from-slate-800/60 hover:to-blue-800/60 transition-all duration-300 border border-slate-700/50 hover:border-slate-600/60 border-l-2 border-l-slate-500/50 hover:border-l-slate-400/70">
+                <span className="tracking-wide">CUSTOM SOLUTIONS</span>
               </Link>
               <Link href="/vai-coaching" className="px-5 py-3 rounded-lg text-sm font-semibold text-gray-300 hover:text-white bg-gray-900 hover:bg-gray-800 transition-all duration-300 border border-gray-700/50 hover:border-gray-600/60 border-l-2 border-l-blue-500/30 hover:border-l-blue-500/60">
                 <span className="tracking-wide">VAI COACHING</span>
@@ -47,21 +47,40 @@ export default function Navbar() {
                 <span>VAI Toolkit</span>
               </Link>
               
-              {/* Coming Soon Dropdown */}
+              {/* More Dropdown */}
               <div className="relative">
                 <button
-                  onClick={() => setIsComingSoonOpen(!isComingSoonOpen)}
+                  onClick={() => setIsMoreOpen(!isMoreOpen)}
                   className="px-5 py-3 rounded-lg text-sm font-medium text-gray-300 hover:text-white bg-gray-900/80 hover:bg-gray-800 transition-all duration-300 border border-gray-700/50 hover:border-gray-600/60 border-l-2 border-l-amber-500/30 hover:border-l-amber-500/60 flex items-center space-x-2"
                 >
-                  <span>Coming Soon</span>
-                  <svg className={`w-4 h-4 transition-transform duration-200 ${isComingSoonOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <span>More</span>
+                  <svg className={`w-4 h-4 transition-transform duration-200 ${isMoreOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                   </svg>
                 </button>
                 
-                {isComingSoonOpen && (
+                {isMoreOpen && (
                   <div className="absolute top-full left-0 mt-2 w-56 bg-black/95 border border-gray-700 rounded-lg shadow-2xl z-50">
                     <div className="py-2">
+                      <Link href="/about" className="block px-4 py-3 text-sm text-gray-300 hover:text-white hover:bg-gray-800 transition-colors border-l-2 border-l-blue-500/30 hover:border-l-blue-500/60">
+                        <span>About Us</span>
+                      </Link>
+                      <Link href="/contact" className="block px-4 py-3 text-sm text-gray-300 hover:text-white hover:bg-gray-800 transition-colors border-l-2 border-l-green-500/30 hover:border-l-green-500/60">
+                        <span>Contact</span>
+                      </Link>
+                      <Link href="/affiliate" className="block px-4 py-3 text-sm text-gray-300 hover:text-white hover:bg-gray-800 transition-colors border-l-2 border-l-cyan-500/30 hover:border-l-cyan-500/60">
+                        <span>Affiliate Program</span>
+                      </Link>
+                      <div className="border-t border-gray-600 my-2"></div>
+                      <div className="px-4 py-2 text-xs font-semibold text-gray-400 uppercase tracking-wider">
+                        Coming Soon
+                      </div>
+                      <Link href="/vai-agents" className="block px-4 py-3 text-sm text-gray-300 hover:text-white hover:bg-gray-800 transition-colors border-l-2 border-l-purple-500/30 hover:border-l-purple-500/60">
+                        <div className="flex items-center justify-between">
+                          <span>VAI Agents</span>
+                          <span className="bg-gray-800 text-gray-300 text-xs px-2 py-1 rounded-full font-medium border border-gray-600/30">SOON</span>
+                        </div>
+                      </Link>
                       <Link href="/ai-masterclass" className="block px-4 py-3 text-sm text-gray-300 hover:text-white hover:bg-gray-800 transition-colors border-l-2 border-l-purple-500/30 hover:border-l-purple-500/60">
                         <div className="flex items-center justify-between">
                           <span>VAI Masterclass</span>
@@ -74,23 +93,10 @@ export default function Navbar() {
                           <span className="bg-gray-800 text-gray-300 text-xs px-2 py-1 rounded-full font-medium border border-gray-600/30">SOON</span>
                         </div>
                       </Link>
-                      <Link href="/affiliate" className="block px-4 py-3 text-sm text-gray-300 hover:text-white hover:bg-gray-800 transition-colors border-l-2 border-l-cyan-500/30 hover:border-l-cyan-500/60">
-                        <div className="flex items-center justify-between">
-                          <span>Ventaro AI Affiliate</span>
-                          <span className="bg-gray-800 text-gray-300 text-xs px-2 py-1 rounded-full font-medium border border-gray-600/30">SOON</span>
-                        </div>
-                      </Link>
                     </div>
                   </div>
                 )}
               </div>
-              
-              <Link href="/about" className="px-5 py-3 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-900/80 transition-all duration-300 border border-transparent hover:border-gray-700">
-                About Us
-              </Link>
-              <Link href="/contact" className="px-5 py-3 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-900/80 transition-all duration-300 border border-transparent hover:border-gray-700">
-                Contact
-              </Link>
             </div>
           </div>
           <div className="hidden md:flex items-center space-x-4">
@@ -170,8 +176,8 @@ export default function Navbar() {
           <Link href="/" className="block px-4 py-3 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-gray-900 transition-all duration-300 border border-transparent hover:border-gray-800">
             Home
           </Link>
-          <Link href="/vai-agents" className="block px-4 py-3 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-gray-900 transition-all duration-300 border border-transparent hover:border-gray-800 border-l-2 border-l-purple-500/30 hover:border-l-purple-500/60">
-            VAI Agents
+          <Link href="/custom-solutions" className="block px-4 py-3 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-gray-900 transition-all duration-300 border border-transparent hover:border-gray-800 border-l-2 border-l-slate-500/30 hover:border-l-slate-500/60">
+            Custom Solutions
           </Link>
           <Link href="/vai-coaching" className="block px-4 py-3 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-gray-900 transition-all duration-300 border border-transparent hover:border-gray-800 border-l-2 border-l-blue-500/30 hover:border-l-blue-500/60">
             VAI Coaching
@@ -180,11 +186,27 @@ export default function Navbar() {
             VAI Toolkit
           </Link>
           
+          <div className="border-t border-gray-700 pt-2 mt-2">
+            <Link href="/about" className="block px-4 py-3 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-gray-900 transition-all duration-300 border border-transparent hover:border-gray-800">
+              About Us
+            </Link>
+            <Link href="/contact" className="block px-4 py-3 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-gray-900 transition-all duration-300 border border-transparent hover:border-gray-800">
+              Contact
+            </Link>
+            <Link href="/affiliate" className="block px-4 py-3 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-gray-900 transition-all duration-300 border border-transparent hover:border-gray-800 border-l-2 border-l-cyan-500/30 hover:border-l-cyan-500/60">
+              Affiliate Program
+            </Link>
+          </div>
+          
           {/* Coming Soon Section */}
           <div className="border-t border-gray-700 pt-2 mt-2">
             <div className="px-4 py-2 text-xs font-semibold text-gray-400 uppercase tracking-wider">
               Coming Soon
             </div>
+            <Link href="/vai-agents" className="block px-4 py-3 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-gray-900 transition-all duration-300 border border-transparent hover:border-gray-800 border-l-2 border-l-purple-500/30 hover:border-l-purple-500/60 relative">
+              VAI Agents
+              <span className="absolute -top-1 -right-1 bg-gray-800 text-gray-300 text-xs px-1 py-0.5 rounded text-[10px] font-medium border border-gray-600/30">SOON</span>
+            </Link>
             <Link href="/ai-masterclass" className="block px-4 py-3 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-gray-900 transition-all duration-300 border border-transparent hover:border-gray-800 border-l-2 border-l-purple-500/30 hover:border-l-purple-500/60 relative">
               VAI Masterclass
               <span className="absolute -top-1 -right-1 bg-gray-800 text-gray-300 text-xs px-1 py-0.5 rounded text-[10px] font-medium border border-gray-600/30">SOON</span>
@@ -192,19 +214,6 @@ export default function Navbar() {
             <Link href="/toolbox" className="block px-4 py-3 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-gray-900 transition-all duration-300 border border-transparent hover:border-gray-800 border-l-2 border-l-amber-500/30 hover:border-l-amber-500/60 relative">
               VAI Web Gen
               <span className="absolute -top-1 -right-1 bg-gray-800 text-gray-300 text-xs px-1 py-0.5 rounded text-[10px] font-medium border border-gray-600/30">SOON</span>
-            </Link>
-            <Link href="/affiliate" className="block px-4 py-3 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-gray-900 transition-all duration-300 border border-transparent hover:border-gray-800 border-l-2 border-l-cyan-500/30 hover:border-l-cyan-500/60 relative">
-              Ventaro AI Affiliate
-              <span className="absolute -top-1 -right-1 bg-gray-800 text-gray-300 text-xs px-1 py-0.5 rounded text-[10px] font-medium border border-gray-600/30">SOON</span>
-            </Link>
-          </div>
-          
-          <div className="border-t border-gray-700 pt-2 mt-2">
-            <Link href="/about" className="block px-4 py-3 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-gray-900 transition-all duration-300 border border-transparent hover:border-gray-800">
-              About Us
-            </Link>
-            <Link href="/contact" className="block px-4 py-3 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-gray-900 transition-all duration-300 border border-transparent hover:border-gray-800">
-              Contact
             </Link>
           </div>
 

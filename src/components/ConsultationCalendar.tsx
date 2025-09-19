@@ -100,7 +100,7 @@ export default function ConsultationCalendar({ onBookingComplete }: Consultation
       const data = await response.json();
       
       if (data.success) {
-        toast.success('🎉 Consultation booked successfully! Check your email for confirmation.');
+        toast.success('Consultation booked successfully! Check your email for confirmation.');
         
         // Reset form
         setSelectedDate('');
@@ -339,13 +339,13 @@ export default function ConsultationCalendar({ onBookingComplete }: Consultation
               Booking Consultation...
             </>
           ) : (
-            '💰 Book My AI Business Consultation'
+            'Book My AI Business Consultation'
           )}
         </button>
 
         <div className="text-center text-sm text-gray-400">
-          <p>⚡ You'll receive email confirmation with Google Meet link</p>
-          <p>📧 Both you and our team will be notified automatically</p>
+          <p>You'll receive email confirmation with Google Meet link</p>
+        <p>Both you and our team will be notified automatically</p>
         </div>
       </div>
     </div>

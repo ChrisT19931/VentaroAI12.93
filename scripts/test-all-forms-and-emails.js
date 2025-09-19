@@ -4,7 +4,7 @@
  * Includes backup email system verification
  */
 
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3003';
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3006';
 
 // Test data for forms
 const testData = {

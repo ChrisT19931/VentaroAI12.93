@@ -12,7 +12,7 @@ interface DownloadPromptsProps {
 const DownloadPrompts: React.FC<DownloadPromptsProps> = ({ productInfo, handleDownload }) => {
   return (
     <div className="bg-purple-900/20 border border-purple-500/30 rounded-lg p-6 mb-8">
-      <h2 className="text-xl font-bold text-white mb-4">🔮 Your AI Prompts Collection</h2>
+      <h2 className="text-xl font-bold text-white mb-4">Your AI Prompts Collection</h2>
       <div className="bg-white/10 rounded-lg p-4 border border-purple-500/20">
         <div className="flex items-center justify-between mb-3">
           <div>

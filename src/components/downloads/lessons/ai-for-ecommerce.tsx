@@ -9,7 +9,7 @@ export default function AIForEcommerce() {
       
       {/* Learning Objectives */}
       <div className="bg-green-900/30 border border-green-500/30 rounded-lg p-6 mb-8">
-        <h3 className="text-lg font-semibold text-green-300 mb-3">🎯 What You'll Build</h3>
+        <h3 className="text-lg font-semibold text-green-300 mb-3">What You'll Build</h3>
         <p className="text-green-100 mb-3">In this lesson, you'll create:</p>
         <ul className="list-disc ml-6 text-green-200 space-y-1">
           <li>AI-powered product research and validation systems</li>
@@ -22,19 +22,19 @@ export default function AIForEcommerce() {
 
       {/* Pro Tip */}
       <div className="bg-blue-900/30 border border-blue-500/30 rounded-lg p-4 mb-6">
-        <h3 className="text-lg font-semibold text-blue-300 mb-2">💡 AI eCommerce Advantage</h3>
+        <h3 className="text-lg font-semibold text-blue-300 mb-2">AI eCommerce Advantage</h3>
         <p className="text-blue-100">AI eliminates the guesswork from eCommerce. While competitors struggle with manual processes, you'll automate product research, content creation, customer service, and optimization - running a business that works 24/7.</p>
       </div>
 
       {/* Business Foundation */}
       <div className="mb-8">
-        <h2 className="text-2xl font-semibold text-white mb-4">💰 Building Your AI eCommerce Empire</h2>
+        <h2 className="text-2xl font-semibold text-white mb-4">Building Your AI eCommerce Empire</h2>
         <div className="bg-gray-800/50 rounded-lg p-6">
           <p className="text-gray-300 mb-4">AI transforms eCommerce from a time-intensive business into an automated profit machine. Every aspect of online selling can be enhanced with AI - from finding winning products to scaling customer support.</p>
           
           <div className="grid md:grid-cols-3 gap-4 mt-6">
             <div className="bg-purple-900/20 border border-purple-500/30 rounded p-4">
-              <h3 className="text-purple-300 font-semibold mb-2">🔍 AI-Powered Research</h3>
+              <h3 className="text-purple-300 font-semibold mb-2">AI-Powered Research</h3>
               <ul className="text-purple-200 space-y-1 text-sm">
                 <li>• Product trend analysis</li>
                 <li>• Competitor intelligence</li>
@@ -45,7 +45,7 @@ export default function AIForEcommerce() {
             </div>
             
             <div className="bg-blue-900/20 border border-blue-500/30 rounded p-4">
-              <h3 className="text-blue-300 font-semibold mb-2">📝 Content Automation</h3>
+              <h3 className="text-blue-300 font-semibold mb-2">Content Automation</h3>
               <ul className="text-blue-200 space-y-1 text-sm">
                 <li>• Product descriptions</li>
                 <li>• SEO-optimized listings</li>
@@ -56,7 +56,7 @@ export default function AIForEcommerce() {
             </div>
             
             <div className="bg-green-900/20 border border-green-500/30 rounded p-4">
-              <h3 className="text-green-300 font-semibold mb-2">🤖 Operations Automation</h3>
+              <h3 className="text-green-300 font-semibold mb-2">Operations Automation</h3>
               <ul className="text-green-200 space-y-1 text-sm">
                 <li>• Customer service chatbots</li>
                 <li>• Inventory management</li>
@@ -71,7 +71,7 @@ export default function AIForEcommerce() {
 
       {/* Step-by-Step Implementation */}
       <div className="mb-8">
-        <h2 className="text-2xl font-semibold text-white mb-4">🔧 Step-by-Step Implementation</h2>
+        <h2 className="text-2xl font-semibold text-white mb-4">Step-by-Step Implementation</h2>
         <div className="bg-gray-800/50 rounded-lg p-6">
           <p className="text-gray-300 mb-6">Follow this proven system to build your AI-powered eCommerce business:</p>
           
@@ -83,7 +83,7 @@ export default function AIForEcommerce() {
                 <p>• Validate demand using AI-powered keyword research</p>
                 <p>• Analyze competitor pricing and positioning strategies</p>
                 <div className="bg-black/30 rounded p-3 mt-3">
-                  <p className="text-purple-100 font-mono text-sm">💡 Product Research Prompt:</p>
+                  <p className="text-purple-100 font-mono text-sm">Product Research Prompt:</p>
                   <p className="text-purple-100 font-mono text-sm mt-2">"Analyze the current market for [PRODUCT CATEGORY] and identify 10 high-demand, low-competition product opportunities. For each product, provide: 1) Market demand score 2) Competition level 3) Profit potential 4) Target audience 5) Key selling points 6) Pricing strategy. Focus on products with $50+ profit margins."</p>
                 </div>
               </div>
@@ -96,7 +96,7 @@ export default function AIForEcommerce() {
                 <p>• Build automated email marketing sequences</p>
                 <p>• Generate social media content calendars</p>
                 <div className="bg-black/30 rounded p-3 mt-3">
-                  <p className="text-blue-100 font-mono text-sm">💡 Content Creation Prompt:</p>
+                  <p className="text-blue-100 font-mono text-sm">Content Creation Prompt:</p>
                   <p className="text-blue-100 font-mono text-sm mt-2">"Create a complete content package for [PRODUCT NAME] including: 1) SEO-optimized product title 2) Compelling product description with benefits 3) 5 bullet points highlighting key features 4) Email marketing sequence (5 emails) 5) Social media posts (10 posts) 6) Customer FAQ section. Target audience: [DESCRIBE AUDIENCE]."</p>
                 </div>
               </div>
@@ -109,7 +109,7 @@ export default function AIForEcommerce() {
                 <p>• Implement AI chatbots for customer service</p>
                 <p>• Create automated review and feedback systems</p>
                 <div className="bg-black/30 rounded p-3 mt-3">
-                  <p className="text-green-100 font-mono text-sm">💡 Automation Setup Prompt:</p>
+                  <p className="text-green-100 font-mono text-sm">Automation Setup Prompt:</p>
                   <p className="text-green-100 font-mono text-sm mt-2">"Design a complete customer service automation system for an eCommerce store selling [PRODUCT TYPE]. Include: 1) Chatbot conversation flows 2) Common customer questions and AI responses 3) Order tracking automation 4) Return/refund process 5) Upselling sequences 6) Review request automation. Make it friendly and helpful."</p>
                 </div>
               </div>
@@ -120,12 +120,12 @@ export default function AIForEcommerce() {
 
       {/* Revenue Streams */}
       <div className="mb-8">
-        <h2 className="text-2xl font-semibold text-white mb-4">💰 AI eCommerce Revenue Streams</h2>
+        <h2 className="text-2xl font-semibold text-white mb-4">AI eCommerce Revenue Streams</h2>
         <div className="bg-gray-800/50 rounded-lg p-6">
           <div className="grid md:grid-cols-2 gap-6">
             <div className="space-y-4">
               <div className="bg-purple-900/20 border border-purple-500/30 rounded p-4">
-                <h3 className="text-purple-300 font-semibold mb-2">🛍️ Direct Product Sales</h3>
+                <h3 className="text-purple-300 font-semibold mb-2">Direct Product Sales</h3>
                 <ul className="text-purple-200 space-y-2 text-sm">
                   <li><strong>Physical Products:</strong> $10K-100K/month</li>
                   <li><strong>Digital Products:</strong> $5K-50K/month</li>
@@ -136,7 +136,7 @@ export default function AIForEcommerce() {
               </div>
               
               <div className="bg-blue-900/20 border border-blue-500/30 rounded p-4">
-                <h3 className="text-blue-300 font-semibold mb-2">🔧 AI eCommerce Services</h3>
+                <h3 className="text-blue-300 font-semibold mb-2">AI eCommerce Services</h3>
                 <ul className="text-blue-200 space-y-2 text-sm">
                   <li><strong>Store Setup & Optimization:</strong> $2K-10K per project</li>
                   <li><strong>AI Content Creation:</strong> $500-3K per store</li>
@@ -148,7 +148,7 @@ export default function AIForEcommerce() {
             </div>
             
             <div className="bg-orange-900/20 border border-orange-500/30 rounded p-4">
-              <h3 className="text-orange-300 font-semibold mb-3">🎯 30-Day Launch Plan</h3>
+              <h3 className="text-orange-300 font-semibold mb-3">30-Day Launch Plan</h3>
               <div className="space-y-3">
                 <div className="bg-black/30 rounded p-2">
                   <p className="text-orange-200 text-sm"><strong>Week 1:</strong> Product research, niche selection, supplier sourcing</p>
@@ -170,12 +170,12 @@ export default function AIForEcommerce() {
 
       {/* AI Tools & Platforms */}
       <div className="mb-8">
-        <h2 className="text-2xl font-semibold text-white mb-4">🛠️ Essential AI Tools for eCommerce</h2>
+        <h2 className="text-2xl font-semibold text-white mb-4">Essential AI Tools for eCommerce</h2>
         <div className="bg-gray-800/50 rounded-lg p-6">
           <div className="grid md:grid-cols-2 gap-6">
             <div className="space-y-4">
               <div className="bg-green-900/20 border border-green-500/30 rounded p-4">
-                <h3 className="text-green-300 font-semibold mb-2">🔍 Research & Analytics</h3>
+                <h3 className="text-green-300 font-semibold mb-2">Research & Analytics</h3>
                 <div className="text-green-200 space-y-2 text-sm">
                   <p><strong>ChatGPT/Claude:</strong> Market research, trend analysis</p>
                   <p><strong>Google Trends + AI:</strong> Demand validation</p>
@@ -185,7 +185,7 @@ export default function AIForEcommerce() {
               </div>
               
               <div className="bg-blue-900/20 border border-blue-500/30 rounded p-4">
-                <h3 className="text-blue-300 font-semibold mb-2">📝 Content Creation</h3>
+                <h3 className="text-blue-300 font-semibold mb-2">Content Creation</h3>
                 <div className="text-blue-200 space-y-2 text-sm">
                   <p><strong>Jasper/Copy.ai:</strong> Product descriptions</p>
                   <p><strong>Canva AI:</strong> Product images and graphics</p>
@@ -197,7 +197,7 @@ export default function AIForEcommerce() {
             
             <div className="space-y-4">
               <div className="bg-purple-900/20 border border-purple-500/30 rounded p-4">
-                <h3 className="text-purple-300 font-semibold mb-2">🤖 Automation & Support</h3>
+                <h3 className="text-purple-300 font-semibold mb-2">Automation & Support</h3>
                 <div className="text-purple-200 space-y-2 text-sm">
                   <p><strong>Tidio/Intercom:</strong> AI customer service</p>
                   <p><strong>Klaviyo:</strong> Email marketing automation</p>
@@ -207,7 +207,7 @@ export default function AIForEcommerce() {
               </div>
               
               <div className="bg-orange-900/20 border border-orange-500/30 rounded p-4">
-                <h3 className="text-orange-300 font-semibold mb-2">📊 Optimization & Growth</h3>
+                <h3 className="text-orange-300 font-semibold mb-2">Optimization & Growth</h3>
                 <div className="text-orange-200 space-y-2 text-sm">
                   <p><strong>Google Analytics 4:</strong> AI-powered insights</p>
                   <p><strong>Hotjar:</strong> User behavior analysis</p>
@@ -222,12 +222,12 @@ export default function AIForEcommerce() {
 
       {/* Advanced Strategies */}
       <div className="mb-8">
-        <h2 className="text-2xl font-semibold text-white mb-4">🧠 Advanced AI eCommerce Strategies</h2>
+        <h2 className="text-2xl font-semibold text-white mb-4">Advanced AI eCommerce Strategies</h2>
         <div className="bg-gray-800/50 rounded-lg p-6">
           <div className="grid md:grid-cols-2 gap-6">
             <div className="space-y-4">
               <div className="bg-green-900/20 border border-green-500/30 rounded p-4">
-                <h3 className="text-green-300 font-semibold mb-2">🎯 AI-Powered Personalization</h3>
+                <h3 className="text-green-300 font-semibold mb-2">AI-Powered Personalization</h3>
                 <div className="text-green-200 space-y-2 text-sm">
                   <p>Create unique shopping experiences for each customer:</p>
                   <div className="bg-black/30 rounded p-2 mt-2">
@@ -239,7 +239,7 @@ export default function AIForEcommerce() {
               </div>
               
               <div className="bg-blue-900/20 border border-blue-500/30 rounded p-4">
-                <h3 className="text-blue-300 font-semibold mb-2">📈 Predictive Analytics</h3>
+                <h3 className="text-blue-300 font-semibold mb-2">Predictive Analytics</h3>
                 <div className="text-blue-200 space-y-2 text-sm">
                   <p>Forecast trends and optimize inventory:</p>
                   <div className="bg-black/30 rounded p-2 mt-2">
@@ -253,7 +253,7 @@ export default function AIForEcommerce() {
             
             <div className="space-y-4">
               <div className="bg-purple-900/20 border border-purple-500/30 rounded p-4">
-                <h3 className="text-purple-300 font-semibold mb-2">🔄 Automated Scaling</h3>
+                <h3 className="text-purple-300 font-semibold mb-2">Automated Scaling</h3>
                 <div className="text-purple-200 space-y-2 text-sm">
                   <p>Build systems that scale without manual work:</p>
                   <div className="bg-black/30 rounded p-2 mt-2">
@@ -265,7 +265,7 @@ export default function AIForEcommerce() {
               </div>
               
               <div className="bg-orange-900/20 border border-orange-500/30 rounded p-4">
-                <h3 className="text-orange-300 font-semibold mb-2">🌍 Global Expansion</h3>
+                <h3 className="text-orange-300 font-semibold mb-2">Global Expansion</h3>
                 <div className="text-orange-200 space-y-2 text-sm">
                   <p>Use AI to enter international markets:</p>
                   <div className="bg-black/30 rounded p-2 mt-2">
@@ -282,7 +282,7 @@ export default function AIForEcommerce() {
       
       {/* Success Metrics */}
       <div className="mb-8">
-        <h2 className="text-2xl font-semibold text-white mb-4">📊 Success Metrics & Scaling</h2>
+        <h2 className="text-2xl font-semibold text-white mb-4">Success Metrics & Scaling</h2>
         <div className="bg-gray-800/50 rounded-lg p-6">
           <div className="grid md:grid-cols-3 gap-4">
             <div className="bg-purple-900/20 border border-purple-500/30 rounded p-4 text-center">
@@ -303,7 +303,7 @@ export default function AIForEcommerce() {
           </div>
           
           <div className="mt-6 bg-yellow-900/20 border border-yellow-500/30 rounded p-4">
-            <h3 className="text-yellow-300 font-semibold mb-2">🎯 Your Next Action</h3>
+            <h3 className="text-yellow-300 font-semibold mb-2">Your Next Action</h3>
             <p className="text-yellow-200">Start with product research today. Use AI to identify 3 profitable product opportunities in a niche you understand. The key is to start - you can optimize and scale once you have momentum.</p>
           </div>
         </div>

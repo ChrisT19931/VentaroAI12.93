@@ -118,9 +118,9 @@ export default function CoachingCalendar({ onBookingComplete }: CoachingCalendar
       
       if (data.success) {
         if (data.emailsSent?.admin && data.emailsSent?.customer) {
-          toast.success('🔥 Booking request submitted! Check your email for confirmation.');
+          toast.success('Booking request submitted! Check your email for confirmation.');
         } else {
-          toast.success('🔥 Booking request submitted successfully! You will be contacted within 24 hours.');
+          toast.success('Booking request submitted successfully! You will be contacted within 24 hours.');
         }
         
         // Reset form
@@ -179,7 +179,7 @@ export default function CoachingCalendar({ onBookingComplete }: CoachingCalendar
   return (
     <div className="bg-gray-900/50 border border-gray-600 rounded-xl p-6">
       <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
-        📅 Schedule Your Coaching Session
+        Schedule Your Coaching Session
       </h3>
       
       {/* User Name Input */}
@@ -354,7 +354,7 @@ export default function CoachingCalendar({ onBookingComplete }: CoachingCalendar
           </>
         ) : (
           <>
-            📅 Request Booking
+            Request Booking
           </>
         )}
       </button>

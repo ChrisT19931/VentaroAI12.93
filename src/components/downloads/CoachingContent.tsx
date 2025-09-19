@@ -24,7 +24,7 @@ export default function CoachingContent({ hasAccess = false, isAdmin = false }: 
   }, []);
 
   const handleBookingComplete = (bookingId: string) => {
-    toast.success('🔥 Booking request submitted successfully!');
+    toast.success('Booking request submitted successfully!');
     // Could add additional logic here if needed
   };
 
@@ -44,14 +44,14 @@ export default function CoachingContent({ hasAccess = false, isAdmin = false }: 
       <div className="min-h-screen bg-black py-12">
         <div className="container mx-auto px-4 max-w-2xl">
           <div className="bg-gray-900 rounded-lg p-8 text-center">
-            <div className="text-6xl mb-6">🎯</div>
+            <div className="text-6xl mb-6"></div>
             <h1 className="text-3xl font-bold text-white mb-4">1-on-1 AI Coaching Sessions</h1>
             <p className="text-gray-300 mb-8">
               Get personalized AI coaching to accelerate your business growth and income.
             </p>
             
             <div className="bg-red-900/20 border border-red-500/30 rounded-lg p-4 mb-6">
-              <p className="text-red-300 text-sm mb-2">🔒 Access Required</p>
+              <p className="text-red-300 text-sm mb-2">Access Required</p>
               <p className="text-gray-300 text-sm">Please log in or purchase to access this content</p>
             </div>
             
@@ -86,7 +86,7 @@ export default function CoachingContent({ hasAccess = false, isAdmin = false }: 
       <div className="container mx-auto px-4 max-w-4xl">
         {/* Header */}
         <div className="text-center mb-8">
-          <div className="text-6xl mb-4">🎯</div>
+          <div className="text-6xl mb-4"></div>
           <h1 className="text-4xl font-bold text-white mb-4">1-on-1 AI Coaching Sessions</h1>
           <p className="text-xl text-gray-300">
             Personalized coaching to accelerate your AI-powered business success
@@ -111,13 +111,13 @@ export default function CoachingContent({ hasAccess = false, isAdmin = false }: 
             </div>
             
             <div className="text-center">
-              <div className="bg-green-600 text-white rounded-full w-16 h-16 flex items-center justify-center text-2xl mx-auto mb-4">💻</div>
+              <div className="bg-green-600 text-white rounded-full w-16 h-16 flex items-center justify-center text-2xl mx-auto mb-4"></div>
               <h3 className="text-white font-semibold mb-2">Format</h3>
               <p className="text-gray-300">Video call via Google Meet with screen sharing</p>
             </div>
             
             <div className="text-center">
-              <div className="bg-purple-600 text-white rounded-full w-16 h-16 flex items-center justify-center text-2xl mx-auto mb-4">📋</div>
+              <div className="bg-purple-600 text-white rounded-full w-16 h-16 flex items-center justify-center text-2xl mx-auto mb-4"></div>
               <h3 className="text-white font-semibold mb-2">Follow-up</h3>
               <p className="text-gray-300">Follow up email with report</p>
             </div>

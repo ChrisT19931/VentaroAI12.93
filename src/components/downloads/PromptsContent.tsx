@@ -292,7 +292,7 @@ export default function PromptsContent({ hasAccess, isAdmin }: PromptsContentPro
     return (
       <div className="min-h-screen bg-black flex items-center justify-center">
         <div className="text-center">
-          <div className="text-6xl mb-6">🔒</div>
+          <div className="text-6xl mb-6"></div>
           <h1 className="text-3xl font-bold text-white mb-4">Access Required</h1>
           <p className="text-gray-300 mb-8">Please sign in to access the AI Prompts Arsenal.</p>
           <div className="space-x-4">
@@ -312,7 +312,7 @@ export default function PromptsContent({ hasAccess, isAdmin }: PromptsContentPro
     return (
       <div className="min-h-screen bg-black flex items-center justify-center">
         <div className="text-center">
-          <div className="text-6xl mb-6">🔒</div>
+          <div className="text-6xl mb-6"></div>
           <h1 className="text-3xl font-bold text-white mb-4">Purchase Required</h1>
           <p className="text-gray-300 mb-8">You need to purchase the AI Prompts Arsenal to access this content.</p>
           <div className="space-x-4">
@@ -341,13 +341,13 @@ export default function PromptsContent({ hasAccess, isAdmin }: PromptsContentPro
           {/* Header */}
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              💰 30x AI Prompts Arsenal
+              30x AI Prompts Arsenal
             </h1>
             <p className="text-xl text-gray-300 mb-6">
               Transform ANY business idea into a million-dollar online empire with these BIG MONEY prompts
             </p>
             <div className="bg-gradient-to-r from-green-600 to-emerald-600 rounded-xl p-6 mb-8 border border-green-500/30">
-              <h3 className="text-2xl font-bold text-white mb-4">🎯 How These Prompts Work</h3>
+              <h3 className="text-2xl font-bold text-white mb-4">How These Prompts Work</h3>
               <p className="text-green-100 text-lg leading-relaxed">
                 Feed ChatGPT your business idea + these prompts = Complete blueprint to build a profitable online empire. 
                 Each prompt is designed to extract maximum value and create actionable strategies for BIG MONEY online businesses.
@@ -357,7 +357,7 @@ export default function PromptsContent({ hasAccess, isAdmin }: PromptsContentPro
 
           {/* What's Included */}
           <div className="bg-white/10 backdrop-blur-lg rounded-xl p-8 mb-12 border border-gray-700">
-            <h2 className="text-3xl font-bold text-white mb-6 text-center">💎 What's Included</h2>
+            <h2 className="text-3xl font-bold text-white mb-6 text-center">What's Included</h2>
             <div className="grid md:grid-cols-2 gap-8">
               <div className="space-y-4">
                 <div className="flex items-start space-x-3">
@@ -396,20 +396,20 @@ export default function PromptsContent({ hasAccess, isAdmin }: PromptsContentPro
 
           {/* Perfect For */}
           <div className="bg-gradient-to-r from-purple-900/30 to-blue-900/30 rounded-xl p-8 mb-12 border border-purple-500/30">
-            <h2 className="text-3xl font-bold text-white mb-6 text-center">🎯 Perfect For</h2>
+            <h2 className="text-3xl font-bold text-white mb-6 text-center">Perfect For</h2>
             <div className="grid md:grid-cols-3 gap-6">
               <div className="text-center">
-                <div className="text-4xl mb-4">💰</div>
+                <div className="text-4xl mb-4"></div>
                 <h4 className="text-white font-bold mb-2">Ambitious Entrepreneurs</h4>
                 <p className="text-gray-300 text-sm">Who want to build million-dollar online empires from any business idea</p>
               </div>
               <div className="text-center">
-                <div className="text-4xl mb-4">💰</div>
+                <div className="text-4xl mb-4"></div>
                 <h4 className="text-white font-bold mb-2">High-Ticket Creators</h4>
                 <p className="text-gray-300 text-sm">Who want to command premium prices for their expertise and services</p>
               </div>
               <div className="text-center">
-                <div className="text-4xl mb-4">📈</div>
+                <div className="text-4xl mb-4"></div>
                 <h4 className="text-white font-bold mb-2">Digital Asset Builders</h4>
                 <p className="text-gray-300 text-sm">Who want to create passive income through digital properties and investments</p>
               </div>
@@ -439,7 +439,7 @@ export default function PromptsContent({ hasAccess, isAdmin }: PromptsContentPro
                             <h3 className="text-lg font-bold text-white">{prompt.title}</h3>
                           </div>
                           <div className="flex items-center space-x-4 text-sm">
-                            <span className="text-green-400 font-semibold">💰 {prompt.revenue}</span>
+                            <span className="text-green-400 font-semibold">{prompt.revenue}</span>
                             <span className="text-gray-400">•</span>
                             <span className="text-blue-400">{prompt.useCase}</span>
                           </div>
@@ -457,7 +457,7 @@ export default function PromptsContent({ hasAccess, isAdmin }: PromptsContentPro
                     {expandedPrompts.has(prompt.id) && (
                       <div className="border-t border-gray-700 p-6 bg-gray-900/50">
                         <div className="mb-4">
-                          <h4 className="text-white font-semibold mb-2">🎯 Complete Prompt:</h4>
+                          <h4 className="text-white font-semibold mb-2">Complete Prompt:</h4>
                           <div className="bg-black/50 rounded-lg p-4 font-mono text-sm text-gray-300 leading-relaxed">
                             {prompt.prompt}
                           </div>
@@ -475,7 +475,7 @@ export default function PromptsContent({ hasAccess, isAdmin }: PromptsContentPro
                                 : 'bg-blue-600 hover:bg-blue-700 text-white'
                             }`}
                           >
-                            {copiedPrompt === prompt.id ? '✅ Copied!' : '📋 Copy Prompt'}
+                            {copiedPrompt === prompt.id ? 'Copied!' : 'Copy Prompt'}
                           </button>
                         </div>
                       </div>
@@ -488,12 +488,12 @@ export default function PromptsContent({ hasAccess, isAdmin }: PromptsContentPro
 
           {/* Call to Action */}
           <div className="text-center mt-16 bg-gradient-to-r from-green-900/50 to-emerald-900/50 rounded-xl p-8 border border-green-500/30">
-            <h2 className="text-3xl font-bold text-white mb-4">💰 Ready to Build Your Online Empire?</h2>
+            <h2 className="text-3xl font-bold text-white mb-4">Ready to Build Your Online Empire?</h2>
             <p className="text-xl text-gray-300 mb-6">
               Use these prompts with ChatGPT to transform any business idea into a million-dollar online business blueprint
             </p>
             <div className="text-sm text-gray-400">
-              <p>💡 Pro Tip: Replace [YOUR BUSINESS IDEA] with your actual idea and watch ChatGPT create your complete business plan</p>
+              <p>Pro Tip: Replace [YOUR BUSINESS IDEA] with your actual idea and watch ChatGPT create your complete business plan</p>
             </div>
           </div>
 

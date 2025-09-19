@@ -14,6 +14,7 @@ import AnimatedHeading from '../components/AnimatedHeading'
 import PremiumHeading from '../components/PremiumHeading'
 import MetallicText from '../components/MetallicText'
 import ScrollReveal from '../components/ScrollReveal'
+import InteractiveQuoteWizard from '../components/InteractiveQuoteWizard'
 // import FloatingQuoteButton from '../components/FloatingQuoteButton' // Temporarily disabled
 // AIChatWidget functionality moved to GlobalWidgets
 
@@ -31,6 +32,7 @@ export default function Home() {
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isCustomSubmitting, setIsCustomSubmitting] = useState(false);
   // Chat functionality moved to GlobalWidgets
   const maxSpots = 300;
 
@@ -156,12 +158,239 @@ export default function Home() {
     }
   };
 
+  const handleCustomSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsCustomSubmitting(true);
+
+    try {
+      const formData = new FormData(e.target as HTMLFormElement);
+      const data = {
+        name: formData.get('name'),
+        email: formData.get('email'),
+        projectType: formData.get('projectType'),
+        timeline: formData.get('timeline'),
+        description: formData.get('description')
+      };
+
+      // Track form submission
+      analytics.track('custom_quote_submitted', data);
+
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...data,
+          type: 'custom_quote'
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to submit form');
+      }
+
+      // Reset form
+      (e.target as HTMLFormElement).reset();
+      
+      toast.success('Thank you for your quote request! We\'ll get back to you within 24 hours.');
+    } catch (error) {
+      console.error('Error submitting custom quote:', error);
+      toast.error('There was an error submitting your request. Please try again.');
+    } finally {
+      setIsCustomSubmitting(false);
+    }
+  };
+
   return (
     <>
       <main className="min-h-screen">
         {/* Cinematic Hero Section */}
        {/* <CinematicHero /> */} {/* Temporarily disabled due to webpack module resolution error */}
        
+       {/* Custom Solutions Section - Cloned from /custom-solutions */}
+       <section className="relative py-20 bg-gradient-to-b from-black via-gray-950 to-black overflow-hidden">
+         <div className="absolute inset-0 bg-gradient-to-r from-blue-950/10 via-transparent to-blue-950/10"></div>
+         <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-5"></div>
+         
+         {/* Enhanced 3D Background Elements */}
+         <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500/5 rounded-full blur-3xl animate-pulse"></div>
+         <div className="absolute bottom-20 right-10 w-96 h-96 bg-blue-600/5 rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
+         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-blue-500/3 rounded-full blur-3xl"></div>
+         
+         <div className="relative z-10 max-w-7xl mx-auto px-6">
+           <div className="text-center mb-16">
+             <div className="inline-flex items-center gap-2 bg-gradient-to-r from-gray-900/80 to-black/80 backdrop-blur-xl border border-gray-700/30 rounded-full px-8 py-4 mb-8 shadow-2xl shadow-black/40 transform hover:scale-105 transition-all duration-500">
+               <div className="w-3 h-3 bg-blue-400 rounded-full animate-pulse shadow-lg shadow-blue-400/50"></div>
+               <span className="text-gray-300 font-bold text-sm uppercase tracking-wider drop-shadow-lg">ENTERPRISE AI SOLUTIONS</span>
+               <div className="w-3 h-3 bg-blue-500 rounded-full animate-pulse shadow-lg shadow-blue-500/50"></div>
+             </div>
+             
+             <div className="relative">
+               <div className="absolute -inset-1 bg-blue-500/10 rounded-lg blur-md z-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+               <h1 className="text-5xl md:text-7xl font-bold mb-6 text-white drop-shadow-2xl">
+                 Transform Your Business <span className="bg-gradient-to-r from-emerald-400 to-blue-400 bg-clip-text text-transparent">10x Faster</span>
+               </h1>
+             </div>
+             
+             <p className="text-xl md:text-2xl text-gray-300 mb-12 leading-relaxed max-w-4xl mx-auto">
+               <span className="text-white font-semibold">We take the guesswork out of AI implementation.</span> Tell us your needs and we'll create the perfect solution for your business. Save time, reduce complexity, and get results - we handle the technical details so you can focus on growth.
+             </p>
+           </div>
+
+           {/* Services Grid */}
+           <div className="mb-20">
+             <div className="text-center mb-12">
+               <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                 <span className="bg-gradient-to-r from-blue-400 via-purple-500 to-blue-600 bg-clip-text text-transparent">Accelerate Your Success</span>
+               </h2>
+               <p className="text-gray-400 text-lg max-w-3xl mx-auto">
+                 Speed is everything. We compress months of development into weeks, delivering everything from rapid prototypes to enterprise transformations.
+               </p>
+             </div>
+
+             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+               {[
+                 {
+                   title: "SaaS Platforms",
+                   description: "Complete web applications with user management, payments, and AI features",
+                   features: ["User Authentication", "Payment Integration", "AI-Powered Features", "Responsive Design"]
+                 },
+                 {
+                   title: "AI Chatbots",
+                   description: "Intelligent conversational agents for customer service and lead generation",
+                   features: ["Natural Language Processing", "Multi-Platform Integration", "Custom Training", "Analytics Dashboard"]
+                 },
+                 {
+                   title: "Automation Tools",
+                   description: "Custom workflows that eliminate repetitive tasks and boost productivity",
+                   features: ["Process Automation", "Data Integration", "Custom Workflows", "Real-time Monitoring"]
+                 },
+                 {
+                   title: "Data Analytics",
+                   description: "Transform raw data into actionable insights with AI-powered analysis",
+                   features: ["Predictive Analytics", "Custom Dashboards", "Real-time Reporting", "Data Visualization"]
+                 },
+                 {
+                   title: "API Integration",
+                   description: "Connect your existing systems with modern AI capabilities",
+                   features: ["System Integration", "API Development", "Legacy Modernization", "Cloud Migration"]
+                 },
+                 {
+                   title: "Custom Solutions",
+                   description: "Bespoke AI applications tailored to your specific business needs",
+                   features: ["Requirements Analysis", "Custom Development", "Testing & QA", "Ongoing Support"]
+                 }
+               ].map((service, index) => (
+                 <div key={index} className="group relative bg-gradient-to-br from-gray-900/60 via-gray-800/50 to-black/95 backdrop-blur-2xl rounded-3xl p-6 shadow-[0_25px_50px_-12px_rgba(0,0,0,0.9)] hover:shadow-[0_35px_60px_-12px_rgba(59,130,246,0.3)] transition-all duration-700 transform hover:-translate-y-2 hover:scale-105 overflow-hidden border border-gray-700/30 hover:border-blue-500/50">
+                   <div className="absolute inset-0 rounded-3xl bg-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                   <div className="relative z-10">
+                     <h3 className="text-xl font-bold text-white mb-3 group-hover:text-blue-300 transition-colors duration-300">{service.title}</h3>
+                     <p className="text-gray-400 mb-4 text-sm leading-relaxed group-hover:text-gray-300 transition-colors duration-300">{service.description}</p>
+                     <ul className="space-y-2">
+                       {service.features.map((feature, featureIndex) => (
+                         <li key={featureIndex} className="flex items-center space-x-2 text-sm">
+                           <div className="w-1.5 h-1.5 bg-blue-400 rounded-full group-hover:bg-blue-300 transition-colors duration-300"></div>
+                           <span className="text-gray-400 group-hover:text-gray-300 transition-colors duration-300">{feature}</span>
+                         </li>
+                       ))}
+                     </ul>
+                   </div>
+                 </div>
+               ))}
+             </div>
+           </div>
+
+           {/* Business Examples */}
+           <div className="mb-20">
+             <div className="text-center mb-12">
+               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Perfect for Every Business</h2>
+               <p className="text-gray-400 text-lg max-w-3xl mx-auto">
+                 Tell us your needs and we'll create the perfect AI solution for your business. We take the guesswork out of implementation and deliver results that matter.
+               </p>
+             </div>
+
+             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+               {[
+                 { type: "E-commerce", solution: "Inventory management AI" },
+                 { type: "Healthcare", solution: "Patient scheduling system" },
+                 { type: "Real Estate", solution: "Lead qualification bot" },
+                 { type: "Education", solution: "Student progress tracker" },
+                 { type: "Finance", solution: "Risk assessment tool" },
+                 { type: "Marketing", solution: "Campaign optimization AI" },
+                 { type: "Manufacturing", solution: "Quality control system" },
+                 { type: "Retail", solution: "Customer service chatbot" }
+               ].map((example, index) => (
+                 <div key={index} className="group bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-xl rounded-2xl p-4 border border-gray-700/30 hover:border-blue-500/50 transition-all duration-300 hover:transform hover:scale-105">
+                   <div className="text-blue-400 font-semibold text-sm mb-2 group-hover:text-blue-300 transition-colors duration-300">{example.type}</div>
+                   <div className="text-gray-300 text-sm group-hover:text-white transition-colors duration-300">{example.solution}</div>
+                 </div>
+               ))}
+             </div>
+           </div>
+
+           {/* Interactive Quote Wizard Section */}
+           <div className="text-center mb-16">
+             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+               Get Your Custom Quote
+             </h2>
+             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+               Let's understand your needs with a few quick questions. We'll provide a detailed proposal within 24 hours.
+             </p>
+           </div>
+           
+           <InteractiveQuoteWizard />
+
+           {/* Process Section */}
+           <div className="text-center mb-20">
+             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Our Process</h2>
+             <p className="text-gray-400 text-lg mb-12 max-w-3xl mx-auto">
+               From concept to deployment, we handle everything with precision and speed.
+             </p>
+
+             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+               {[
+                 {
+                   step: "01",
+                   title: "Discovery",
+                   description: "We analyze your requirements and create a detailed project roadmap."
+                 },
+                 {
+                   step: "02",
+                   title: "Proposal",
+                   description: "Receive a comprehensive proposal with timeline and deliverables."
+                 },
+                 {
+                   step: "03",
+                   title: "Development",
+                   description: "Our team builds your solution with regular progress updates."
+                 },
+                 {
+                   step: "04",
+                   title: "Deployment",
+                   description: "Launch your solution with full support and documentation."
+                 }
+               ].map((process, index) => (
+                 <div key={index} className="group relative">
+                   <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-xl rounded-2xl p-6 border border-gray-700/30 hover:border-blue-500/50 transition-all duration-300 hover:transform hover:scale-105">
+                     <div className="text-4xl font-bold text-blue-400 mb-4 group-hover:text-blue-300 transition-colors duration-300">{process.step}</div>
+                     <h3 className="text-xl font-bold text-white mb-3 group-hover:text-blue-300 transition-colors duration-300">{process.title}</h3>
+                     <p className="text-gray-400 text-sm leading-relaxed group-hover:text-gray-300 transition-colors duration-300">{process.description}</p>
+                   </div>
+                   {index < 3 && (
+                     <div className="hidden lg:block absolute top-1/2 -right-4 transform -translate-y-1/2 z-10">
+                       <svg className="w-8 h-8 text-blue-500/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                       </svg>
+                     </div>
+                   )}
+                 </div>
+               ))}
+             </div>
+           </div>
+         </div>
+       </section>
+
        {/* NEW: AI Coaching Hero Section - Mobile First */}
        <section className="relative py-20 bg-gradient-to-b from-black via-gray-950 to-black overflow-hidden">
          <div className="absolute inset-0 bg-gradient-to-r from-emerald-950/10 via-transparent to-emerald-950/10"></div>
@@ -194,7 +423,7 @@ export default function Home() {
              </div>
              
              <p className="text-xl md:text-2xl text-slate-400 mb-12 leading-relaxed max-w-4xl mx-auto drop-shadow-xl transform hover:scale-102 transition-all duration-500 font-light premium-heading-animation" style={{animationDelay: '0.2s'}}>
-               Whether you're new to AI, experienced but unsure how to use it to build online businesses, or looking to optimize your existing business, we can help! Professional AI consulting and implementation guidance for everyone seeking a competitive advantage.
+               <span className="text-white font-semibold">No restrictions. No limitations.</span> From solo entrepreneurs to Fortune 500 enterprises - we deliver professional AI solutions that transform businesses at every scale. Whether you're starting your first venture or optimizing complex operations, our expertise adapts to your needs.
              </p>
            </div>
            
@@ -407,7 +636,7 @@ export default function Home() {
            
            {/* Call to Action */}
            <div className="text-center">
-             <p className="text-lg text-slate-400 mb-6 font-light">Professional consulting sessions include strategic guidance, ongoing support, and implementation resources.</p>
+             <p className="text-lg text-slate-400 mb-6 font-light">Serving <span className="text-white font-semibold">startups, SMBs, and enterprise clients</span> with equal dedication and expertise. Professional consulting sessions include strategic guidance, ongoing support, and implementation resources.</p>
              <Link href="/vai-coaching" className="inline-block bg-gradient-to-r from-slate-700 to-gray-700 hover:from-slate-600 hover:to-gray-600 text-white font-semibold py-4 px-8 rounded-2xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-slate-500/30 border border-slate-600/50">
                View Consulting Programs
              </Link>
@@ -428,7 +657,7 @@ export default function Home() {
              
              <div className="bg-gradient-to-r from-gray-900/60 to-black/60 backdrop-blur-xl border border-gray-700/30 rounded-3xl p-8 max-w-4xl mx-auto shadow-2xl">
                <p className="text-xl text-gray-200 leading-relaxed font-medium">
-                 We started VAI Coaching with a simple mission: to help businesses and professionals harness the power of AI without getting lost in technical complexity. Our team of experts combines practical experience with cutting-edge knowledge to deliver actionable guidance that drives real results.
+                 <span className="text-white font-semibold">From individual entrepreneurs to multinational corporations</span> - we deliver the same level of professional excellence to every client. Our mission is simple: democratize AI expertise and make cutting-edge technology accessible to businesses of all sizes, without compromising on quality or results.
                </p>
              </div>
            </div>
@@ -453,314 +682,7 @@ export default function Home() {
         </div>
       </section>
         
-        {/* Professional Consultation - Want to Speak with a Professional? */}
-        <section className="py-24 bg-gradient-to-br from-gray-950 via-slate-900 to-black relative overflow-hidden">
-          {/* Premium Background Effects */}
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/5 to-purple-900/10"></div>
-          <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-5"></div>
-          <div className="absolute top-20 right-20 w-32 h-32 border border-blue-500/10 rotate-45 opacity-30"></div>
-          <div className="absolute bottom-20 left-20 w-24 h-24 border border-purple-500/10 rotate-12 opacity-30"></div>
-          
-          <div className="container mx-auto px-6 max-w-7xl relative z-10">
-            {/* Header Section */}
-            <div className="text-center mb-16">
-              <ScrollReveal direction="up" delay={0.1}>
-                <span className="inline-block px-6 py-2 bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-full text-sm font-bold text-blue-300 mb-6 border border-blue-500/30 shadow-xl">
-                  💬 WANT TO SPEAK WITH A PROFESSIONAL?
-                </span>
-              </ScrollReveal>
-              
-              <ScrollReveal direction="up" delay={0.3}>
-                <AnimatedHeading 
-                  className="text-4xl md:text-5xl mb-6" 
-                  animation="slide-up" 
-                  theme="blue" 
-                  is3D={true}
-                >
-                  <span className="text-white drop-shadow-xl">Get Expert Guidance & Custom Solutions</span>
-                </AnimatedHeading>
-              </ScrollReveal>
-              <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed mb-8">
-                Ready to take your business to the next level? Our team of AI and business experts is here to provide personalized guidance, custom development, and strategic consulting tailored to your specific needs.
-              </p>
-            </div>
-            {/* Service Options Grid */}
-            <div className="grid md:grid-cols-3 gap-8 mb-16">
-              {/* AI Strategy Consulting */}
-              <div className="bg-gradient-to-br from-blue-900/20 to-purple-900/20 rounded-2xl p-6 border border-blue-500/30 hover:border-blue-400/50 transition-all duration-300 group">
-                <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                  </svg>
-                </div>
-                <h4 className="text-xl font-bold text-white mb-3">AI Strategy & Consulting</h4>
-                <p className="text-gray-300 text-sm mb-4">Strategic AI implementation planning, business process optimization, and growth consulting.</p>
-                <ul className="text-xs text-gray-400 space-y-1">
-                  <li>• AI readiness assessment</li>
-                  <li>• Custom AI strategy roadmap</li>
-                  <li>• Process automation planning</li>
-                  <li>• ROI analysis & projections</li>
-                </ul>
-              </div>
 
-              {/* Custom Development */}
-              <div className="bg-gradient-to-br from-emerald-900/20 to-blue-900/20 rounded-2xl p-6 border border-emerald-500/30 hover:border-emerald-400/50 transition-all duration-300 group">
-                <div className="w-12 h-12 bg-gradient-to-br from-emerald-500 to-blue-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-                  </svg>
-                </div>
-                <h4 className="text-xl font-bold text-white mb-3">Custom Platform Development</h4>
-                <p className="text-gray-300 text-sm mb-4">Full-stack web applications, e-commerce platforms, and custom business solutions.</p>
-                <ul className="text-xs text-gray-400 space-y-1">
-                  <li>• React/Next.js development</li>
-                  <li>• Database & API integration</li>
-                  <li>• Payment processing</li>
-                  <li>• Mobile-responsive design</li>
-                </ul>
-              </div>
-
-              {/* Training & Implementation */}
-              <div className="bg-gradient-to-br from-purple-900/20 to-pink-900/20 rounded-2xl p-6 border border-purple-500/30 hover:border-purple-400/50 transition-all duration-300 group">
-                <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                  </svg>
-                </div>
-                <h4 className="text-xl font-bold text-white mb-3">Training & Implementation</h4>
-                <p className="text-gray-300 text-sm mb-4">Hands-on training, team onboarding, and guided implementation of AI solutions.</p>
-                <ul className="text-xs text-gray-400 space-y-1">
-                  <li>• Team training programs</li>
-                  <li>• Implementation support</li>
-                  <li>• Best practices guidance</li>
-                  <li>• Ongoing mentorship</li>
-                </ul>
-              </div>
-            </div>
-            
-            {/* Comprehensive Consultation Form */}
-            <div id="consultation-form" className="max-w-4xl mx-auto">
-              <div className="glass-panel rounded-3xl p-8 border border-blue-500/30 shadow-2xl hover:shadow-blue-500/10 transition-all duration-300">
-                <div className="text-center mb-8">
-                  <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-full border border-blue-500/30 mb-4">
-                    <span className="text-blue-300 text-sm font-semibold tracking-wide">💬 FREE CONSULTATION</span>
-                  </div>
-                  <h3 className="text-3xl font-bold text-white mb-4">Ready to Transform Your Business?</h3>
-                  <p className="text-gray-300 leading-relaxed max-w-2xl mx-auto">
-                    Tell us about your goals and challenges. Our experts will provide personalized recommendations and a custom solution roadmap.
-                  </p>
-                </div>
-                
-                <form id="consultation-form" onSubmit={handleContactSubmit} className="space-y-6">
-                  {/* Name and Email Row */}
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div>
-                      <label className="block text-white font-medium mb-3">
-                        Full Name *
-                      </label>
-                      <input 
-                        type="text" 
-                        name="name"
-                        value={contactForm.name}
-                        onChange={handleContactChange}
-                        placeholder="John Smith"
-                        required
-                        className="w-full p-4 bg-white/5 border border-slate-600/50 rounded-xl text-white placeholder-gray-400 focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 focus:outline-none transition-all duration-300 hover:border-slate-500 backdrop-blur-sm"
-                      />
-                    </div>
-                    
-                    <div>
-                      <label className="block text-white font-medium mb-3">
-                        Email Address *
-                      </label>
-                      <input 
-                        type="email" 
-                        name="email"
-                        value={contactForm.email}
-                        onChange={handleContactChange}
-                        placeholder="john@company.com"
-                        required
-                        className="w-full p-4 bg-white/5 border border-slate-600/50 rounded-xl text-white placeholder-gray-400 focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 focus:outline-none transition-all duration-300 hover:border-slate-500 backdrop-blur-sm"
-                      />
-                    </div>
-                  </div>
-                  
-                  {/* Phone and Company Row */}
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div>
-                      <label className="block text-white font-medium mb-3">
-                        Phone Number
-                      </label>
-                      <input 
-                        type="tel" 
-                        name="phone"
-                        value={contactForm.phone}
-                        onChange={handleContactChange}
-                        placeholder="(555) 123-4567"
-                        className="w-full p-4 bg-white/5 border border-slate-600/50 rounded-xl text-white placeholder-gray-400 focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 focus:outline-none transition-all duration-300 hover:border-slate-500 backdrop-blur-sm"
-                      />
-                    </div>
-                    
-                    <div>
-                      <label className="block text-white font-medium mb-3">
-                        Company/Organization
-                      </label>
-                      <input 
-                        type="text" 
-                        name="company"
-                        value={contactForm.company}
-                        onChange={handleContactChange}
-                        placeholder="Your Company Name"
-                        className="w-full p-4 bg-white/5 border border-slate-600/50 rounded-xl text-white placeholder-gray-400 focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 focus:outline-none transition-all duration-300 hover:border-slate-500 backdrop-blur-sm"
-                      />
-                    </div>
-                  </div>
-
-                  {/* Service Interest and Budget Row */}
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div>
-                      <label className="block text-white font-medium mb-3">
-                        Primary Interest *
-                      </label>
-                      <select 
-                        name="projectType"
-                        value={contactForm.projectType}
-                        onChange={handleContactChange}
-                        required
-                        className="w-full p-4 bg-white/5 border border-slate-600/50 rounded-xl text-white focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 focus:outline-none transition-all duration-300 hover:border-slate-500 backdrop-blur-sm"
-                      >
-                        <option value="">Select your primary interest</option>
-                        <option value="ai-strategy">AI Strategy & Consulting</option>
-                        <option value="custom-development">Custom Platform Development</option>
-                        <option value="ai-integration">AI Integration & Automation</option>
-                        <option value="training">Training & Implementation</option>
-                        <option value="ecommerce">E-commerce Solutions</option>
-                        <option value="webapp">Web Application Development</option>
-                        <option value="digital-transformation">Digital Transformation</option>
-                        <option value="ongoing-support">Ongoing Support & Maintenance</option>
-                        <option value="other">Other/Multiple Services</option>
-                      </select>
-                    </div>
-
-                    <div>
-                      <label className="block text-white font-medium mb-3">
-                        Project Budget Range
-                      </label>
-                      <select 
-                        name="budget"
-                        value={contactForm.budget || ''}
-                        onChange={handleContactChange}
-                        className="w-full p-4 bg-white/5 border border-slate-600/50 rounded-xl text-white focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 focus:outline-none transition-all duration-300 hover:border-slate-500 backdrop-blur-sm"
-                      >
-                        <option value="">Select budget range</option>
-                        <option value="10-200">$10 - $200</option>
-                        <option value="200-1000">$200 - $1,000</option>
-                        <option value="1000-5000">$1,000 - $5,000</option>
-                        <option value="5000-plus">$5,000+</option>
-                        <option value="discuss">Let's discuss</option>
-                      </select>
-                    </div>
-                  </div>
-
-                  {/* Timeline and Current Situation */}
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div>
-                      <label className="block text-white font-medium mb-3">
-                        Desired Timeline
-                      </label>
-                      <select 
-                        name="timeline"
-                        value={contactForm.timeline || ''}
-                        onChange={handleContactChange}
-                        className="w-full p-4 bg-white/5 border border-slate-600/50 rounded-xl text-white focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 focus:outline-none transition-all duration-300 hover:border-slate-500 backdrop-blur-sm"
-                      >
-                        <option value="">Select timeline</option>
-                        <option value="asap">ASAP (Rush project)</option>
-                        <option value="1-month">Within 1 month</option>
-                        <option value="2-3-months">2-3 months</option>
-                        <option value="3-6-months">3-6 months</option>
-                        <option value="6-plus-months">6+ months</option>
-                        <option value="planning">Still planning</option>
-                      </select>
-                    </div>
-
-                    <div>
-                      <label className="block text-white font-medium mb-3">
-                        Current Business Stage
-                      </label>
-                      <select 
-                        name="businessStage"
-                        value={contactForm.businessStage || ''}
-                        onChange={handleContactChange}
-                        className="w-full p-4 bg-white/5 border border-slate-600/50 rounded-xl text-white focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 focus:outline-none transition-all duration-300 hover:border-slate-500 backdrop-blur-sm"
-                      >
-                        <option value="">Select business stage</option>
-                        <option value="startup">Startup/New Business</option>
-                        <option value="small-business">Small Business (1-10 employees)</option>
-                        <option value="medium-business">Medium Business (11-50 employees)</option>
-                        <option value="large-business">Large Business (50+ employees)</option>
-                        <option value="enterprise">Enterprise Organization</option>
-                        <option value="individual">Individual/Freelancer</option>
-                      </select>
-                    </div>
-                  </div>
-                  
-                  {/* Project Details */}
-                  <div>
-                    <label className="block text-white font-medium mb-3">
-                      Tell us about your goals and challenges *
-                    </label>
-                    <textarea 
-                      name="message"
-                      value={contactForm.message}
-                      onChange={handleContactChange}
-                      placeholder="Describe your business goals, current challenges, and what you hope to achieve. The more details you provide, the better we can tailor our recommendations..."
-                      rows={5}
-                      required
-                      className="w-full p-4 bg-white/5 border border-slate-600/50 rounded-xl text-white placeholder-gray-400 focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 focus:outline-none transition-all duration-300 hover:border-slate-500 backdrop-blur-sm resize-none"
-                    />
-                  </div>
-                  
-                  {/* Submit Button */}
-                  <div className="pt-4">
-                    <button 
-                      type="submit" 
-                      disabled={isSubmitting}
-                      className="w-full bg-gradient-to-r from-blue-600 via-purple-600 to-blue-700 hover:from-blue-700 hover:via-purple-700 hover:to-blue-800 disabled:from-gray-600 disabled:to-gray-700 text-white font-semibold py-4 px-8 rounded-xl transition-all duration-300 transform hover:scale-[1.02] hover:shadow-2xl disabled:scale-100 disabled:shadow-none flex items-center justify-center space-x-3 group"
-                    >
-                      {isSubmitting ? (
-                        <>
-                          <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>
-                          <span>Sending your consultation request...</span>
-                        </>
-                      ) : (
-                        <>
-                          <span>Get My Free Consultation & Custom Roadmap</span>
-                          <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                          </svg>
-                        </>
-                      )}
-                    </button>
-                    <div className="text-center mt-4 space-y-2">
-                      <p className="text-gray-400 text-sm">
-                        💬 We'll respond within 24 hours with a personalized consultation
-                      </p>
-                      <p className="text-blue-300 text-xs">
-                        ✅ No obligation • ✅ Free strategic assessment • ✅ Custom roadmap included
-                      </p>
-                    </div>
-                  </div>
-              </form>
-            </div>
-          </div>
-            
-            {/* Social Proof */}
-            <div className="mt-16">
-              <SocialProof />
-            </div>
-          </div>
-        </section>
 
       {/* Additional Services Section */}
       <section className="py-24 bg-black relative overflow-hidden">
