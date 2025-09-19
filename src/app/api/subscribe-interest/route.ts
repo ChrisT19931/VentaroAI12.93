@@ -59,7 +59,7 @@ export async function POST(request: NextRequest) {
           </div>
         </div>
       `,
-      type: 'product-interest',
+      type: 'subscription',
       formData: {
         product,
         source,

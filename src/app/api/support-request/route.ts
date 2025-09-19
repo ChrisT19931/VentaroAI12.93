@@ -160,7 +160,7 @@ export async function POST(request: NextRequest) {
       to: 'chris.t@ventarosales.com',
       subject: `🛠️ New Support Booking: ${subject} - ${priority.toUpperCase()} Priority`,
       html: adminEmailContent,
-      type: 'support-request',
+      type: 'support',
       formData: {
         userName,
         userEmail,
@@ -257,7 +257,7 @@ export async function POST(request: NextRequest) {
       to: userEmail,
       subject: '✅ Support Request Confirmed - We\'ll Be In Touch Soon!',
       html: clientConfirmationContent,
-      type: 'support-request',
+      type: 'support',
       formData: {
         userName,
         userEmail,

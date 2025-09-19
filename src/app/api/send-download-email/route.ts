@@ -170,7 +170,7 @@ export async function POST(request: NextRequest) {
       subject: '🔥 Your AI Tools Mastery Guide 2025 is Ready for Download!',
       text,
       html,
-      type: 'download-email',
+      type: 'support',
       formData: {
         email,
         productName,

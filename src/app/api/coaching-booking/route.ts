@@ -147,7 +147,7 @@ ${bookingData.goals}
 ${bookingData.additional_notes ? `Additional Notes:\n${bookingData.additional_notes}` : ''}
 
 Reply to: ${bookingData.email}`,
-    type: 'coaching-booking',
+    type: 'support',
     formData: bookingData
   });
 
@@ -238,7 +238,7 @@ Questions? Contact: chris.t@ventarosales.com
 
 Best regards,
 The Ventaro AI Team`,
-    type: 'coaching-booking',
+    type: 'support',
     formData: bookingData
   });
 
