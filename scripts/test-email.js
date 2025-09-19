@@ -10,65 +10,56 @@
 require('dotenv').config({ path: '.env.local' });
 
 async function testEmailSystem() {
-  console.log('🔧 Testing Three-Tier Email System Configuration...');
-  console.log('==================================================');
+  console.log('🔧 VAI35 SendGrid Email System Test');
+console.log('===================================');
+console.log('Testing: SendGrid → Supabase Backup');
+console.log('');
   
   // Check environment variables
-  const hasOpenAI = process.env.OPENAI_API_KEY && process.env.OPENAI_API_KEY !== 'your_openai_api_key_here';
-  const hasSendGrid = process.env.SENDGRID_API_KEY && process.env.SENDGRID_API_KEY !== 'your_sendgrid_api_key';
-  const hasResend = process.env.RESEND_API_KEY && process.env.RESEND_API_KEY !== 'your_resend_api_key';
-  const hasMailgun = process.env.MAILGUN_API_KEY && process.env.MAILGUN_DOMAIN && 
-                    process.env.MAILGUN_API_KEY !== 'your_mailgun_api_key_here';
-  const hasSupabase = process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.SUPABASE_SERVICE_ROLE_KEY;
+const sendgridConfigured = process.env.SENDGRID_API_KEY && process.env.SENDGRID_API_KEY !== 'your_sendgrid_api_key';
+const supabaseConfigured = process.env.SUPABASE_URL && process.env.SUPABASE_SERVICE_ROLE_KEY;
+const openaiConfigured = process.env.OPENAI_API_KEY && process.env.OPENAI_API_KEY !== 'your_openai_api_key';
 
-  console.log('📧 Email Services (Fallback Order):');
-  console.log(`   1. SendGrid (Primary): ${hasSendGrid ? '✅ Configured' : '❌ Missing/Default'}`);
-  console.log(`   2. Resend (Secondary): ${hasResend ? '✅ Configured' : '❌ Missing/Default'}`);
-  console.log(`   3. Mailgun (Tertiary): ${hasMailgun ? '✅ Configured' : '❌ Missing/Default'}`);
-  console.log(`   4. Supabase (Backup): ${hasSupabase ? '✅ Configured' : '❌ Missing/Default'}`);
-  console.log(`   🤖 OpenAI: ${hasOpenAI ? '✅ Configured' : '❌ Missing/Default'}`);
-  console.log('');
+console.log('📋 Configuration Status:');
+console.log(`   SendGrid: ${sendgridConfigured ? '✅ Configured' : '❌ Missing/Default'}`);
+console.log(`   Supabase: ${supabaseConfigured ? '✅ Configured' : '❌ Missing/Default'}`);
+console.log(`   OpenAI: ${openaiConfigured ? '✅ Configured' : '❌ Missing/Default'}`);
+console.log('');
+
+console.log('🎯 Fallback Order:');
+console.log('   1. SendGrid (Primary - Production grade)');
+console.log('   2. Supabase Backup (Fallback - Store for manual processing)');
+console.log('');
   
-  if (!hasSendGrid && !hasResend && !hasMailgun && !hasSupabase) {
-    console.log('❌ No email services configured!');
-    console.log('Please configure at least one email service in your .env.local file:');
-    console.log('- SendGrid: https://sendgrid.com/solutions/email-api/');
-    console.log('- Resend: https://resend.com/api-keys');
-    console.log('- Mailgun: https://www.mailgun.com/');
-    console.log('- Supabase: https://supabase.com/');
+  if (!sendgridConfigured) {
+    console.log('❌ SENDGRID_API_KEY not configured!');
+    console.log('Please update your .env.local file with a real SendGrid API key.');
+    console.log('Get one at: https://sendgrid.com/solutions/email-api/');
     return;
   }
   
   try {
-    // Import the three-tier email system
-     const { sendEmailWithBackup } = await import('../src/lib/backup-email.ts');
+    // Import the email system
+    const { sendEmailWithBackup } = await import('../src/lib/backup-email.js');
     
     console.log('📧 Sending test email...');
     
     const result = await sendEmailWithBackup({
       to: 'test@example.com', // Change this to your email for real testing
-      subject: '🧪 VAI35 Three-Tier Email System Test',
+      subject: 'VAI35 SendGrid Email System Test',
       type: 'contact',
+      text: 'This is a test email from the VAI35 SendGrid email system with Supabase backup. If you receive this, the email system is working correctly!',
       html: `
-        <h2>✅ Email System Test Successful!</h2>
-        <p>Your VAI35 three-tier email system is working correctly.</p>
-        <p><strong>Timestamp:</strong> ${new Date().toISOString()}</p>
-        <p><strong>Method:</strong> Three-Tier Fallback System</p>
-        <p><strong>Services:</strong> SendGrid → Resend → Mailgun → Supabase</p>
-        <hr>
-        <p><em>This is an automated test email from your VAI35 application.</em></p>
-      `,
-      text: `
-✅ Email System Test Successful!
-
-Your VAI35 three-tier email system is working correctly.
-
-Timestamp: ${new Date().toISOString()}
-Method: Three-Tier Fallback System
-Services: SendGrid → Resend → Mailgun → Supabase
-
----
-This is an automated test email from your VAI35 application.
+        <h2>🎉 VAI35 SendGrid Email System Test</h2>
+        <p>Congratulations! Your SendGrid email system with Supabase backup is working correctly.</p>
+        <div style="background: #f5f5f5; padding: 15px; border-radius: 5px; margin: 15px 0;">
+          <h3>📧 System Overview:</h3>
+          <ul>
+            <li><strong>Primary:</strong> SendGrid (Production-grade delivery)</li>
+            <li><strong>Backup:</strong> Supabase (Manual processing queue)</li>
+          </ul>
+        </div>
+        <p><em>This email was sent on ${new Date().toISOString()}</em></p>
       `
     });
     
@@ -84,23 +75,21 @@ This is an automated test email from your VAI35 application.
     
     if (result.success) {
       console.log('');
-      console.log('🎉 SUCCESS! Your three-tier email system is working!');
-      console.log('Contact forms will now send emails with automatic fallback.');
+      console.log('✅ SUCCESS: SendGrid email system test completed successfully!');
+      console.log('Contact forms will now send emails properly.');
     } else {
       console.log('');
       console.log('❌ FAILED! Check the error above.');
-      console.log('Make sure at least one email service is properly configured.');
+      console.log('Make sure your SendGrid API key is correct.');
     }
     
   } catch (error) {
-    console.error('❌ Test failed with error:', error.message);
+    console.log('❌ ERROR: SendGrid email system test failed:', error.message);
     console.log('');
-    console.log('💡 Common issues:');
-    console.log('- Invalid API keys for email services');
-    console.log('- Network connectivity issues');
-    console.log('- Missing dependencies (run: npm install)');
-    console.log('- Incorrect domain configuration for Mailgun');
-    console.log('- Missing Supabase configuration');
+    console.log('\n📚 Common Issues:');
+    console.log('   • SendGrid: Check API key and verified sender email');
+    console.log('   • Supabase: Check URL and service role key');
+    console.log('   • Make sure .env.local is properly configured');
   }
 }
 

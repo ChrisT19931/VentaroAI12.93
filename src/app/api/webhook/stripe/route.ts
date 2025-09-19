@@ -94,10 +94,26 @@ function mapStripeProductToInternal(productName: string, stripeProductId: string
 async function createPurchaseRecord(purchaseData: any): Promise<boolean> {
   logPurchaseEvent('INFO', 'Attempting to create purchase record', purchaseData);
 
+  // Check if Supabase is configured
+  const supabaseConfigured = process.env.NEXT_PUBLIC_SUPABASE_URL && 
+    !process.env.NEXT_PUBLIC_SUPABASE_URL.includes('placeholder') &&
+    process.env.SUPABASE_SERVICE_ROLE_KEY && 
+    !process.env.SUPABASE_SERVICE_ROLE_KEY.includes('placeholder');
+
+  if (!supabaseConfigured) {
+    logPurchaseEvent('ERROR', '🚨 CRITICAL: Supabase not configured - using emergency fallback storage', {
+      supabaseUrl: process.env.NEXT_PUBLIC_SUPABASE_URL ? 'SET (but may be placeholder)' : 'MISSING',
+      serviceKey: process.env.SUPABASE_SERVICE_ROLE_KEY ? 'SET (but may be placeholder)' : 'MISSING'
+    });
+    
+    // Emergency file-based storage when Supabase is not configured
+    return await emergencyStorePurchase(purchaseData);
+  }
+
   const strategies = [
     'supabase_auth',
     'direct_supabase',
-    'fallback_storage'
+    'emergency_storage'
   ];
 
   for (const strategy of strategies) {
@@ -136,16 +152,15 @@ async function createPurchaseRecord(purchaseData: any): Promise<boolean> {
           }
           break;
 
-        case 'fallback_storage':
-          // This would be in-memory or file storage as last resort
+        case 'emergency_storage':
+          // Emergency storage as last resort
+          success = await emergencyStorePurchase(purchaseData);
           purchase = {
             ...purchaseData,
-            id: `fallback_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
+            id: `emergency_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
             created_at: new Date().toISOString(),
-            storage_method: 'fallback'
+            storage_method: 'emergency'
           };
-          success = true;
-          logPurchaseEvent('WARN', 'Using fallback storage - purchase may not persist across restarts', purchase);
           break;
       }
 
@@ -171,6 +186,46 @@ async function createPurchaseRecord(purchaseData: any): Promise<boolean> {
 
   logPurchaseEvent('ERROR', 'ALL PURCHASE CREATION STRATEGIES FAILED', purchaseData);
   return false;
+}
+
+// Emergency storage function for when Supabase is not configured
+async function emergencyStorePurchase(purchaseData: any): Promise<boolean> {
+  try {
+    const fs = require('fs').promises;
+    const path = require('path');
+    
+    const emergencyDir = path.join(process.cwd(), 'emergency-purchases');
+    const purchaseFile = path.join(emergencyDir, `purchase_${Date.now()}_${purchaseData.customer_email.replace('@', '_at_')}.json`);
+    
+    // Ensure directory exists
+    try {
+      await fs.mkdir(emergencyDir, { recursive: true });
+    } catch (e) {
+      // Directory might already exist
+    }
+    
+    const emergencyRecord = {
+      ...purchaseData,
+      id: `emergency_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
+      created_at: new Date().toISOString(),
+      storage_method: 'emergency_file',
+      note: 'EMERGENCY STORAGE - Supabase not configured. Configure Supabase and migrate this data.'
+    };
+    
+    await fs.writeFile(purchaseFile, JSON.stringify(emergencyRecord, null, 2));
+    
+    logPurchaseEvent('WARN', '🚨 EMERGENCY: Purchase stored to file system', {
+      file: purchaseFile,
+      email: purchaseData.customer_email,
+      product: purchaseData.product_name,
+      note: 'Configure Supabase to enable proper database storage'
+    });
+    
+    return true;
+  } catch (error: any) {
+    logPurchaseEvent('ERROR', `Emergency storage failed: ${error.message}`, error);
+    return false;
+  }
 }
 
 // ENHANCED EMAIL SENDING WITH RETRIES

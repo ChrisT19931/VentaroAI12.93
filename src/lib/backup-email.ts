@@ -17,7 +17,7 @@ interface BackupEmailResult {
   success: boolean;
   id?: string;
   error?: string;
-  method: 'sendgrid' | 'resend' | 'mailgun' | 'backup' | 'failed';
+  method: 'sendgrid' | 'backup' | 'failed';
 }
 
 // Store email in Supabase as backup
@@ -56,9 +56,9 @@ export async function storeBackupEmail(emailData: EmailData): Promise<{ success:
   }
 }
 
-// Send email with SendGrid -> Resend -> Backup system fallback
+// Send email with SendGrid -> Backup system fallback
 export async function sendEmailWithBackup(emailData: EmailData): Promise<BackupEmailResult> {
-  // First try SendGrid
+  // Try SendGrid first
   if (process.env.SENDGRID_API_KEY && process.env.SENDGRID_API_KEY !== 'your_sendgrid_api_key') {
     try {
       const sgMail = (await import('@sendgrid/mail')).default;
@@ -81,88 +81,11 @@ export async function sendEmailWithBackup(emailData: EmailData): Promise<BackupE
       return { success: true, method: 'sendgrid' };
     } catch (error: any) {
       console.error('❌ SENDGRID: Failed to send email:', error);
-      // Fall back to Resend
-    }
-  }
-
-  // Second try Resend
-  if (process.env.RESEND_API_KEY && process.env.RESEND_API_KEY !== 'your_resend_api_key') {
-    try {
-      const { Resend } = await import('resend');
-      const resend = new Resend(process.env.RESEND_API_KEY);
-
-      const emailPayload: any = {
-        from: emailData.from || process.env.SENDGRID_FROM_EMAIL || 'noreply@ventaroai.com',
-        to: [emailData.to],
-        subject: emailData.subject,
-      };
-
-      if (emailData.html) {
-        emailPayload.html = emailData.html;
-      }
-      if (emailData.text) {
-        emailPayload.text = emailData.text;
-      }
-
-      const result = await resend.emails.send(emailPayload);
-      console.log('✅ RESEND: Email sent successfully to', emailData.to, 'ID:', result.data?.id);
-      
-      // Also store in backup for record keeping
-      await storeBackupEmail({ ...emailData, type: emailData.type });
-      
-      return { success: true, method: 'resend' };
-    } catch (error: any) {
-      console.error('❌ RESEND: Failed to send email:', error);
-      // Fall back to Mailgun
-    }
-  }
-
-  // Third try Mailgun
-  if (process.env.MAILGUN_API_KEY && process.env.MAILGUN_DOMAIN && 
-      process.env.MAILGUN_API_KEY !== 'your_mailgun_api_key') {
-    try {
-      const formData = new FormData();
-      formData.append('from', emailData.from || process.env.SENDGRID_FROM_EMAIL || 'noreply@ventaroai.com');
-      formData.append('to', emailData.to);
-      formData.append('subject', emailData.subject);
-      
-      if (emailData.html) {
-        formData.append('html', emailData.html);
-      }
-      if (emailData.text) {
-        formData.append('text', emailData.text);
-      }
-
-      const response = await fetch(
-        `https://api.mailgun.net/v3/${process.env.MAILGUN_DOMAIN}/messages`,
-        {
-          method: 'POST',
-          headers: {
-            'Authorization': `Basic ${Buffer.from(`api:${process.env.MAILGUN_API_KEY}`).toString('base64')}`
-          },
-          body: formData
-        }
-      );
-
-      if (response.ok) {
-        const result = await response.json();
-        console.log('✅ MAILGUN: Email sent successfully to', emailData.to, 'ID:', result.id);
-        
-        // Also store in backup for record keeping
-        await storeBackupEmail({ ...emailData, type: emailData.type });
-        
-        return { success: true, method: 'mailgun' };
-      } else {
-        const errorText = await response.text();
-        throw new Error(`Mailgun API error: ${response.status} - ${errorText}`);
-      }
-    } catch (error: any) {
-      console.error('❌ MAILGUN: Failed to send email:', error);
       // Fall back to backup system
     }
   }
 
-  // Final fallback to backup system (store only)
+  // Fallback to backup system (store only)
   console.log('📧 BACKUP EMAIL: Using backup email system for', emailData.to);
   const backupResult = await storeBackupEmail(emailData);
   
@@ -277,9 +200,9 @@ export async function processBackupEmails() {
         formData: email.form_data
       });
       
-      if (result.success && (result.method === 'sendgrid' || result.method === 'resend')) {
+      if (result.success && result.method === 'sendgrid') {
         await markBackupEmailProcessed(email.id, 'sent');
-        console.log('✅ BACKUP EMAIL PROCESSOR: Successfully sent email via', result.method.toUpperCase(), 'ID:', email.id);
+        console.log('✅ BACKUP EMAIL PROCESSOR: Successfully sent email via SENDGRID, ID:', email.id);
       } else {
         console.log('⏳ BACKUP EMAIL PROCESSOR: Email still in backup queue', email.id);
       }
