@@ -12,7 +12,6 @@ interface QuoteData {
   timeline: string;
   budget: string;
   description: string;
-  goals: string;
 }
 
 interface Question {
@@ -68,17 +67,10 @@ const questions: Question[] = [
   },
   {
     id: 'description',
-    question: "Tell us about your project",
+    question: "Tell us about it",
     type: 'textarea',
-    placeholder: 'Describe what you want to build, key features, target users, etc.',
+    placeholder: 'Describe what you want to build, key features, target users, your goals, problems you\'re solving, and what success looks like to you.',
     subtitle: 'The more details you share, the better we can help you'
-  },
-  {
-    id: 'goals',
-    question: "What are your main goals?",
-    type: 'textarea',
-    placeholder: 'What problems are you solving? What success looks like to you?',
-    subtitle: 'Understanding your goals helps us design the perfect solution'
   },
   {
     id: 'name',
@@ -112,8 +104,7 @@ export default function InteractiveQuoteWizard() {
     projectType: '',
     timeline: '',
     budget: '',
-    description: '',
-    goals: ''
+    description: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showReview, setShowReview] = useState(false);
@@ -169,11 +160,8 @@ PROJECT TYPE: ${quoteData.projectType}
 TIMELINE: ${quoteData.timeline}
 BUDGET: ${quoteData.budget}
 
-PROJECT DESCRIPTION:
+PROJECT DESCRIPTION & GOALS:
 ${quoteData.description}
-
-GOALS & OBJECTIVES:
-${quoteData.goals}
 
 ---
 This quote request was submitted through the interactive qualification wizard.
@@ -196,8 +184,7 @@ This quote request was submitted through the interactive qualification wizard.
         projectType: '',
         timeline: '',
         budget: '',
-        description: '',
-        goals: ''
+        description: ''
       });
       setCurrentStep(0);
       setShowReview(false);
@@ -272,12 +259,8 @@ This quote request was submitted through the interactive qualification wizard.
                 </div>
               </div>
               <div>
-                <span className="text-gray-400 text-sm">Description:</span>
+                <span className="text-gray-400 text-sm">Description & Goals:</span>
                 <p className="text-white font-medium">{quoteData.description}</p>
-              </div>
-              <div>
-                <span className="text-gray-400 text-sm">Goals:</span>
-                <p className="text-white font-medium">{quoteData.goals}</p>
               </div>
             </div>
           </div>

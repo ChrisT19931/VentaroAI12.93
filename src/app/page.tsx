@@ -280,17 +280,14 @@ export default function Home() {
                  As we're new to this but the best in the game, we're happy to ease your concerns about our services. 
                  Call Chris T - Founder directly to discuss your project and understand how we can help accelerate your success.
                </p>
-               <a 
-                 href="tel:0435413110"
-                 className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-bold rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-[0_20px_40px_-12px_rgba(59,130,246,0.4)] text-base sm:text-lg min-h-[48px] tap-target"
-               >
+               <div className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-blue-600/20 to-indigo-600/20 border-2 border-blue-400 text-blue-300 font-bold rounded-xl text-base sm:text-lg min-h-[48px] select-all">
                  <svg className="w-4 h-4 sm:w-5 sm:h-5 mr-2 sm:mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                  </svg>
-                 <span className="hidden sm:inline">Call Chris T - Founder: </span>0435 413 110
-               </a>
+                 <span className="text-white font-mono tracking-wider">0435 413 110</span>
+               </div>
                <p className="text-xs sm:text-sm text-gray-400 mt-3 sm:mt-4 px-2 sm:px-0">
-                 📞 Direct line to Chris T - Founder • We understand the skepticism to a new startup
+                 📞 Direct line to Chris T - Founder • We understand the skepticism to a new startup • This entire platform/website was built from AI prompts alone start-finish/ongoing - this is one way we can implement AI into your business, we are the 1% in 2025 that implement AI into actual online platforms that generate revenue/etc
                </p>
              </div>
            </div>
@@ -934,12 +931,12 @@ export default function Home() {
             <div className="group text-center p-8 glass-panel rounded-3xl shadow-2xl hover:shadow-purple-500/20 transition-all duration-300 transform hover:-translate-y-2 hover:scale-102 border border-purple-500/30">
               <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-pink-600 text-white rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-purple-500/30">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                 </svg>
               </div>
-              <h3 className="text-2xl font-bold mb-4 text-white glow-text">Full Code Ownership</h3>
+              <h3 className="text-2xl font-bold mb-4 text-white glow-text">Innovation-First Mindset</h3>
               <p className="text-gray-300 leading-relaxed">
-                Own your entire codebase with maximum flexibility. Unlike platform-dependent solutions, if they go out of business, your business doesn't. Protect yourself with true ownership.
+                We don't just follow trends - we create them. Our forward-thinking approach ensures your business stays ahead of the curve with cutting-edge solutions that drive real results.
               </p>
             </div>
             
@@ -995,9 +992,7 @@ export default function Home() {
               </p>
             </div>
 
-            {/* Beat Content Saturation section removed */}
 
-            {/* Brand Over Tech Advantage section removed */}
 
             {/* Row 4 - Intentionally left empty */}
 
