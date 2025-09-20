@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { sendEmailWithBrevo, generateUserConfirmationEmail, generateAdminNotificationEmail } from '@/lib/brevo-email';
 import { sendEmailWithBackup } from '@/lib/backup-email';
 
 import { supabase } from '@/lib/supabase';
@@ -123,312 +124,51 @@ export async function POST(request: NextRequest) {
       servicesFormatted = services.split(',').map(service => `• ${service.trim()}`).join('\n');
     }
 
-    // Send email to admin using backup system (non-blocking)
+    // Prepare form data for email templates
+    const formData = {
+      name,
+      email,
+      subject,
+      message,
+      services,
+      projectType,
+      timeline,
+      budget,
+      businessStage,
+      phone,
+      company,
+      product,
+      description: message // alias for consistency
+    };
+
+    // Send admin notification email using Brevo
     let adminEmailResult;
     try {
-      adminEmailResult = await sendEmailWithBackup({
+      const adminEmail = generateAdminNotificationEmail(formData);
+      adminEmailResult = await sendEmailWithBrevo({
         to: 'chris.t@ventarosales.com',
-        subject: `🔔 New ${projectType ? 'Project Quote Request' : 'Contact Form Submission'}: ${subject}`,
-        type: 'contact',
-        formData: {
-          name,
-          email,
-          subject,
-          message,
-          services,
-          projectType,
-          timeline,
-          budget,
-          businessStage,
-          phone,
-          company,
-          product
-        },
-      html: `
-        <!DOCTYPE html>
-        <html>
-        <head>
-          <meta charset="utf-8">
-          <title>New Contact Form Submission</title>
-        </head>
-        <body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
-          <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 20px; text-align: center; border-radius: 10px 10px 0 0;">
-            <h1 style="color: white; margin: 0;">${projectType ? '🎯 New Project Quote Request' : '🔔 New Contact Form Submission'}</h1>
-          </div>
-          
-          <div style="background: white; padding: 30px; border: 1px solid #ddd; border-top: none; border-radius: 0 0 10px 10px;">
-            <h2 style="color: #333; margin-top: 0;">📋 Contact Details:</h2>
-            
-            <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
-              <tr>
-                <td style="padding: 10px; border-bottom: 1px solid #eee; font-weight: bold; width: 30%;">Name:</td>
-                <td style="padding: 10px; border-bottom: 1px solid #eee;">${name}</td>
-              </tr>
-              <tr>
-                <td style="padding: 10px; border-bottom: 1px solid #eee; font-weight: bold;">Email:</td>
-                <td style="padding: 10px; border-bottom: 1px solid #eee;"><a href="mailto:${email}" style="color: #007bff;">${email}</a></td>
-              </tr>
-              ${phone ? `
-              <tr>
-                <td style="padding: 10px; border-bottom: 1px solid #eee; font-weight: bold;">Phone:</td>
-                <td style="padding: 10px; border-bottom: 1px solid #eee;"><a href="tel:${phone}" style="color: #007bff;">${phone}</a></td>
-              </tr>
-              ` : ''}
-              ${company ? `
-              <tr>
-                <td style="padding: 10px; border-bottom: 1px solid #eee; font-weight: bold;">Company:</td>
-                <td style="padding: 10px; border-bottom: 1px solid #eee;">${company}</td>
-              </tr>
-              ` : ''}
-              <tr>
-                <td style="padding: 10px; border-bottom: 1px solid #eee; font-weight: bold;">Subject:</td>
-                <td style="padding: 10px; border-bottom: 1px solid #eee;">${subject}</td>
-              </tr>
-              ${projectType ? `
-              <tr>
-                <td style="padding: 10px; border-bottom: 1px solid #eee; font-weight: bold;">Project Type:</td>
-                <td style="padding: 10px; border-bottom: 1px solid #eee;"><span style="background: #e3f2fd; padding: 4px 8px; border-radius: 4px; font-weight: bold; color: #1976d2;">${projectType}</span></td>
-              </tr>
-              ` : ''}
-              ${timeline ? `
-              <tr>
-                <td style="padding: 10px; border-bottom: 1px solid #eee; font-weight: bold;">Timeline:</td>
-                <td style="padding: 10px; border-bottom: 1px solid #eee;"><span style="background: #fff3e0; padding: 4px 8px; border-radius: 4px; font-weight: bold; color: #f57c00;">${timeline}</span></td>
-              </tr>
-              ` : ''}
-              ${budget ? `
-              <tr>
-                <td style="padding: 10px; border-bottom: 1px solid #eee; font-weight: bold;">Budget:</td>
-                <td style="padding: 10px; border-bottom: 1px solid #eee;"><span style="background: #e8f5e8; padding: 4px 8px; border-radius: 4px; font-weight: bold; color: #2e7d32;">${budget}</span></td>
-              </tr>
-              ` : ''}
-              ${businessStage ? `
-              <tr>
-                <td style="padding: 10px; border-bottom: 1px solid #eee; font-weight: bold;">Business Stage:</td>
-                <td style="padding: 10px; border-bottom: 1px solid #eee;"><span style="background: #f3e5f5; padding: 4px 8px; border-radius: 4px; font-weight: bold; color: #7b1fa2;">${businessStage}</span></td>
-              </tr>
-              ` : ''}
-              ${product ? `
-              <tr>
-                <td style="padding: 10px; border-bottom: 1px solid #eee; font-weight: bold;">Product Reference:</td>
-                <td style="padding: 10px; border-bottom: 1px solid #eee;">${product}</td>
-              </tr>
-              ` : ''}
-              <tr>
-                <td style="padding: 10px; border-bottom: 1px solid #eee; font-weight: bold;">Submitted:</td>
-                <td style="padding: 10px; border-bottom: 1px solid #eee;">${new Date().toLocaleString()}</td>
-              </tr>
-            </table>
-            
-            ${servicesFormatted ? `
-            <h3 style="color: #333; margin-top: 30px;">🛠️ Services Requested:</h3>
-            <div style="background: #f0f9ff; padding: 20px; border-radius: 8px; border-left: 4px solid #0ea5e9;">
-              <pre style="margin: 0; white-space: pre-wrap; font-family: Arial, sans-serif; color: #0c4a6e; font-weight: 500;">${servicesFormatted}</pre>
-            </div>
-            ` : ''}
-            
-            <h3 style="color: #333; margin-top: 30px;">Message:</h3>
-            <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; border-left: 4px solid #007bff;">
-              <p style="margin: 0; white-space: pre-wrap;">${message}</p>
-            </div>
-            
-            <div style="margin-top: 30px; padding: 15px; background: #e3f2fd; border-radius: 6px;">
-              <p style="margin: 0; font-size: 14px; color: #1976d2;">
-                <strong>📊 Rate Limit Info:</strong> This email has ${remaining} contact submissions remaining today.
-              </p>
-            </div>
-            
-            <div style="text-align: center; margin-top: 30px;">
-              <a href="mailto:${email}?subject=Re: ${subject}" style="background: #007bff; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: bold;">
-                Reply to ${name}
-              </a>
-            </div>
-          </div>
-        </body>
-        </html>
-      `,
-      text: `${projectType ? 'New Project Quote Request' : 'New Contact Form Submission'}
-
-📋 CONTACT DETAILS:
-Name: ${name}
-Email: ${email}${phone ? `
-Phone: ${phone}` : ''}${company ? `
-Company: ${company}` : ''}
-Subject: ${subject}${projectType ? `
-Project Type: ${projectType}` : ''}${timeline ? `
-Timeline: ${timeline}` : ''}
-Submitted: ${new Date().toLocaleString()}
-
-${servicesFormatted ? `🛠️ SERVICES REQUESTED:
-${servicesFormatted}
-
-` : ''}📝 MESSAGE:
-${message}
-
-📧 Reply to: ${email}`
+        subject: adminEmail.subject,
+        html: adminEmail.html,
+        text: adminEmail.text,
+        type: projectType ? 'quote_request' : 'contact',
+        formData
       });
     } catch (emailError) {
        console.warn('⚠️ CONTACT FORM: Admin email sending error:', emailError);
        adminEmailResult = { success: false, error: emailError instanceof Error ? emailError.message : String(emailError) };
     }
 
-    // Send auto-reply to customer using backup system (non-blocking)
+    // Send user confirmation email using Brevo
     let customerEmailResult;
     try {
-      customerEmailResult = await sendEmailWithBackup({
-      to: email,
-      subject: `✅ ${projectType ? 'Your Project Quote Request' : 'Thank you for contacting'} - Ventaro AI`,
-      type: 'contact',
-      formData: {
-        name,
-        email,
-        subject,
-        message,
-        services,
-        projectType,
-        timeline,
-        phone,
-        company,
-        product
-      },
-      html: `
-        <!DOCTYPE html>
-        <html>
-        <head>
-          <meta charset="utf-8">
-          <title>Thank you for contacting us</title>
-        </head>
-        <body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
-          <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 30px; text-align: center; border-radius: 10px 10px 0 0;">
-            <h1 style="color: white; margin: 0; font-size: 28px;">${projectType ? '🎯 Quote Request Received!' : 'Thank You! 🙏'}</h1>
-            <p style="color: white; margin: 10px 0 0 0; font-size: 16px;">${projectType ? 'We\'re excited to work on your project' : 'We\'ve received your message'}</p>
-          </div>
-          
-          <div style="background: white; padding: 30px; border: 1px solid #ddd; border-top: none; border-radius: 0 0 10px 10px;">
-            <h2 style="color: #333; margin-top: 0;">Hi ${name}! 👋</h2>
-            
-            <p>${projectType ? `Thank you for your interest in our ${projectType.toLowerCase()} services! We've successfully received your project quote request and our expert team is already reviewing the details.` : `Thank you for reaching out to Ventaro AI! We've successfully received your message about "<strong>${subject}</strong>" and our team will review it shortly.`}</p>
-            
-            <div style="background: #f0f9ff; padding: 25px; border-radius: 12px; margin: 25px 0; border-left: 5px solid #0ea5e9;">
-              <h3 style="margin-top: 0; color: #0c4a6e; font-size: 18px;">📋 Your ${projectType ? 'Project' : 'Submission'} Summary:</h3>
-              <table style="width: 100%; border-collapse: collapse;">
-                <tr>
-                  <td style="padding: 8px 0; font-weight: bold; color: #0c4a6e; width: 35%;">Name:</td>
-                  <td style="padding: 8px 0; color: #374151;">${name}</td>
-                </tr>
-                <tr>
-                  <td style="padding: 8px 0; font-weight: bold; color: #0c4a6e;">Email:</td>
-                  <td style="padding: 8px 0; color: #374151;">${email}</td>
-                </tr>
-                ${phone ? `
-                <tr>
-                  <td style="padding: 8px 0; font-weight: bold; color: #0c4a6e;">Phone:</td>
-                  <td style="padding: 8px 0; color: #374151;">${phone}</td>
-                </tr>
-                ` : ''}
-                ${company ? `
-                <tr>
-                  <td style="padding: 8px 0; font-weight: bold; color: #0c4a6e;">Company:</td>
-                  <td style="padding: 8px 0; color: #374151;">${company}</td>
-                </tr>
-                ` : ''}
-                ${projectType ? `
-                <tr>
-                  <td style="padding: 8px 0; font-weight: bold; color: #0c4a6e;">Project Type:</td>
-                  <td style="padding: 8px 0; color: #374151;"><span style="background: #dbeafe; padding: 3px 8px; border-radius: 4px; font-weight: bold;">${projectType}</span></td>
-                </tr>
-                ` : ''}
-                ${timeline ? `
-                <tr>
-                  <td style="padding: 8px 0; font-weight: bold; color: #0c4a6e;">Timeline:</td>
-                  <td style="padding: 8px 0; color: #374151;"><span style="background: #fef3c7; padding: 3px 8px; border-radius: 4px; font-weight: bold;">${timeline}</span></td>
-                </tr>
-                ` : ''}
-                <tr>
-                  <td style="padding: 8px 0; font-weight: bold; color: #0c4a6e;">Subject:</td>
-                  <td style="padding: 8px 0; color: #374151;">${subject}</td>
-                </tr>
-                <tr>
-                  <td style="padding: 8px 0; font-weight: bold; color: #0c4a6e;">Submitted:</td>
-                  <td style="padding: 8px 0; color: #374151;">${new Date().toLocaleString()}</td>
-                </tr>
-                <tr>
-                  <td style="padding: 8px 0; font-weight: bold; color: #0c4a6e;">Reference ID:</td>
-                  <td style="padding: 8px 0; color: #374151; font-family: monospace;">#${submissionId || Date.now()}</td>
-                </tr>
-              </table>
-            </div>
-            
-            ${servicesFormatted ? `
-            <div style="background: #ecfdf5; padding: 25px; border-radius: 12px; margin: 25px 0; border-left: 5px solid #10b981;">
-              <h3 style="margin-top: 0; color: #065f46; font-size: 18px;">🛠️ Services You've Requested:</h3>
-              <div style="background: white; padding: 20px; border-radius: 8px; margin-top: 15px;">
-                <pre style="margin: 0; white-space: pre-wrap; font-family: Arial, sans-serif; color: #065f46; font-weight: 500; font-size: 15px; line-height: 1.8;">${servicesFormatted}</pre>
-              </div>
-              <p style="margin: 15px 0 0 0; color: #065f46; font-style: italic; font-size: 14px;">✨ Our team will provide detailed information and pricing for each of these services.</p>
-            </div>
-            ` : ''}
-            
-            <div style="background: #e8f5e8; padding: 20px; border-radius: 8px; margin: 20px 0;">
-              <h3 style="margin-top: 0; color: #2d5a2d;">⏰ What Happens Next?</h3>
-              <ul style="margin: 0; padding-left: 20px; color: #2d5a2d;">
-                <li>Our team will review your message within 24 hours</li>
-                <li>You'll receive a personalized response via email</li>
-                <li>For urgent matters, we'll prioritize your request</li>
-              </ul>
-            </div>
-            
-            <div style="background: #fff3cd; padding: 15px; border-radius: 6px; margin: 20px 0;">
-              <p style="margin: 0; font-size: 14px; color: #856404;">
-                <strong>💡 While You Wait:</strong> Check out our <a href="${process.env.NEXT_PUBLIC_SITE_URL || 'https://ventaroai.com'}/products" style="color: #856404;">AI Tools and Resources</a> to get started right away!
-              </p>
-            </div>
-            
-            <hr style="border: none; border-top: 1px solid #eee; margin: 30px 0;">
-            
-            <p style="font-size: 14px; color: #666; text-align: center; margin: 0;">
-              Need immediate assistance? Contact us at <a href="mailto:chris.t@ventarosales.com" style="color: #007bff;">chris.t@ventarosales.com</a>
-              <br>
-              <span style="font-size: 12px;">Ventaro AI - Pioneering the future of digital products with AI</span>
-            </p>
-          </div>
-        </body>
-        </html>
-      `,
-      text: `${projectType ? 'Your Project Quote Request - Ventaro AI' : 'Thank you for contacting Ventaro AI!'}
-
-Hi ${name},
-
-${projectType ? `Thank you for your interest in our ${projectType.toLowerCase()} services! We've successfully received your project quote request and our expert team is already reviewing the details.` : `We've received your message about "${subject}" and our team will review it within 24 hours.`}
-
-📋 YOUR ${projectType ? 'PROJECT' : 'SUBMISSION'} SUMMARY:
-Name: ${name}
-Email: ${email}${phone ? `
-Phone: ${phone}` : ''}${company ? `
-Company: ${company}` : ''}${projectType ? `
-Project Type: ${projectType}` : ''}${timeline ? `
-Timeline: ${timeline}` : ''}
-Subject: ${subject}
-Submitted: ${new Date().toLocaleString()}
-Reference ID: #${submissionId || Date.now()}
-
-${servicesFormatted ? `🛠️ SERVICES YOU'VE REQUESTED:
-${servicesFormatted}
-
-✨ Our team will provide detailed information and pricing for each of these services.
-
-` : ''}⏰ WHAT HAPPENS NEXT:
-- Our team will review your ${projectType ? 'project requirements' : 'message'} within 24 hours
-- You'll receive a personalized ${projectType ? 'quote and project proposal' : 'response'} via email
-- For urgent matters, we'll prioritize your request
-- ${projectType ? 'We may schedule a consultation call to discuss your project in detail' : 'Our experts will provide tailored recommendations'}
-
-While you wait, check out our AI Tools and Resources: ${process.env.NEXT_PUBLIC_SITE_URL || 'https://ventaroai.com'}/products
-
-Best regards,
-The Ventaro AI Team
-
-Need immediate assistance? Contact: chris.t@ventarosales.com`
+      const userEmail = generateUserConfirmationEmail(formData);
+      customerEmailResult = await sendEmailWithBrevo({
+        to: email,
+        subject: userEmail.subject,
+        html: userEmail.html,
+        text: userEmail.text,
+        type: 'confirmation',
+        formData
       });
     } catch (emailError) {
        console.warn('⚠️ CONTACT FORM: Customer email sending error:', emailError);
