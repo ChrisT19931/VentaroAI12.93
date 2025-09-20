@@ -198,9 +198,6 @@ export default function Navbar() {
             <Link href="/contact" className="block px-4 py-3 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-gray-900 transition-all duration-300 border border-transparent hover:border-gray-800">
               Contact
             </Link>
-            <Link href="/affiliate" className="block px-4 py-3 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-gray-900 transition-all duration-300 border border-transparent hover:border-gray-800 border-l-2 border-l-cyan-500/30 hover:border-l-cyan-500/60">
-              Affiliate Program
-            </Link>
           </div>
           
           {/* Coming Soon Section */}
@@ -216,12 +213,12 @@ export default function Navbar() {
               VAI Masterclass
               <span className="absolute -top-1 -right-1 bg-gray-800 text-gray-300 text-xs px-1 py-0.5 rounded text-[10px] font-medium border border-gray-600/30">SOON</span>
             </Link>
-            <Link href="/products" className="block px-4 py-3 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-gray-900 transition-all duration-300 border border-transparent hover:border-gray-800 border-l-2 border-l-amber-500/30 hover:border-l-amber-500/60">
-              VAI Toolkit
-            </Link>
             <Link href="/web-gen" className="block px-4 py-3 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-gray-900 transition-all duration-300 border border-transparent hover:border-gray-800 border-l-2 border-l-emerald-500/30 hover:border-l-emerald-500/60 relative">
               VAI Web Gen
               <span className="absolute -top-1 -right-1 bg-gray-800 text-gray-300 text-xs px-1 py-0.5 rounded text-[10px] font-medium border border-gray-600/30">SOON</span>
+            </Link>
+            <Link href="/affiliate" className="block px-4 py-3 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-gray-900 transition-all duration-300 border border-transparent hover:border-gray-800 border-l-2 border-l-cyan-500/30 hover:border-l-cyan-500/60">
+              Affiliate Program
             </Link>
           </div>
 

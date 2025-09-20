@@ -1555,5 +1555,35 @@
     "sessionId": "session_1758329718175_mn2w2l7ih",
     "page": "/",
     "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "time_on_page",
+    "properties": {
+      "duration": 487,
+      "page": "/",
+      "url": "http://localhost:3003/",
+      "referrer": "http://localhost:3003/",
+      "viewport": "2004x1172",
+      "timestamp": "2025-09-20T01:03:25.046Z"
+    },
+    "timestamp": "2025-09-20T01:03:25.046Z",
+    "sessionId": "session_1758329718175_mn2w2l7ih",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
+  },
+  {
+    "event": "time_on_page",
+    "properties": {
+      "duration": 487,
+      "page": "/",
+      "url": "http://localhost:3003/",
+      "referrer": "http://localhost:3003/",
+      "viewport": "2004x1172",
+      "timestamp": "2025-09-20T01:03:25.145Z"
+    },
+    "timestamp": "2025-09-20T01:03:25.145Z",
+    "sessionId": "session_1758329718175_mn2w2l7ih",
+    "page": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Trae/1.100.3 Chrome/132.0.6834.210 Electron/34.5.1 Safari/537.36"
   }
 ]
