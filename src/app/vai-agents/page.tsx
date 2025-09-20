@@ -13,7 +13,7 @@ export default function VAIAgentsPage() {
   const [prospectNames, setProspectNames] = useState<string>('');
   const [isAnalyzing, setIsAnalyzing] = useState(false);
   const [analysisResults, setAnalysisResults] = useState<any>(null);
-  const [selectedAgent, setSelectedAgent] = useState<'prospect' | 'content' | 'sales' | null>('prospect');
+  const [selectedAgent, setSelectedAgent] = useState<'prospect' | 'content' | 'sales' | 'competitor' | 'market' | null>('prospect');
 
   const handleProspectAnalysis = async () => {
     if (!prospectNames.trim()) return;
