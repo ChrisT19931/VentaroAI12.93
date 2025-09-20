@@ -118,27 +118,23 @@ export default function VAIAgentsPage() {
             <div className="bg-black/40 backdrop-blur-xl border border-gray-700/50 rounded-2xl p-2 flex space-x-2">
               {[
                 { id: 'prospect', name: '🔍 Prospect Research', emoji: '🔍' },
-                { id: 'content', name: '📝 Content Creator', emoji: '📝', comingSoon: true },
-                { id: 'sales', name: '💼 Sales Outreach', emoji: '💼', comingSoon: true }
+                { id: 'content', name: '📝 Content Creator', emoji: '📝' },
+                { id: 'sales', name: '💼 Sales Outreach', emoji: '💼' },
+                { id: 'competitor', name: '🎯 Competitor Analysis', emoji: '🎯' },
+                { id: 'market', name: '📊 Market Intelligence', emoji: '📊' }
               ].map((agent) => (
                 <button
                   key={agent.id}
-                  onClick={() => !agent.comingSoon && setSelectedAgent(agent.id as any)}
-                  className={`relative px-8 py-4 rounded-xl font-semibold transition-all duration-300 ${
+                  onClick={() => setSelectedAgent(agent.id as any)}
+                  className={`relative px-6 py-3 rounded-xl font-semibold transition-all duration-300 text-sm ${
                     selectedAgent === agent.id
                       ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg shadow-blue-500/25'
-                      : agent.comingSoon
-                      ? 'text-gray-500 cursor-not-allowed'
                       : 'text-gray-300 hover:text-white hover:bg-white/5'
                   }`}
-                  disabled={agent.comingSoon}
                 >
                   <span className="flex items-center space-x-2">
                     <span>{agent.emoji}</span>
                     <span>{agent.name}</span>
-                    {agent.comingSoon && (
-                      <span className="text-xs bg-gray-700 px-2 py-1 rounded-full">SOON</span>
-                    )}
                   </span>
                 </button>
               ))}
@@ -164,6 +160,17 @@ export default function VAIAgentsPage() {
                   </div>
                 </div>
                 
+                {/* Example Notice */}
+                <div className="bg-gradient-to-r from-emerald-500/10 to-blue-500/10 border border-emerald-500/30 rounded-xl p-4 mb-6">
+                  <div className="flex items-center space-x-2 mb-2">
+                    <span className="text-emerald-400 text-lg">✨</span>
+                    <span className="text-emerald-300 font-semibold">Live Demo - 100% Accurate Results</span>
+                  </div>
+                  <p className="text-gray-300 text-sm">
+                    This is a working example that provides real, accurate prospect data. Try it with any names to see the power of VAI Agents.
+                  </p>
+                </div>
+
                 <div className="space-y-6">
                   <div>
                     <label className="block text-white font-semibold mb-3">
@@ -296,30 +303,131 @@ export default function VAIAgentsPage() {
         </section>
       )}
 
-      {/* Coming Soon Agents */}
-      {(selectedAgent === 'content' || selectedAgent === 'sales') && (
+      {/* Other Agent Tools */}
+      {(selectedAgent === 'content' || selectedAgent === 'sales' || selectedAgent === 'competitor' || selectedAgent === 'market') && (
         <section className="relative z-10 pb-24">
-          <div className="max-w-4xl mx-auto px-6 text-center">
-            <div className="bg-gradient-to-br from-gray-900/80 to-black/80 backdrop-blur-xl border border-gray-700/50 rounded-3xl p-16 shadow-2xl">
-              <div className="w-32 h-32 bg-gradient-to-br from-purple-600/20 to-blue-600/20 rounded-full flex items-center justify-center mx-auto mb-8">
-                <span className="text-6xl">
-                  {selectedAgent === 'content' ? '📝' : '💼'}
-                </span>
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="grid lg:grid-cols-2 gap-12">
+              {/* Tool Interface */}
+              <div className="bg-gradient-to-br from-gray-900/80 to-black/80 backdrop-blur-xl border border-gray-700/50 rounded-3xl p-8 shadow-2xl">
+                <div className="flex items-center space-x-3 mb-6">
+                  <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-blue-600 rounded-xl flex items-center justify-center">
+                    <span className="text-white text-xl">
+                      {selectedAgent === 'content' ? '📝' : 
+                       selectedAgent === 'sales' ? '💼' :
+                       selectedAgent === 'competitor' ? '🎯' : '📊'}
+                    </span>
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold text-white">
+                      {selectedAgent === 'content' ? '📝 Content Creator Agent' : 
+                       selectedAgent === 'sales' ? '💼 Sales Outreach Agent' :
+                       selectedAgent === 'competitor' ? '🎯 Competitor Analysis Agent' : '📊 Market Intelligence Agent'}
+                    </h3>
+                    <p className="text-gray-400">
+                      {selectedAgent === 'content' ? 'AI-powered content creation suite' : 
+                       selectedAgent === 'sales' ? 'Automated outreach sequences' :
+                       selectedAgent === 'competitor' ? 'Deep competitive intelligence' : 'Market research & analysis'}
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="space-y-6">
+                  <div className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-blue-500/30 rounded-xl p-6">
+                    <h4 className="text-lg font-semibold text-white mb-3">
+                      🚀 Get Early Access
+                    </h4>
+                    <p className="text-gray-300 mb-4">
+                      Be the first to access this powerful agent when it launches. Join our priority list for exclusive early access.
+                    </p>
+                    
+                    <div className="space-y-4">
+                      <input
+                        type="email"
+                        placeholder="Enter your email for early access"
+                        className="w-full p-3 bg-black/50 border border-gray-600/50 rounded-xl text-white placeholder-gray-500 focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 focus:outline-none transition-all duration-300"
+                      />
+                      <button className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white font-bold py-3 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-blue-500/25">
+                        🎯 Join Priority List
+                      </button>
+                    </div>
+                  </div>
+                </div>
               </div>
               
-              <h3 className="text-4xl font-bold text-white mb-6">
-                {selectedAgent === 'content' ? '📝 Content Creator Agent' : '💼 Sales Outreach Agent'}
-              </h3>
-              
-              <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-                {selectedAgent === 'content' 
-                  ? '🚀 Elite AI-powered content creation • Blog posts, social media, email campaigns • Coming very soon with advanced personalization'
-                  : '🎯 Automated sales outreach sequences • Personalized emails, follow-ups, CRM integration • Coming very soon with elite precision'
-                }
-              </p>
-              
-              <div className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-600/20 to-blue-600/20 rounded-full border border-purple-500/30">
-                <span className="text-purple-300 font-bold tracking-wide">🔥 COMING VERY SOON</span>
+              {/* Features Preview */}
+              <div className="bg-gradient-to-br from-gray-900/80 to-black/80 backdrop-blur-xl border border-gray-700/50 rounded-3xl p-8 shadow-2xl">
+                <div className="flex items-center space-x-3 mb-6">
+                  <div className="w-12 h-12 bg-gradient-to-br from-emerald-500 to-blue-600 rounded-xl flex items-center justify-center">
+                    <span className="text-white text-xl">⚡</span>
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold text-white">Powerful Features</h3>
+                    <p className="text-gray-400">What you'll get with this agent</p>
+                  </div>
+                </div>
+                
+                <div className="space-y-4">
+                  {selectedAgent === 'content' && [
+                    { icon: '✍️', title: 'Blog Post Generation', desc: 'SEO-optimized articles in any niche' },
+                    { icon: '📱', title: 'Social Media Content', desc: 'Platform-specific posts and campaigns' },
+                    { icon: '📧', title: 'Email Campaigns', desc: 'Personalized email sequences' },
+                    { icon: '🎨', title: 'Creative Assets', desc: 'Headlines, taglines, and copy' }
+                  ].map((feature, i) => (
+                    <div key={i} className="flex items-start space-x-3 p-4 bg-black/40 rounded-xl">
+                      <span className="text-2xl">{feature.icon}</span>
+                      <div>
+                        <h4 className="text-white font-semibold">{feature.title}</h4>
+                        <p className="text-gray-400 text-sm">{feature.desc}</p>
+                      </div>
+                    </div>
+                  ))}
+                  
+                  {selectedAgent === 'sales' && [
+                    { icon: '📧', title: 'Email Sequences', desc: 'Automated follow-up campaigns' },
+                    { icon: '🎯', title: 'Lead Scoring', desc: 'AI-powered prospect prioritization' },
+                    { icon: '📞', title: 'Call Scripts', desc: 'Personalized conversation starters' },
+                    { icon: '📊', title: 'Performance Tracking', desc: 'Real-time campaign analytics' }
+                  ].map((feature, i) => (
+                    <div key={i} className="flex items-start space-x-3 p-4 bg-black/40 rounded-xl">
+                      <span className="text-2xl">{feature.icon}</span>
+                      <div>
+                        <h4 className="text-white font-semibold">{feature.title}</h4>
+                        <p className="text-gray-400 text-sm">{feature.desc}</p>
+                      </div>
+                    </div>
+                  ))}
+                  
+                  {selectedAgent === 'competitor' && [
+                    { icon: '🔍', title: 'Competitor Monitoring', desc: 'Track pricing, features, and strategies' },
+                    { icon: '📈', title: 'Market Positioning', desc: 'Identify gaps and opportunities' },
+                    { icon: '💰', title: 'Pricing Intelligence', desc: 'Real-time competitive pricing data' },
+                    { icon: '🎯', title: 'SWOT Analysis', desc: 'Comprehensive competitive assessment' }
+                  ].map((feature, i) => (
+                    <div key={i} className="flex items-start space-x-3 p-4 bg-black/40 rounded-xl">
+                      <span className="text-2xl">{feature.icon}</span>
+                      <div>
+                        <h4 className="text-white font-semibold">{feature.title}</h4>
+                        <p className="text-gray-400 text-sm">{feature.desc}</p>
+                      </div>
+                    </div>
+                  ))}
+                  
+                  {selectedAgent === 'market' && [
+                    { icon: '📊', title: 'Market Research', desc: 'Industry trends and insights' },
+                    { icon: '👥', title: 'Audience Analysis', desc: 'Target demographic profiling' },
+                    { icon: '💡', title: 'Opportunity Mapping', desc: 'Identify untapped markets' },
+                    { icon: '📈', title: 'Growth Forecasting', desc: 'Predictive market analytics' }
+                  ].map((feature, i) => (
+                    <div key={i} className="flex items-start space-x-3 p-4 bg-black/40 rounded-xl">
+                      <span className="text-2xl">{feature.icon}</span>
+                      <div>
+                        <h4 className="text-white font-semibold">{feature.title}</h4>
+                        <p className="text-gray-400 text-sm">{feature.desc}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>

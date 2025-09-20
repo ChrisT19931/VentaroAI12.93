@@ -337,7 +337,15 @@ const PricingPage = () => {
                       <div className={`inline-flex items-center px-3 py-1 ${colors.badge} rounded-full text-sm font-semibold mb-4`}>
                         {plan.badge}
                       </div>
-                      <h3 className="text-2xl font-bold text-white mb-2">{plan.name}</h3>
+                      <h3 className="text-2xl font-bold mb-2">
+                        {key === 'vaiToolkit' ? (
+                          <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-green-400 to-teal-400 hover:from-emerald-300 hover:via-green-300 hover:to-teal-300 transition-all duration-500">
+                            {plan.name}
+                          </span>
+                        ) : (
+                          <span className="text-white">{plan.name}</span>
+                        )}
+                      </h3>
                       <p className="text-gray-300 mb-6">{plan.description}</p>
                       
                       <div className="mb-6">
@@ -449,7 +457,15 @@ const PricingPage = () => {
                     <div className={`inline-flex items-center px-3 py-1 ${colors.badge} rounded-full text-sm font-semibold mb-4`}>
                       {plan.badge}
                     </div>
-                    <h3 className="text-2xl font-bold text-white mb-2">{plan.name}</h3>
+                    <h3 className="text-2xl font-bold mb-2">
+                      {key === 'vaiToolkit' ? (
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-green-400 to-teal-400 hover:from-emerald-300 hover:via-green-300 hover:to-teal-300 transition-all duration-500">
+                          {plan.name}
+                        </span>
+                      ) : (
+                        <span className="text-white">{plan.name}</span>
+                      )}
+                    </h3>
                     <p className="text-gray-300 mb-6">{plan.description}</p>
                     
                     <div className="mb-6">

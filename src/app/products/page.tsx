@@ -35,7 +35,7 @@ function getProducts() {
     {
       id: 'ai-for-beginners-support',
       name: 'AI for Beginners Support',
-      description: '60-minute consultation + unlimited email support + complete AI beginner cheat sheet. Perfect for anyone starting their AI journey.',
+      description: '60-minute foundational coaching call to educate on AI fundamentals + unlimited email support + full AI tools & platforms cheat sheet. Perfect for anyone starting their AI journey.',
       price: 300.00,
       recurring: false,
       image_url: '/images/products/ai-beginners-support.svg',
@@ -49,7 +49,7 @@ function getProducts() {
     {
       id: 'ai-web-development-support',
       name: 'AI for Web Development Support',
-      description: '60-minute consultation + unlimited email support + complete web development deployment cheat sheet. Master AI-powered web development.',
+      description: '60-minute foundational coaching call teaching start-to-finish how to build an online platform with AI/coding + unlimited email support + complete platform building cheat sheet. No experience required.',
       price: 400.00,
       recurring: false,
       image_url: '/images/products/ai-web-dev-support.svg',
@@ -63,7 +63,7 @@ function getProducts() {
     {
       id: 'ai-business-support',
       name: 'AI for Business Support',
-      description: '60-minute consultation + unlimited email support + complete business AI strategy cheat sheet. Transform your business with AI.',
+      description: '60-minute foundational coaching call providing strategic assistance with using AI to optimize your business online + unlimited email support + online business AI optimization cheat sheet. Transform your business with AI.',
       price: 500.00,
       recurring: false,
       image_url: '/images/products/ai-business-support.svg',
@@ -273,7 +273,7 @@ const ProductsPage = React.memo(function ProductsPage() {
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-5xl md:text-6xl font-black text-white mb-6 drop-shadow-2xl">
-            Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-gray-300 via-gray-400 to-gray-500">Products</span>
+            VAI <span className="text-transparent bg-clip-text bg-gradient-to-r from-gray-300 via-gray-400 to-gray-500">Toolkit</span>
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
             Professional AI tools and resources to build your online business empire.

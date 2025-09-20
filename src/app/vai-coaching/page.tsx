@@ -21,7 +21,7 @@ export default function VAICoaching() {
           items: [{
             id: productId,
             name: productName,
-            price: 250, // September 2025 special price
+            price: 250, // September special coaching session price (was 300)
             quantity: 1,
             image: '/images/products/coaching-session.svg',
             productType: 'coaching'
@@ -77,7 +77,7 @@ export default function VAICoaching() {
               </div>
               
               <p className="text-xl md:text-2xl text-gray-300 mb-12 leading-relaxed max-w-4xl mx-auto">
-                Get personalized one-on-one guidance directly from the founder & director of VAI. All coaching sessions now available at <span className="line-through text-gray-500">$300</span> <span className="text-white font-semibold">$250</span> each for September 2025 only.
+                Get personalized one-on-one guidance directly from the founder & director of VAI. Professional coaching sessions available at <span className="line-through text-gray-500">$300</span> <span className="text-emerald-400 font-bold">$250</span> each (September Special).
               </p>
             </motion.div>
           </div>
@@ -121,12 +121,12 @@ export default function VAICoaching() {
                 >
                   AI for Beginners
                 </AnimatedHeading>
-                <p className="text-gray-300 mb-6 text-sm leading-relaxed group-hover:text-white transition-colors duration-300">Comprehensive AI guidance for sales professionals and entrepreneurs. Get up to date with the full range of AI tools, learn how to use them effectively for your goals, and master practical applications for business growth.</p>
+                <p className="text-gray-300 mb-6 text-sm leading-relaxed group-hover:text-white transition-colors duration-300">60-minute foundational coaching call to educate on AI fundamentals. Get the ability to comprehend exactly what all bots/tools are, how to use them, and a strong overview to help you decide what to do with AI.</p>
                 
                 <div className="space-y-3 mb-6">
                   <div className="flex items-center space-x-2 transform group-hover:translate-x-2 transition-all duration-300">
                     <div className="w-2 h-2 bg-emerald-400 rounded-full shadow-lg group-hover:shadow-emerald-400/50 transition-all duration-300"></div>
-                    <span className="text-xs text-gray-400 group-hover:text-emerald-200 transition-colors duration-300">60-minute consultation call</span>
+                    <span className="text-xs text-gray-400 group-hover:text-emerald-200 transition-colors duration-300">60-minute foundational coaching call</span>
                   </div>
                   <div className="flex items-center space-x-2 transform group-hover:translate-x-2 transition-all duration-300" style={{transitionDelay: '0.1s'}}>
                     <div className="w-2 h-2 bg-emerald-400 rounded-full shadow-lg group-hover:shadow-emerald-400/50 transition-all duration-300"></div>
@@ -134,13 +134,13 @@ export default function VAICoaching() {
                   </div>
                   <div className="flex items-center space-x-2 transform group-hover:translate-x-2 transition-all duration-300" style={{transitionDelay: '0.2s'}}>
                     <div className="w-2 h-2 bg-emerald-400 rounded-full shadow-lg group-hover:shadow-emerald-400/50 transition-all duration-300"></div>
-                    <span className="text-xs text-gray-400 group-hover:text-emerald-200 transition-colors duration-300">Complete AI beginner cheat sheet</span>
+                    <span className="text-xs text-gray-400 group-hover:text-emerald-200 transition-colors duration-300">Full AI tools & platforms cheat sheet</span>
                   </div>
                 </div>
                 
                 <div className="text-center mb-6">
                   <div className="text-4xl font-black text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-gray-200 group-hover:to-white transition-all duration-700 drop-shadow-[0_4px_8px_rgba(0,0,0,0.8)] group-hover:drop-shadow-[0_8px_16px_rgba(255,255,255,0.2)]}"><span className="line-through text-gray-500 text-3xl">A$300</span> <span>A$250</span></div>
-                  <div className="text-xs text-gray-400 group-hover:text-gray-300 transition-colors duration-500">September 2025 special offer</div>
+                  <div className="text-xs text-gray-400 group-hover:text-gray-300 transition-colors duration-500">Professional coaching session - September Special</div>
                 </div>
                 
                 <button 
@@ -190,12 +190,12 @@ export default function VAICoaching() {
                 >
                   AI for Web Developers
                 </AnimatedHeading>
-                <p className="text-gray-300 mb-6 text-sm leading-relaxed group-hover:text-white transition-colors duration-300">Learn how to leverage AI tools to create online platforms, tools, and SaaS applications. Master AI-powered development workflows, automation strategies, and cutting-edge implementation techniques for modern web development.</p>
+                <p className="text-gray-300 mb-6 text-sm leading-relaxed group-hover:text-white transition-colors duration-300">60-minute foundational coaching call teaching start-to-finish how to build an online platform with AI/coding. No experience required - complete guidance from concept to deployment.</p>
                 
                 <div className="space-y-3 mb-6">
                   <div className="flex items-center space-x-2 transform group-hover:translate-x-2 transition-all duration-300">
                     <div className="w-2 h-2 bg-blue-400 rounded-full shadow-lg group-hover:shadow-blue-400/50 transition-all duration-300"></div>
-                    <span className="text-xs text-gray-400 group-hover:text-blue-200 transition-colors duration-300">60-minute consultation call</span>
+                    <span className="text-xs text-gray-400 group-hover:text-blue-200 transition-colors duration-300">60-minute foundational coaching call</span>
                   </div>
                   <div className="flex items-center space-x-2 transform group-hover:translate-x-2 transition-all duration-300" style={{transitionDelay: '0.1s'}}>
                     <div className="w-2 h-2 bg-blue-400 rounded-full shadow-lg group-hover:shadow-blue-400/50 transition-all duration-300"></div>
@@ -203,13 +203,13 @@ export default function VAICoaching() {
                   </div>
                   <div className="flex items-center space-x-2 transform group-hover:translate-x-2 transition-all duration-300" style={{transitionDelay: '0.2s'}}>
                     <div className="w-2 h-2 bg-blue-400 rounded-full shadow-lg group-hover:shadow-blue-400/50 transition-all duration-300"></div>
-                    <span className="text-xs text-gray-400 group-hover:text-blue-200 transition-colors duration-300">Technical implementation guide</span>
+                    <span className="text-xs text-gray-400 group-hover:text-blue-200 transition-colors duration-300">Complete platform building cheat sheet</span>
                   </div>
                 </div>
                 
                 <div className="text-center mb-6">
                   <div className="text-4xl font-black text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-gray-100 group-hover:to-white transition-all duration-700 drop-shadow-[0_4px_8px_rgba(0,0,0,0.8)] group-hover:drop-shadow-[0_8px_16px_rgba(255,255,255,0.2)]}"><span className="line-through text-gray-500 text-3xl">A$300</span> <span>A$250</span></div>
-                  <div className="text-xs text-gray-400 group-hover:text-gray-300 transition-colors duration-500">September 2025 special offer</div>
+                  <div className="text-xs text-gray-400 group-hover:text-gray-300 transition-colors duration-500">Professional coaching session - September Special</div>
                 </div>
                 
                 <button 
@@ -259,12 +259,12 @@ export default function VAICoaching() {
                 >
                   AI for Business
                 </AnimatedHeading>
-                <p className="text-gray-300 mb-6 text-sm leading-relaxed group-hover:text-white transition-colors duration-300">Strategic AI guidance for employers and business leaders. Understand AI capabilities, implementation strategies, and how to effectively integrate AI solutions into your organization for competitive advantage and operational efficiency.</p>
+                <p className="text-gray-300 mb-6 text-sm leading-relaxed group-hover:text-white transition-colors duration-300">60-minute foundational coaching call providing strategic assistance with using AI to optimize your business online specifically. Learn how to leverage AI for maximum business impact.</p>
                 
                 <div className="space-y-3 mb-6">
                   <div className="flex items-center space-x-2 transform group-hover:translate-x-2 transition-all duration-300">
                     <div className="w-2 h-2 bg-purple-400 rounded-full shadow-lg group-hover:shadow-purple-400/50 transition-all duration-300"></div>
-                    <span className="text-xs text-gray-400 group-hover:text-purple-200 transition-colors duration-300">90-minute strategy session</span>
+                    <span className="text-xs text-gray-400 group-hover:text-purple-200 transition-colors duration-300">60-minute foundational coaching call</span>
                   </div>
                   <div className="flex items-center space-x-2 transform group-hover:translate-x-2 transition-all duration-300" style={{transitionDelay: '0.1s'}}>
                     <div className="w-2 h-2 bg-purple-400 rounded-full shadow-lg group-hover:shadow-purple-400/50 transition-all duration-300"></div>
@@ -272,13 +272,13 @@ export default function VAICoaching() {
                   </div>
                   <div className="flex items-center space-x-2 transform group-hover:translate-x-2 transition-all duration-300" style={{transitionDelay: '0.2s'}}>
                     <div className="w-2 h-2 bg-purple-400 rounded-full shadow-lg group-hover:shadow-purple-400/50 transition-all duration-300"></div>
-                    <span className="text-xs text-gray-400 group-hover:text-purple-200 transition-colors duration-300">Custom AI strategy roadmap</span>
+                    <span className="text-xs text-gray-400 group-hover:text-purple-200 transition-colors duration-300">Online business AI optimization cheat sheet</span>
                   </div>
                 </div>
                 
                 <div className="text-center mb-6">
-                  <div className="text-4xl font-black text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-gray-50 group-hover:to-white transition-all duration-700 drop-shadow-[0_4px_8px_rgba(0,0,0,0.8)] group-hover:drop-shadow-[0_8px_16px_rgba(255,255,255,0.2)]"><span className="line-through text-gray-500 text-3xl">A$300</span> <span>A$250</span></div>
-                  <div className="text-xs text-gray-400 group-hover:text-gray-300 transition-colors duration-500">September 2025 special offer</div>
+                  <div className="text-4xl font-black text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-gray-50 group-hover:to-white transition-all duration-700 drop-shadow-[0_4px_8px_rgba(0,0,0,0.8)] group-hover:drop-shadow-[0_8px_16px_rgba(255,255,255,0.2)]}"><span className="line-through text-gray-500 text-3xl">A$300</span> <span>A$250</span></div>
+                  <div className="text-xs text-gray-400 group-hover:text-gray-300 transition-colors duration-500">Professional coaching session - September Special</div>
                 </div>
                 
                 <button 
@@ -392,77 +392,7 @@ export default function VAICoaching() {
             </div>
           </motion.div>
 
-          {/* September 2025 Special Offer */}
-          <motion.div 
-            className="mt-24 mb-12"
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-amber-500/20 via-yellow-500/20 to-orange-500/20 rounded-3xl blur-3xl animate-pulse"></div>
-              <div className="relative bg-gradient-to-r from-gray-900/90 via-gray-800/90 to-gray-900/90 backdrop-blur-xl rounded-3xl p-16 border border-amber-500/30 shadow-2xl">
-                <div className="text-center">
-                  <span className="inline-block px-6 py-2 bg-gradient-to-r from-amber-600 to-orange-600 rounded-full text-sm font-bold text-white mb-6 border border-amber-400/40 shadow-xl shadow-amber-500/20">
-                    SEPTEMBER 2025 SPECIAL OFFER
-                  </span>
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.2 }}
-                    viewport={{ once: true }}
-                  >
-                    <AnimatedHeading 
-                      className="text-4xl md:text-6xl mb-8" 
-                      animation="scale" 
-                      theme="gold" 
-                      is3D={true}
-                      deep3D={true}
-                      delay={900}
-                    >
-                      Limited Time Discount
-                    </AnimatedHeading>
-                  </motion.div>
-                  <motion.p 
-                    className="text-xl md:text-2xl text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.4 }}
-                    viewport={{ once: true }}
-                  >
-                    Book your personalized AI coaching session now and save $50 on all coaching packages for September 2025 only.
-                  </motion.p>
-                  <motion.div
-                    className="flex flex-col sm:flex-row gap-8 justify-center items-center"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.6 }}
-                    viewport={{ once: true }}
-                  >
-                    <motion.button
-                      className="group relative px-12 py-6 bg-gradient-to-r from-amber-500 via-yellow-500 to-orange-500 text-white font-bold text-lg rounded-2xl overflow-hidden shadow-2xl hover:shadow-amber-500/25 transition-all duration-500"
-                      whileHover={{ scale: 1.05, y: -5 }}
-                      whileTap={{ scale: 0.98 }}
-                    >
-                      <div className="absolute inset-0 bg-gradient-to-r from-amber-600 via-yellow-600 to-orange-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                      <div className="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl"></div>
-                      <span className="relative flex items-center gap-3">
-                        Schedule Your Session
-                        <svg className="w-6 h-6 group-hover:translate-x-2 transition-transform duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                        </svg>
-                      </span>
-                    </motion.button>
-                    <div className="text-center">
-                      <p className="text-lg font-bold text-white mb-1"><span className="line-through text-gray-400">$300</span> <span className="text-amber-400">$250</span> per session</p>
-                      <p className="text-sm text-gray-400">Limited time offer for September 2025</p>
-                    </div>
-                  </motion.div>
-                </div>
-              </div>
-            </div>
-          </motion.div>
+
          </div>
        </section>
     </div>

@@ -238,6 +238,18 @@ export default function Home() {
              </p>
            </div>
 
+           {/* Interactive Quote Wizard Section - Moved Higher for Better Visibility */}
+           <div className="text-center mb-16">
+             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+               Get Your Custom Quote
+             </h2>
+             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+               Let's understand your needs with a few quick questions. We'll provide a detailed proposal within 24 hours.
+             </p>
+           </div>
+           
+           <InteractiveQuoteWizard />
+
            {/* Services Grid */}
            <div className="mb-20">
              <div className="text-center mb-12">
@@ -329,17 +341,7 @@ export default function Home() {
              </div>
            </div>
 
-           {/* Interactive Quote Wizard Section */}
-           <div className="text-center mb-16">
-             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-               Get Your Custom Quote
-             </h2>
-             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-               Let's understand your needs with a few quick questions. We'll provide a detailed proposal within 24 hours.
-             </p>
-           </div>
-           
-           <InteractiveQuoteWizard />
+
 
            {/* Process Section */}
            <div className="text-center mb-20">
@@ -459,7 +461,7 @@ export default function Home() {
                    size="md" 
                    withGlow={true} 
                  />
-                 <p className="text-gray-300 mb-6 text-sm leading-relaxed group-hover:text-white transition-colors duration-300">Perfect for sales professionals and entrepreneurs to get up to speed with AI tools, their uses, and how to best leverage them for your specific goals.</p>
+                 <p className="text-gray-300 mb-6 text-sm leading-relaxed group-hover:text-white transition-colors duration-300">60-minute foundational coaching call to educate on AI fundamentals. Get the ability to comprehend exactly what all bots/tools are, how to use them, and a strong overview to help you decide what to do with AI.</p>
                  
                  <div className="space-y-3 mb-6">
                    <div className="flex items-center space-x-2 transform group-hover:translate-x-2 transition-all duration-300">
@@ -474,7 +476,7 @@ export default function Home() {
                    
                    <div className="flex items-center space-x-2 transform group-hover:translate-x-2 transition-all duration-300" style={{transitionDelay: '0.2s'}}>
                      <div className="w-2 h-2 bg-emerald-400 rounded-full shadow-lg group-hover:shadow-emerald-400/50 transition-all duration-300"></div>
-                     <span className="text-xs text-gray-400 group-hover:text-emerald-200 transition-colors duration-300">Complete AI beginner cheat sheet</span>
+                     <span className="text-xs text-gray-400 group-hover:text-emerald-200 transition-colors duration-300">Full AI tools & platforms cheat sheet</span>
                    </div>
                  </div>
                  
@@ -527,7 +529,7 @@ export default function Home() {
                    size="md" 
                    withGlow={true} 
                  />
-                 <p className="text-gray-300 mb-6 text-sm leading-relaxed group-hover:text-white transition-colors duration-300">Learn how to use AI tools to create online platforms, SaaS applications, and web-based tools with modern development techniques.</p>
+                 <p className="text-gray-300 mb-6 text-sm leading-relaxed group-hover:text-white transition-colors duration-300">60-minute foundational coaching call teaching start-to-finish how to build an online platform with AI/coding. No experience required - complete guidance from concept to deployment.</p>
                  
                  <div className="space-y-3 mb-6">
                    <div className="flex items-center space-x-2 transform group-hover:translate-x-2 transition-all duration-300">
@@ -542,7 +544,7 @@ export default function Home() {
                    
                    <div className="flex items-center space-x-2 transform group-hover:translate-x-2 transition-all duration-300" style={{transitionDelay: '0.2s'}}>
                      <div className="w-2 h-2 bg-blue-400 rounded-full shadow-lg group-hover:shadow-blue-400/50 transition-all duration-300"></div>
-                     <span className="text-xs text-gray-400 group-hover:text-blue-200 transition-colors duration-300">Web development deployment cheat sheet</span>
+                     <span className="text-xs text-gray-400 group-hover:text-blue-200 transition-colors duration-300">Complete platform building cheat sheet</span>
                    </div>
                  </div>
                  
@@ -595,7 +597,7 @@ export default function Home() {
                    size="md" 
                    withGlow={true} 
                  />
-                 <p className="text-gray-300 mb-6 text-sm leading-relaxed group-hover:text-white transition-colors duration-300">Designed for employers and business leaders to understand AI capabilities and how to effectively integrate them into your organization.</p>
+                 <p className="text-gray-300 mb-6 text-sm leading-relaxed group-hover:text-white transition-colors duration-300">60-minute foundational coaching call providing strategic assistance with using AI to optimize your business online specifically. Learn how to leverage AI for maximum business impact.</p>
                  
                  <div className="space-y-3 mb-6">
                    <div className="flex items-center space-x-2 transform group-hover:translate-x-2 transition-all duration-300">
@@ -610,7 +612,7 @@ export default function Home() {
                    
                    <div className="flex items-center space-x-2 transform group-hover:translate-x-2 transition-all duration-300" style={{transitionDelay: '0.2s'}}>
                      <div className="w-2 h-2 bg-purple-400 rounded-full shadow-lg group-hover:shadow-purple-400/50 transition-all duration-300"></div>
-                     <span className="text-xs text-gray-400 group-hover:text-purple-200 transition-colors duration-300">Business AI strategy cheat sheet</span>
+                     <span className="text-xs text-gray-400 group-hover:text-purple-200 transition-colors duration-300">Online business AI optimization cheat sheet</span>
                    </div>
                  </div>
                  
@@ -634,13 +636,7 @@ export default function Home() {
              </div>
            </div>
            
-           {/* Call to Action */}
-           <div className="text-center">
-             <p className="text-lg text-slate-400 mb-6 font-light">Serving <span className="text-white font-semibold">startups, SMBs, and enterprise clients</span> with equal dedication and expertise. Professional consulting sessions include strategic guidance, ongoing support, and implementation resources.</p>
-             <Link href="/vai-coaching" className="inline-block bg-gradient-to-r from-slate-700 to-gray-700 hover:from-slate-600 hover:to-gray-600 text-white font-semibold py-4 px-8 rounded-2xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-slate-500/30 border border-slate-600/50">
-               View Consulting Programs
-             </Link>
-           </div>
+
          </div>
        </section>
        
@@ -1055,14 +1051,20 @@ export default function Home() {
                       </div>
                     </div>
                     
-                    <Link 
-                      href="/vai-coaching" 
-                      className="group/btn relative inline-flex items-center px-16 py-6 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-bold text-xl rounded-2xl transition-all duration-700 transform hover:scale-110 hover:shadow-[0_25px_50px_-12px_rgba(59,130,246,0.6)] border border-blue-500/30 hover:border-blue-400/60 shadow-[0_15px_35px_-5px_rgba(59,130,246,0.3)]">
-                      <span className="relative z-10 tracking-wide drop-shadow-lg">Book Your Coaching Call Now</span>
+                    <UnifiedCheckoutButton 
+                      product={{
+                        id: 'ai-business-support',
+                        name: 'Premium AI Business Coaching',
+                        price: 250
+                      }}
+                      className="group/btn relative inline-flex items-center px-16 py-6 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-bold text-xl rounded-2xl transition-all duration-700 transform hover:scale-110 hover:shadow-[0_25px_50px_-12px_rgba(59,130,246,0.6)] border border-blue-500/30 hover:border-blue-400/60 shadow-[0_15px_35px_-5px_rgba(59,130,246,0.3)]"
+                      variant="direct"
+                    >
+                      <span className="relative z-10 tracking-wide drop-shadow-lg">Book Your Coaching Call Now - A$250</span>
                       <div className="absolute inset-0 bg-white/10 rounded-2xl opacity-0 group-hover/btn:opacity-100 transition-opacity duration-500"></div>
                       <div className="ml-4 text-2xl group-hover/btn:translate-x-2 transition-transform duration-300 drop-shadow-lg">→</div>
                       <div className="absolute -inset-1 bg-blue-500/30 rounded-2xl blur opacity-0 group-hover/btn:opacity-50 transition-opacity duration-700"></div>
-                    </Link>
+                    </UnifiedCheckoutButton>
                     
                     <div className="flex items-center justify-center space-x-8 text-gray-400 text-sm mt-8 group-hover:text-gray-300 transition-colors duration-500">
                       <div className="flex items-center transform group-hover:scale-105 transition-transform duration-300">

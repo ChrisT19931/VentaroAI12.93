@@ -95,219 +95,7 @@ export default function CustomSolutions() {
         </div>
       </section>
 
-      {/* Services Grid */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-black/20 via-gray-950/50 to-black/20">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white drop-shadow-xl">
-              <span className="bg-gradient-to-r from-emerald-400 to-blue-400 bg-clip-text text-transparent">Accelerate</span> Your Success
-            </h2>
-            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-              <span className="text-white font-semibold">Efficient. Reliable. Results-driven.</span> We deliver AI solutions that streamline your operations and accelerate your business goals. From simple automation tools to comprehensive enterprise systems - we get it done.
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                title: "AI SaaS Platforms",
-                description: "Complete SaaS applications with AI features - from MVP to enterprise scale",
-                icon: "SAAS",
-                price: "$200-1000+",
-                features: ["User Management", "Payment Integration", "AI-Powered Features", "Custom Dashboards"]
-              },
-              {
-                title: "AI-Enhanced Websites",
-                description: "Modern websites with integrated AI chatbots, personalization, and automation",
-                icon: "WEB",
-                price: "$50-500",
-                features: ["Responsive Design", "AI Chatbots", "SEO Optimization", "Analytics Integration"]
-              },
-              {
-                title: "Business Automation",
-                description: "Automate repetitive tasks, workflows, and processes with intelligent AI systems",
-                icon: "AUTO",
-                price: "$100-800",
-                features: ["Workflow Automation", "Document Processing", "Email Automation", "Data Entry"]
-              },
-              {
-                title: "AI Chatbots & Assistants",
-                description: "Custom conversational AI for customer support, sales, and lead generation",
-                icon: "BOT",
-                price: "$75-400",
-                features: ["24/7 Support", "Lead Qualification", "Multi-Platform", "Custom Training"]
-              },
-              {
-                title: "Data Analytics Tools",
-                description: "Transform your data into insights with custom dashboards and AI analytics",
-                icon: "DATA",
-                price: "$150-600",
-                features: ["Custom Dashboards", "Predictive Analytics", "Report Generation", "Data Visualization"]
-              },
-              {
-                title: "E-commerce AI Solutions",
-                description: "AI-powered online stores with recommendations, inventory management, and more",
-                icon: "SHOP",
-                price: "$300-1000+",
-                features: ["Product Recommendations", "Inventory AI", "Customer Insights", "Sales Automation"]
-              },
-              {
-                title: "Custom AI Models",
-                description: "Tailored machine learning models for your specific business needs and data",
-                icon: "ML",
-                price: "$400-1000+",
-                features: ["Computer Vision", "NLP Processing", "Predictive Models", "Custom Training"]
-              },
-              {
-                title: "Mobile App Development",
-                description: "AI-powered mobile applications for iOS and Android with smart features",
-                icon: "MOBILE",
-                price: "$500-1000+",
-                features: ["Cross-Platform", "AI Integration", "Push Notifications", "Offline Capabilities"]
-              },
-              {
-                title: "API & Integration Services",
-                description: "Connect your systems with AI APIs, third-party integrations, and custom endpoints",
-                icon: "API",
-                price: "$100-500",
-                features: ["REST APIs", "Third-party Integration", "Webhook Setup", "Database Connections"]
-              }
-            ].map((service, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.1 * index }}
-                className="bg-gradient-to-br from-gray-900/30 to-black/60 backdrop-blur-xl border border-white/10 rounded-2xl p-8 hover:border-white/20 transition-all duration-500 group hover:transform hover:scale-105 shadow-2xl hover:shadow-white/10"
-              >
-                <div className="flex justify-between items-start mb-4">
-                  <div className="text-4xl">{service.icon}</div>
-                  <div className="text-right">
-                    <div className="text-sm text-gray-400">Starting at</div>
-                    <div className="text-lg font-bold text-white">{service.price}</div>
-                  </div>
-                </div>
-                <h3 className="text-xl font-bold mb-3 text-white group-hover:text-gray-200 transition-colors duration-300">
-                  {service.title}
-                </h3>
-                <p className="text-gray-400 mb-4 group-hover:text-gray-300 transition-colors duration-300">{service.description}</p>
-                <ul className="space-y-2">
-                  {service.features.map((feature, idx) => (
-                    <li key={idx} className="text-sm text-gray-500 flex items-center group-hover:text-gray-400 transition-colors duration-300">
-                      <span className="w-1.5 h-1.5 bg-white/60 rounded-full mr-2 group-hover:bg-white/80 transition-colors duration-300"></span>
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Business Examples Section */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-950 via-black to-gray-950">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-16"
-          >
-            <div className="inline-block px-6 py-2 bg-gradient-to-r from-white/10 to-gray-500/10 rounded-full text-sm font-bold text-gray-300 mb-8 border border-white/20 shadow-xl">
-              REAL BUSINESS SOLUTIONS
-            </div>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white drop-shadow-2xl">
-              Perfect for <span className="bg-gradient-to-r from-gray-400 to-white bg-clip-text text-transparent">Your Business</span>
-            </h2>
-            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-              See what we can build for different business types and budgets
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                businessType: "Small Restaurant",
-                budget: "$150-400",
-                solution: "AI Ordering System",
-                description: "WhatsApp/SMS ordering bot, inventory tracking, customer management",
-                features: ["Automated Orders", "Menu Management", "Customer Database", "Sales Reports"]
-              },
-              {
-                businessType: "Online Store",
-                budget: "$300-800",
-                solution: "E-commerce AI Platform",
-                description: "Smart product recommendations, inventory AI, customer insights dashboard",
-                features: ["Product Recommendations", "Inventory Alerts", "Customer Analytics", "Sales Automation"]
-              },
-              {
-                businessType: "Service Business",
-                budget: "$100-500",
-                solution: "Booking & CRM System",
-                description: "Automated booking, client management, follow-up sequences, payment processing",
-                features: ["Online Booking", "Client Portal", "Automated Follow-ups", "Payment Integration"]
-              },
-              {
-                businessType: "Content Creator",
-                budget: "$75-300",
-                solution: "AI Content Tools",
-                description: "Content generation, social media automation, audience analytics",
-                features: ["Content Generation", "Social Scheduling", "Analytics Dashboard", "Engagement Tracking"]
-              },
-              {
-                businessType: "Real Estate Agent",
-                budget: "$200-600",
-                solution: "Lead Generation System",
-                description: "Property matching AI, lead qualification, automated follow-ups",
-                features: ["Property Matching", "Lead Scoring", "Automated Emails", "Market Analytics"]
-              },
-              {
-                businessType: "Consulting Firm",
-                budget: "$400-1000+",
-                solution: "Knowledge Management",
-                description: "AI-powered knowledge base, client portal, project management system",
-                features: ["Knowledge AI", "Client Portal", "Project Tracking", "Report Generation"]
-              }
-            ].map((example, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.1 * index }}
-                className="bg-gradient-to-br from-gray-900/40 to-black/70 backdrop-blur-xl border border-white/10 rounded-2xl p-6 hover:border-white/20 transition-all duration-500 group hover:transform hover:scale-105 shadow-2xl hover:shadow-white/10"
-              >
-                <div className="flex justify-between items-start mb-4">
-                  <div className="text-sm font-semibold text-gray-300">{example.businessType}</div>
-                  <div className="text-right">
-                    <div className="text-xs text-gray-500">Budget Range</div>
-                    <div className="text-sm font-bold text-white">{example.budget}</div>
-                  </div>
-                </div>
-                <h3 className="text-lg font-bold mb-2 text-white group-hover:text-gray-200 transition-colors duration-300">
-                  {example.solution}
-                </h3>
-                <p className="text-gray-400 mb-4 text-sm group-hover:text-gray-300 transition-colors duration-300">{example.description}</p>
-                <ul className="space-y-1">
-                  {example.features.map((feature, idx) => (
-                    <li key={idx} className="text-xs text-gray-500 flex items-center group-hover:text-gray-400 transition-colors duration-300">
-                      <span className="w-1 h-1 bg-white/60 rounded-full mr-2 group-hover:bg-white/80 transition-colors duration-300"></span>
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Quote Form Section */}
+      {/* Quote Form Section - Moved Up */}
       <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-950 via-black to-gray-950 relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-5"></div>
         <div className="absolute top-20 left-20 w-40 h-40 bg-gradient-to-br from-white/5 to-gray-500/5 rounded-2xl rotate-12 opacity-30"></div>
@@ -521,6 +309,218 @@ export default function CustomSolutions() {
               {isSubmitting ? 'Sending Request...' : 'Start My AI Project'}
             </button>
           </motion.form>
+        </div>
+      </section>
+
+      {/* Services Grid */}
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-black/20 via-gray-950/50 to-black/20">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white drop-shadow-xl">
+              <span className="bg-gradient-to-r from-emerald-400 to-blue-400 bg-clip-text text-transparent">Accelerate</span> Your Success
+            </h2>
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+              <span className="text-white font-semibold">Efficient. Reliable. Results-driven.</span> We deliver AI solutions that streamline your operations and accelerate your business goals. From simple automation tools to comprehensive enterprise systems - we get it done.
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                title: "AI SaaS Platforms",
+                description: "Complete SaaS applications with AI features - from MVP to enterprise scale",
+                icon: "SAAS",
+                price: "$200-1000+",
+                features: ["User Management", "Payment Integration", "AI-Powered Features", "Custom Dashboards"]
+              },
+              {
+                title: "AI-Enhanced Websites",
+                description: "Modern websites with integrated AI chatbots, personalization, and automation",
+                icon: "WEB",
+                price: "$50-500",
+                features: ["Responsive Design", "AI Chatbots", "SEO Optimization", "Analytics Integration"]
+              },
+              {
+                title: "Business Automation",
+                description: "Automate repetitive tasks, workflows, and processes with intelligent AI systems",
+                icon: "AUTO",
+                price: "$100-800",
+                features: ["Workflow Automation", "Document Processing", "Email Automation", "Data Entry"]
+              },
+              {
+                title: "AI Chatbots & Assistants",
+                description: "Custom conversational AI for customer support, sales, and lead generation",
+                icon: "BOT",
+                price: "$75-400",
+                features: ["24/7 Support", "Lead Qualification", "Multi-Platform", "Custom Training"]
+              },
+              {
+                title: "Data Analytics Tools",
+                description: "Transform your data into insights with custom dashboards and AI analytics",
+                icon: "DATA",
+                price: "$150-600",
+                features: ["Custom Dashboards", "Predictive Analytics", "Report Generation", "Data Visualization"]
+              },
+              {
+                title: "E-commerce AI Solutions",
+                description: "AI-powered online stores with recommendations, inventory management, and more",
+                icon: "SHOP",
+                price: "$300-1000+",
+                features: ["Product Recommendations", "Inventory AI", "Customer Insights", "Sales Automation"]
+              },
+              {
+                title: "Custom AI Models",
+                description: "Tailored machine learning models for your specific business needs and data",
+                icon: "ML",
+                price: "$400-1000+",
+                features: ["Computer Vision", "NLP Processing", "Predictive Models", "Custom Training"]
+              },
+              {
+                title: "Mobile App Development",
+                description: "AI-powered mobile applications for iOS and Android with smart features",
+                icon: "MOBILE",
+                price: "$500-1000+",
+                features: ["Cross-Platform", "AI Integration", "Push Notifications", "Offline Capabilities"]
+              },
+              {
+                title: "API & Integration Services",
+                description: "Connect your systems with AI APIs, third-party integrations, and custom endpoints",
+                icon: "API",
+                price: "$100-500",
+                features: ["REST APIs", "Third-party Integration", "Webhook Setup", "Database Connections"]
+              }
+            ].map((service, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.1 * index }}
+                className="bg-gradient-to-br from-gray-900/30 to-black/60 backdrop-blur-xl border border-white/10 rounded-2xl p-8 hover:border-white/20 transition-all duration-500 group hover:transform hover:scale-105 shadow-2xl hover:shadow-white/10"
+              >
+                <div className="flex justify-between items-start mb-4">
+                  <div className="text-4xl">{service.icon}</div>
+                  <div className="text-right">
+                    <div className="text-sm text-gray-400">Starting at</div>
+                    <div className="text-lg font-bold text-white">{service.price}</div>
+                  </div>
+                </div>
+                <h3 className="text-xl font-bold mb-3 bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent group-hover:from-blue-300 group-hover:to-emerald-300 transition-all duration-300">
+                  {service.title}
+                </h3>
+                <p className="text-gray-400 mb-4 group-hover:text-gray-300 transition-colors duration-300">{service.description}</p>
+                <ul className="space-y-2">
+                  {service.features.map((feature, idx) => (
+                    <li key={idx} className="text-sm text-gray-500 flex items-center group-hover:text-gray-400 transition-colors duration-300">
+                      <span className="w-1.5 h-1.5 bg-white/60 rounded-full mr-2 group-hover:bg-white/80 transition-colors duration-300"></span>
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Business Examples Section */}
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-950 via-black to-gray-950">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
+            <div className="inline-block px-6 py-2 bg-gradient-to-r from-white/10 to-gray-500/10 rounded-full text-sm font-bold text-gray-300 mb-8 border border-white/20 shadow-xl">
+              REAL BUSINESS SOLUTIONS
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white drop-shadow-2xl">
+              Perfect for <span className="bg-gradient-to-r from-gray-400 to-white bg-clip-text text-transparent">Your Business</span>
+            </h2>
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+              See what we can build for different business types and budgets
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                businessType: "Small Restaurant",
+                budget: "$150-400",
+                solution: "AI Ordering System",
+                description: "WhatsApp/SMS ordering bot, inventory tracking, customer management",
+                features: ["Automated Orders", "Menu Management", "Customer Database", "Sales Reports"]
+              },
+              {
+                businessType: "Online Store",
+                budget: "$300-800",
+                solution: "E-commerce AI Platform",
+                description: "Smart product recommendations, inventory AI, customer insights dashboard",
+                features: ["Product Recommendations", "Inventory Alerts", "Customer Analytics", "Sales Automation"]
+              },
+              {
+                businessType: "Service Business",
+                budget: "$100-500",
+                solution: "Booking & CRM System",
+                description: "Automated booking, client management, follow-up sequences, payment processing",
+                features: ["Online Booking", "Client Portal", "Automated Follow-ups", "Payment Integration"]
+              },
+              {
+                businessType: "Content Creator",
+                budget: "$75-300",
+                solution: "AI Content Tools",
+                description: "Content generation, social media automation, audience analytics",
+                features: ["Content Generation", "Social Scheduling", "Analytics Dashboard", "Engagement Tracking"]
+              },
+              {
+                businessType: "Real Estate Agent",
+                budget: "$200-600",
+                solution: "Lead Generation System",
+                description: "Property matching AI, lead qualification, automated follow-ups",
+                features: ["Property Matching", "Lead Scoring", "Automated Emails", "Market Analytics"]
+              },
+              {
+                businessType: "Consulting Firm",
+                budget: "$400-1000+",
+                solution: "Knowledge Management",
+                description: "AI-powered knowledge base, client portal, project management system",
+                features: ["Knowledge AI", "Client Portal", "Project Tracking", "Report Generation"]
+              }
+            ].map((example, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.1 * index }}
+                className="bg-gradient-to-br from-gray-900/40 to-black/70 backdrop-blur-xl border border-white/10 rounded-2xl p-6 hover:border-white/20 transition-all duration-500 group hover:transform hover:scale-105 shadow-2xl hover:shadow-white/10"
+              >
+                <div className="flex justify-between items-start mb-4">
+                  <div className="text-sm font-semibold text-gray-300">{example.businessType}</div>
+                  <div className="text-right">
+                    <div className="text-xs text-gray-500">Budget Range</div>
+                    <div className="text-sm font-bold text-white">{example.budget}</div>
+                  </div>
+                </div>
+                <h3 className="text-lg font-bold mb-2 text-white group-hover:text-gray-200 transition-colors duration-300">
+                  {example.solution}
+                </h3>
+                <p className="text-gray-400 mb-4 text-sm group-hover:text-gray-300 transition-colors duration-300">{example.description}</p>
+                <ul className="space-y-1">
+                  {example.features.map((feature, idx) => (
+                    <li key={idx} className="text-xs text-gray-500 flex items-center group-hover:text-gray-400 transition-colors duration-300">
+                      <span className="w-1 h-1 bg-white/60 rounded-full mr-2 group-hover:bg-white/80 transition-colors duration-300"></span>
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
