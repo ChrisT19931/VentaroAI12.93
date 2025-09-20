@@ -68,9 +68,6 @@ export default function Navbar() {
                       <Link href="/contact" className="block px-4 py-3 text-sm text-gray-300 hover:text-white hover:bg-gray-800 transition-colors border-l-2 border-l-green-500/30 hover:border-l-green-500/60">
                         <span>Contact</span>
                       </Link>
-                      <Link href="/affiliate" className="block px-4 py-3 text-sm text-gray-300 hover:text-white hover:bg-gray-800 transition-colors border-l-2 border-l-cyan-500/30 hover:border-l-cyan-500/60">
-                        <span>Affiliate Program</span>
-                      </Link>
                       <div className="border-t border-gray-600 my-2"></div>
                       <div className="px-4 py-2 text-xs font-semibold text-gray-400 uppercase tracking-wider">
                         Coming Soon
@@ -87,16 +84,14 @@ export default function Navbar() {
                           <span className="bg-gray-800 text-gray-300 text-xs px-2 py-1 rounded-full font-medium border border-gray-600/30">SOON</span>
                         </div>
                       </Link>
-                      <Link href="/products" className="block px-4 py-3 text-sm text-gray-300 hover:text-white hover:bg-gray-800 transition-colors border-l-2 border-l-amber-500/30 hover:border-l-amber-500/60">
-                        <div className="flex items-center justify-between">
-                          <span>VAI Toolkit</span>
-                        </div>
-                      </Link>
                       <Link href="/web-gen" className="block px-4 py-3 text-sm text-gray-300 hover:text-white hover:bg-gray-800 transition-colors border-l-2 border-l-emerald-500/30 hover:border-l-emerald-500/60">
                         <div className="flex items-center justify-between">
                           <span>VAI Web Gen</span>
                           <span className="bg-gray-800 text-gray-300 text-xs px-2 py-1 rounded-full font-medium border border-gray-600/30">SOON</span>
                         </div>
+                      </Link>
+                      <Link href="/affiliate" className="block px-4 py-3 text-sm text-gray-300 hover:text-white hover:bg-gray-800 transition-colors border-l-2 border-l-cyan-500/30 hover:border-l-cyan-500/60">
+                        <span>Affiliate Program</span>
                       </Link>
                     </div>
                   </div>
