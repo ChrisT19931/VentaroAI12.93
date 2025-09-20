@@ -167,7 +167,7 @@ export async function POST(request: NextRequest) {
         subject: userEmail.subject,
         html: userEmail.html,
         text: userEmail.text,
-        type: 'confirmation',
+        type: 'contact',
         formData
       });
     } catch (emailError) {
