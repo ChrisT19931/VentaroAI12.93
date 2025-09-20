@@ -126,15 +126,19 @@ export default function VAICoaching() {
                 <div className="space-y-3 mb-6">
                   <div className="flex items-center space-x-2 transform group-hover:translate-x-2 transition-all duration-300">
                     <div className="w-2 h-2 bg-emerald-400 rounded-full shadow-lg group-hover:shadow-emerald-400/50 transition-all duration-300"></div>
-                    <span className="text-xs text-gray-400 group-hover:text-emerald-200 transition-colors duration-300">60-minute foundational coaching call</span>
+                    <span className="text-xs text-gray-400 group-hover:text-emerald-200 transition-colors duration-300">15 min consultation call/Google Meet</span>
                   </div>
                   <div className="flex items-center space-x-2 transform group-hover:translate-x-2 transition-all duration-300" style={{transitionDelay: '0.1s'}}>
                     <div className="w-2 h-2 bg-emerald-400 rounded-full shadow-lg group-hover:shadow-emerald-400/50 transition-all duration-300"></div>
-                    <span className="text-xs text-gray-400 group-hover:text-emerald-200 transition-colors duration-300">Unlimited email support (1 month)</span>
+                    <span className="text-xs text-gray-400 group-hover:text-emerald-200 transition-colors duration-300">60 min Google Meet presentation</span>
                   </div>
                   <div className="flex items-center space-x-2 transform group-hover:translate-x-2 transition-all duration-300" style={{transitionDelay: '0.2s'}}>
                     <div className="w-2 h-2 bg-emerald-400 rounded-full shadow-lg group-hover:shadow-emerald-400/50 transition-all duration-300"></div>
-                    <span className="text-xs text-gray-400 group-hover:text-emerald-200 transition-colors duration-300">Full AI tools & platforms cheat sheet</span>
+                    <span className="text-xs text-gray-400 group-hover:text-emerald-200 transition-colors duration-300">Full report start-finish action plan</span>
+                  </div>
+                  <div className="flex items-center space-x-2 transform group-hover:translate-x-2 transition-all duration-300" style={{transitionDelay: '0.3s'}}>
+                    <div className="w-2 h-2 bg-emerald-400 rounded-full shadow-lg group-hover:shadow-emerald-400/50 transition-all duration-300"></div>
+                    <span className="text-xs text-gray-400 group-hover:text-emerald-200 transition-colors duration-300">Unlimited ongoing email support</span>
                   </div>
                 </div>
                 
@@ -195,15 +199,19 @@ export default function VAICoaching() {
                 <div className="space-y-3 mb-6">
                   <div className="flex items-center space-x-2 transform group-hover:translate-x-2 transition-all duration-300">
                     <div className="w-2 h-2 bg-blue-400 rounded-full shadow-lg group-hover:shadow-blue-400/50 transition-all duration-300"></div>
-                    <span className="text-xs text-gray-400 group-hover:text-blue-200 transition-colors duration-300">60-minute foundational coaching call</span>
+                    <span className="text-xs text-gray-400 group-hover:text-blue-200 transition-colors duration-300">15 min consultation call/Google Meet</span>
                   </div>
                   <div className="flex items-center space-x-2 transform group-hover:translate-x-2 transition-all duration-300" style={{transitionDelay: '0.1s'}}>
                     <div className="w-2 h-2 bg-blue-400 rounded-full shadow-lg group-hover:shadow-blue-400/50 transition-all duration-300"></div>
-                    <span className="text-xs text-gray-400 group-hover:text-blue-200 transition-colors duration-300">Unlimited email support (1 month)</span>
+                    <span className="text-xs text-gray-400 group-hover:text-blue-200 transition-colors duration-300">60 min Google Meet presentation</span>
                   </div>
                   <div className="flex items-center space-x-2 transform group-hover:translate-x-2 transition-all duration-300" style={{transitionDelay: '0.2s'}}>
                     <div className="w-2 h-2 bg-blue-400 rounded-full shadow-lg group-hover:shadow-blue-400/50 transition-all duration-300"></div>
-                    <span className="text-xs text-gray-400 group-hover:text-blue-200 transition-colors duration-300">Complete platform building cheat sheet</span>
+                    <span className="text-xs text-gray-400 group-hover:text-blue-200 transition-colors duration-300">Full report start-finish action plan</span>
+                  </div>
+                  <div className="flex items-center space-x-2 transform group-hover:translate-x-2 transition-all duration-300" style={{transitionDelay: '0.3s'}}>
+                    <div className="w-2 h-2 bg-blue-400 rounded-full shadow-lg group-hover:shadow-blue-400/50 transition-all duration-300"></div>
+                    <span className="text-xs text-gray-400 group-hover:text-blue-200 transition-colors duration-300">Unlimited ongoing email support</span>
                   </div>
                 </div>
                 
@@ -264,15 +272,19 @@ export default function VAICoaching() {
                 <div className="space-y-3 mb-6">
                   <div className="flex items-center space-x-2 transform group-hover:translate-x-2 transition-all duration-300">
                     <div className="w-2 h-2 bg-purple-400 rounded-full shadow-lg group-hover:shadow-purple-400/50 transition-all duration-300"></div>
-                    <span className="text-xs text-gray-400 group-hover:text-purple-200 transition-colors duration-300">60-minute foundational coaching call</span>
+                    <span className="text-xs text-gray-400 group-hover:text-purple-200 transition-colors duration-300">15 min consultation call/Google Meet</span>
                   </div>
                   <div className="flex items-center space-x-2 transform group-hover:translate-x-2 transition-all duration-300" style={{transitionDelay: '0.1s'}}>
                     <div className="w-2 h-2 bg-purple-400 rounded-full shadow-lg group-hover:shadow-purple-400/50 transition-all duration-300"></div>
-                    <span className="text-xs text-gray-400 group-hover:text-purple-200 transition-colors duration-300">Unlimited email support (1 month)</span>
+                    <span className="text-xs text-gray-400 group-hover:text-purple-200 transition-colors duration-300">60 min Google Meet presentation</span>
                   </div>
                   <div className="flex items-center space-x-2 transform group-hover:translate-x-2 transition-all duration-300" style={{transitionDelay: '0.2s'}}>
                     <div className="w-2 h-2 bg-purple-400 rounded-full shadow-lg group-hover:shadow-purple-400/50 transition-all duration-300"></div>
-                    <span className="text-xs text-gray-400 group-hover:text-purple-200 transition-colors duration-300">Online business AI optimization cheat sheet</span>
+                    <span className="text-xs text-gray-400 group-hover:text-purple-200 transition-colors duration-300">Full report start-finish action plan</span>
+                  </div>
+                  <div className="flex items-center space-x-2 transform group-hover:translate-x-2 transition-all duration-300" style={{transitionDelay: '0.3s'}}>
+                    <div className="w-2 h-2 bg-purple-400 rounded-full shadow-lg group-hover:shadow-purple-400/50 transition-all duration-300"></div>
+                    <span className="text-xs text-gray-400 group-hover:text-purple-200 transition-colors duration-300">Unlimited ongoing email support</span>
                   </div>
                 </div>
                 

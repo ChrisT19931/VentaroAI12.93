@@ -3,7 +3,7 @@ import { headers } from 'next/headers';
 import { getStripeInstance } from '@/lib/stripe';
 import { supabase } from '@/lib/supabase';
 import { supabaseAuth } from '@/lib/supabase-auth';
-import { sendOrderConfirmationEmail, sendAccessGrantedEmail } from '@/lib/sendgrid';
+import { sendOrderConfirmationEmail, sendAccessGrantedEmail } from '@/lib/email';
 
 // COMPREHENSIVE LOGGING SYSTEM
 function logPurchaseEvent(level: 'INFO' | 'WARN' | 'ERROR' | 'SUCCESS', message: string, data?: any) {
@@ -235,17 +235,21 @@ async function sendNotificationEmails(customerEmail: string, productName: string
       name: 'Order Confirmation',
       fn: () => sendOrderConfirmationEmail({
         email: customerEmail,
-        orderNumber: purchase.id || `ORDER_${Date.now()}`,
-        orderItems: [{
-          name: productName,
-          price: purchase.amount || 0
-        }],
-        total: purchase.amount || 0,
-        downloadLinks: [{
+        orderDetails: {
           productName,
-          url: accessLink
-        }],
-        isGuest: false
+          price: purchase.amount || 0,
+          orderId: purchase.id || `ORDER_${Date.now()}`,
+          orderItems: [{
+            name: productName,
+            price: purchase.amount || 0
+          }],
+          total: purchase.amount || 0,
+          downloadLinks: [{
+            productName,
+            url: accessLink
+          }],
+          isGuest: false
+        }
       })
     },
     {
@@ -253,7 +257,7 @@ async function sendNotificationEmails(customerEmail: string, productName: string
       fn: () => sendAccessGrantedEmail({
         email: customerEmail,
         productName,
-        accessUrl: accessLink,
+        accessLink: accessLink,
       })
     }
   ];

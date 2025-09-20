@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { performanceMonitor, getPerformanceReport, getPerformanceScore } from '@/lib/performance-monitor';
 import { checkSupabaseHealth, supabase } from '@/lib/supabase';
 import { checkStripeHealth, getStripeInstance } from '@/lib/stripe';
-import { checkSendGridHealth, getEmailStats } from '@/lib/sendgrid';
+import { checkEmailHealth } from '@/lib/email';
 
 export async function GET(request: NextRequest) {
   const startTime = Date.now();
@@ -14,7 +14,7 @@ export async function GET(request: NextRequest) {
     const performanceScore = getPerformanceScore();
     
     // Check service health for performance impact
-    const [supabaseHealthy, stripeHealthy, sendGridHealthy] = await Promise.allSettled([
+    const [supabaseHealthy, stripeHealthy, emailHealthy] = await Promise.allSettled([
       checkSupabaseHealth(supabase),
       (async () => {
         try {
@@ -25,10 +25,14 @@ export async function GET(request: NextRequest) {
           return false;
         }
       })(),
-      checkSendGridHealth(),
+      checkEmailHealth(),
     ]);
     
-    const emailStats = getEmailStats();
+    const emailHealthResult = emailHealthy.status === 'fulfilled' ? emailHealthy.value : { 
+      brevo: { healthy: false, stats: {} }, 
+      sendgrid: { healthy: false, stats: {} }, 
+      primary: 'backup' 
+    };
     
     // Calculate service performance scores
     const servicePerformance = {
@@ -40,10 +44,14 @@ export async function GET(request: NextRequest) {
         healthy: stripeHealthy.status === 'fulfilled' && stripeHealthy.value,
         impact: stripeHealthy.status === 'fulfilled' && stripeHealthy.value ? 0 : -15,
       },
-      sendgrid: {
-        healthy: sendGridHealthy.status === 'fulfilled' && sendGridHealthy.value,
-        impact: sendGridHealthy.status === 'fulfilled' && sendGridHealthy.value ? 0 : -10,
-        stats: emailStats,
+      email: {
+        healthy: emailHealthResult.brevo?.healthy || emailHealthResult.sendgrid?.healthy || false,
+        impact: (emailHealthResult.brevo?.healthy || emailHealthResult.sendgrid?.healthy) ? 0 : -10,
+        primary: emailHealthResult.primary,
+        services: {
+          brevo: emailHealthResult.brevo,
+          sendgrid: emailHealthResult.sendgrid
+        },
       },
     };
     

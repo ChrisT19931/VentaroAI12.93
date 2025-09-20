@@ -1,11 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import sgMail from '@sendgrid/mail';
 import { sendEmailWithBackup } from '@/lib/backup-email';
-
-// Initialize SendGrid
-if (process.env.SENDGRID_API_KEY) {
-  sgMail.setApiKey(process.env.SENDGRID_API_KEY);
-}
 
 interface InquiryData {
   name: string;

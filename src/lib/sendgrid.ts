@@ -467,3 +467,60 @@ export const sendAccessGrantedEmail = async ({
     }
   });
 };
+
+export const sendPasswordResetEmail = async ({
+  email,
+  resetUrl,
+}: {
+  email: string;
+  resetUrl: string;
+}) => {
+  const html = `
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Reset Your Password</title>
+    </head>
+    <body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
+      <div style="background: linear-gradient(135deg, #dc3545 0%, #fd7e14 100%); padding: 40px; text-align: center; border-radius: 10px 10px 0 0;">
+        <h1 style="color: white; margin: 0; font-size: 32px;">Reset Your Password 🔐</h1>
+        <p style="color: #f0f0f0; margin: 15px 0 0 0; font-size: 18px;">Secure your account</p>
+      </div>
+      
+      <div style="background: white; padding: 40px; border: 1px solid #ddd; border-top: none;">
+        <h2 style="color: #333; margin: 0 0 20px 0;">Password Reset Request</h2>
+        
+        <p style="font-size: 16px; margin-bottom: 25px;">We received a request to reset your password for your Ventaro AI account. Click the button below to create a new password.</p>
+        
+        <div style="text-align: center; margin: 30px 0;">
+          <a href="${resetUrl}" style="display: inline-block; padding: 15px 30px; background-color: #dc3545; color: white; text-decoration: none; border-radius: 8px; font-weight: bold; font-size: 16px;">Reset Password</a>
+        </div>
+        
+        <div style="background-color: #fff3cd; border: 1px solid #ffeaa7; border-radius: 8px; padding: 20px; margin: 25px 0;">
+          <h4 style="color: #856404; margin: 0 0 10px 0;">⚠️ Security Notice</h4>
+          <p style="color: #856404; margin: 0; font-size: 14px;">This password reset link will expire in 1 hour. If you didn't request this reset, please ignore this email and your password will remain unchanged.</p>
+        </div>
+        
+        <div style="background-color: #e7f3ff; border-left: 4px solid #007bff; padding: 20px; margin: 25px 0;">
+          <h4 style="color: #004085; margin: 0 0 10px 0;">Need Help?</h4>
+          <p style="color: #004085; margin: 0;">If you're having trouble with the button above, copy and paste this link into your browser:</p>
+          <p style="color: #007bff; word-break: break-all; margin: 10px 0 0 0; font-size: 14px;">${resetUrl}</p>
+        </div>
+      </div>
+      
+      <div style="background: #f8f9fa; padding: 20px; text-align: center; border-radius: 0 0 10px 10px; border: 1px solid #ddd; border-top: none;">
+        <p style="margin: 0; color: #666; font-size: 14px;">Ventaro AI Security Team</p>
+        <p style="margin: 5px 0 0 0; color: #666; font-size: 12px;">This email was sent to ${email}</p>
+      </div>
+    </body>
+    </html>
+  `;
+
+  return await sendEmail({
+    to: email,
+    subject: 'Reset Your Password - Ventaro AI',
+    html,
+  });
+};

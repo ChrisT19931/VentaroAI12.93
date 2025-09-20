@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { checkSupabaseHealth, supabase } from '@/lib/supabase';
 import { checkStripeHealth, getStripeInstance } from '@/lib/stripe';
-import { checkSendGridHealth, getEmailStats } from '@/lib/sendgrid';
+import { checkEmailHealth } from '@/lib/email';
 import { getSystemHealth, getOptimizationStatus } from '@/lib/system-optimizer';
 import { performanceMonitor } from '@/lib/performance-monitor';
 
@@ -23,7 +23,7 @@ export async function GET(request: NextRequest) {
   
   try {
     // Check all service health in parallel for faster response
-    const [supabaseHealthy, stripeHealthy, sendGridHealthy] = await Promise.allSettled([
+    const [supabaseHealthy, stripeHealthy, emailHealthy] = await Promise.allSettled([
       checkSupabaseHealth(supabase),
       (async () => {
         try {
@@ -34,10 +34,14 @@ export async function GET(request: NextRequest) {
           return false;
         }
       })(),
-      checkSendGridHealth(),
+      checkEmailHealth(),
     ]);
     
-    const emailStats = getEmailStats();
+    const emailHealthResult = emailHealthy.status === 'fulfilled' ? emailHealthy.value : { 
+      brevo: { healthy: false, stats: {} }, 
+      sendgrid: { healthy: false, stats: {} }, 
+      primary: 'backup' 
+    };
     
     // Get system optimization status
     const systemHealth = getSystemHealth();
@@ -63,11 +67,15 @@ export async function GET(request: NextRequest) {
           details: stripeHealthy.status === 'rejected' ? stripeHealthy.reason?.message : 'API connection verified',
           lastChecked: new Date().toISOString(),
         },
-        sendgrid: {
-          status: sendGridHealthy.status === 'fulfilled' && sendGridHealthy.value ? 'healthy' : 'unhealthy',
-          details: sendGridHealthy.status === 'rejected' ? sendGridHealthy.reason?.message : 'Email service operational',
+        email: {
+          status: (emailHealthResult.brevo?.healthy || emailHealthResult.sendgrid?.healthy) ? 'healthy' : 'unhealthy',
+          details: (emailHealthResult.brevo?.healthy || emailHealthResult.sendgrid?.healthy) ? 'Email service operational' : 'Email service issues detected',
           lastChecked: new Date().toISOString(),
-          stats: emailStats,
+          primary: emailHealthResult.primary,
+          services: {
+            brevo: emailHealthResult.brevo,
+            sendgrid: emailHealthResult.sendgrid
+          },
         },
       },
       optimization: {

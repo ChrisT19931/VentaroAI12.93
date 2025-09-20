@@ -94,6 +94,17 @@ const mockProducts = [
     created_at: new Date().toISOString()
   },
   {
+    id: 'ai-jumpstart-pack',
+    name: 'AI Jumpstart Pack',
+    description: 'Premium fixed-price package: 2-hour strategy session + 1 quick-win automation built in 30 days. Perfect for rapid AI implementation.',
+    price: 350.00,
+    image_url: '/images/products/ai-jumpstart-pack.svg',
+    category: 'Premium Package',
+    featured: true,
+    is_active: true,
+    created_at: new Date().toISOString()
+  },
+  {
     id: 'test',
     name: 'Test Product',
     description: 'Test product for development',

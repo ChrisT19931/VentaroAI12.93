@@ -15,6 +15,7 @@ import PremiumHeading from '../components/PremiumHeading'
 import MetallicText from '../components/MetallicText'
 import ScrollReveal from '../components/ScrollReveal'
 import InteractiveQuoteWizard from '../components/InteractiveQuoteWizard'
+
 // import FloatingQuoteButton from '../components/FloatingQuoteButton' // Temporarily disabled
 // AIChatWidget functionality moved to GlobalWidgets
 
@@ -208,60 +209,104 @@ export default function Home() {
         {/* Cinematic Hero Section */}
        {/* <CinematicHero /> */} {/* Temporarily disabled due to webpack module resolution error */}
        
-       {/* Custom Solutions Section - Cloned from /custom-solutions */}
-       <section className="relative py-20 bg-gradient-to-b from-black via-gray-950 to-black overflow-hidden">
+       {/* Elite Hero Section - Mobile Optimized */}
+       <section className="relative py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-black via-gray-950 to-black overflow-hidden group">
          <div className="absolute inset-0 bg-gradient-to-r from-blue-950/10 via-transparent to-blue-950/10"></div>
          <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-5"></div>
          
-         {/* Enhanced 3D Background Elements */}
-         <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500/5 rounded-full blur-3xl animate-pulse"></div>
-         <div className="absolute bottom-20 right-10 w-96 h-96 bg-blue-600/5 rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
-         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-blue-500/3 rounded-full blur-3xl"></div>
+         {/* Enhanced 3D Background Elements - Mobile Optimized */}
+         <div className="absolute top-10 sm:top-20 left-5 sm:left-10 w-48 sm:w-72 h-48 sm:h-72 bg-blue-500/5 rounded-full blur-3xl animate-pulse"></div>
+         <div className="absolute bottom-10 sm:bottom-20 right-5 sm:right-10 w-64 sm:w-96 h-64 sm:h-96 bg-blue-600/5 rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
+         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[400px] sm:w-[600px] lg:w-[800px] h-[400px] sm:h-[600px] lg:h-[800px] bg-blue-500/3 rounded-full blur-3xl"></div>
          
-         <div className="relative z-10 max-w-7xl mx-auto px-6">
-           <div className="text-center mb-16">
-             <div className="inline-flex items-center gap-2 bg-gradient-to-r from-gray-900/80 to-black/80 backdrop-blur-xl border border-gray-700/30 rounded-full px-8 py-4 mb-8 shadow-2xl shadow-black/40 transform hover:scale-105 transition-all duration-500">
-               <div className="w-3 h-3 bg-blue-400 rounded-full animate-pulse shadow-lg shadow-blue-400/50"></div>
-               <span className="text-gray-300 font-bold text-sm uppercase tracking-wider drop-shadow-lg">ENTERPRISE AI SOLUTIONS</span>
-               <div className="w-3 h-3 bg-blue-500 rounded-full animate-pulse shadow-lg shadow-blue-500/50"></div>
+         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
+           <div className="text-center mb-12 sm:mb-16">
+             <div className="inline-flex items-center gap-2 bg-gradient-to-r from-gray-900/40 to-gray-800/40 backdrop-blur-sm border border-gray-600/30 rounded-full px-4 sm:px-6 py-2 sm:py-3 mb-4 sm:mb-6">
+               <div className="w-2 h-2 bg-gray-400 rounded-full animate-pulse"></div>
+               <span className="text-gray-300 font-semibold text-xs sm:text-sm uppercase tracking-wider">ELITE AI TRANSFORMATION</span>
+               <div className="w-2 h-2 bg-gray-500 rounded-full animate-pulse"></div>
              </div>
              
              <div className="relative">
                <div className="absolute -inset-1 bg-blue-500/10 rounded-lg blur-md z-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-               <h1 className="text-5xl md:text-7xl font-bold mb-6 text-white drop-shadow-2xl">
-                 Transform Your Business <span className="bg-gradient-to-r from-emerald-400 to-blue-400 bg-clip-text text-transparent">10x Faster</span>
-               </h1>
+               <AnimatedHeading 
+                 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl mb-4 sm:mb-6 leading-tight px-2 sm:px-0" 
+                 animation="slide-up" 
+                 theme="silver" 
+                 is3D={true}
+               >
+                 <span className="text-white drop-shadow-2xl border-l-2 sm:border-l-4 border-gray-500/40 pl-2 sm:pl-4 block sm:inline">
+                   Transform Your Business <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent block sm:inline mt-2 sm:mt-0">with AI</span>
+                 </span>
+               </AnimatedHeading>
              </div>
              
-             <p className="text-xl md:text-2xl text-gray-300 mb-12 leading-relaxed max-w-4xl mx-auto">
-               <span className="text-white font-semibold">We take the guesswork out of AI implementation.</span> Tell us your needs and we'll create the perfect solution for your business. Save time, reduce complexity, and get results - we handle the technical details so you can focus on growth.
+             <p className="text-lg sm:text-xl md:text-2xl text-gray-300 mb-8 sm:mb-12 leading-relaxed max-w-4xl mx-auto px-4 sm:px-0">
+               We take care of the knowledge & implementation gap between AI & your business goals.
              </p>
+
            </div>
 
-           {/* Interactive Quote Wizard Section - Moved Higher for Better Visibility */}
-           <div className="text-center mb-16">
-             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-               Get Your Custom Quote
-             </h2>
-             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-               Let's understand your needs with a few quick questions. We'll provide a detailed proposal within 24 hours.
+           {/* Elite Custom Solution Section - Mobile Optimized */}
+           <div className="text-center mb-12 sm:mb-16">
+             <div className="relative">
+               <div className="absolute -inset-1 bg-blue-500/10 rounded-lg blur-md z-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+               <AnimatedHeading 
+                 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-4 sm:mb-6 leading-tight px-2 sm:px-0" 
+                 animation="slide-right" 
+                 theme="blue" 
+                 is3D={true}
+                 delay={200}
+               >
+                 <span className="text-white drop-shadow-2xl border-l-2 sm:border-l-4 border-blue-500/40 pl-2 sm:pl-4">
+                   Get Your Custom Solution
+                 </span>
+               </AnimatedHeading>
+             </div>
+             <p className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed px-4 sm:px-0">
+               Let's understand your needs with a few quick questions. We'll provide a detailed solution proposal <span className="text-blue-400 font-bold">right asap</span>.
              </p>
            </div>
            
            <InteractiveQuoteWizard />
 
-           {/* Services Grid */}
-           <div className="mb-20">
-             <div className="text-center mb-12">
-               <h2 className="text-3xl md:text-4xl font-bold mb-4">
+           {/* Call Now Button - Mobile Optimized */}
+           <div className="text-center mt-8 sm:mt-12 mb-16 sm:mb-20">
+             <div className="bg-gradient-to-br from-blue-900/30 to-indigo-900/30 backdrop-blur-sm border border-blue-500/30 rounded-2xl p-4 sm:p-6 lg:p-8 max-w-2xl mx-auto mx-4 sm:mx-auto">
+               <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 sm:mb-4">
+                 Prefer to Talk Directly?
+               </h3>
+               <p className="text-sm sm:text-base text-gray-300 mb-4 sm:mb-6 leading-relaxed px-2 sm:px-0">
+                 As we're new to this but the best in the game, we're happy to ease your concerns about our services. 
+                 Call Chris T - Founder directly to discuss your project and understand how we can help accelerate your success.
+               </p>
+               <a 
+                 href="tel:0435413110"
+                 className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-bold rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-[0_20px_40px_-12px_rgba(59,130,246,0.4)] text-base sm:text-lg min-h-[48px] tap-target"
+               >
+                 <svg className="w-4 h-4 sm:w-5 sm:h-5 mr-2 sm:mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                 </svg>
+                 <span className="hidden sm:inline">Call Chris T - Founder: </span>0435 413 110
+               </a>
+               <p className="text-xs sm:text-sm text-gray-400 mt-3 sm:mt-4 px-2 sm:px-0">
+                 📞 Direct line to Chris T - Founder • We understand the skepticism to a new startup
+               </p>
+             </div>
+           </div>
+
+           {/* Services Grid - Mobile Optimized */}
+           <div className="mb-16 sm:mb-20">
+             <div className="text-center mb-8 sm:mb-12">
+               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 px-4 sm:px-0">
                  <span className="bg-gradient-to-r from-blue-400 via-purple-500 to-blue-600 bg-clip-text text-transparent">Accelerate Your Success</span>
                </h2>
-               <p className="text-gray-400 text-lg max-w-3xl mx-auto">
+               <p className="text-base sm:text-lg text-gray-400 max-w-3xl mx-auto px-4 sm:px-0">
                  Speed is everything. We compress months of development into weeks, delivering everything from rapid prototypes to enterprise transformations.
                </p>
              </div>
 
-             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 max-w-6xl mx-auto px-4 sm:px-6 lg:px-0">
                {[
                  {
                    title: "SaaS Platforms",
@@ -294,15 +339,15 @@ export default function Home() {
                    features: ["Requirements Analysis", "Custom Development", "Testing & QA", "Ongoing Support"]
                  }
                ].map((service, index) => (
-                 <div key={index} className="group relative bg-gradient-to-br from-gray-900/60 via-gray-800/50 to-black/95 backdrop-blur-2xl rounded-3xl p-6 shadow-[0_25px_50px_-12px_rgba(0,0,0,0.9)] hover:shadow-[0_35px_60px_-12px_rgba(59,130,246,0.3)] transition-all duration-700 transform hover:-translate-y-2 hover:scale-105 overflow-hidden border border-gray-700/30 hover:border-blue-500/50">
-                   <div className="absolute inset-0 rounded-3xl bg-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-                   <div className="relative z-10">
-                     <h3 className="text-xl font-bold text-white mb-3 group-hover:text-blue-300 transition-colors duration-300">{service.title}</h3>
-                     <p className="text-gray-400 mb-4 text-sm leading-relaxed group-hover:text-gray-300 transition-colors duration-300">{service.description}</p>
-                     <ul className="space-y-2">
+                 <div key={index} className="group relative bg-gradient-to-br from-gray-900/60 via-gray-800/50 to-black/95 backdrop-blur-2xl rounded-2xl sm:rounded-3xl p-4 sm:p-6 shadow-[0_25px_50px_-12px_rgba(0,0,0,0.9)] hover:shadow-[0_35px_60px_-12px_rgba(59,130,246,0.3)] transition-all duration-700 transform hover:-translate-y-2 hover:scale-105 overflow-hidden border border-gray-700/30 hover:border-blue-500/50 min-h-[280px] sm:min-h-[320px] tap-target">
+                   <div className="absolute inset-0 rounded-2xl sm:rounded-3xl bg-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                   <div className="relative z-10 h-full flex flex-col">
+                     <h3 className="text-lg sm:text-xl font-bold text-white mb-2 sm:mb-3 group-hover:text-blue-300 transition-colors duration-300">{service.title}</h3>
+                     <p className="text-gray-400 mb-3 sm:mb-4 text-sm sm:text-base leading-relaxed group-hover:text-gray-300 transition-colors duration-300 flex-grow">{service.description}</p>
+                     <ul className="space-y-1.5 sm:space-y-2">
                        {service.features.map((feature, featureIndex) => (
-                         <li key={featureIndex} className="flex items-center space-x-2 text-sm">
-                           <div className="w-1.5 h-1.5 bg-blue-400 rounded-full group-hover:bg-blue-300 transition-colors duration-300"></div>
+                         <li key={featureIndex} className="flex items-center space-x-2 text-xs sm:text-sm">
+                           <div className="w-1.5 h-1.5 bg-blue-400 rounded-full group-hover:bg-blue-300 transition-colors duration-300 flex-shrink-0"></div>
                            <span className="text-gray-400 group-hover:text-gray-300 transition-colors duration-300">{feature}</span>
                          </li>
                        ))}
@@ -313,16 +358,16 @@ export default function Home() {
              </div>
            </div>
 
-           {/* Business Examples */}
-           <div className="mb-20">
-             <div className="text-center mb-12">
-               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Perfect for Every Business</h2>
-               <p className="text-gray-400 text-lg max-w-3xl mx-auto">
+           {/* Business Examples - Mobile Optimized */}
+           <div className="mb-16 sm:mb-20">
+             <div className="text-center mb-8 sm:mb-12">
+               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-3 sm:mb-4 px-4 sm:px-0">Perfect for Every Business</h2>
+               <p className="text-base sm:text-lg text-gray-400 max-w-3xl mx-auto px-4 sm:px-0">
                  Tell us your needs and we'll create the perfect AI solution for your business. We take the guesswork out of implementation and deliver results that matter.
                </p>
              </div>
 
-             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 max-w-6xl mx-auto px-4 sm:px-6 lg:px-0">
                {[
                  { type: "E-commerce", solution: "Inventory management AI" },
                  { type: "Healthcare", solution: "Patient scheduling system" },
@@ -333,24 +378,27 @@ export default function Home() {
                  { type: "Manufacturing", solution: "Quality control system" },
                  { type: "Retail", solution: "Customer service chatbot" }
                ].map((example, index) => (
-                 <div key={index} className="group bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-xl rounded-2xl p-4 border border-gray-700/30 hover:border-blue-500/50 transition-all duration-300 hover:transform hover:scale-105">
-                   <div className="text-blue-400 font-semibold text-sm mb-2 group-hover:text-blue-300 transition-colors duration-300">{example.type}</div>
-                   <div className="text-gray-300 text-sm group-hover:text-white transition-colors duration-300">{example.solution}</div>
+                 <div key={index} className="group bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-xl rounded-xl sm:rounded-2xl p-3 sm:p-4 border border-gray-700/30 hover:border-blue-500/50 transition-all duration-300 hover:transform hover:scale-105 min-h-[80px] sm:min-h-[90px] flex flex-col justify-center tap-target">
+                   <div className="text-blue-400 font-semibold text-xs sm:text-sm mb-1 sm:mb-2 group-hover:text-blue-300 transition-colors duration-300">{example.type}</div>
+                   <div className="text-gray-300 text-xs sm:text-sm group-hover:text-white transition-colors duration-300 leading-relaxed">{example.solution}</div>
                  </div>
                ))}
              </div>
            </div>
 
+           {/* Interactive Elements Section */}
+           <div className="mb-20">
+             {/* Portfolio Gallery section removed */}
+           </div>
 
-
-           {/* Process Section */}
-           <div className="text-center mb-20">
-             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Our Process</h2>
-             <p className="text-gray-400 text-lg mb-12 max-w-3xl mx-auto">
+           {/* Process Section - Mobile Optimized */}
+           <div className="text-center mb-16 sm:mb-20">
+             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-3 sm:mb-4 px-4 sm:px-0">Our Process</h2>
+             <p className="text-base sm:text-lg text-gray-400 mb-8 sm:mb-12 max-w-3xl mx-auto px-4 sm:px-0">
                From concept to deployment, we handle everything with precision and speed.
              </p>
 
-             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 max-w-6xl mx-auto px-4 sm:px-6 lg:px-0">
                {[
                  {
                    step: "01",
@@ -374,14 +422,14 @@ export default function Home() {
                  }
                ].map((process, index) => (
                  <div key={index} className="group relative">
-                   <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-xl rounded-2xl p-6 border border-gray-700/30 hover:border-blue-500/50 transition-all duration-300 hover:transform hover:scale-105">
-                     <div className="text-4xl font-bold text-blue-400 mb-4 group-hover:text-blue-300 transition-colors duration-300">{process.step}</div>
-                     <h3 className="text-xl font-bold text-white mb-3 group-hover:text-blue-300 transition-colors duration-300">{process.title}</h3>
-                     <p className="text-gray-400 text-sm leading-relaxed group-hover:text-gray-300 transition-colors duration-300">{process.description}</p>
+                   <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-xl rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-gray-700/30 hover:border-blue-500/50 transition-all duration-300 hover:transform hover:scale-105 min-h-[160px] sm:min-h-[180px] flex flex-col tap-target">
+                     <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-blue-400 mb-2 sm:mb-4 group-hover:text-blue-300 transition-colors duration-300">{process.step}</div>
+                     <h3 className="text-lg sm:text-xl font-bold text-white mb-2 sm:mb-3 group-hover:text-blue-300 transition-colors duration-300">{process.title}</h3>
+                     <p className="text-xs sm:text-sm text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors duration-300 flex-grow">{process.description}</p>
                    </div>
                    {index < 3 && (
                      <div className="hidden lg:block absolute top-1/2 -right-4 transform -translate-y-1/2 z-10">
-                       <svg className="w-8 h-8 text-blue-500/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                       <svg className="w-6 h-6 lg:w-8 lg:h-8 text-blue-500/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                        </svg>
                      </div>
@@ -393,38 +441,38 @@ export default function Home() {
          </div>
        </section>
 
-       {/* NEW: AI Coaching Hero Section - Mobile First */}
-       <section className="relative py-20 bg-gradient-to-b from-black via-gray-950 to-black overflow-hidden">
-         <div className="absolute inset-0 bg-gradient-to-r from-emerald-950/10 via-transparent to-emerald-950/10"></div>
+       {/* NEW: AI Coaching Hero Section - Mobile Optimized */}
+       <section className="relative py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-black via-gray-950 to-black overflow-hidden">
+         <div className="absolute inset-0 bg-gradient-to-r from-blue-950/10 via-transparent to-blue-950/10"></div>
          <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-5"></div>
          
-         {/* Enhanced 3D Background Elements */}
-         <div className="absolute top-20 left-10 w-72 h-72 bg-emerald-500/5 rounded-full blur-3xl animate-pulse"></div>
-         <div className="absolute bottom-20 right-10 w-96 h-96 bg-emerald-600/5 rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
-         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-emerald-500/3 rounded-full blur-3xl"></div>
+         {/* Enhanced 3D Background Elements - Mobile Responsive */}
+         <div className="absolute top-10 sm:top-20 left-5 sm:left-10 w-48 sm:w-72 h-48 sm:h-72 bg-blue-500/5 rounded-full blur-3xl animate-pulse"></div>
+         <div className="absolute bottom-10 sm:bottom-20 right-5 sm:right-10 w-64 sm:w-96 h-64 sm:h-96 bg-blue-600/5 rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
+         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[400px] sm:w-[600px] lg:w-[800px] h-[400px] sm:h-[600px] lg:h-[800px] bg-blue-500/3 rounded-full blur-3xl"></div>
          
-         <div className="relative z-10 max-w-7xl mx-auto px-6">
-           <div className="text-center mb-12">
-             <div className="inline-flex items-center gap-2 bg-gradient-to-r from-gray-900/80 to-black/80 backdrop-blur-xl border border-gray-700/30 rounded-full px-8 py-4 mb-8 shadow-2xl shadow-black/40 transform hover:scale-105 transition-all duration-500">
-               <div className="w-3 h-3 bg-emerald-400 rounded-full animate-pulse shadow-lg shadow-emerald-400/50"></div>
-               <span className="text-gray-300 font-bold text-sm uppercase tracking-wider drop-shadow-lg">EXECUTIVE AI COACHING</span>
-               <div className="w-3 h-3 bg-emerald-500 rounded-full animate-pulse shadow-lg shadow-emerald-500/50"></div>
+         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
+           <div className="text-center mb-8 sm:mb-12">
+             <div className="inline-flex items-center gap-2 bg-gradient-to-r from-gray-900/80 to-black/80 backdrop-blur-xl border border-gray-700/30 rounded-full px-4 sm:px-6 lg:px-8 py-3 sm:py-4 mb-6 sm:mb-8 shadow-2xl shadow-black/40 transform hover:scale-105 transition-all duration-500">
+               <div className="w-2 sm:w-3 h-2 sm:h-3 bg-blue-400 rounded-full animate-pulse shadow-lg shadow-blue-400/50"></div>
+               <span className="text-gray-300 font-bold text-xs sm:text-sm uppercase tracking-wider drop-shadow-lg">EXECUTIVE AI COACHING</span>
+               <div className="w-2 sm:w-3 h-2 sm:h-3 bg-blue-500 rounded-full animate-pulse shadow-lg shadow-blue-500/50"></div>
              </div>
              
              <div className="relative">
-               <div className="absolute -inset-1 bg-emerald-500/10 rounded-lg blur-md z-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+               <div className="absolute -inset-1 bg-blue-500/10 rounded-lg blur-md z-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
                <AnimatedHeading 
-                 className="text-4xl md:text-6xl mb-8 leading-tight" 
+                 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-6 sm:mb-8 leading-tight px-4 sm:px-0" 
                  animation="slide-up" 
                  theme="silver" 
                  is3D={true}
                >
                  <span className="drop-shadow-2xl">VAI </span>
-                 <span className="text-white drop-shadow-2xl border-l-4 border-blue-500/40 pl-4">Coaching</span>
+                 <span className="text-white drop-shadow-2xl border-l-2 sm:border-l-4 border-blue-500/40 pl-2 sm:pl-4">Coaching</span>
                </AnimatedHeading>
              </div>
              
-             <p className="text-xl md:text-2xl text-slate-400 mb-12 leading-relaxed max-w-4xl mx-auto drop-shadow-xl transform hover:scale-102 transition-all duration-500 font-light premium-heading-animation" style={{animationDelay: '0.2s'}}>
+             <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-slate-400 mb-8 sm:mb-12 leading-relaxed max-w-4xl mx-auto drop-shadow-xl transform hover:scale-102 transition-all duration-500 font-light premium-heading-animation px-4 sm:px-0" style={{animationDelay: '0.2s'}}>
                <span className="text-white font-semibold">No restrictions. No limitations.</span> From solo entrepreneurs to Fortune 500 enterprises - we deliver professional AI solutions that transform businesses at every scale. Whether you're starting your first venture or optimizing complex operations, our expertise adapts to your needs.
              </p>
            </div>
@@ -432,12 +480,12 @@ export default function Home() {
            {/* Mobile-First Coaching Cards with Enhanced 3D Effects */}
            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-12 perspective-1000">
              {/* VAI Beginners Mastery */}
-             <div className="group relative bg-gradient-to-br from-gray-900/60 via-gray-800/50 to-black/95 backdrop-blur-2xl rounded-3xl shadow-[0_25px_50px_-12px_rgba(0,0,0,0.9)] hover:shadow-[0_35px_60px_-12px_rgba(16,185,129,0.3)] transition-all duration-700 transform hover:-translate-y-8 hover:scale-110 hover:rotate-y-12 overflow-hidden border-2 border-emerald-500/40 hover:border-emerald-400/80">
-               <div className="absolute inset-0 rounded-3xl bg-emerald-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-                <div className="absolute -inset-1 bg-emerald-500/20 rounded-3xl blur opacity-0 group-hover:opacity-20 transition-opacity duration-700"></div>
+             <div className="group relative bg-gradient-to-br from-gray-900/60 via-gray-800/50 to-black/95 backdrop-blur-2xl rounded-3xl shadow-[0_25px_50px_-12px_rgba(0,0,0,0.9)] hover:shadow-[0_35px_60px_-12px_rgba(59,130,246,0.3)] transition-all duration-700 transform hover:-translate-y-8 hover:scale-110 hover:rotate-y-12 overflow-hidden border-2 border-blue-500/40 hover:border-blue-400/80">
+               <div className="absolute inset-0 rounded-3xl bg-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                <div className="absolute -inset-1 bg-blue-500/20 rounded-3xl blur opacity-0 group-hover:opacity-20 transition-opacity duration-700"></div>
                
                <div className="absolute top-4 left-4 z-20">
-                 <div className="bg-gray-800/90 text-white text-xs font-bold px-3 py-1 rounded-full shadow-[0_8px_25px_-8px_rgba(0,0,0,0.6)] hover:shadow-[0_12px_35px_-8px_rgba(0,0,0,0.8)] transform hover:scale-110 transition-all duration-500 border border-emerald-500/40">
+                 <div className="bg-gray-800/90 text-white text-xs font-bold px-3 py-1 rounded-full shadow-[0_8px_25px_-8px_rgba(0,0,0,0.6)] hover:shadow-[0_12px_35px_-8px_rgba(0,0,0,0.8)] transform hover:scale-110 transition-all duration-500 border border-blue-500/40">
                    BEGINNER FRIENDLY
                  </div>
                </div>
@@ -456,8 +504,8 @@ export default function Home() {
                <div className="p-6">
                  <MetallicText 
                    text="AI for Beginners" 
-                   className="text-2xl mb-3 border-l-2 border-emerald-500/40 pl-3" 
-                   theme="emerald" 
+                   className="text-2xl mb-3 border-l-2 border-blue-500/40 pl-3" 
+                   theme="blue" 
                    size="md" 
                    withGlow={true} 
                  />
@@ -465,18 +513,23 @@ export default function Home() {
                  
                  <div className="space-y-3 mb-6">
                    <div className="flex items-center space-x-2 transform group-hover:translate-x-2 transition-all duration-300">
-                     <div className="w-2 h-2 bg-emerald-400 rounded-full shadow-lg group-hover:shadow-emerald-400/50 transition-all duration-300"></div>
-                     <span className="text-xs text-gray-400 group-hover:text-emerald-200 transition-colors duration-300">60-min Google Meet coaching call</span>
+                     <div className="w-2 h-2 bg-blue-400 rounded-full shadow-lg group-hover:shadow-blue-400/50 transition-all duration-300"></div>
+                     <span className="text-xs text-gray-400 group-hover:text-blue-200 transition-colors duration-300">15 min consultation call/Google Meet</span>
                    </div>
                    
                    <div className="flex items-center space-x-2 transform group-hover:translate-x-2 transition-all duration-300" style={{transitionDelay: '0.1s'}}>
-                     <div className="w-2 h-2 bg-emerald-400 rounded-full shadow-lg group-hover:shadow-emerald-400/50 transition-all duration-300"></div>
-                     <span className="text-xs text-gray-400 group-hover:text-emerald-200 transition-colors duration-300">Unlimited 1-month email support</span>
+                     <div className="w-2 h-2 bg-blue-400 rounded-full shadow-lg group-hover:shadow-blue-400/50 transition-all duration-300"></div>
+                     <span className="text-xs text-gray-400 group-hover:text-blue-200 transition-colors duration-300">60 min Google Meet presentation</span>
                    </div>
                    
                    <div className="flex items-center space-x-2 transform group-hover:translate-x-2 transition-all duration-300" style={{transitionDelay: '0.2s'}}>
-                     <div className="w-2 h-2 bg-emerald-400 rounded-full shadow-lg group-hover:shadow-emerald-400/50 transition-all duration-300"></div>
-                     <span className="text-xs text-gray-400 group-hover:text-emerald-200 transition-colors duration-300">Full AI tools & platforms cheat sheet</span>
+                     <div className="w-2 h-2 bg-blue-400 rounded-full shadow-lg group-hover:shadow-blue-400/50 transition-all duration-300"></div>
+                     <span className="text-xs text-gray-400 group-hover:text-blue-200 transition-colors duration-300">Full report start-finish action plan</span>
+                   </div>
+                   
+                   <div className="flex items-center space-x-2 transform group-hover:translate-x-2 transition-all duration-300" style={{transitionDelay: '0.3s'}}>
+                     <div className="w-2 h-2 bg-blue-400 rounded-full shadow-lg group-hover:shadow-blue-400/50 transition-all duration-300"></div>
+                     <span className="text-xs text-gray-400 group-hover:text-blue-200 transition-colors duration-300">Unlimited ongoing email support</span>
                    </div>
                  </div>
                  
@@ -491,7 +544,7 @@ export default function Home() {
                      name: 'VAI Beginners Mastery',
                      price: 250
                    }}
-                   className="w-full block text-center py-4 rounded-xl font-bold transition-all duration-700 bg-gradient-to-r from-emerald-600 to-green-600 hover:from-emerald-500 hover:to-green-500 text-white text-sm transform group-hover:scale-110 group-hover:shadow-[0_15px_35px_-5px_rgba(16,185,129,0.6)] hover:shadow-[0_20px_45px_-5px_rgba(16,185,129,0.8)] border border-emerald-500/30 hover:border-emerald-400/60"
+                   className="w-full block text-center py-4 rounded-xl font-bold transition-all duration-700 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white text-sm transform group-hover:scale-110 group-hover:shadow-[0_15px_35px_-5px_rgba(59,130,246,0.6)] hover:shadow-[0_20px_45px_-5px_rgba(59,130,246,0.8)] border border-blue-500/30 hover:border-blue-400/60"
                    variant="direct"
                  >
                    Schedule Consultation
@@ -534,17 +587,22 @@ export default function Home() {
                  <div className="space-y-3 mb-6">
                    <div className="flex items-center space-x-2 transform group-hover:translate-x-2 transition-all duration-300">
                      <div className="w-2 h-2 bg-blue-400 rounded-full shadow-lg group-hover:shadow-blue-400/50 transition-all duration-300"></div>
-                     <span className="text-xs text-gray-400 group-hover:text-blue-200 transition-colors duration-300">60-min Google Meet coaching call</span>
+                     <span className="text-xs text-gray-400 group-hover:text-blue-200 transition-colors duration-300">15 min consultation call/Google Meet</span>
                    </div>
                    
                    <div className="flex items-center space-x-2 transform group-hover:translate-x-2 transition-all duration-300" style={{transitionDelay: '0.1s'}}>
                      <div className="w-2 h-2 bg-blue-400 rounded-full shadow-lg group-hover:shadow-blue-400/50 transition-all duration-300"></div>
-                     <span className="text-xs text-gray-400 group-hover:text-blue-200 transition-colors duration-300">Unlimited 1-month email support</span>
+                     <span className="text-xs text-gray-400 group-hover:text-blue-200 transition-colors duration-300">60 min Google Meet presentation</span>
                    </div>
                    
                    <div className="flex items-center space-x-2 transform group-hover:translate-x-2 transition-all duration-300" style={{transitionDelay: '0.2s'}}>
                      <div className="w-2 h-2 bg-blue-400 rounded-full shadow-lg group-hover:shadow-blue-400/50 transition-all duration-300"></div>
-                     <span className="text-xs text-gray-400 group-hover:text-blue-200 transition-colors duration-300">Complete platform building cheat sheet</span>
+                     <span className="text-xs text-gray-400 group-hover:text-blue-200 transition-colors duration-300">Full report start-finish action plan</span>
+                   </div>
+                   
+                   <div className="flex items-center space-x-2 transform group-hover:translate-x-2 transition-all duration-300" style={{transitionDelay: '0.3s'}}>
+                     <div className="w-2 h-2 bg-blue-400 rounded-full shadow-lg group-hover:shadow-blue-400/50 transition-all duration-300"></div>
+                     <span className="text-xs text-gray-400 group-hover:text-blue-200 transition-colors duration-300">Unlimited ongoing email support</span>
                    </div>
                  </div>
                  
@@ -602,17 +660,22 @@ export default function Home() {
                  <div className="space-y-3 mb-6">
                    <div className="flex items-center space-x-2 transform group-hover:translate-x-2 transition-all duration-300">
                      <div className="w-2 h-2 bg-purple-400 rounded-full shadow-lg group-hover:shadow-purple-400/50 transition-all duration-300"></div>
-                     <span className="text-xs text-gray-400 group-hover:text-purple-200 transition-colors duration-300">60-min Google Meet coaching call</span>
+                     <span className="text-xs text-gray-400 group-hover:text-purple-200 transition-colors duration-300">15 min consultation call/Google Meet</span>
                    </div>
                    
                    <div className="flex items-center space-x-2 transform group-hover:translate-x-2 transition-all duration-300" style={{transitionDelay: '0.1s'}}>
                      <div className="w-2 h-2 bg-purple-400 rounded-full shadow-lg group-hover:shadow-purple-400/50 transition-all duration-300"></div>
-                     <span className="text-xs text-gray-400 group-hover:text-purple-200 transition-colors duration-300">Unlimited 1-month email support</span>
+                     <span className="text-xs text-gray-400 group-hover:text-purple-200 transition-colors duration-300">60 min Google Meet presentation</span>
                    </div>
                    
                    <div className="flex items-center space-x-2 transform group-hover:translate-x-2 transition-all duration-300" style={{transitionDelay: '0.2s'}}>
                      <div className="w-2 h-2 bg-purple-400 rounded-full shadow-lg group-hover:shadow-purple-400/50 transition-all duration-300"></div>
-                     <span className="text-xs text-gray-400 group-hover:text-purple-200 transition-colors duration-300">Online business AI optimization cheat sheet</span>
+                     <span className="text-xs text-gray-400 group-hover:text-purple-200 transition-colors duration-300">Full report start-finish action plan</span>
+                   </div>
+                   
+                   <div className="flex items-center space-x-2 transform group-hover:translate-x-2 transition-all duration-300" style={{transitionDelay: '0.3s'}}>
+                     <div className="w-2 h-2 bg-purple-400 rounded-full shadow-lg group-hover:shadow-purple-400/50 transition-all duration-300"></div>
+                     <span className="text-xs text-gray-400 group-hover:text-purple-200 transition-colors duration-300">Unlimited ongoing email support</span>
                    </div>
                  </div>
                  
@@ -644,19 +707,7 @@ export default function Home() {
        <section className="py-8 bg-gradient-to-br from-gray-950 via-black to-gray-950 relative overflow-hidden">
          <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-5"></div>
          <div className="container mx-auto px-6 max-w-5xl relative z-10">
-           <div className="text-center">
-             <div className="inline-flex items-center gap-3 bg-gradient-to-r from-gray-900/90 to-black/90 backdrop-blur-xl border border-gray-600/40 rounded-2xl px-8 py-4 mb-6 shadow-2xl">
-               <div className="w-3 h-3 bg-emerald-400 rounded-full animate-pulse shadow-lg shadow-emerald-400/50"></div>
-               <span className="text-gray-200 font-bold text-base uppercase tracking-wider">Founded in Melbourne, Australia</span>
-               <div className="w-3 h-3 bg-blue-400 rounded-full animate-pulse shadow-lg shadow-blue-400/50"></div>
-             </div>
-             
-             <div className="bg-gradient-to-r from-gray-900/60 to-black/60 backdrop-blur-xl border border-gray-700/30 rounded-3xl p-8 max-w-4xl mx-auto shadow-2xl">
-               <p className="text-xl text-gray-200 leading-relaxed font-medium">
-                 <span className="text-white font-semibold">From individual entrepreneurs to multinational corporations</span> - we deliver the same level of professional excellence to every client. Our mission is simple: democratize AI expertise and make cutting-edge technology accessible to businesses of all sizes, without compromising on quality or results.
-               </p>
-             </div>
-           </div>
+
          </div>
        </section>
         
@@ -720,43 +771,43 @@ export default function Home() {
             {/* Support Packages - Removed per user request */}
 
             {/* $10 Prompts - Credibility Offer */}
-            <div className="group relative bg-gradient-to-br from-slate-900/95 via-emerald-900/30 to-gray-900/95 backdrop-blur-xl rounded-3xl shadow-lg hover:shadow-emerald-500/20 transition-all duration-300 transform hover:-translate-y-2 overflow-hidden border-2 border-emerald-500/40 hover:border-emerald-500/60">
+            <div className="group relative bg-gradient-to-br from-slate-900/95 via-blue-900/30 to-gray-900/95 backdrop-blur-xl rounded-3xl shadow-lg hover:shadow-blue-500/20 transition-all duration-300 transform hover:-translate-y-2 overflow-hidden border-2 border-blue-500/40 hover:border-blue-500/60">
               {/* Enhanced glow effects */}
-              <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-emerald-500/20 via-transparent to-emerald-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-blue-500/20 via-transparent to-blue-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               
               <div className="absolute top-4 left-4 z-20">
-                <div className="bg-gradient-to-r from-green-500 to-emerald-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg transition-all duration-300">
+                <div className="bg-gradient-to-r from-blue-500 to-indigo-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg transition-all duration-300">
                   STARTER
                 </div>
               </div>
               
               <div className="h-32 bg-gradient-to-br from-slate-900 to-gray-900 relative overflow-hidden flex items-center justify-center group-hover:bg-gradient-to-br group-hover:from-slate-800 group-hover:to-gray-800 transition-all duration-500">
                 <div className="relative transform group-hover:scale-110 transition-all duration-500">
-                  <svg className="w-16 h-16 text-emerald-400 opacity-60 group-hover:opacity-100 group-hover:text-emerald-300 transition-all duration-500 group-hover:drop-shadow-lg" fill="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-16 h-16 text-blue-400 opacity-60 group-hover:opacity-100 group-hover:text-blue-300 transition-all duration-500 group-hover:drop-shadow-lg" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
                   </svg>
-                  <div className="absolute inset-0 bg-emerald-400/20 rounded-full blur-xl group-hover:bg-emerald-400/40 transition-all duration-300"></div>
+                  <div className="absolute inset-0 bg-blue-400/20 rounded-full blur-xl group-hover:bg-blue-400/40 transition-all duration-300"></div>
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent group-hover:from-black/50 transition-all duration-500"></div>
               </div>
               
               <div className="p-6">
-                <h3 className="text-xl font-black mb-3 text-white drop-shadow-lg border-l-2 border-emerald-500/40 pl-3">AI Prompts Arsenal</h3>
+                <h3 className="text-xl font-black mb-3 text-white drop-shadow-lg border-l-2 border-blue-500/40 pl-3">AI Prompts Arsenal</h3>
                 <p className="text-gray-200 mb-4 text-sm leading-relaxed group-hover:text-white transition-colors duration-500">30 professionally crafted AI prompts for strategic business development.</p>
                 
                 <div className="space-y-3 mb-4">
                   <div className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-emerald-400 rounded-full"></div>
+                    <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
                     <span className="text-xs text-gray-300">Strategic platform development</span>
                   </div>
                   <div className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-emerald-400 rounded-full"></div>
+                    <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
                     <span className="text-xs text-gray-300">Self-directed implementation</span>
                   </div>
                 </div>
                 
                 <div className="text-center mb-4">
-                  <div className="text-3xl font-black text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-emerald-400 group-hover:to-green-400 transition-all duration-500">A$10</div>
+                  <div className="text-3xl font-black text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-indigo-400 transition-all duration-500">A$10</div>
                   <div className="text-xs text-gray-300">one-time</div>
                 </div>
                 <UnifiedCheckoutButton 
@@ -766,7 +817,7 @@ export default function Home() {
                     price: 10,
                     productType: 'digital'
                   }}
-                  className="w-full block text-center py-3 rounded-xl font-bold transition-all duration-500 bg-gradient-to-r from-emerald-600 to-emerald-700 hover:from-emerald-500 hover:to-emerald-600 text-white text-sm transform group-hover:scale-105 group-hover:shadow-lg group-hover:shadow-emerald-500/30"
+                  className="w-full block text-center py-3 rounded-xl font-bold transition-all duration-500 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 text-white text-sm transform group-hover:scale-105 group-hover:shadow-lg group-hover:shadow-blue-500/30"
                   variant="direct"
                 >
                   Get Prompts
@@ -859,10 +910,10 @@ export default function Home() {
         <div className="container mx-auto px-6 max-w-7xl relative z-10">
           <div className="text-center mb-20">
             <h2 className="text-5xl md:text-6xl font-black text-white mb-6 glow-text">
-              Why Choose <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">Ventaro</span>
+              Why Choose <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">Ventaro AI</span>
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Experience excellence in digital innovation with our professional AI-powered solutions and strategic methodologies.
+              We've been implementing AI into businesses for 2+ years before most people even knew ChatGPT existed. This platform itself was built from scratch with AI - every element crafted through cutting-edge technology.
             </p>
           </div>
           
@@ -871,36 +922,36 @@ export default function Home() {
             <div className="group text-center p-8 glass-panel rounded-3xl shadow-2xl hover:shadow-blue-500/20 transition-all duration-300 transform hover:-translate-y-2 hover:scale-102 border border-blue-500/30">
               <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-purple-600 text-white rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-blue-500/30">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
               </div>
-              <h3 className="text-2xl font-bold mb-4 text-white glow-text">Self-Directed Business Development</h3>
+              <h3 className="text-2xl font-bold mb-4 text-white glow-text">Ahead of the AI Curve</h3>
               <p className="text-gray-300 leading-relaxed">
-                Our comprehensive resources provide everything you need to build your own AI-powered business with professional guidance and strategic frameworks.
+                From zero experience to industry leaders in just 6 months, thanks to 2+ years of AI implementation before most were even aware of ChatGPT. We're at the forefront as AI evolves.
               </p>
             </div>
             
             <div className="group text-center p-8 glass-panel rounded-3xl shadow-2xl hover:shadow-purple-500/20 transition-all duration-300 transform hover:-translate-y-2 hover:scale-102 border border-purple-500/30">
               <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-pink-600 text-white rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-purple-500/30">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 7.172V5L8 4z" />
-                </svg>
-              </div>
-              <h3 className="text-2xl font-bold mb-4 text-white glow-text">Bespoke Platform Development</h3>
-              <p className="text-gray-300 leading-relaxed">
-                Partner with our expert development team to create professional custom platforms, from sophisticated landing pages to comprehensive e-commerce solutions.
-              </p>
-            </div>
-            
-            <div className="group text-center p-8 glass-panel rounded-3xl shadow-2xl hover:shadow-green-500/20 transition-all duration-300 transform hover:-translate-y-2 hover:scale-102 border border-green-500/30">
-              <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-blue-600 text-white rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-green-500/30">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                 </svg>
               </div>
-              <h3 className="text-2xl font-bold mb-4 text-white glow-text">Enterprise-Grade Content</h3>
+              <h3 className="text-2xl font-bold mb-4 text-white glow-text">Full Code Ownership</h3>
               <p className="text-gray-300 leading-relaxed">
-                All our solutions feature premium, professionally crafted content developed using cutting-edge AI technologies and industry best practices.
+                Own your entire codebase with maximum flexibility. Unlike platform-dependent solutions, if they go out of business, your business doesn't. Protect yourself with true ownership.
+              </p>
+            </div>
+            
+            <div className="group text-center p-8 glass-panel rounded-3xl shadow-2xl hover:shadow-blue-500/20 transition-all duration-300 transform hover:-translate-y-2 hover:scale-102 border border-blue-500/30">
+              <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-indigo-600 text-white rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-blue-500/30">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold mb-4 text-white glow-text">Unbeatable Value</h3>
+              <p className="text-gray-300 leading-relaxed">
+                More cost-effective than other coaching offerings. It seems too good to be true, but AI makes it possible. We're the real deal with real offerings - this is a no-brainer.
               </p>
             </div>
 
@@ -908,24 +959,24 @@ export default function Home() {
             <div className="group text-center p-8 glass-panel rounded-3xl shadow-2xl hover:shadow-orange-500/20 transition-all duration-300 transform hover:-translate-y-2 hover:scale-102 border border-orange-500/30">
               <div className="w-20 h-20 bg-gradient-to-br from-orange-500 to-red-600 text-white rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-orange-500/30">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
                 </svg>
               </div>
-              <h3 className="text-2xl font-bold mb-4 text-white glow-text">Immediate Digital Access</h3>
+              <h3 className="text-2xl font-bold mb-4 text-white glow-text">AI Adapts, We Adapt</h3>
               <p className="text-gray-300 leading-relaxed">
-                Receive instant access to your purchased solutions through our streamlined, professional delivery platform.
+                As AI technology evolves, so do we. Our continuous innovation ensures you're always equipped with the latest AI strategies and implementations for sustained competitive advantage.
               </p>
             </div>
 
             <div className="group text-center p-8 glass-panel rounded-3xl shadow-2xl hover:shadow-cyan-500/20 transition-all duration-300 transform hover:-translate-y-2 hover:scale-102 border border-cyan-500/30">
               <div className="w-20 h-20 bg-gradient-to-br from-cyan-500 to-blue-600 text-white rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-cyan-500/30">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
-              <h3 className="text-2xl font-bold mb-4 text-white glow-text">Perpetual Access Rights</h3>
+              <h3 className="text-2xl font-bold mb-4 text-white glow-text">Proven Track Record</h3>
               <p className="text-gray-300 leading-relaxed">
-                No subscriptions or recurring fees. Single payment provides permanent ownership of your digital assets with unlimited access.
+                This very platform showcases our expertise - built entirely from scratch using AI. From concept to execution, we demonstrate what's possible when you combine vision with cutting-edge technology.
               </p>
             </div>
 
@@ -935,12 +986,12 @@ export default function Home() {
             <div className="group text-center p-8 glass-panel rounded-3xl shadow-2xl hover:shadow-rose-500/20 transition-all duration-300 transform hover:-translate-y-2 hover:scale-102 border border-rose-500/30">
               <div className="w-20 h-20 bg-gradient-to-br from-rose-500 to-pink-600 text-white rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-rose-500/30">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
                 </svg>
               </div>
-              <h3 className="text-2xl font-bold mb-4 text-white glow-text">Strategic Market Positioning</h3>
+              <h3 className="text-2xl font-bold mb-4 text-white glow-text">First-Mover Advantage</h3>
               <p className="text-gray-300 leading-relaxed">
-                Organizations establishing their presence and data assets now will maintain competitive advantages. Early positioning enables organic growth rather than paid acquisition.
+                While others are just discovering AI's potential, we've been perfecting implementation strategies for years. Partner with pioneers who've already solved the problems you're facing.
               </p>
             </div>
 
@@ -985,10 +1036,10 @@ export default function Home() {
             
             <div className="relative text-center">
               <h2 className="text-6xl md:text-7xl font-black mb-8 text-white leading-tight">
-                <span className="bg-gradient-to-r from-gray-300 via-gray-400 to-gray-500 bg-clip-text text-transparent relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-gradient-to-r after:from-transparent after:via-emerald-400/20 after:to-transparent">
+                <span className="bg-gradient-to-r from-gray-300 via-gray-400 to-gray-500 bg-clip-text text-transparent relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-gradient-to-r after:from-transparent after:via-blue-400/20 after:to-transparent">
                   Master AI for
                 </span>
-                <span className="block text-white mt-4 border-l-4 border-gray-400 border-b-emerald-400/30 pl-6 ml-4">
+                <span className="block text-white mt-4 border-l-4 border-gray-400 border-b-blue-400/30 pl-6 ml-4">
                   Business Success
                 </span>
               </h2>
@@ -1057,24 +1108,24 @@ export default function Home() {
                         name: 'Premium AI Business Coaching',
                         price: 250
                       }}
-                      className="group/btn relative inline-flex items-center px-16 py-6 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-bold text-xl rounded-2xl transition-all duration-700 transform hover:scale-110 hover:shadow-[0_25px_50px_-12px_rgba(59,130,246,0.6)] border border-blue-500/30 hover:border-blue-400/60 shadow-[0_15px_35px_-5px_rgba(59,130,246,0.3)]"
+                      className="group/btn relative inline-flex items-center px-6 sm:px-12 lg:px-16 py-4 sm:py-5 lg:py-6 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-bold text-base sm:text-lg lg:text-xl rounded-xl sm:rounded-2xl transition-all duration-700 transform hover:scale-110 hover:shadow-[0_25px_50px_-12px_rgba(59,130,246,0.6)] border border-blue-500/30 hover:border-blue-400/60 shadow-[0_15px_35px_-5px_rgba(59,130,246,0.3)] tap-target w-full sm:w-auto"
                       variant="direct"
                     >
-                      <span className="relative z-10 tracking-wide drop-shadow-lg">Book Your Coaching Call Now - A$250</span>
-                      <div className="absolute inset-0 bg-white/10 rounded-2xl opacity-0 group-hover/btn:opacity-100 transition-opacity duration-500"></div>
-                      <div className="ml-4 text-2xl group-hover/btn:translate-x-2 transition-transform duration-300 drop-shadow-lg">→</div>
-                      <div className="absolute -inset-1 bg-blue-500/30 rounded-2xl blur opacity-0 group-hover/btn:opacity-50 transition-opacity duration-700"></div>
+                      <span className="relative z-10 tracking-wide drop-shadow-lg text-center flex-grow sm:flex-grow-0">Book Your Coaching Call Now - A$250</span>
+                      <div className="absolute inset-0 bg-white/10 rounded-xl sm:rounded-2xl opacity-0 group-hover/btn:opacity-100 transition-opacity duration-500"></div>
+                      <div className="ml-2 sm:ml-4 text-lg sm:text-xl lg:text-2xl group-hover/btn:translate-x-2 transition-transform duration-300 drop-shadow-lg">→</div>
+                      <div className="absolute -inset-1 bg-blue-500/30 rounded-xl sm:rounded-2xl blur opacity-0 group-hover/btn:opacity-50 transition-opacity duration-700"></div>
                     </UnifiedCheckoutButton>
                     
-                    <div className="flex items-center justify-center space-x-8 text-gray-400 text-sm mt-8 group-hover:text-gray-300 transition-colors duration-500">
+                    <div className="flex flex-col sm:flex-row items-center justify-center space-y-3 sm:space-y-0 sm:space-x-8 text-gray-400 text-xs sm:text-sm mt-6 sm:mt-8 group-hover:text-gray-300 transition-colors duration-500">
                       <div className="flex items-center transform group-hover:scale-105 transition-transform duration-300">
-                        <svg className="w-4 h-4 mr-2 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-3 sm:w-4 h-3 sm:h-4 mr-2 text-blue-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                         </svg>
                         <span className="font-medium">Immediate booking available</span>
                       </div>
                       <div className="flex items-center transform group-hover:scale-105 transition-transform duration-300" style={{transitionDelay: '0.1s'}}>
-                        <svg className="w-4 h-4 mr-2 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-3 sm:w-4 h-3 sm:h-4 mr-2 text-blue-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4" />
                         </svg>
                         <span className="font-medium">100% satisfaction guarantee</span>

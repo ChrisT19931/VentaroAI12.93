@@ -158,6 +158,19 @@ const PricingPage = () => {
 
   const addOns = [
     {
+      name: 'AI Jumpstart Pack',
+      description: 'Premium fixed-price package for rapid AI implementation',
+      price: 350,
+      originalPrice: null,
+      features: [
+        '2-hour strategy session',
+        '1 quick-win automation built in 30 days',
+        'Custom implementation roadmap',
+        'Priority support during build',
+        'Follow-up optimization call'
+      ]
+    },
+    {
       name: 'AI Tools Mastery Guide',
       description: 'Complete guide to mastering AI tools for business',
       price: 47,
@@ -532,18 +545,22 @@ const PricingPage = () => {
             </span>
           </h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {addOns.map((addon, index) => {
               const addonColors = {
                 0: {
+                  border: 'border-emerald-500/20 hover:border-emerald-400/40',
+                  button: 'bg-gradient-to-r from-emerald-600 to-emerald-700 hover:from-emerald-500 hover:to-emerald-600 text-white'
+                },
+                1: {
                   border: 'border-blue-500/20 hover:border-blue-400/40',
                   button: 'bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 text-white'
                 },
-                1: {
+                2: {
                   border: 'border-purple-500/20 hover:border-purple-400/40',
                   button: 'bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-500 hover:to-purple-600 text-white'
                 },
-                2: {
+                3: {
                   border: 'border-pink-500/20 hover:border-pink-400/40',
                   button: 'bg-gradient-to-r from-gray-800 to-gray-900 hover:from-purple-600/20 hover:to-pink-600/20 border border-purple-500/20 hover:border-purple-400/40 text-white hover:text-purple-300'
                 }

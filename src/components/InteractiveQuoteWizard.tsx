@@ -26,38 +26,17 @@ interface Question {
 
 const questions: Question[] = [
   {
-    id: 'name',
-    question: "What's your name?",
-    type: 'text',
-    placeholder: 'Enter your full name',
-    subtitle: 'We like to know who we\'re talking to 😊'
-  },
-  {
-    id: 'email',
-    question: "What's your email address?",
-    type: 'email',
-    placeholder: 'your@email.com',
-    subtitle: 'We\'ll send your custom quote here'
-  },
-  {
-    id: 'company',
-    question: "What's your company name?",
-    type: 'text',
-    placeholder: 'Your company or organization',
-    subtitle: 'Or just say "Personal" if it\'s for yourself'
-  },
-  {
     id: 'projectType',
     question: "What type of AI solution do you need?",
     type: 'select',
     subtitle: 'Choose the option that best fits your needs',
     options: [
-      { value: 'saas', label: '🚀 SaaS Platform - Complete web application' },
-      { value: 'chatbot', label: '🤖 AI Chatbot - Customer service & support' },
-      { value: 'automation', label: '⚡ Automation Tool - Streamline workflows' },
-      { value: 'analytics', label: '📊 Data Analytics - Insights & reporting' },
-      { value: 'integration', label: '🔗 API Integration - Connect systems' },
-      { value: 'custom', label: '✨ Custom Solution - Something unique' }
+      { value: 'saas', label: 'SaaS Platform' },
+      { value: 'chatbot', label: 'AI Chatbot' },
+      { value: 'automation', label: 'Automation' },
+      { value: 'ecommerce', label: 'Ecommerce Online Business' },
+      { value: 'marketing', label: 'Marketing' },
+      { value: 'custom', label: 'Custom Solution' }
     ]
   },
   {
@@ -66,11 +45,11 @@ const questions: Question[] = [
     type: 'select',
     subtitle: 'This helps us plan resources and pricing',
     options: [
-      { value: 'asap', label: '🔥 ASAP - Rush job (premium pricing)' },
-      { value: '1-2weeks', label: '⚡ 1-2 Weeks - Fast delivery' },
-      { value: '3-4weeks', label: '📅 3-4 Weeks - Standard timeline' },
-      { value: '1-2months', label: '🎯 1-2 Months - Complex project' },
-      { value: '3+months', label: '🏗️ 3+ Months - Enterprise solution' }
+      { value: 'asap', label: 'ASAP - Rush job (premium pricing)' },
+      { value: '1-2weeks', label: '1-2 Weeks - Fast delivery' },
+      { value: '3-4weeks', label: '3-4 Weeks - Standard timeline' },
+      { value: '1-2months', label: '1-2 Months - Complex project' },
+      { value: '3+months', label: '3+ Months - Enterprise solution' }
     ]
   },
   {
@@ -79,12 +58,12 @@ const questions: Question[] = [
     type: 'select',
     subtitle: 'This helps us recommend the best approach',
     options: [
-      { value: 'under-1k', label: '💡 Under $1,000 - Simple solution' },
-      { value: '1k-5k', label: '🚀 $1,000 - $5,000 - Standard project' },
-      { value: '5k-15k', label: '⭐ $5,000 - $15,000 - Advanced features' },
-      { value: '15k-50k', label: '🏆 $15,000 - $50,000 - Enterprise grade' },
-      { value: '50k+', label: '💎 $50,000+ - Premium solution' },
-      { value: 'discuss', label: '💬 Let\'s discuss - Not sure yet' }
+      { value: 'under-1k', label: 'Under $1,000 - Simple solution' },
+      { value: '1k-5k', label: '$1,000 - $5,000 - Standard project' },
+      { value: '5k-15k', label: '$5,000 - $15,000 - Advanced features' },
+      { value: '15k-50k', label: '$15,000 - $50,000 - Enterprise grade' },
+      { value: '50k+', label: '$50,000+ - Premium solution' },
+      { value: 'discuss', label: 'Let\'s discuss - Not sure yet' }
     ]
   },
   {
@@ -100,6 +79,27 @@ const questions: Question[] = [
     type: 'textarea',
     placeholder: 'What problems are you solving? What success looks like to you?',
     subtitle: 'Understanding your goals helps us design the perfect solution'
+  },
+  {
+    id: 'name',
+    question: "What's your name?",
+    type: 'text',
+    placeholder: 'Enter your full name',
+    subtitle: 'We like to know who we\'re talking to'
+  },
+  {
+    id: 'email',
+    question: "What's your email address?",
+    type: 'email',
+    placeholder: 'your@email.com',
+    subtitle: 'We\'ll send your custom solution proposal here'
+  },
+  {
+    id: 'company',
+    question: "What's your company name?",
+    type: 'text',
+    placeholder: 'Your company or organization',
+    subtitle: 'Or just say "Personal" if it\'s for yourself'
   }
 ];
 
@@ -162,7 +162,7 @@ export default function InteractiveQuoteWizard() {
         body: JSON.stringify({
           name: quoteData.name,
           email: quoteData.email,
-          subject: `Custom AI Solution Quote Request - ${quoteData.projectType}`,
+          subject: `Custom AI Solution Request - ${quoteData.projectType}`,
           message: `
 COMPANY: ${quoteData.company}
 PROJECT TYPE: ${quoteData.projectType}
@@ -186,7 +186,7 @@ This quote request was submitted through the interactive qualification wizard.
         throw new Error('Failed to send quote request');
       }
 
-      toast.success('Quote request sent! We\'ll review your requirements and send a detailed proposal within 24 hours.');
+      toast.success('Solution request sent! We\'ll review your requirements and send a detailed proposal within 24 hours.');
       
       // Reset form
       setQuoteData({
@@ -301,10 +301,10 @@ This quote request was submitted through the interactive qualification wizard.
                   <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                   <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                 </svg>
-                Sending Quote Request...
+                Sending Solution Request...
               </>
             ) : (
-              'Send Quote Request →'
+              'Send Solution Request →'
             )}
           </button>
         </div>

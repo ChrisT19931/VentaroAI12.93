@@ -1,13 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import getStripeInstance from '@/lib/stripe';
-import sgMail from '@sendgrid/mail';
 import { createClientWithRetry } from '@/lib/supabase';
 import { sendEmailWithBackup } from '@/lib/backup-email';
-
-// Initialize SendGrid
-if (process.env.SENDGRID_API_KEY) {
-  sgMail.setApiKey(process.env.SENDGRID_API_KEY);
-}
 
 export async function POST(request: NextRequest) {
   try {

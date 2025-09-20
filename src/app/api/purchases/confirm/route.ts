@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { supabase, getSupabaseAdmin } from '@/lib/supabase';
-import { sendOrderConfirmationEmail } from '@/lib/sendgrid';
+import { sendOrderConfirmationEmail } from '@/lib/email';
 
 export async function POST(request: NextRequest) {
   try {
@@ -60,11 +60,15 @@ export async function POST(request: NextRequest) {
       try {
         await sendOrderConfirmationEmail({
           email,
-          orderNumber,
-          orderItems,
-          total,
-          downloadLinks,
-          isGuest: !userId
+          orderDetails: {
+            productName: orderItems[0]?.name || 'Digital Product',
+            price: total || 0,
+            orderId: orderNumber,
+            orderItems,
+            total,
+            downloadLinks,
+            isGuest: !userId
+          }
         });
       } catch (emailError) {
         console.error('Failed to send confirmation email:', emailError);

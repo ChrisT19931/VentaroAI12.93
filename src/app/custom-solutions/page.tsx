@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import AnimatedHeading from '@/components/AnimatedHeading';
 
 export default function CustomSolutions() {
   const [formData, setFormData] = useState({
@@ -68,12 +69,16 @@ export default function CustomSolutions() {
 
   return (
     <div className="min-h-screen bg-black text-white">
-      {/* Hero Section */}
-      <section className="relative py-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      {/* Elite Hero Section - VAI Coaching Style */}
+      <section className="relative py-24 px-4 sm:px-6 lg:px-8 overflow-hidden group">
         <div className="absolute inset-0 bg-gradient-to-br from-gray-950 via-black to-gray-950"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-950/10 via-transparent to-blue-950/10"></div>
         <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-5"></div>
-        <div className="absolute top-20 right-20 w-32 h-32 border border-white/5 rotate-45 opacity-30"></div>
-        <div className="absolute bottom-20 left-20 w-24 h-24 border border-white/5 rotate-12 opacity-30"></div>
+        
+        {/* Enhanced 3D Background Elements */}
+        <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500/5 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-blue-600/5 rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-blue-500/3 rounded-full blur-3xl"></div>
         
         <div className="relative max-w-7xl mx-auto">
           <motion.div
@@ -82,14 +87,28 @@ export default function CustomSolutions() {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <div className="inline-block px-6 py-2 bg-gradient-to-r from-white/10 to-gray-500/10 rounded-full text-sm font-bold text-gray-300 mb-8 border border-white/20 shadow-xl">
-              ENTERPRISE AI SOLUTIONS
+            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-gray-900/40 to-gray-800/40 backdrop-blur-sm border border-gray-600/30 rounded-full px-6 py-3 mb-6">
+              <div className="w-2 h-2 bg-gray-400 rounded-full animate-pulse"></div>
+              <span className="text-gray-300 font-semibold text-sm uppercase tracking-wider">ELITE AI SOLUTIONS</span>
+              <div className="w-2 h-2 bg-gray-500 rounded-full animate-pulse"></div>
             </div>
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 text-white drop-shadow-2xl">
-              Transform Your Business <span className="bg-gradient-to-r from-emerald-400 to-blue-400 bg-clip-text text-transparent">10x Faster</span>
-            </h1>
+            
+            <div className="relative">
+              <div className="absolute -inset-1 bg-blue-500/10 rounded-lg blur-md z-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+              <AnimatedHeading 
+                className="text-5xl md:text-7xl mb-6 leading-tight" 
+                animation="slide-up" 
+                theme="silver" 
+                is3D={true}
+              >
+                <span className="text-white drop-shadow-2xl border-l-4 border-gray-500/40 pl-4">
+                  Transform Your Business <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">with AI</span>
+                </span>
+              </AnimatedHeading>
+            </div>
+            
             <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-              <span className="text-white font-semibold">We take the guesswork out of AI implementation.</span> Tell us your needs and we'll create the perfect solution for your business. Save time, reduce complexity, and get results - we handle the technical details so you can focus on growth.
+              <span className="text-blue-400 font-bold">We take the guesswork out of AI implementation.</span> Tell us your needs and we'll create the perfect solution for your business. Save time, reduce complexity, and get results - we handle the technical details so you can focus on <span className="text-blue-400 font-bold">growth</span>.
             </p>
           </motion.div>
         </div>
@@ -322,7 +341,7 @@ export default function CustomSolutions() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white drop-shadow-xl">
-              <span className="bg-gradient-to-r from-emerald-400 to-blue-400 bg-clip-text text-transparent">Accelerate</span> Your Success
+              <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Accelerate</span> Your Success
             </h2>
             <p className="text-xl text-gray-400 max-w-3xl mx-auto">
               <span className="text-white font-semibold">Efficient. Reliable. Results-driven.</span> We deliver AI solutions that streamline your operations and accelerate your business goals. From simple automation tools to comprehensive enterprise systems - we get it done.
@@ -409,7 +428,7 @@ export default function CustomSolutions() {
                     <div className="text-lg font-bold text-white">{service.price}</div>
                   </div>
                 </div>
-                <h3 className="text-xl font-bold mb-3 bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent group-hover:from-blue-300 group-hover:to-emerald-300 transition-all duration-300">
+                <h3 className="text-xl font-bold mb-3 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent group-hover:from-blue-300 group-hover:to-purple-300 transition-all duration-300">
                   {service.title}
                 </h3>
                 <p className="text-gray-400 mb-4 group-hover:text-gray-300 transition-colors duration-300">{service.description}</p>

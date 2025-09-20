@@ -91,7 +91,10 @@ export default function Navbar() {
                         </div>
                       </Link>
                       <Link href="/affiliate" className="block px-4 py-3 text-sm text-gray-300 hover:text-white hover:bg-gray-800 transition-colors border-l-2 border-l-cyan-500/30 hover:border-l-cyan-500/60">
-                        <span>Affiliate Program</span>
+                        <div className="flex items-center justify-between">
+                          <span>Affiliate Program</span>
+                          <span className="bg-gray-800 text-gray-300 text-xs px-2 py-1 rounded-full font-medium border border-gray-600/30">SOON</span>
+                        </div>
                       </Link>
                     </div>
                   </div>
@@ -212,8 +215,9 @@ export default function Navbar() {
               VAI Web Gen
               <span className="absolute -top-1 -right-1 bg-gray-800 text-gray-300 text-xs px-1 py-0.5 rounded text-[10px] font-medium border border-gray-600/30">SOON</span>
             </Link>
-            <Link href="/affiliate" className="block px-4 py-3 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-gray-900 transition-all duration-300 border border-transparent hover:border-gray-800 border-l-2 border-l-cyan-500/30 hover:border-l-cyan-500/60">
+            <Link href="/affiliate" className="block px-4 py-3 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-gray-900 transition-all duration-300 border border-transparent hover:border-gray-800 border-l-2 border-l-cyan-500/30 hover:border-l-cyan-500/60 relative">
               Affiliate Program
+              <span className="absolute -top-1 -right-1 bg-gray-800 text-gray-300 text-xs px-1 py-0.5 rounded text-[10px] font-medium border border-gray-600/30">SOON</span>
             </Link>
           </div>
 

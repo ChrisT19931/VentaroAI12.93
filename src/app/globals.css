@@ -1014,11 +1014,25 @@
   }
   
   /* Improved tap targets */
+  .btn, button, a, [role="button"], .tap-target {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
   .tap-target {
     min-height: 48px;
     min-width: 48px;
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
+    -webkit-tap-highlight-color: rgba(59, 130, 246, 0.1);
+    tap-highlight-color: rgba(59, 130, 246, 0.1);
+  }
+  
+  /* Enhanced touch interactions */
+  .tap-target:active {
+    transform: scale(0.98);
+    transition: transform 0.1s ease;
   }
 }
