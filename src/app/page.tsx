@@ -264,7 +264,7 @@ export default function Home() {
                </AnimatedHeading>
              </div>
              <p className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed px-4 sm:px-0">
-               Let's understand your needs with a few quick questions. We'll provide a detailed solution proposal <span className="text-blue-400 font-bold">right asap</span>.
+               Let's understand your needs with a few quick questions. We'll provide a detailed solution proposal <span className="text-blue-400 font-bold">asap</span>.
              </p>
            </div>
            
@@ -277,8 +277,7 @@ export default function Home() {
                  Prefer to Talk Directly?
                </h3>
                <p className="text-sm sm:text-base text-gray-300 mb-4 sm:mb-6 leading-relaxed px-2 sm:px-0">
-                 As we're new to this but the best in the game, we're happy to ease your concerns about our services. 
-                 Call Chris T - Founder directly to discuss your project and understand how we can help accelerate your success.
+                 Call Chris T - Founder directly to discuss your project requirements.
                </p>
                <div className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-blue-600/20 to-indigo-600/20 border-2 border-blue-400 text-blue-300 font-bold rounded-xl text-base sm:text-lg min-h-[48px] select-all">
                  <svg className="w-4 h-4 sm:w-5 sm:h-5 mr-2 sm:mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -287,7 +286,7 @@ export default function Home() {
                  <span className="text-white font-mono tracking-wider">0435 413 110</span>
                </div>
                <p className="text-xs sm:text-sm text-gray-400 mt-3 sm:mt-4 px-2 sm:px-0">
-                 📞 Direct line to Chris T - Founder • We understand the skepticism to a new startup • This entire platform/website was built from AI prompts alone start-finish/ongoing - this is one way we can implement AI into your business, we are the 1% in 2025 that implement AI into actual online platforms that generate revenue/etc
+                 📞 Direct line to Chris T - Founder • This platform was built entirely with AI prompts - demonstrating how we implement AI into revenue-generating businesses
                </p>
              </div>
            </div>
@@ -699,34 +698,6 @@ export default function Home() {
 
          </div>
        </section>
-       
-       {/* Company Information Section */}
-       <section className="py-8 bg-gradient-to-br from-gray-950 via-black to-gray-950 relative overflow-hidden">
-         <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-5"></div>
-         <div className="container mx-auto px-6 max-w-5xl relative z-10">
-
-         </div>
-       </section>
-        
-        {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
-            <div className="w-1 h-3 bg-white/60 rounded-full mt-2 animate-pulse"></div>
-          </div>
-        </div>
-
-      {/* Pricing Tiers Section */}
-      <section className="py-24 relative overflow-hidden z-10">
-        {/* Professional Dark Background Elements */}
-        <div className="absolute inset-0 bg-black/20"></div>
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-20 left-20 w-40 h-40 bg-gradient-to-br from-slate-700/10 to-slate-900/10 rounded-2xl rotate-12"></div>
-          <div className="absolute bottom-20 right-20 w-32 h-32 bg-gradient-to-br from-slate-600/10 to-slate-800/10 rounded-xl rotate-45"></div>
-          <div className="absolute top-1/3 right-1/4 w-24 h-24 bg-gradient-to-br from-slate-500/5 to-slate-700/5 rounded-full"></div>
-        </div>
-      </section>
-        
-
 
       {/* Additional Services Section */}
       <section className="py-24 bg-black relative overflow-hidden">
@@ -991,16 +962,6 @@ export default function Home() {
                 While others are just discovering AI's potential, we've been perfecting implementation strategies for years. Partner with pioneers who've already solved the problems you're facing.
               </p>
             </div>
-
-
-
-            {/* Row 4 - Intentionally left empty */}
-
-
-            {/* Row 5 */}
-            {/* Rare Value Proposition section removed */}
-
-            {/* Row 6 - Intentionally left empty */}
 
           </div>
         </div>
